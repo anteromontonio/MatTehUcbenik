@@ -5,7 +5,7 @@ project:
     - name: Antonio Montero
       affiliation: Univerza v Ljubljani, Pedagoška fakulteta
       website: https://anteromontonio.github.io
-  copyright: '2025'
+  copyright: "2025"
   github: anteromontonio/matTeh
   bibliography:
     - references.bib
@@ -40,7 +40,7 @@ project:
         - file: A_namescanjeLatexa.md
         - file: B_izvozIzOverleaf.md
         - file: C_dolzineLaTeX.md
-        # - file: 03-Plotting.ipynb
+        - file: 03-Plotting.ipynb
 site:
   options:
     logo: MT_Logo.png
@@ -48,6 +48,6 @@ site:
     favicon: MT_Logo.png
     folders: true
     style: myCSS.css
-    language : sl
+    language: sl
 
   template: book-theme

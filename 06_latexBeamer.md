@@ -7,8 +7,15 @@
 Beamer je LaTeX razširitev za izdelavo drsnic ("slajdov").
 Za izdelavo predstavitve z Beamerjem uporabimo razred `beamer` namesto `article`.
 Nato uporabimo okolja `frame` za vsak posamezen diapozitiv.
+
+:::{seealso} Glej tudi: Beamer uporabniški vodič.
+:class: seealso
+V tem poglaviu bomo predstavili osnovne koncepte in ukaze za ustvarjanje predstavitev z Beamerjem.
+Za podrobnejše informacije in napredne funkcije si oglejte uradno [Beamer user guide](https://tug.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf).
+:::
+
 Ukaz `\frametitle{}` določi naslov drsnice. Lahko tudi uporabimo ukaz `framesubtitle{}` za podnaslov drsnice.
-Krajša možnost je, da naslov oz. podnaslov drsnice podamo kot možnost okolja `frame`, {prf:ref}`eg_beamer_1`.
+Krajša možnost je, da naslov oz. podnaslov drsnice podamo kot možnost okolja `frame`; [Primer %s](#eg_beamer_1).
 
 :::{prf:example}
 :label: eg_beamer_1
@@ -501,20 +508,157 @@ Najlažji način za uporabo specifikacij prekrivanja je z uporabo ukaza `\pause`
 Če dodamo ukaz `\pause` v okolje `frame`, prvi sloj drsnice prikaže vsebino do prva uporaba ukaza `\pause`, drugi sloj prikaže vsebino do druge uporabe ukaza `\pause` in tako naprej. Poglejte [Primer %s](#eg_beamer-pause).
 
 :::{prf:example}
-:label: eg\_
+:label: eg_beamer-pause
 
 `````{tab-set}
 ````{tab-item} LaTeX
 ```latex
-
+\begin{frame}{Primer uporabe ukaza \texttt{\textbackslash pause}}
+  Ta besedilo bo napisano od prvega sloja naprej, \pause
+  to od drugega, \pause
+  in to samo na tretjem in zadnjem sloju.
+\end{frame}
 ```
 ````
+
 ````{tab-item} PDF
-``` {image} --path--to--image
-:name:
+``` {image} ./img/06_eg-pause.gif
+:name: fig-06_eg-pause
 ```
 ````
 `````
+
+:::
+
+Ukaz `\pause` je enostaven za uporabo, vendar ponuja omejene možnosti prilagajanja. Za bolj natančno kontrolo nad tem, kdaj se posamezni deli vsebine prikažejo, lahko uporabimo _specifikacije prekrivanja_ znotraj ukazov kot so `\textbf`, `\textit`, `\textcolor` in druge (poglejte [Tabelo %s](#tab-prekrivanje-ukaze)).
+
+:::{dropdown} Ukazi, ki podpirajo specifikacije prekrivanja
+
+```{list-table}
+:label: tab-prekrivanje-ukaze
+* - `\textbf`
+  - `\textit`
+  - `\textmd`
+  - `\textnormal`
+  - `\textrm`
+* - `\textsc`
+  - `\textsf`
+  - `\textsl`
+  - `\texttt`
+  - `\textup`
+* - `\emph`
+  - `\color`
+  - `\textcolor`
+  - `\alert`
+  - `\structure`
+
+```
+
+Beamer uporaba ukaza `\alert` in `\structure` za poudarjanje besedila. Ukaz `\alert` običajno prikaže besedilo v rdeči barvi, medtem ko `\structure` uporabi barvo, določeno s temo Beamerja za poudarjeno besedilo.
+:::
+
+Sintaksa za specifikacije prekrivanja je naslednja:
+
+```latex
+\ukaz<spec_prek>{<besedilo>}
+```
+
+Kjer `\ukaz` predstavlja ukaz, ki ga želimo nadzorovati (npr. `\textbf`), `spec_prek` pa določa, na katerih slojih bo ukaz uporabljen. Na primer, `\textbf<2>{<besedilo>}` bo prikazalo `<besedilo>` krepko le na drugem sloju drsnice (ostali sloji bodo prikazali `<besedilo>` v običajnem slogu); poglejte [Primer %s](#eg_beamer-overlay-1).
+
+:::{prf:example}
+:label: eg_beamer-overlay-1
+
+`````{tab-set}
+````{tab-item} LaTeX
+```latex
+\begin{frame}{Specifikacije prekrivanja}
+  Tukaj je nekaj besedila, ki je vedno vidno.
+
+  Naslednje številke kažejo, v katerem sloju smo:
+  \alert<1>{1},
+  \alert<2>{2},
+  \alert<3>{3},
+  \alert<4>{4},
+  \alert<5>{5}.
+
+  \textbf<2->{To besedilo je od drugega sloja naprej krepko.}
+
+  \textit<3,5>{To besedilo je poševno v tretjem in petem sloju.}
+
+  \textcolor<1-2,4>{blue}{To besedilo je modro v prvim, drugim in četrtem sloju.}
+\end{frame}
+```
+````
+````{tab-item} PDF
+``` {image} ./img/06_eg-overlays-1.gif
+:name:fig_06_eg-overlay
+```
+```
+````
+`````
+
+:::
+
+Nekatere ukaze, kot so `\item` v okolju `itemize` in `enumerate`, imajo vgrajeno podporo za specifikacije prekrivanja; poglejte [Primer %s](#eg_beamer-overlay-2).
+
+:::{prf:example}
+:label: eg_beamer-overlay-2
+
+`````{tab-set}
+````{tab-item} LaTeX
+```latex
+\begin{frame}{Specifikacije prekrivanja v okoljih}
+  \begin{enumerate}
+    \item<1-> Prva točka je vidna od prvega sloja naprej.
+    \item<2,4> Druga točka je vidna v drugem in četrtem sloju.
+    \item<2> Tretja točka je vidna samo v drugem sloju.
+    \item<3-> Četrta točka je vidna od tretjega sloja naprej.
+    \item <4-> Peta točka je vidna od četrtega sloja naprej.
+  \end{enumerate}
+\end{frame}
+```
+````
+````{tab-item} PDF
+``` {image} ./img/06_eg-overlays-2.gif
+:name: fig_beamer-overlay-2
+```
+````
+`````
+
+:::{exercise}
+:label: ex_overlays-1
+
+1. Napišite Beamer drsnico, ki prikazuje naslednji neurejen seznam:
+
+- Ena
+- Dve
+- Tri
+- Štiri
+
+2. Z uporabo specifikacij prekrivanja naredite naslednje:
+
+- Točko prikažite v obratnem vrstnem redu, nato ostanejo štiri sloje in izginejo v nasprotnem vrstnem redu, kot so se pojavile (tako da je beseda „Štiri“ prva, ki se prikaže, in zadnja, ki izgine).
+- Če je število slojev liho, morajo biti vse besede, ki predstavljajo soda števila, rdeče. Nasprotno velja za besede, ki predstavljajo liha števila.
+  :::
+
+```{margin}
+[Seznam vaj](#06_latexBeamer_vaje)
+```
+
+:::{solution} ex_overlays-1
+:class: tip dropdown
+Možna rešitev:
+
+```latex
+\begin{frame}{Vaja 6.1}
+  \begin{itemize}
+    \item<4-8> \textcolor<4,6,8>{red}{Ena}
+    \item<3-9> \textcolor<3,5,7,9>{red}{Dve}
+    \item<2-10> \textcolor<2,4,6,8,10>{red}{Tri}
+    \item<1-11> \textcolor<1,3,5,7,9,11>{red}{Štiri}
+  \end{itemize}
+  \end{frame}
+```
 
 :::
 

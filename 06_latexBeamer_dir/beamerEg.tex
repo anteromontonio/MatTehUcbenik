@@ -59,10 +59,52 @@
 
 
 %%EG Pause
-\begin{frame}{Primer uporabe ukaza \texttt{\textbackslash pause}}
-  Ta besedilo bo napisano od prvega sloja naprej, \pause 
-  to od drugega, \pause 
-  in to samo na tretjem in zadnjem sloju.
-\end{frame}
+% \begin{frame}{Primer uporabe ukaza \texttt{\textbackslash pause}}
+%   Ta besedilo bo napisano od prvega sloja naprej, \pause 
+%   to od drugega, \pause 
+%   in to samo na tretjem in zadnjem sloju.
+% \end{frame}
 
-\end{document} 
+
+%%EG Prekrivanje-specifikacije
+% \begin{frame}{Specifikacije prekrivanja}
+%   Tukaj je nekaj besedila, ki je vedno vidno.
+  
+%   Naslednje številke kažejo, v katerem sloju smo:  
+%   \alert<1>{1},
+%   \alert<2>{2},
+%   \alert<3>{3},
+%   \alert<4>{4},
+%   \alert<5>{5}.
+  
+%   \textbf<2->{To besedilo je od drugega sloja naprej krepko.}
+  
+%   \textit<3,5>{To besedilo je poševno v tretjem in petem sloju.}
+  
+%   \textcolor<1-2,4>{blue}{To besedilo je modro v prvim, drugim in četrtem sloju.}
+ 
+% \end{frame}
+
+% \begin{frame}{Specifikacije prekrivanja v okoljih}
+%   \begin{enumerate}
+%     \item<1-> Prva točka je vidna od prvega sloja naprej.
+%     \item<2,4> Druga točka je vidna v drugem in četrtem sloju.
+%     \item<2> Tretja točka je vidna samo v drugem sloju.
+%     \item<3-> Četrta točka je vidna od tretjega sloja naprej.
+%     \item <4-> Peta točka je vidna od četrtega sloja naprej.
+%   \end{enumerate}
+% \end{frame}
+
+\begin{frame}{Seznam z učinki prekrivanja}
+  \begin{itemize}
+    % Štiri se pojavi prva in izgine zadnja
+    % Tri se pojavi druga in izgine predzadnja
+    % Dve se pojavi tretja in izgine tretja od konca
+    % Ena se pojavi zadnja in izgine prva
+    \item<4-8> \textcolor<4,6,8>{red}{Ena}
+    \item<3-9> \textcolor<3,5,7,9>{red}{Dve}
+    \item<2-10> \textcolor<2,4,6,8,10>{red}{Tri}
+    \item<1-11> \textcolor<1,3,5,7,9,11>{red}{Štiri}
+  \end{itemize}
+  \end{frame}
+\end{document}
