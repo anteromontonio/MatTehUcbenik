@@ -40,7 +40,7 @@ project:
         - file: A_namescanjeLatexa.md
         - file: B_izvozIzOverleaf.md
         - file: C_dolzineLaTeX.md
-        - file: 03-Plotting.ipynb
+        # - file: 03-Plotting.ipynb
 site:
   options:
     logo: MT_Logo.png
