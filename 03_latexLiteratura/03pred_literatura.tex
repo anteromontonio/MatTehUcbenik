@@ -1,0 +1,92 @@
+\documentclass{article}
+\usepackage[slovene]{babel}
+\usepackage{biblatex}
+\addbibresource{literatura.bib}
+% [
+% sortcites=true, 
+% %sorting=ynt,
+% style=alphabetic
+% url=false,
+% doi=false,
+% ]
+
+
+\usepackage{hyperref}
+
+
+\title{\LaTeX{} 3. - Sklicevanje in Literatura}
+\author{Antonio Montero}
+
+\begin{document}
+\maketitle
+
+\section*{Sklicevanje}
+\label{sec:sklicevanje}
+
+
+% S uporabo ukaza \texttt{\textbackslash label\{sec:sklicevanje\}} smo označili ta razdelek, nanj pa se lahko sklicujemo z ukazom \texttt{\textbackslash ref\{sec:sklicevanje\}}. 
+
+% Na primer, v razdelku \nameref{sec:sklicevanje} smo predstavili sklicevanje na različne elemente v dokumentu.
+% Na primer, v razdelku \cref{sec:sklicevanje} smo predstavili sklicevanje na različne elemente v dokumentu.
+
+\section{Literatura}
+% Prva knjiga, ki sem jo prebral, je bila \cite{hp1}. 
+% % ...
+% \begin{thebibliography}{9}
+%   \bibitem{hp1} J. K. Rowling, \textit{Harry Potter in kamen modrosti}, Založba EPTA, 1997.
+%   \bibitem{hp2} J. K. Rowling, \textit{Harry Potter in dvorana skrivnosti}, Založba EPTA, 1998.
+% \end{thebibliography}
+
+
+\vspace{1cm}
+
+Avtor knjige \cite{dm2018} je moj sosed v pisarni.
+
+
+\ldots{}, ki ga je prikazala že ga. Curie
+v \cite{curie}
+\vspace{1cm}
+
+\ldots{} Pred kratkim sem se učil uporabljati Bib\LaTeX{} iz \cite{lshort}. Zdi se mi zelo uporabno. \ldots
+\vspace{1cm}
+
+\ldots{} to je mogoče preprosto razložiti z
+dejstvom, da je bil Einstein časovni
+popotnik \cite{dream} \ldots
+\vspace{1cm}
+
+Vedno jih moramo navajati tako, kot so navedeni v bibliografiji \cite{dream, lshort, hp1, curie}.
+
+
+
+
+
+
+\clearpage
+\nocite{*}
+
+% \printbibliography[title={Viri in literatura}]
+
+% \printbibliography[type=article,title={Samo članki}]
+
+%  \printbibliography[type=book,title={Vse knjige}]
+
+%   \printbibliography[keyword={physics},title={Reference, povezane s Fiziko}]
+%  \printbibliography[notkeyword={latex},title={Vse, razen tistih, povezane z LaTeX-om}]
+ 
+ 
+%  \printbibliography[keyword={matematika},title={Reference, povezane s Matematiko}]
+
+ 
+%  \defbibfilter{custom}{keyword=physics or keyword=latex}     
+%  \printbibliography[filter=custom,title={Reference, povezane s fiziko ali \LaTeX-om}]
+
+
+% \printbibliography[title={Literatura, privzeto}]
+% \printbibliography[title={Literatura, v kazalu}, heading=bibintoc]
+% \printbibliography[title={Literatura, kot podrazdelek -- z zvezdico --}, heading=subbibliography]
+% \printbibliography[title={Literatura kot razdelek, s številko}, heading=bibnumbered]
+% \printbibliography[title={Literatura kot podrazdelek, brez št.-a, v kazalu}, heading=subbibintoc]
+% \printbibliography[title={Literatura kot podrazdelek, s št.-o, v kazalu}, heading=subbibnumbered]
+% \printbibliography[title={Čeprav napišem naslov, se nič ne natisne}, heading=none]
+\end{document}

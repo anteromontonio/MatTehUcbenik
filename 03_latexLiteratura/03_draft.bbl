@@ -1,0 +1,316 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{curie}{article}{}
+      \name{author}{1}{}{%
+        {{hash=0ea567cb9d6654e1a373dbffdb9b257e}{%
+           family={Curie},
+           familyi={C\bibinitperiod},
+           given={Marie},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{0ea567cb9d6654e1a373dbffdb9b257e}
+      \strng{fullhash}{0ea567cb9d6654e1a373dbffdb9b257e}
+      \strng{bibnamehash}{0ea567cb9d6654e1a373dbffdb9b257e}
+      \strng{authorbibnamehash}{0ea567cb9d6654e1a373dbffdb9b257e}
+      \strng{authornamehash}{0ea567cb9d6654e1a373dbffdb9b257e}
+      \strng{authorfullhash}{0ea567cb9d6654e1a373dbffdb9b257e}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revue scientifique}
+      \field{number}{3}
+      \field{series}{4}
+      \field{title}{Les nouvelles substances radioactives}
+      \field{volume}{14}
+      \field{year}{1900}
+      \true{nocite}
+      \keyw{physics}
+    \endentry
+    \entry{dirac}{book}{}
+      \name{author}{1}{}{%
+        {{hash=59342ede3a101402b34939644b51ad06}{%
+           family={Dirac},
+           familyi={D\bibinitperiod},
+           given={Paul\bibnamedelimb Adrien\bibnamedelima Maurice},
+           giveni={P\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Clarendon Press}%
+      }
+      \strng{namehash}{59342ede3a101402b34939644b51ad06}
+      \strng{fullhash}{59342ede3a101402b34939644b51ad06}
+      \strng{bibnamehash}{59342ede3a101402b34939644b51ad06}
+      \strng{authorbibnamehash}{59342ede3a101402b34939644b51ad06}
+      \strng{authornamehash}{59342ede3a101402b34939644b51ad06}
+      \strng{authorfullhash}{59342ede3a101402b34939644b51ad06}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9780198520115}
+      \field{series}{International series of monographs on physics}
+      \field{title}{The Principles of Quantum Mechanics}
+      \field{year}{1981}
+      \true{nocite}
+      \keyw{physics}
+    \endentry
+    \entry{dream}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=54a4e762b7178c6de1735d0515b405be}{%
+           family={Diviner},
+           familyi={D\bibinitperiod},
+           given={Jane},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{54a4e762b7178c6de1735d0515b405be}
+      \strng{fullhash}{54a4e762b7178c6de1735d0515b405be}
+      \strng{bibnamehash}{54a4e762b7178c6de1735d0515b405be}
+      \strng{authorbibnamehash}{54a4e762b7178c6de1735d0515b405be}
+      \strng{authornamehash}{54a4e762b7178c6de1735d0515b405be}
+      \strng{authorfullhash}{54a4e762b7178c6de1735d0515b405be}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{19}
+      \field{howpublished}{The vision came to me while I was sleeping}
+      \field{month}{7}
+      \field{note}{It was very vivid}
+      \field{title}{Yesterday's dream}
+      \field{year}{3012}
+      \field{dateera}{ce}
+      \true{nocite}
+      \keyw{dreamy,unreliable}
+    \endentry
+    \entry{einstein}{article}{}
+      \name{author}{1}{}{%
+        {{hash=3ebf53e52a3ce84f0ffb8553200a6a63}{%
+           family={Einstein},
+           familyi={E\bibinitperiod},
+           given={Albert},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{3ebf53e52a3ce84f0ffb8553200a6a63}
+      \strng{fullhash}{3ebf53e52a3ce84f0ffb8553200a6a63}
+      \strng{bibnamehash}{3ebf53e52a3ce84f0ffb8553200a6a63}
+      \strng{authorbibnamehash}{3ebf53e52a3ce84f0ffb8553200a6a63}
+      \strng{authornamehash}{3ebf53e52a3ce84f0ffb8553200a6a63}
+      \strng{authorfullhash}{3ebf53e52a3ce84f0ffb8553200a6a63}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annalen der Physik}
+      \field{number}{10}
+      \field{title}{{Zur Elektrodynamik bewegter Körper}. ({German}) [{On} the electrodynamics of moving bodies]}
+      \field{volume}{322}
+      \field{year}{1905}
+      \true{nocite}
+      \field{pages}{891\bibrangedash 921}
+      \range{pages}{31}
+      \verb{doi}
+      \verb http://dx.doi.org/10.1002/andp.19053221004
+      \endverb
+      \keyw{physics}
+    \endentry
+    \entry{einstein_relativity}{book}{}
+      \name{author}{3}{}{%
+        {{hash=3ebf53e52a3ce84f0ffb8553200a6a63}{%
+           family={Einstein},
+           familyi={E\bibinitperiod},
+           given={Albert},
+           giveni={A\bibinitperiod}}}%
+        {{hash=3f3d7a77ccb649d6453d39b821adb9bf}{%
+           family={Lorentz},
+           familyi={L\bibinitperiod},
+           given={Hendrik\bibnamedelima Antoon},
+           giveni={H\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=53a04b0452e82d11dbbb27d1587aac8a}{%
+           family={Weyl},
+           familyi={W\bibinitperiod},
+           given={Hermann},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Courier Corporation}%
+      }
+      \strng{namehash}{1884f60b8ac4a423f625f7fd76abd72f}
+      \strng{fullhash}{1884f60b8ac4a423f625f7fd76abd72f}
+      \strng{bibnamehash}{1884f60b8ac4a423f625f7fd76abd72f}
+      \strng{authorbibnamehash}{1884f60b8ac4a423f625f7fd76abd72f}
+      \strng{authornamehash}{1884f60b8ac4a423f625f7fd76abd72f}
+      \strng{authorfullhash}{1884f60b8ac4a423f625f7fd76abd72f}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The principle of relativity}
+      \field{year}{2013}
+      \true{nocite}
+      \keyw{physics}
+    \endentry
+    \entry{lshort}{book}{}
+      \name{author}{4}{}{%
+        {{hash=5d11479143005f8afd00a80db661847f}{%
+           family={Oetiker},
+           familyi={O\bibinitperiod},
+           given={Tobias},
+           giveni={T\bibinitperiod}}}%
+        {{hash=8ca96670929452aa6904ed514c3b557d}{%
+           family={Partl},
+           familyi={P\bibinitperiod},
+           given={Hubert},
+           giveni={H\bibinitperiod}}}%
+        {{hash=db9b819bf4a42d221113f40ed8c86d64}{%
+           family={Hyna},
+           familyi={H\bibinitperiod},
+           given={Irene},
+           giveni={I\bibinitperiod}}}%
+        {{hash=18761ea06cd8d6305a71fa1fde3f4b19}{%
+           family={Schlegl},
+           familyi={S\bibinitperiod},
+           given={Elisabeth},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{febdb7d8cc94bfeec1182be1d0189280}
+      \strng{fullhash}{8fca386a8f8bd6243f3461ae9167a2f4}
+      \strng{bibnamehash}{febdb7d8cc94bfeec1182be1d0189280}
+      \strng{authorbibnamehash}{febdb7d8cc94bfeec1182be1d0189280}
+      \strng{authornamehash}{febdb7d8cc94bfeec1182be1d0189280}
+      \strng{authorfullhash}{8fca386a8f8bd6243f3461ae9167a2f4}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{9}
+      \field{month}{3}
+      \field{title}{The Not So Short Introduction to \LaTeXe}
+      \field{version}{6.4}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.ctan.org/pkg/lshort-english
+      \endverb
+      \verb{url}
+      \verb https://www.ctan.org/pkg/lshort-english
+      \endverb
+      \keyw{latex}
+    \endentry
+    \entry{hp2}{book}{}
+      \name{author}{1}{}{%
+        {{hash=c236f3af616d9810c2134d976f59235a}{%
+           family={Rowling},
+           familyi={R\bibinitperiod},
+           given={J.\bibnamedelimi K.},
+           giveni={J\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Mladinska knjiga}%
+      }
+      \strng{namehash}{c236f3af616d9810c2134d976f59235a}
+      \strng{fullhash}{c236f3af616d9810c2134d976f59235a}
+      \strng{bibnamehash}{c236f3af616d9810c2134d976f59235a}
+      \strng{authorbibnamehash}{c236f3af616d9810c2134d976f59235a}
+      \strng{authornamehash}{c236f3af616d9810c2134d976f59235a}
+      \strng{authorfullhash}{c236f3af616d9810c2134d976f59235a}
+      \field{extraname}{1}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1. ponatis}
+      \field{isbn}{978-961-01-6504-0}
+      \field{note}{Prevod dela: Harry Potter and the chamber of secrets}
+      \field{title}{Harry Potter. Dvorana skrivnosti}
+      \field{year}{2017}
+      \true{nocite}
+      \field{pages}{258}
+      \range{pages}{1}
+    \endentry
+    \entry{hp1}{book}{}
+      \name{author}{1}{}{%
+        {{hash=c236f3af616d9810c2134d976f59235a}{%
+           family={Rowling},
+           familyi={R\bibinitperiod},
+           given={J.\bibnamedelimi K.},
+           giveni={J\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Mladinska knjiga}%
+      }
+      \strng{namehash}{c236f3af616d9810c2134d976f59235a}
+      \strng{fullhash}{c236f3af616d9810c2134d976f59235a}
+      \strng{bibnamehash}{c236f3af616d9810c2134d976f59235a}
+      \strng{authorbibnamehash}{c236f3af616d9810c2134d976f59235a}
+      \strng{authornamehash}{c236f3af616d9810c2134d976f59235a}
+      \strng{authorfullhash}{c236f3af616d9810c2134d976f59235a}
+      \field{extraname}{2}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1. natis}
+      \field{isbn}{978-961-01-4531-8}
+      \field{note}{Prevod dela: Harry Potter and the philosopher’s stone}
+      \field{title}{Harry Potter. Kamen modrosti}
+      \field{year}{2017}
+      \true{nocite}
+      \field{pages}{245}
+      \range{pages}{1}
+    \endentry
+    \entry{dm2018}{book}{}
+      \name{author}{2}{}{%
+        {{hash=f9858eb7deb79e7ecbf15747012a5045}{%
+           family={Tepeh},
+           familyi={T\bibinitperiod},
+           given={Aleksandra},
+           giveni={A\bibinitperiod}}}%
+        {{hash=98918986e2227c6295b3b9a83b28b728}{%
+           family={Škrekovski},
+           familyi={Š\bibinitperiod},
+           given={Riste},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Univerzitetna založba Univerze}%
+      }
+      \strng{namehash}{3564eefa9b870910274cc280a6d10a82}
+      \strng{fullhash}{3564eefa9b870910274cc280a6d10a82}
+      \strng{bibnamehash}{3564eefa9b870910274cc280a6d10a82}
+      \strng{authorbibnamehash}{3564eefa9b870910274cc280a6d10a82}
+      \strng{authornamehash}{3564eefa9b870910274cc280a6d10a82}
+      \strng{authorfullhash}{3564eefa9b870910274cc280a6d10a82}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Diskretna matematika}
+      \field{year}{2018}
+      \true{nocite}
+      \keyw{matematika}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

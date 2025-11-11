@@ -1,0 +1,172 @@
+\documentclass[12pt]{article}
+\usepackage[slovene]{babel}
+\usepackage{lmodern}
+
+\usepackage{minted}
+\setminted{fontsize=\small, linenos, }
+% % tcolorbox / tcblisting
+% % 
+\usepackage{booktabs,array}
+\usepackage{multirow}
+
+\author{France Prešeren}
+\title{Zdravljica}
+\date{\today}  
+
+\begin{document}
+  \maketitle
+  To je moja prva datoteka v LaTeXu. V tem bom napisal ljubezensko pismo Juliji.
+  
+  \vspace{2cm}
+
+  "` "' Več kot 50 \% površine Slovenije pokriva gozd "> "< .
+
+  \glqq \grqq
+
+  \vspace{2cm}
+
+
+  Več kot 90 \% Slovencev zasluži več kot 500 € na mesec, kar je približno 600 \$.
+
+  \vspace{2cm}
+
+  Ni pomembno, če za besedo
+  stoji en ali pa več           presledkov.
+  Prelom vrstice brez praznih 
+        se obravnava kot presledek.
+
+
+  Prazna vrstica začenja nov odstavek. 
+  %
+  Prazen komentar ni prazna vrstica.
+
+\clearpage
+
+\noindent Živé naj vsi naródi,\\
+ki hrepené dočakat' dan,\newline
+da koder sonce hodi,\\
+prepir iz svéta bo pregnan,\newline
+da rojak\\
+prost bo vsak,\\
+ne vrag, le sosed bo mejak!
+
+\vspace{2cm}
+Vpliva samo na \textit{argument}.
+Po \texttt{\textbackslash itshape} \itshape
+je vse v poševnem tisku,
+dokler ne sledi  \upshape \texttt{\textbackslash upshape}.
+Zdaj je vse tako, kot je bilo prej.
+
+
+
+\vspace{2cm}
+
+\begin{center}
+ \begin{tabular}{lll}
+\toprule
+Pisava & Ukaz (za argument) & Ukaz (switch) \\
+\midrule
+\textrm{pokončna serifna pisava} & \mintinline{latex}{\textrm{<besedilo>}} & \mintinline{latex}{\rmfamily} \\
+\textsf{gladka pisava} & \mintinline{latex}{\textsf{<besedilo>}} & \mintinline{latex}{\sffamily} \\
+\texttt{strojepisna pisava} & \mintinline{latex}{\texttt{<besedilo>}} & \mintinline{latex}{\ttfamily} \\ \midrule
+\textmd{srednja debelina} & \mintinline{latex}{\textmd{<besedilo>}} & \mintinline{latex}{\mdseries} \\
+\textbf{krepka pisava} & \mintinline{latex}{\textbf{<besedilo>}} & \mintinline{latex}{\bfseries} \\ \midrule
+\textit{poševna pisava} & \mintinline{latex}{\textit{<besedilo>}} & \mintinline{latex}{\itshape} \\
+\textsl{ležeča pisava} & \mintinline{latex}{\textsl{<besedilo>}} & \mintinline{latex}{\slshape} \\
+\textsc{male velike črke} & \mintinline{latex}{\textsc{<besedilo>}} & \mintinline{latex}{\scshape} \\\midrule
+\textup{pokončna} & \mintinline{latex}{\textup{<besedilo>}} & \mintinline{latex}{\upshape} \\
+\textup{velika-mala} & \mintinline{latex}{\textulc{<besedilo>}} & \mintinline{latex}{\ulcshape} \\
+\textnormal{privzeta pisava} & \mintinline{latex}{\textnormal{<besedilo>}} & \mintinline{latex}{\normalfont} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\scshape
+does \ulcshape this work? 
+
+
+\clearpage
+
+% \vspace{2cm}
+
+To je \underline{podčrtano} besedilo. 
+Izgleda \underline{malo} \underline{grdo}, 
+zato ga ne uporabljajmo pogosto.
+
+To je \emph{poudarjeno} besedilo.
+
+\textit{To je poševno besedilo, v 
+katerem je \emph{poudarjeno} besedilo.}
+
+\emph{Ta \emph{poudarjeno besedilo} 
+je obdan s poudarjenim besedilom \dots 
+ali je \emph{res} poudarjen?}
+
+
+\vspace{2cm}
+
+Praviloma pisave izbiramo premišljeno, ali pa izbor kar prepustimo LaTeXu.
+Besedilo lahko \emph{poudarimo} ali zapišemo \textbf{krepko}, ali pa \emph{\textbf{oboje skupaj}}.
+Kaj se zgodi, če \emph{uporabimo poudarjeno \emph{znotraj} poudarjenega besedila}?
+Seveda \textbf{lahko nastavimo tudi \textnormal{običajno} pisavo}.
+Besedilo lahko tudi \underline{podčrtamo}, vendar tega ne priporočamo, \underline{ker} \underline{je grdo}.
+
+Pišemo lahko tudi v \textsf{sans-serifni pisavi} ali pa \textsc{z malimi velikimi črkami},
+denimo \textsc{SageMath}. 
+\textsl{Ležeča pisava} {ni ista reč kot} \textit{poševna pisava}.
+Poševna pisava uporablja \textit{drugačne glife}, ležeča pisava pa uporablja \textsl{iste glife}, vendar ležečo. 
+Razlika je res očitna, če pogledate \textit{poševno pisano črko a} poleg \textsl{ležeče črke a}.
+
+Včasih uporabimo tudi \texttt{pisavo fiksne širine}, v kateri so vsi znaki enako široki.
+
+
+\vspace{2cm}
+
+\begin{tabular}{p{0.4\textwidth}p{0.55\textwidth}}
+        % \toprule
+        Ukaz  & Velikost                               \\
+        \hline
+        \mintinline{latex}{{\tiny}}  & {\tiny drobna pisava} \\                      
+        \mintinline{latex}{{\scriptsize}} & {\scriptsize velikost indeksov}           \\
+        \mintinline{latex}{{\footnotesize}}           & {\footnotesize  velikost opomb pod črto}       \\
+        \mintinline{latex}{{\small}}    & {\small majhna pisava}                     \\
+        \mintinline{latex}{{\normalsize}}             & {\normalsize  normalna velikost}              \\
+        \mintinline{latex}{{\large}}                  & {\large nekoliko večji znaki}                     \\
+        \mintinline{latex}{{\Large}}  & {\Large veliki znaki}                      \\
+        \mintinline{latex}{{\LARGE}}                  &{\LARGE zelo veliki znaki}                  \\
+        \multirow{2}{*}{\mintinline{latex}{{\huge}} } & \multirow{2}{*}{{\huge ogromni znaki}}        \\
+        & \\
+        \multirow{2}{*}{\mintinline{latex}{{\Huge}} } & \multirow{2.2}{*}{{\Huge največji znaki} }   \\
+        & \\
+      \end{tabular}
+
+\vspace{2cm}
+      \begin{quote}
+        \underline{\textbf{Pom\textsc{nite}\Huge!}} \textit{Čim}
+        \textsf{V\textbf{\LARGE E}}\textit{č} pisav \Huge uporabljate
+         \footnotesize \textbf{v} vašem \small \texttt{dokumentu},
+        \large \textit{tem} \normalsize lažje \textsc{berljiv} in
+        \textsl{\textsf{lepši} pos\large t\Large a\LARGE n\huge e}.
+      \end{quote}
+
+\vspace{2cm}
+
+V slovenščini vezaj (-) brez presledkov povezuje sestavine besed (slovensko-angleški slovar, C-vitamin), medtem ko pomišljaj (--) s presledki razmejuje ali poudarja miselne enote (To je bilo -- verjeli ali ne -- res.) ter označuje obseg (strani 15--20).
+V slovenščini uporabljamo več vrst narekovajev. 
+Najpogostejši so dvojni spodnji in zgornji ("` "'), npr. "`To je primer."' 
+Uporabljajo se v knjižnem jeziku in uradnih besedilih. 
+Pogosti so tudi dvojni zgornji (`` '' ), npr. ``Tako piše v članku.'', zlasti v elektronskih besedilih. Včasih naletimo na špičaste narekovaje ("> "<), npr. ">Tako so govorili."<, ki imajo dolgo tradicijo v slovenski tipografiji. 
+Vsi trije tipi so pravilni, pomembno pa je, da v enem besedilu uporabljamo enotno obliko.
+
+Ko pišemo besedilo v \LaTeX u, moramo paziti, da uporabljamo pravilne simbole. Poleg zgoraj navedenih simbolov ima \LaTeX tudi poseben ukaz za \dots, in sicer \dots{}  (prim. ...).
+
+\vspace{2cm}
+
+Ukazi, kot je \texttt{\textit{argument}},
+  vplivajo samo na \textit{argument}. 
+  Če uporabimo različico switch, se vse, 
+  kar je po ukazom \texttt{\itshape} \itshape,  
+  spremeni in ostane tako, dokler se ne pojavi drug \texttt{upshape}. 
+  Zdaj je vse tako, kot je bilo prej.
+
+\end{document}

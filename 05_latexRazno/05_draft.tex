@@ -1,0 +1,264 @@
+\documentclass{article}
+%Vsebina preambula.tex:
+\usepackage[slovene]{babel}
+\usepackage{lipsum} 
+\usepackage{mathtools, amssymb, amsthm}
+\usepackage{graphicx, caption, subcaption} 
+\usepackage{array, booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{ragged2e}
+
+\NewDocumentCommand{\DemoColor}{m}{
+    \raisebox{0.15cm}{#1} &
+    \fcolorbox{black}{#1}{\phantom{\rule{0.5cm}{0.5cm}}}
+  }
+
+\NewDocumentCommand{\pozdrav}{O{svet}}
+{Pozdravljeni, #1!}
+
+
+\NewDocumentCommand{\kpi}{}
+{\mathrm{\pi}} %Ukaz \kpi, kot 'konstantna pi'
+\NewDocumentCommand{\ke}{}
+{\mathrm{e}} %Ukaz \ke za Eulerjevo število
+
+
+\NewDocumentCommand{\zap}{O{n}m}
+{#2_{1}, \dots, #2_{#1}}
+
+\NewDocumentCommand{\vektor}{om}
+{
+  \IfNoValueTF{#1}
+  {(#2_{1}, #2_{2}, #2_{3})} %Če ni podan prvi argument, vrni vektor z 3 elementi
+  {(#2_{1}, \dots, #2_{#1})} %Če je podan prvi argument, vrni vektor z #1 elementi
+} 
+
+
+\NewDocumentCommand{\ukaz}{o}
+{
+  \IfValueTF{#1}
+  {Neobvezni argument je: \textbf{#1}} %Če je podan prvi argument, vrni njegov vrednost
+  {Ni neobveznega argumenta.} %Če ni podanega argumenta
+}
+
+\NewDocumentCommand{\zapLim}{D<>{1}O{n}m}
+{#3_{#1}, \dots, #3_{#2}}
+
+
+\NewDocumentCommand{\jeRekli}{sm}
+{\IfBooleanTF{#1}
+{Ana je rekla: ``#2''}
+{Boštjan je rekel: ``#2''}
+}
+
+\NewDocumentEnvironment{kralj}{}
+{\begin{FlushLeft} \textbf{Poslušajte!} Njegova veličanstvo, kralj Artur bo podal izjavo: \end{FlushLeft}\begin{Center} \scshape  }
+{\normalfont \end{Center}\begin{FlushRight} Konec izjave. Hvala za vašo pozornost. \end{FlushRight}}
+
+\NewDocumentEnvironment{kraljIme}{m}
+{\begin{FlushLeft} \textbf{Poslušajte!} Njegova veličanstvo, kralj \emph{#1} bo podal izjavo: \end{FlushLeft}\begin{Center} \scshape  }
+{\normalfont \end{Center}\begin{FlushRight} Konec izjave. Hvala za vašo pozornost. \end{FlushRight}}
+
+\NewDocumentEnvironment{kralji}{sm}
+{ % ob \begin{kralji}
+  \IfBooleanTF{#1}{ %z zvezdico
+    \begin{FlushLeft} \textbf{Poslušajte!} Njegova veličanstvo, kralj \emph{#2} bo podal izjavo: \end{FlushLeft}\begin{Center} \scshape  
+  }
+  { %brez zvezdice
+    \begin{FlushLeft} \textbf{Poslušajte!} Njena veličanstvo, kraljica \emph{#2} bo podala izjavo: \end{FlushLeft}\begin{Center} \scshape
+  }
+}
+{ % ob \end{kralji}
+  \IfBooleanTF{#1}
+  { %z zvezdico
+    \normalfont \end{Center}\begin{FlushRight} Konec izjave.  Kralj je hvalžen za vašo pozornost.\end{FlushRight}
+  }
+  { %brez zvezdice
+    \normalfont \end{Center}\begin{FlushRight} Konec izjave. Kraljica je hvaležna za vašo pozornost. \end{FlushRight}
+  }
+}
+
+
+\begin{document}
+\color{red} Svet je zdaj rdeč, nekateri deli so \textcolor{yellow}{rumeni}. 
+\[\mathcolor{blue}{\sum_{k=0}}^{10} i \]
+Vse še vedno rdeča
+\color{blue}
+zdaj modra.
+
+
+\begin{table}
+  % \ExplSyntaxOn
+  
+  % \ExplSyntaxOff
+  % \caption{Osnovne barve, ki so vnaprej določene v paketu \illa{xcolor}.}\label{tbl:basecolors}
+  \begin{tabular}{@{}lc*2{@{\qquad}lc}@{}}
+    \toprule
+    Ime                 & Demo                  &
+    Ime                 & Demo                  &
+    Ime                 & Demo                                       \\
+    \midrule
+    \DemoColor{black}    & \DemoColor{lightgray} & \DemoColor{purple} \\
+    \DemoColor{blue}     & \DemoColor{lime}      & \DemoColor{red}    \\
+    \DemoColor{brown}    & \DemoColor{magenta}   & \DemoColor{teal}   \\
+    \DemoColor{cyan}     & \DemoColor{olive}     & \DemoColor{violet} \\
+    \DemoColor{darkgray} & \DemoColor{orange}    & \DemoColor{white}  \\
+    \DemoColor{gray}     & \DemoColor{pink}      & \DemoColor{yellow} \\
+    \DemoColor{green}    &                       &                    \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\vspace{2cm}
+
+\textcolor{white!80!blue}{S}
+\textcolor{white!60!blue}{l}
+\textcolor{white!40!blue}{o}
+\textcolor{white!20!blue}{v}
+\textcolor{blue}{e}
+\textcolor{blue!75!red}{n}
+\textcolor{blue!50!red}{i}
+\textcolor{blue!25!red}{j}
+\textcolor{red}{a}
+
+
+\vspace{2cm}
+\noindent
+\textcolor[Gray]{0}{Nula} \\
+\textcolor[Gray]{3}{Tri} \\
+\textcolor[Gray]{7}{Sedem} \\
+\textcolor[Gray]{11}{Enaist} \\
+\textcolor[Gray]{15}{Petnaist}
+
+\vspace{2cm}
+
+
+\definecolor{ULrdeca}{RGB}{226,25,30}
+% V telesu dokumenta:
+\noindent
+\textcolor{ULrdeca}
+{To je rdeča barva Univerze v Ljubljani.}
+
+\color{black} % vrnemo barvo nazaj na črno
+
+\newpage
+% \pagecolor{yellow}
+% \color{-yellow}
+\noindent
+Barva strani je rumena, \\
+besedilo pa nasprotno rumeno.
+
+
+\vspace{2cm}
+
+\begin{minipage}{0.4\textwidth}
+Zanimivo je, kako lahko barve \colorbox{yellow}{\textcolor{red}{izboljšajo}} dokument. Vendar pa lahko prekomerna uporaba barv dokument tudi \fcolorbox{orange}{gray}{pokvari}.
+\end{minipage}
+
+% \vspace{2cm}
+% \begin{minipage}{0.4\textwidth}
+%   Vsakič da uporabljamo ukaz \texttt{\textbackslash pozdrav},
+%   dobimo isti rezultat: \pozdrav.
+% \end{minipage}
+
+
+\[
+\ke^{i \kpi} + 1 = 0 \text{ vs. }
+e^{i \pi} + 1 = 0
+\]
+
+\vspace{2cm}
+\begin{minipage}{0.4\textwidth}
+Dobrodošli na
+  \textcolor[RGB]{226,25,30}{Univerzi v Ljubljani}!
+  Ta \textcolor[RGB]{226,25,30}{barva} mi je zelo všeč.
+\end{minipage}
+
+
+\vspace{2cm}
+\begin{minipage}{0.4\textwidth}
+Ukaz \texttt{\textbackslash zap\{x\}\{n\}} ustvari zaporedje $x_{1}, \dots, x_{n}$,
+torej \texttt{\textbackslash zap\{a\}\{10\}} daje $ \zap{a}{10} $.
+\end{minipage}
+
+
+
+\vspace{2cm}
+\begin{minipage}{0.4\textwidth}
+  Ukaz 
+\texttt{\textbackslash pozdrav[<arg>]}
+pozdravi \texttt{<arg>}, če ga ne damo, pozdravi \texttt{svet}:
+\pozdrav[vsi], \pozdrav.
+\end{minipage}
+
+\vspace{2cm}
+\begin{minipage}{0.4\textwidth}
+Nekatere zaporedje imajo veliko elementov:
+$\zap[1000]{a}$, 
+za večino pa sploh ne vemo, 
+koliko jih je:
+$\zap{b}$.
+\end{minipage}
+
+
+\vspace{2cm}
+
+\begin{minipage}{0.4\textwidth}
+Na splošno ima vektor 
+veliko vnosov: 
+$\vektor[n]{x}$,
+vendar večino časa delamo z 
+vektorji s 3 vnosi:
+  $\vektor{x}$.
+\end{minipage}
+
+\vspace{2cm}
+
+\begin{minipage}{0.4\textwidth}
+  \ukaz 
+  \ukaz[Podan argument].
+\end{minipage}
+
+\vspace{2cm}
+
+\begin{minipage}{0.4\textwidth}
+  Večina zaporedj gre od $1$ do $n$:
+  $\zapLim{a}$,
+  vendar včasih želimo drugačen začetek:
+  $\zapLim<0>{a}$,
+  ali drugačen konec:
+  $\zapLim[500]{a}$.
+  ali pa kar oboje:
+  $\zapLim<5>[500]{a}$.
+\end{minipage}
+
+\vspace{2cm}
+
+\begin{minipage}
+{0.4\textwidth}
+  \jeRekli{Danes je lep dan.}\\
+  \jeRekli*{Upam, da bo jutri tudi tako lep dan.}
+\end{minipage}
+
+
+\vspace{2cm}
+\begin{kraljIme}{Artur}
+  Kralj vam želi lepe praznike
+\end{kraljIme}
+
+
+\vspace{2cm}
+
+\begin{kralji}*{Artur}
+  Kraljeve besede.
+\end{kralji}
+
+\begin{kralji}{Guinevere}
+  Kraljičine besede.
+\end{kralji}
+
+
+
+
+\end{document}

@@ -1,0 +1,386 @@
+\documentclass{article}
+\usepackage[slovene]{babel}
+
+
+\usepackage{ragged2e}
+\usepackage{lmodern}
+\usepackage{graphicx}
+
+\usepackage{subcaption}
+
+\usepackage{enumitem}
+% \setlist[itemize,1]{noitemsep, topsep=0pt, label=\heartsuit}
+% \setlist[itemize,2]{noitemsep, topsep=0pt, label=\diamondsuit}
+% \setlist[enumerate,1]{label=\Alph*.}
+% \setlist[enumerate,2]{label*=\arabic*.}
+% \setlist[description]{style=nextline}
+
+\usepackage{array,booktabs}
+
+\usepackage{multirow}
+
+
+\usepackage{lipsum}
+
+\begin{document}
+
+% \tableofcontents
+
+\setcounter{page}{0}
+
+\lipsum[1-3]
+\newpage
+
+% \lipsum[1-3]
+% \begin{Center}
+%   \includegraphics[width=5cm]{./macka.jpeg}
+% \end{Center}
+% \lipsum[4-6] 
+\lipsum[1-3]
+\begin{figure}
+  \centering
+  \includegraphics[width=5cm]{./macka.jpeg}
+  \caption{To je lepa mehiška mačka.}
+\end{figure}
+\lipsum[4-6] 
+
+\clearpage
+
+
+\vspace{1cm} \hrule \vspace{1cm}
+
+\hrule
+\section{To je section}
+\subsection{To je subsection}
+\subsubsection{To je subsubsection}
+\paragraph{To je paragraph}
+\subparagraph{To je subparagraph}
+
+
+% \vspace{1cm} \hrule \vspace{1cm}
+\section{Drugi razdelek}
+\lipsum[4-6]
+\subsection{a je to podrazdelek?}
+\lipsum[7]
+\subsection{Ja, to je podrazdelek!}
+\lipsum[8-10]
+
+\section{Privi razdelek}
+\lipsum[1-3]
+\subsection*{Podrazdelek brez številke}
+\lipsum[11-13]
+
+\section[Tretji razdelek]{Tretji razdelek z dolgim naslovom, ki se razteza čez več vrstic}
+\lipsum[14-15]
+
+\vspace{2cm}
+
+
+\begin{FlushLeft}
+  Ta besedilo je 
+  levo poravnan.
+  \LaTeX{} se ne trudi narediti
+  vrstic z enakimi dolžinami.
+
+  \lipsum[1][1-2]
+\end{FlushLeft}
+
+\begin{FlushRight}
+  Ta besedilo je desno poravnano.
+  Kot prej tudi tu vrstice nimajo
+  enakih dolžin.
+
+  \lipsum[1][1-2]
+\end{FlushRight}
+
+\begin{Center}
+  V središču 
+  sveta.
+
+  \lipsum[1][1-2]
+\end{Center}
+
+\vspace{2cm}
+
+\noindent 
+
+\begin{enumerate}
+  \item ena
+  \item dva
+  \item tri
+\end{enumerate}
+
+\begin{itemize}
+  \item prva točka neurejena seznama.
+  \item druga točka neurejena seznama.
+\end{itemize}
+
+\begin{description}
+  \item[Prva:] točka opisa.
+  \item[Druga:] točka opisa.
+  \item[Tretja, z daljšim imenom:] točka opisa.
+\end{description}
+
+\vspace{2cm}
+
+\begin{enumerate}
+  \item Različna okolja lahko mešamo
+  po lastnem okusu:
+    \begin{itemize}
+      \item Toda to lahko postane smešno.
+      \item[-] To se začne s pomišljajem.
+    \end{itemize}
+  \item Zapomnite si:
+    \begin{description}
+      \item[Neumne] zadeve ne bodo postale pametne, 
+      če so v seznamu.
+      \item[Pametne] zadeve, za razliko, pa lahko čudovito 
+      prikažemo s seznamom.
+    \end{description}
+\end{enumerate}
+
+
+\clearpage
+
+% Z uporabo možnosti \texttt{label=\textbackslash alph*)} lahko uporabljamo črke namesto številk:
+\begin{enumerate}[label=\alph*)]
+  \item Z možnostjo \texttt{label=\textbackslash textit\{(\textbackslash roman*)\}}, dobimo \textit{(i)}, \textit{(ii)}, \textit{(iii)} \dots
+  \item Podobno, z možnostjo \texttt{label=\textbackslash textbf\{\textbackslash Alph*.\}}, dobimo \textbf{A.}, \textbf{B.}, \textbf{C.}...
+\end{enumerate}
+
+\vspace{2cm}
+% Lahko spremenimo oznake neurejenih seznamov.
+% \begin{itemize}[label=\heartsuit]
+%   \item Tukaj uporabljamo \texttt{label=\textbackslash heartsuit}.
+%   \item Z možnostjo \texttt{label=\textbackslash textendash} dobimo pomišljaj.
+%   \item Z možnostjo \texttt{label=\textbackslash textasteriskCentered} dobimo zvezdico.
+% \end{itemize}
+
+\vspace{2cm}
+% Z uporabo možnosti \texttt{style=nextline} lahko dosežemo, da se opisi začnejo v novi vrstici:
+\begin{description}[style=nextline]
+  \item[Jabolko] Rdeče ali zeleno sadje.
+  \item[Pomaranča] Okroglo oranžno sadje.
+\end{description}
+
+
+\vspace{2cm}
+
+\begin{enumerate}[label=\arabic*.]
+  \item  Prva točka na prvi stopnji.
+    \begin{enumerate}[label*=\Alph*.]
+      \item Prva točka na drugi stopnji.
+      \item Druga točka na drugi stopnji.
+    \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}[label=\Roman*., resume]
+  \item To je drugačen seznam, z rimskimi številkami.
+  \item Številke pa se nadaljujejo iz prejšnjega seznama.
+  \item Nikoli ne smete nadaljevati seznama z različnimi oznakami.
+\end{enumerate}
+
+
+\clearpage
+
+\begin{itemize}
+  \item Neurejeni seznami prve stopnje imajo kot oznake srčke.
+  \item Opazujte, kako je bil razmik nastavljen tudi globalno.
+  \begin{itemize}
+    \item Neurejeni seznami na drugi stopnji imajo diamanti.
+  \end{itemize}
+\end{itemize}
+
+\vspace{2cm}
+
+\begin{enumerate}
+  \item  Prav tako smo nastavili oznake urejenih seznamov.
+  \begin{enumerate}
+    \item Zdaj tisti na drugi stopnji privzeto podedujejo oznake (e.g. A.1.)
+  \end{enumerate}
+\end{enumerate}
+
+\vspace{2cm}
+
+\begin{description}
+  \item[Opisni seznami] so nastavljeni tako, da se opisi začnejo v novi vrstici.
+  \item[To je] zelo uporabno, kadar so opisi daljši.
+\end{description}
+
+
+\vspace{2cm}
+
+Tabele v \LaTeX u se lahko poravnajo na sredino:
+\begin{tabular}{ll} 1&2\\3&4 \end{tabular}
+na dno: 
+\begin{tabular}[b]{ll} 1&2\\3&4 \end{tabular}
+ali na vrh: 
+\begin{tabular}[t]{ll} 1&2\\3&4 \end{tabular}
+glede na besedilo okoli njih.
+
+\vspace{2cm}
+\begin{tabular}{l|c r|}
+  levo& središče & desno \\ \hline
+  1 & 2 & 3 \\ \cline{1-1}
+  4 & 5 & 6 \\ \cline{2-3}
+  7 & 8 & 9 \\ \hline
+\end{tabular}
+
+
+\vspace{2cm}
+
+\begin{tabular}{ l p{2cm} m{2cm} b{2cm}}
+  \hline
+  \texttt{l} & \texttt{p\{2cm\}} & \texttt{m\{2cm\}} & \texttt{b\{2cm\}} \\
+  \hline
+  Celica &
+  Vrh besedila je poravnan s celico. &
+  Središče besedila je poravnan s celico. &
+  Dno besedila je poravnan s celico. \\\hline
+\end{tabular}
+
+\vspace{2cm}
+
+\begin{tabular}{c p{.7\textwidth}}
+  \toprule
+  Znak & Opis \\
+  \midrule
+  \texttt{l} & Poravnava besedila v stolpcu na levo. \\
+  \texttt{c} & Poravnava besedila v stolpcu na sredino. \\
+  \texttt{r} & Poravnava besedila v stolpcu na desno. \\
+  \texttt{p{<širina>}} & Besedilo v stolpcu bo zavito, če preseže določeno širino. \\
+  \texttt{m{<širina>}} & Kot \texttt{p{<širina>}}, vendar bo besedilo navpično poravnano na sredino celice. \\
+  \texttt{b{<širina>}} & Kot \texttt{p{<širina>}}, vendar bo besedilo navpično poravnano na dno celice. \\
+  \bottomrule
+  \end{tabular}
+
+  \vspace{2cm}
+
+  \begin{tabular}
+    { l @{\hspace{1cm}}  r @{,} l @{ €}}
+    % 
+    \toprule
+    Izdelek & \multicolumn{2}{c}{Cena}\\
+    \midrule
+    Espresso & 1&50 \\
+    Kava z mlekom & 2&50 \\
+    Čaj & 1&80 \\
+    \bottomrule
+  \end{tabular}
+  
+
+  \vspace{2cm}
+
+  \begin{tabular}{ l c l }
+  \toprule
+  & \multicolumn{2}{c}{Reakcija} \\\cmidrule{2-3}
+  Oseba & Obraz & Razpoloženje \\
+  \midrule
+  Jaz & :) & Vesel \\
+  Vi & :| & Zaskrbljen \\
+  Svoj partner & \multicolumn{2}{c}{Ni na voljo} \\
+  \bottomrule
+  \end{tabular}
+\vspace{2cm}
+
+  \begin{tabular}{ l c l }
+  \toprule
+ \multirow{2}{*}{Oseba} & \multicolumn{2}{c}{Reakcija} \\\cmidrule{2-3}
+  & Obraz & Razpoloženje \\
+  \midrule
+  \multirow{2}{*}{Mi} & :) & Vesel \\
+   & :| & Zaskrbljen \\
+  Svoj partner & \multicolumn{2}{c}{Ni na voljo} \\
+  \bottomrule
+  \end{tabular}
+\vspace{2cm}
+
+  \begin{tabular}{ >{ \bfseries } l  >{\mdseries } p{0.6\textwidth} }
+  \toprule
+  Krepko besedilo & Navadno besedilo \\
+  \midrule
+  Krepko besedilo & Besedilo v prvem stolpcu je krepko. \\
+  Krepko besedilo & Besedilo v prvem stolpcu je vedno krepko. \\
+  Krepko besedilo & Res! Besedilo v prvem stolpcu je vedno krepko. \\
+  \bottomrule
+  \end{tabular}
+
+
+\vspace{2cm}
+
+
+
+\clearpage 
+\includegraphics[width=2cm]{./macka.jpeg}
+\includegraphics[height=2cm]{./macka.jpeg}
+\includegraphics[width=2cm,height=2cm]{./macka.jpeg}
+
+\vspace{2cm}
+
+\includegraphics[scale=0.2]{./macka.jpeg}
+\includegraphics[scale=0.1]{./macka.jpeg}
+\includegraphics[scale=-0.1]{./macka.jpeg}
+
+\clearpage
+
+\lipsum[1][3] \includegraphics[width=1cm, angle=45]{./macka.jpeg} \lipsum[1][4]
+
+% \vspace{.5cm}
+% \hrule
+% \vspace{.5cm}
+
+\lipsum[1][3] \includegraphics[width=1cm, angle=180]{./macka.jpeg} \lipsum[1][4]
+
+% \vspace{.5cm}
+% \hrule
+% \vspace{.5cm}
+
+% \vspace{1cm}
+\lipsum[1][3] \includegraphics[width=1cm, angle=180, origin=c]{./macka.jpeg} \lipsum[1][4]
+
+% \vspace{.5cm}
+% \hrule
+% \vspace{.5cm}
+
+% \vspace{1cm}
+\lipsum[1][3] \includegraphics[width=1cm, angle=180, origin=lt]{./macka.jpeg} \lipsum[1][4]
+
+
+\clearpage 
+
+
+\lipsum[1-3]
+\begin{Center}
+  \includegraphics[width=5cm]{./macka.jpeg}
+\end{Center}
+\lipsum[4-6]  
+
+\vspace{2cm}
+
+\begin{tabular}{ l c r }
+  \texttt{l} & \texttt{c} & \texttt{r} \\
+  levo  &
+  središče &
+  desno  \\
+  1 & 2 & 3 \\
+\end{tabular}
+
+
+\clearpage
+
+\begin{figure}
+  \centering
+  \begin{subfigure}[t]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{./macka.jpeg}
+    \caption{Zelo dooooooooooooolga pojaznila za najlepšo Mačko na svetu.}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{./pes.jpg}
+    \caption{Kuža}
+  \end{subfigure}
+  \caption{Pojaznilo za obe podsliki}
+\end{figure}
+
+
+\end{document}

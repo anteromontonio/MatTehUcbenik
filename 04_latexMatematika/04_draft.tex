@@ -1,0 +1,243 @@
+\documentclass[12pt]{article}
+\usepackage[slovene]{babel}
+\usepackage{printlen}
+
+\usepackage{ragged2e,lmodern} %sodobni LaTeX
+
+\usepackage{array,booktabs, multirow} % Tabele
+\usepackage{graphicx} % Slike
+\usepackage{tcolorbox}
+\tcbset{colback=white, arc=0mm, boxrule=0.2mm,}
+
+\usepackage{mathtools}
+\usepackage{amsthm, amssymb} % Matematik
+\usepackage{lipsum}
+
+% \usepackage{hyperref} % Hiperpovezave
+
+\usepackage{minted}
+
+
+\title{\LaTeX{} 4. Matematika}
+\author{Antonio Montero}
+\date{22. oktober 2025}
+
+
+
+\newsavebox{\mybox}
+
+
+
+\newcommand{\pbox}[1]{
+  \savebox{\mybox}{\tcbox{#1}}
+  
+  \usebox{\mybox}
+  
+  \vspace{1cm}
+  \the\wd\mybox
+  \hrule 
+  \vspace{1cm}
+  }
+  
+
+
+
+  \NewDocumentCommand{\kpi}{}{\mathrm{\pi}}
+
+
+  \theoremstyle{plain}
+  \newtheorem{izrek}{Izrek}
+  \newtheorem{trd}[izrek]{Trditev}
+  \theoremstyle{definition}
+  \newtheorem{defja}[izrek]{Definicija}
+  \theoremstyle{remark}
+  \newtheorem*{zgled}{Zgled}
+
+\begin{document}
+\maketitle
+
+\begin{tcolorbox}
+  % \begin{equation}
+  % \label{eq:kvadratna_formula}
+  % % \tag{Kvadratna formula}
+  %   x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+  % \end{equation}
+
+V enačbi \ref{eq:kvadratna_formula} je prikazana kvadratna formula.
+\end{tcolorbox}
+
+\begin{tcolorbox}
+\[2+ \text{enka} = 3 \]
+\end{tcolorbox}
+
+\vspace{2cm}
+
+\pbox{$\displaystyle 2+ \text{enka} = 3 $}
+\pbox{%
+$123xyz$ je enako kot \(1 2 3 x y z \)
+}
+
+\pbox{
+  Primerjaj besedo \textit{office} z besedo $office$.
+}
+
+$\kpi$
+
+$\begin{smallmatrix}
+a & b \\ c & d
+\end{smallmatrix}$
+
+\[\sum_{j\in\{0,\ldots\, 10\}}
+\sum_{i\in\{0,\ldots\, 3^{3^{3^j}}\}} i\cdot j\]
+
+$\mathrm{e}$
+
+
+\vspace{2cm}
+
+% \begin{izrek}[Pitagorov izrek]
+%   Vsota površin kvadratov katet pravokotnega 
+%   trikotnika je enaka površini kvadrata nad 
+%   hipotenuzo.
+%   Izrek lahko zapišemo tudi kot: \[c^{2} = a^{2} + b^{2}\]
+% \end{izrek}
+
+\vspace{2cm}
+
+V \LaTeX-u moramo matematični del besedila zapisati v matematičnem načinu. Tudi če je to nekaj tako preprostega kot ta številka $2$ ali ta spremenljivka $x$.
+
+\vspace{2cm}
+
+\section{Razdelek z teoremi}
+
+% \begin{izrek} (Pitagorov izrek)
+%   V pravokotnem trikotniku velja \[c^{2} = a^{2} + b^{2}\] 
+% \end{izrek}
+% % ...
+
+\vspace{2cm}
+\begin{trd} 
+  Ne vem, če ta trditev velja.
+\end{trd}
+\begin{proof}
+  Očitno, uporabimo
+  \[E=mc^2.\qedhere\]
+\end{proof}
+% % ... 
+% \begin{defja}
+%   Tukaj sem napisal definicijo. Običajno vporabljamo \emph{povdarjeno} besedilo za naslove definicij.
+% \end{defja}
+% % ... 
+% \begin{zgled}
+%   Tukaj sem napisal primer.
+% \end{zgled}
+
+
+\clearpage
+
+% Maxwellove enačbe v vakuumu so:
+% \begin{align}
+%   \nabla \cdot \mathbf{E} & = \frac{\rho}{\varepsilon_0} \label{eq:GaussE} \\
+%   \nabla \cdot \mathbf{B} & = 0 \label{eq:GaussB} \\
+%   \nabla \times \mathbf{E} & = -\frac{\partial \mathbf{B}}{\partial t} \label{eq:Faraday} \\
+%   \nabla \times \mathbf{B} & = \mu_0 \mathbf{J} + \mu_0 \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t} \label{eq:Ampere}
+% \end{align} 
+
+Enačba \ref{eq:GaussE} opisuje Gaussov zakon za električno polje, enačba \ref{eq:GaussB} pa Gaussov zakon za magnetno polje. Enačba \ref{eq:Faraday} predstavlja Faradayev zakon elektromagnetne indukcije, medtem ko enačba \ref{eq:Ampere} predstavlja Amperov zakon z Maxwellovim dodatkom.
+
+\clearpage
+
+\begin{izrek}[de Morganovi zakoni]
+  Za vsakih dvoje podmnožic $A$ in $B$ množice $X$ veljata naslednji enačbi:
+  \begin{align}
+    X\setminus (A \cup B) & = (X \setminus A) \cap (X \setminus B) \label{eq:deMorgan1}\\
+    X\setminus (A \cap B) & = (X \setminus A) \cup (X \setminus B) \label{eq:deMorgan2}
+  \end{align}
+\end{izrek}
+\begin{proof}
+  Dokaz za prvo enačbo:
+  Naj bo $x \in X\setminus (A \cup B)$. Potem 
+  \begin{align*}
+    x \in X \text{ in } x \notin A \cup B
+    & \Rightarrow x \in X \text{ in } (x \notin A \text{ in } x \notin B) \\
+    & \Rightarrow  (x \in X \text{ in } x \notin A) \text{ in } (x \in X \text{ in } x \notin B) \\
+    & \Rightarrow x \in X \setminus A \text{ in } x \in X \setminus B \\
+    & \Rightarrow  x \in (X \setminus A) \cap (X \setminus B)
+  \end{align*}
+%
+  Obratno, naj bo $x \in (X \setminus A) \cap (X \setminus B)$. Potem 
+  \begin{align*}
+    x \in (X \setminus A) \cap (X \setminus B)
+    & \Rightarrow (x \in X \text{ in } x \notin A) \text{ in } (x \in X \text{ in } x \notin B) \\
+    & \Rightarrow x \in X \text{ in } (x \notin A \text{ in } x \notin B) \\
+    & \Rightarrow x \in X \text{ in } x \notin A \cup B \\
+    & \Rightarrow x \in X\setminus (A \cup B)
+  \end{align*}
+S tem je dokaz prve enačbe zaključen.
+
+  Dokaz za drugo enačbo je podoben: 
+  Naj bo $x \in X\setminus (A \cap B)$. Potem 
+  \begin{align*}
+    x \in X\setminus (A \cap B)
+    & \Rightarrow x \in X \text{ in } x \notin A \cap B \\
+    & \Rightarrow x \in X \text{ in } (x \notin A \text{ ali } x \notin B) \\
+    & \Rightarrow  (x \in X \text{ in } x \notin A) \text{ ali } (x \in X \text{ in } x \notin B) \\
+    & \Rightarrow x \in X \setminus A \text{ ali } x \in X \setminus B \\
+    & \Rightarrow  x \in (X \setminus A) \cup (X \setminus B)
+  \end{align*}
+%  
+Obratno, naj bo $x \in (X \setminus A) \cup X \setminus B$. Potem 
+  \begin{align*}
+    x \in (X \setminus A) \cup (X \setminus B)
+    & \Rightarrow (x \in X \text{ in } x \notin A) \text{ ali } (x \in X \text{ in } x \notin B) \\
+    & \Rightarrow x \in X \text{ in } (x \notin A \text{ ali } x \notin B) \\
+    & \Rightarrow x \in X \text{ in } x \notin A \cap B \\
+    & \Rightarrow x \in X\setminus (A \cap B)
+  \end{align*}
+  Sledi, da $X\setminus (A\cap B) = (X \setminus A) \cup (X \setminus B)$.
+
+  Torej enačbi \ref{eq:deMorgan1} in \ref{eq:deMorgan2} držita.
+\end{proof}
+
+\vspace{2cm}
+
+\begin{minipage}{0.5\textwidth}
+\begin{multline*}
+  a + b + c + d + e \\
+  + f + g + h + i \\
+  = j + k + l + m + n
+  \end{multline*}
+\end{minipage}
+
+\vspace{2cm}
+
+\begin{minipage}{0.5\textwidth}
+\begin{multline*}
+    a + b + c \\
+    \shoveleft{+ d + e + f} \\
+    \shoveright{+ g + h + i} \\
+    = j + k + l + m + n
+\end{multline*}
+\end{minipage}
+
+\vspace{2cm}
+
+\begin{minipage}{0.5\textwidth}
+  \begin{multline*}
+    f(a, b) = \left(
+    \int_a^b f(x)
+    dooooooooolgo
+    \right. \\
+    \left.
+    \vphantom{
+    \int_a^b f(x)
+    dooooooooolgo
+    }
+    kratko d x
+    \right)
+  \end{multline*}
+\end{minipage}
+
+
+
+\end{document}

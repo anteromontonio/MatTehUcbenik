@@ -1,0 +1,36 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: LaTeX
+    numbered: true
+    chapters:
+    - file: 01_latexUvod
+    - file: 02_latexOsnovnaOkolja
+    - file: 03_latexLiteratura
+    - file: 04_latex_matematika
+    - file: 05_latex_razno
+    - file: 06_latex_beamer
+  - caption: GeoGebra
+    numbered: true
+    chapters:
+    - file: 07_geogebra_uvod 
+    - file: 08_geogebra_geometrija 
+    - file: 09_geogebra_analiza 
+    - file: 10_geogebra_3d 
+    - file: 11_geogebra_razno 
+  - caption: SageMath
+    numbered: true
+    chapters:
+    - file: 12_sage_uvod 
+    - file: 13_sage_algebra 
+    - file: 14_sage_analiza
+  - caption: Priloge
+    numbered: false
+    chapters:
+    - file:  A_namescanjeLatexa
+    - file:  B_izvozIzOverleaf
+    - file:  C_dolzineLaTeX
+    - file:  03-Plotting  
