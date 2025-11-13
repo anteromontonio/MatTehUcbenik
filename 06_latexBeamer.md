@@ -169,7 +169,7 @@ Upoštevajte, da je pozicija logotipa odvisna od uporabljene teme. Poleg tega, n
 
 % \usetheme{Boadilla} %logo na spodaj desno
 % \usetheme{PaloAlto} %logo na zgoraj levo
-% \usetheme{Marburg} %titlegraphi, ampak nima logotipa
+% \usetheme{Marburg} %titlegraphic, ampak nima logotipa
 %\usetheme{Bergen} %logo na spodaj desno, nima graphic na naslovnici
 
 \title{Naslov predstavitve}
@@ -523,7 +523,7 @@ Uporaba logične enote `\part` v Beamer predstavitvi.
 
 (beamer_prekrivanje)=
 
-## Spefifikacije prekrivanja
+## Specifikacije prekrivanja
 
 Izhodna datoteka Beamer je običajno v formatu `PDF` kar je v principu statična datoteka. Beamer pa omogoča ustvarjanje dinamičnih učinkov z uporabo _specifikacij prekrivanja_ (ang. _overlay specifications_).
 
@@ -1350,6 +1350,7 @@ Lahko pa ponudimo zunanje vire za raziskovanje različnih tem.
 - [Beamer Theme Matrix](https://hartwork.org/beamer-theme-matrix/): Interaktivno orodje za raziskovanje različnih kombinacij tem in barvnih shem v Beamerju.
 - [Beamer Theme Gallery](https://deic.uab.es/~iblanes/beamer_gallery/index.html): Galerija različnih tem Beamer, tem pisave in tem barv.
 - [Beamer User Guide](https://tug.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf): Del III vodiča za uporabnike Beamerja vsebuje podrobne informacije o temah in barvnih shemah.
+- [Overleaf beamer templates](https://www.overleaf.com/gallery/tagged/beamer): Sodobne teme Beamer na Overleafu.
 
 (06_latexBeamer_vaje)=
 
