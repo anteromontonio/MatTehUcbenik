@@ -730,8 +730,9 @@ Lažna animacija s specifikacijami prekrivanja.
 ```
 ````
 `````
-
 :::
+
+[`stick.zip`](./img/stick.zip) vsebuje slike, uporabljene v zgornjem primeru.
 
 :::{dropdown} Paket `animate`
 Za bolj gladke in prilagodljive animacije v Beamer predstavitvah lahko uporabimo paket [`animate`](https://ctan.org/pkg/animate?lang=en). Ta paket omogoča vključevanje animacij, ki se samodejno predvajajo znotraj drsnic Beamer.
@@ -1167,14 +1168,14 @@ Poleg tega lahko uporabimo specifikacije prekrivanja za postopno prikazovanje vr
 `````{tab-set}
 ````{tab-item} LaTeX
 ```latex
+\begin{frame}{Tabele v Beamerju}
   \begin{table}
   \begin{tabular}{ l c l }
     \toprule
-    % \visible<1->
     Oseba & Obraz & Razpoloženje\\
     \midrule %\pause
-    \visible<2->{Jaz & :) & Vesel} \\ %\pause
-    \visible<3->{Vi & :/ & Zaskrbljen} \\ %\pause
+    \visible<2->{Jaz & :) & Vesel} \\ 
+    \visible<3->{Vi & :/ & Zaskrbljen} \\ 
     \visible<4->
     {Svoj partner} & \visible<5->{:(} & \visible<6>{Žalosten} \\
     \bottomrule
