@@ -121,24 +121,24 @@ zdaj modra.
 :::{card} PDF
 
 ```{figure} ./img/05_eg-barve-1.png
-:name: fig:eg-barve-1
+:label: fig:eg-barve-1
 ```
 
 :::
 ::::
 
-Barve, ki so vnaprej določene v paketu `xcolor`, so prikazane v{numref}`Tabeli {number}<tbl:basecolors>`.
+Barve, ki so vnaprej določene v paketu `xcolor`, so prikazane v [Tabeli %s](#tbl:basecolors).
 
 ```{figure} ./img/05_xcolorList.png
-:name: tbl:basecolors
+:label: tbl:basecolors
 :height: 400px
 Osnovne barve, ki jih določa paket `xcolor`.
 ```
 
-Seznam določenih barv lahko razširimo z uporabo možnosti, ki jih ponuja paket `xcolor`. Npr z možnostjo `dvipsnames` lahko uporabimo dodatne barve prikazane v {numref}`Tabeli {number}<tbl:dvipsnames>`.
+Seznam določenih barv lahko razširimo z uporabo možnosti, ki jih ponuja paket `xcolor`. Npr z možnostjo `dvipsnames` lahko uporabimo dodatne barve prikazane v [Tabeli %s](#tbl:dvipsnames).
 
 ```{figure} ./img/05_xcolorDvipsnames.png
-:name: tbl:dvipsnames
+:label: tbl:dvipsnames
 :height: 350px
 Dodatne barve, ki jih določa paket `xcolor` z možnostjo `dvipsnames`.
 ```
@@ -160,7 +160,7 @@ Mešanje lahko vključuje tudi več kot dve barvi. V tem primeru, mešanje je iz
 Z uporabo ukaza za mešanje barv, reproducirajte barvni gradient prikazan na spodnji sliki:
 
 ```{figure} ./img/05_ex-gradient.png
-:name: fig:ex-gradient
+:label: fig:ex-gradient
 :height: 100px
 ```
 
@@ -207,7 +207,7 @@ Včasih moramo biti natančnejši pri barvah, ki jih uporabljamo. Za to lahko up
 :::{card} PDF
 
 ```{figure} ./img/05_eg-Gray-model.png
-:name: fig:eg-Gray-model
+:label: fig:eg-Gray-model
 :width: 100px
 ```
 
@@ -216,10 +216,10 @@ Včasih moramo biti natančnejši pri barvah, ki jih uporabljamo. Za to lahko up
 
 Podobno lahko uporabimo model `grey`, kjer vrednosti segajo od `0` do `1`, pri čemer `0` predstavlja črno in `1` belo.
 
-V Tabeli {numref}`{number}<tbl:color-models>` so prikazani nekateri barvni modeli, ki jih podpira paket `xcolor`.
+V [Tabeli %s](#tbl:color-models) so prikazani nekateri barvni modeli, ki jih podpira paket `xcolor`.
 
 :::{list-table} Najpogostejši modeli barv v paketu `xcolor`
-:name: tbl:color-models
+:label: tbl:color-models
 :header-rows: 1
 
 * - Model
@@ -284,7 +284,7 @@ Z uporabo ukaza `\definecolor{<ime_barve>}{<model>}{<parametri>}` (v preambuli) 
 :::{card} PDF
 
 ````{figure} ./img/05_eg-ULrdeca.png
-:name: fig:eg-ULrdeca
+:label: fig:eg-ULrdeca
 
 :::
 ::::
@@ -316,7 +316,7 @@ besedilo pa nasprotno rumeno.
 :::{card} PDF
 
 ````{figure} ./img/05_eg-pagecolor.png
-:name: fig:eg-pagecolor
+:label: fig:eg-pagecolor
 :::
 ::::
 
@@ -342,7 +342,7 @@ Vendar pa lahko prekomerna uporaba barv dokument tudi
 :::{card} PDF
 
 ````{figure} ./img/05_eg-colorbox.png
-:name: fig:eg-colorbox
+:label: fig:eg-colorbox
 :::
 ::::
 
@@ -457,10 +457,10 @@ Na primer, pri definiciji ukaza za konstantno $\pi$, je bolje definirati ukaz `\
 :::
 
 Če želimo definirati nov ukaz, ki sprejema argumente, moramo določiti vrsto in število argumentov v nizu `<vrsta_argumentov>`.
-Nekateri najpogostejši tipi argumentov so prikazani v {numref}`Tabeli {number}<tbl:arg-types>`.
+Nekateri najpogostejši tipi argumentov so prikazani v [Tabeli %s](#tbl:arg-types).
 
 :::{list-table} Najpogostejši tipi argumentov v `\NewDocumentCommand`
-:name: tbl:arg-types
+:label: tbl:arg-types
 :header-rows: 1
 
 * - Tip argumenta
@@ -500,7 +500,7 @@ Ta \textULrdeca{barva} mi je zelo všeč.
 :::{card} PDF
 
 ```{figure} ./img/05_eg-ArgsM-1.png
-:name: fig:eg-ArgsM-1
+:label: fig:eg-ArgsM-1
 ```
 
 :::
@@ -531,7 +531,7 @@ $ \zap{a}{10} $.
 :::{card} PDF
 
 ```{figure} ./img/05_eg-ArgsM-2.png
-:name: fig:eg-ArgsM-2
+:label: fig:eg-ArgsM-2
 ```
 
 :::
@@ -560,7 +560,7 @@ pozdravi \texttt{<arg>},
 :::{card} PDF
 
 ```{figure} ./img/05_eg-ArgsO-1.png
-:name: fig:eg-ArgsO-1
+:label: fig:eg-ArgsO-1
 ```
 
 ::::
@@ -589,7 +589,7 @@ $\Zap{b}$.
 :::{card} PDF
 
 ```{figure} ./img/05_eg-ArgsMO-1.png
-:name: fig:eg-ArgsMO-1
+:label: fig:eg-ArgsMO-1
 ```
 
 :::
@@ -622,7 +622,7 @@ Včasih želimo da ukaz deluje drugače, če je neobvezni argument podan ali ne.
 :::{card} PDF
 
 ```{figure} ./img/05_eg-ArgsMo-2.png
-:name: fig:eg-ArgsMo-2
+:label: fig:eg-ArgsMo-2
 ```
 
 :::
@@ -657,7 +657,7 @@ $\zapLim<5>[500]{a}$.
 :::{card} PDF
 
 ```{figure} ./img/05_eg-ArgsD-1.png
-:name: fig:eg-ArgsD-1
+:label: fig:eg-ArgsD-1
 ```
 
 :::
@@ -688,7 +688,7 @@ Nazadnje, lahko tudi uporabljamo znak `s` za niz `<vrsta_argumentov>`, da defini
 :::{card} PDF
 
 ```{figure} ./img/05_eg-ArgsS-1.png
-:name: fig:eg-ArgsS-1
+:label: fig:eg-ArgsS-1
 ```
 
 :::
@@ -793,7 +793,7 @@ To je izjava kralja Arturja.
 ````
 ````{tab-item} PDF
 ``` {figure} ./img/05_eg-okolja-kralj-1.png
-  :name: fig:eg-okolja-kralj-1
+  :label: fig:eg-okolja-kralj-1
 ```
 ````
 `````
@@ -830,7 +830,7 @@ Lahko tudi definiramo okolja z argumenti. Na primer, lahko definiramo okolje `kr
 ````
 ````{tab-item} PDF
 ``` {figure} ./img/05_eg-okolja-kralj-2.png
-  :name: fig:eg-okolja-kralj-2
+  :label: fig:eg-okolja-kralj-2
 ```
 ````
 `````
@@ -880,7 +880,7 @@ Kraljičine besede.
 ````
 ````{tab-item} PDF
 ``` {figure} ./img/05_eg-okolja-kralj-2.png
-  :name: fig:eg-okolja-kralj--3
+  :label: fig:eg-okolja-kralj--3
 ```
 ````
 `````

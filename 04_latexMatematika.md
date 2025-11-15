@@ -642,10 +642,11 @@ Nato lahko uporabimo ukaz `\foo` v matematičnem načinu, kar bo dalo rezultat $
 
 :::::{dropdown} Veliki operatorji
 Nekateri matematični operaterji se štejejo za »velike« operaterje. Ti operatorji so običajno uporabljeni v prikaznem načinu in imajo večje simbole, medtem ko so v vrstičnem načinu manjši. Veliki operatorji vključujejo vsote, produkte, integrale, itd.
-Nekatere funkcije v {numref}`Tabeli {number} <tab:latex_operators>` so tudi veliki operatorji.
+Nekatere funkcije v [Tabeli %s](#tab_latex-operators) so tudi veliki operatorji.
 
 ::::{list-table} Veliki operatorji
 :header-rows: 1
+:label: tab_latex-operators
 
 * - LaTeX
   - PDF (prikazni način)
@@ -687,9 +688,9 @@ Nekatere funkcije v {numref}`Tabeli {number} <tab:latex_operators>` so tudi veli
   - $\displaystyle \max_{x \in A} f(x)$
   - $\max_{x \in A} f(x)$
 * - `\min_{x \in A} f(x)`
-    - $\displaystyle \min_{x \in A} f(x)$
-    - $\min_{x \in A} f(x)$
-      ::::
+  - $\displaystyle \min_{x \in A} f(x)$
+  - $\min_{x \in A} f(x)$
+::::
 
 Če želimo definirati nove velike operatorje, lahko uporabimo ukaz
 
@@ -729,8 +730,8 @@ Standardni ukazi za uporabo različnih pisav, kot je, `\textbf{...}`, ne delujej
 * - `\mathbb{ABC}`
   - $\mathbb{ABC}$
 * - `\mathfrak{ABCxyz}`
-    - $\mathfrak{ABCxyz}$
-      ::::
+  - $\mathfrak{ABCxyz}$
+::::
 
 Nekatere vir (npr. [Standard ISO 80000-2](https://www.sist.si/velicine-in-enote-2-del-matematika-sist-en-iso-80000-220196-prevod-v-slovenscino.html)) priporočajo, da se za matematične konstante in posebne funkcije uporablja rimska pisava (upravičeno). Na primer, Eulerjevo število $e$, imaginarna enota $i$ in diferencialni operator $d$ naj bodo zapisani v rimski pisavi kot `\mathrm{e}`: $\mathrm{e}$, `\mathrm{i}`:$\mathrm{i}$ in `\mathrm{d}`: $\mathrm{d}$.
 Ukaz `\mathrm{\pi}` bi uporabili za zapis števila pi v rimski pisavi: $\mathrm{\pi}$.
@@ -1218,7 +1219,7 @@ $$
 :::
 ::::
 
-Ker so matrike običajno ločene, obstaja pet dodatnih okolj, ki vsebino matrike preprosto obkrožajo z ločevalniki. Ti okolji so prikazen v {numref}`Tabeli {number} <tab:latex_matrike>`:
+Ker so matrike običajno ločene, obstaja pet dodatnih okolj, ki vsebino matrike preprosto obkrožajo z ločevalniki. Ti okolji so prikazen v [Tabeli %s](#tab:latex_matrike):
 
 ::::{list-table} Okolja za matrike
 :header-rows: 1
@@ -1237,8 +1238,8 @@ Ker so matrike običajno ločene, obstaja pet dodatnih okolj, ki vsebino matrike
 * - `\begin{vmatrix} a & b \\ c & d \end{vmatrix}`
   - $\begin{vmatrix} a & b \\ c & d \end{vmatrix}$
 * - `\begin{Vmatrix} a & b \\ c & d \end{Vmatrix}`
-    - $\begin{Vmatrix} a & b \\ c & d \end{Vmatrix}$
-      ::::
+  - $\begin{Vmatrix} a & b \\ c & d \end{Vmatrix}$
+::::
 
 Matrike, ki so ustvarili z uporabo teh okolij so precej velike, ker so namenjene za prikazni način. Če jih želite uporabiti v vrstičnem načinu, lahko uporabimo okolje `smallmatrix`, ki je manjše različica okolja `matrix`. Okolja `smallmatrix` ni mogoče uporabiti z ločevalniki, zato morate ročno dodati oklepaje ali druge ločevalnike okoli matrike.
 

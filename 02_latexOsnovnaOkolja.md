@@ -699,7 +699,7 @@ Ta ukaz je uporaben, kadar želimo, da se besedilo razteza čez več stolpcev, n
 
 :::{exercise}
 :label: ex_booktabs_2
-Naredite kopijo tabele, ki ste jo ustvarili v {numref}`vaji {number} <ex_booktabs_1>` in jo uredite tako, da bo izgledala kot spodnja.
+Naredite kopijo tabele, ki ste jo ustvarili v [vaji %s](#ex_booktabs_1) in jo uredite tako, da bo izgledala kot spodnja.
 
 ```{figure} ./img/02_ex-booktabs-2.png
 :name: ex-tabular-2
@@ -736,7 +736,7 @@ Delno vodoravno črto iz stolpca `i` v stolpec `j` natisnemo z ukazom `\cmidrule
 
 :::{exercise}
 :label: ex_booktabs_3
-Naredite kopijo tabele, ki ste jo ustvarili v {numref}`vaji {number} <ex_booktabs_2>` in jo uredite tako, da bo izgledala kot spodnja.
+Naredite kopijo tabele, ki ste jo ustvarili v [vaji %s](#ex_booktabs_2) in jo uredite tako, da bo izgledala kot spodnja.
 
 ```{figure} ./img/02_ex-booktabs-3.png
 :name: ex-tabular-3

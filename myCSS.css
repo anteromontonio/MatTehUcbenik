@@ -98,6 +98,10 @@
   color: #3465a4;
 }
 
+.centered{
+  text-align: center;
+}
+
 .text-green{
   color: #4e9a06;
 }

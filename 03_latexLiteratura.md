@@ -105,7 +105,7 @@ predstavili sklicevanje na različne elemente v dokumentu.
 ```` 
 ````{tab-item} PDF
 ``` {figure} ./img/03_eg-sklici-1.png
-:name: fig:sklici_1
+:label: fig:sklici_1
 ```
 ```` 
 `````
@@ -154,7 +154,7 @@ Na sliki \ref{fig:macka} na strani \pageref{fig:macka} vidimo lepo mačko.
 ```` 
 ````{tab-item} PDF
 ``` {figure} ./img/03_eg-sklici-2.png
-:name: fig:sklici_2
+:label: fig:sklici_2
 ```
 ```` 
 `````
@@ -178,7 +178,7 @@ V koraku \ref{itm:cevlje} ne poszabite zavezati vezalk.
 ```` 
 ````{tab-item} PDF
 ``` {figure} ./img/03_eg-sklici-3.png
-:name: fig:sklici_3
+:label: fig:sklici_3
 :width: 60%
 :align: left
 ```
@@ -221,7 +221,7 @@ Založba EPTA, 1998.
 ```` 
 ````{tab-item} PDF
 ``` {figure} ./img/03_eg-literatura-1.png
-:name: fig:literatura_1
+:label: fig:literatura_1
 ```
 ```` 
 `````
@@ -351,7 +351,7 @@ Na primer, lahko uporabimo možnost `title`, da spremenimo naslov bibliografije,
 ````
 ````{tab-item} PDF
 ``` {figure} ./img/03_eg-literatura-2.png
-:name: fig:literatura_2
+:label: fig:literatura_2
 ```
 ````
 `````
@@ -374,7 +374,7 @@ Na primer, lahko natisnemo samo knjige z uporabo možnosti `type=book`:
 ````
 ````{tab-item} PDF
 ``` {figure} ./img/03_eg-literatura-3.png
-:name: fig:literatura_3
+:label: fig:literatura_3
 ```
 ````
 `````
@@ -393,7 +393,7 @@ Na voljo so filtri `type`, `keywords` in `category` in lahko uporabimo tudi njih
 ````
 ````{tab-item} PDF
 ``` {figure} ./img/03_eg-literatura-4.png
-:name: fig:literatura_4
+:label: fig:literatura_4
 ```
 ````
 `````
@@ -412,7 +412,7 @@ Na voljo so filtri `type`, `keywords` in `category` in lahko uporabimo tudi njih
 ````
 ````{tab-item} PDF
 ``` {figure} ./img/03_eg-literatura-5.png
-:name: fig:literatura_5
+:label: fig:literatura_5
 ```
 ````
 `````
@@ -422,11 +422,11 @@ Na voljo so filtri `type`, `keywords` in `category` in lahko uporabimo tudi njih
 
 
 Privzeto se bibliografija ne prikaže v kazalu vsebine. Če želimo, da se prikaže, lahko uporabimo možnost `heading`. 
-Različen vrednosti za možnost `heading` so v  {numref}`Tabeli {number} <tab:heading_options>`.
+Različen vrednosti za možnost `heading` so v  [Tabeli %s](#tab:heading_options)`.
 
 :::{list-table} Naslov bibliografije v kazalu.
 :header-rows: 1
-:name: tab:heading_options
+:label: tab:heading_options
 
 * - Vrednost
   - Opis
@@ -457,7 +457,7 @@ Različen vrednosti za možnost `heading` so v  {numref}`Tabeli {number} <tab:he
 ````
 ````{tab-item} PDF
 ``` {figure} ./img/03_eg-literatura-heading-1.png
-:name: fig:literatura_
+:label: fig:literatura_
 ```
 ````
 `````
@@ -473,7 +473,7 @@ Različen vrednosti za možnost `heading` so v  {numref}`Tabeli {number} <tab:he
 ````
 ````{tab-item} PDF
 ``` {figure} ./img/03_eg-literatura-heading-2.png
-:name: fig:literatura_heading_2
+:label: fig:literatura_heading_2
 ```
 ````
 `````
@@ -488,7 +488,7 @@ Različen vrednosti za možnost `heading` so v  {numref}`Tabeli {number} <tab:he
 ````
 ````{tab-item} PDF
 ``` {figure} ./img/03_eg-literatura-heading-3.png
-:name: fig:literatura_heading_3
+:label: fig:literatura_heading_3
 ```
 ````
 `````
@@ -504,7 +504,7 @@ Različen vrednosti za možnost `heading` so v  {numref}`Tabeli {number} <tab:he
 ````
 ````{tab-item} PDF
 ``` {figure} ./img/03_eg-literatura-heading-4.png
-:name: fig:literatura_heading_4
+:label: fig:literatura_heading_4
 ```
 ````
 `````
@@ -519,7 +519,7 @@ Različen vrednosti za možnost `heading` so v  {numref}`Tabeli {number} <tab:he
 ````
 ````{tab-item} PDF
 ``` {figure} ./img/03_eg-literatura-heading-5.png
-:name: fig:literatura_heading_5
+:label: fig:literatura_heading_5
 ```
 ````
 `````
@@ -534,7 +534,7 @@ Različen vrednosti za možnost `heading` so v  {numref}`Tabeli {number} <tab:he
 ````
 ````{tab-item} PDF
 ``` {figure} ./img/03_eg-literatura-heading-6.png
-:name: fig:literatura_heading_6
+:label: fig:literatura_heading_6
 ```
 ````
 `````
@@ -550,7 +550,7 @@ Različen vrednosti za možnost `heading` so v  {numref}`Tabeli {number} <tab:he
 ````
 ````{tab-item} PDF
 ``` {figure} ./img/03_eg-literatura-heading-7.png
-:name: fig:literatura_heading_7
+:label: fig:literatura_heading_7
 ```
 ````
 `````
