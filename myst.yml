@@ -6,13 +6,15 @@ project:
       affiliation: Univerza v Ljubljani, Pedagoška fakulteta
       website: https://anteromontonio.github.io
   copyright: "2025"
-  github: anteromontonio/matTeh
+  license: CC-BY-NC-SA-4.0
   bibliography:
     - references.bib
   exports:
     - format: pdf
       template: plain_latex_book
       output: exports/book.pdf
+  source_url: null
+  downloads: null
   toc:
     - file: intro.md
     - title: LaTeX
@@ -25,7 +27,8 @@ project:
         - file: 06_latexBeamer.md
     - title: GeoGebra
       children:
-        - file: 07_geogebra_uvod.ipynb
+        # - file: 07_geogebra_uvod.ipynb
+        - file: 07_geogebra_uvod.md
         - file: 08_geogebra_geometrija.md
         - file: 09_geogebra_analiza.md
         - file: 10_geogebra_3d.md
@@ -49,5 +52,7 @@ site:
     folders: true
     style: myCSS.css
     language: sl
+    hide_toc: false
+    edit_link: null
 
   template: book-theme
