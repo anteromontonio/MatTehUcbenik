@@ -238,7 +238,4 @@ Poleg gumba <img src="./geogebra/images/16px-Menu-button-open-menu.svg.png" clas
   -  <img src="./geogebra/images/24px-Menu-edit-redo.svg.png" class="inline" width="24px">
 :::
 
-* - *Orodja vrstica* (ang. *Toolbar*): 
-	- <img src="./geogebra/images/344px-Toolbar-Graphics.png" class="inline" width="344px">
-* - *Slog vrstice* (ang. *Style Bar*):
-	- <img src="./geogebra/images/40px-Stylingbar_icon_graphics.svg.png" class="inline" width="32px">
+
