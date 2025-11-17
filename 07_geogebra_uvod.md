@@ -3,6 +3,8 @@ kernelspec:
   name: python
   display_name: Python 3
 ---
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
 
 # GeoGebra: Uvod kot MD
 
@@ -192,7 +194,7 @@ Ko odprete Geogebro in se prijavite, boste videli glavno delovno okolje. Privzet
 
 :::{code-cell} python
 :tags: remove-input
-IFrame("https://www.geogebra.org/classic/bmkqk4ju", width=600, height=450, frameborder="1")
+IFrame("https://www.geogebra.org/material/iframe/id/bmkqk4ju/width/1280/height/720/border/3C82F6/sfsb/true/smb/true/stb/true/stbh/true/ai/true/asb/true/sri/true/rc/true/ld/true/sdz/true/ctl/true/szb/true", width="600", height="340px", allowfullscreen=True)
 :::
 
 :::{note} Opomba.
@@ -226,16 +228,6 @@ Geogebra se lahko uporablja v slovenskem jeziku, vmesnik je preveden, prav tako 
 
 Poleg gumba <img src="./geogebra/images/16px-Menu-button-open-menu.svg.png" class="inline" width="22px"> _Menu_, pomembni del orodjarne so tudi:
 
-:::{list-table}
 
-* - *Orodja vrstica* (ang. *Toolbar*):
-  -  <img src="./geogebra/images/344px-Toolbar-Graphics.png" class="inline">
-* - *Slog vrstica* (ang. *Stylebar*):
-  -  <img src="./geogebra/images/40px-Stylingbar_icon_graphics.svg.png" class="inline" width="24px">
-* - *Razveljavi* (ang. *Undo*):
-  -  <img src="./geogebra/images/24px-Menu-edit-undo.svg.png" class="inline" width="24px">
-* - *Ponovno naredi* (ang. *Redo*):
-  -  <img src="./geogebra/images/24px-Menu-edit-redo.svg.png" class="inline" width="24px">
-:::
 
 

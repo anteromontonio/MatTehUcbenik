@@ -28,7 +28,7 @@ project:
     - title: GeoGebra
       children:
         - file: 07_geogebra_uvod.ipynb
-        # - file: 07_geogebra_uvod.
+        - file: 07_geogebra_uvod.md
         - file: 08_geogebra_geometrija.md
         - file: 09_geogebra_analiza.md
         - file: 10_geogebra_3d.md
