@@ -168,11 +168,15 @@ Geogebra lahko uporabimo na dva načina: prek spletnega brskalnika ali z namesti
 V vsakem primeru bomo uporabili račun Geogebra, ki nam omogoča shranjevanje naših delovnih zvezkov v oblak in dostop do njih od kjerkoli. 
 
 :::{exercise}
-:label: ex_geogebra-account
+:label: ex_GeogebraAccount
 Ustvarite račun Geogebra.
 :::
 
-:::{solution} ex_geogebra-account
+```{margin}
+[Seznam vaj](#07_geogebraUvod_vaje)
+```
+
+:::{solution} ex_GeogebraAccount
 :class: dropdown
 1. Obiščite [spletno stran Geogebra](https://www.geogebra.org/).
 2. Kliknite na "Sign in" gumb v zgornjem desnem kotu strani.
@@ -524,3 +528,78 @@ V nadelevanju opisujemo nekatere najpogosteje uporabljena orodja, celoten seznam
 :::
 ::::
 
+Seveda, najlažji način za spoznavanje orodij je, da jih preizkusite sami v Geogebri!
+
+:::{exercise}
+:label: ex_GeogebraTools
+
+1. Odprite Geogebro in ustvarite novo datoteko (verjetno bo to že privzeto narejeno).
+2. Spremenite prikaz v <img src="./geogebra/images/16px-Menu_view_graphics.svg.png" class="inline" width="22px"> *Geometry*.
+3. Z uporabo orodij <img src="./geogebra/images/32px-Mode_point.svg.png" class="inline" width="22px"> *Point*, <img src="./geogebra/images/32px-Mode_segment.svg.png" class="inline" width="22px"> *Segment*, <img src="./geogebra/images/32px-Mode_circle2.svg.png" class="inline" width="22px"> *Circle with Center and Point* in <img src="./geogebra/images/32px-Mode_polygon.svg.png" class="inline" width="22px"> *Polygon*, ustvarite naslednje objekte v Geogebri:
+
+```{figure} ./geogebra/ex_GeogebraTools.png
+:label: fig:ex_GeogebraTools
+```
+:::
+
+```{margin}
+[Seznam vaj](#07_geogebraUvod_vaje)
+```
+
+::::{solution} ex_GeogebraTools
+:class: tip dropdown
+1. Uporabite orodje <img src="./geogebra/images/32px-Mode_point.svg.png" class="inline" width="22px"> *Point* za ustvarjanje točk `A` in `B`.
+2. Uporabite orodje <img src="./geogebra/images/32px-Mode_segment.svg.png" class="inline" width="22px"> *Segment* za ustvarjanje daljice `AB`.
+3. Uporabite orodje <img src="./geogebra/images/32px-Mode_circle2.svg.png" class="inline" width="22px"> *Circle with Center and Point* za ustvarjanje krožnice s središčem v točki `C` in točko na krožnici `D`.
+4. Uporabite orodje <img src="./geogebra/images/32px-Mode_polygon.svg.png" class="inline" width="22px"> *Polygon* za ustvarjanje trikotnika z oglišči `E`, `F` in `G`.
+
+Lahko vidite vse korake spodaj v Geogebri:
+
+:::{code-cell} python
+:tags: remove-input
+IFrame("https://www.geogebra.org/material/iframe/id/bmajgbvx/width/600/height/450/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/false", width="600px", height="450px", allowfullscreen=True)
+:::
+::::
+
+## Vrstica za zamenjavo sloga
+
+<img src="./geogebra/images/40px-Stylingbar_icon_graphics.svg.png" class="inline" width="22px"> *Vrstica za zamenjavo sloga* (ang. *Stylebar*) omogoča hitro spreminjanje grafičnih lastnosti izbranih objektov, kot so barva, debelina črte, slog črte in polnilo.
+Ko izberete objekt v grafičnem oknu, se vrstica za zamenjavo sloga prikaže pod orodjarno in ponuja različne možnosti za prilagajanje videza izbranega objekta. 
+Možnosti so odvisne od vrste izbranega objekta, če ni objekta izbranega, vrstica za zamenjavo sloga prikaže možnosti sloga za pogled. 
+
+V vrstici za zamenjavo sloga se nahajajo samo osnovne možnosti, za dostop do naprednih možnosti sloga pa lahko kliknete na gumb <img src="./geogebra/images/32px-Settings.svg.png" class="inline" width="22px"> *Nastavitve* (ang. *Settings*), ki odpre pogovorno okno z več možnostmi za prilagajanje sloga izbranega objekta. Če ni izbranega objekta, gumb <img src="./geogebra/images/32px-Settings.svg.png" class="inline" width="22px"> *Nastavitve* odpre pogovorno okno z možnostmi za prilagajanje sloga pogleda.
+
+
+:::{exercise}
+:label: ex_Stylebar
+1. V datoteki, ki ste jo ustvarili v vaji [Vaje %s](#ex_GeogebraTools), izberite daljico `AB` in zamenjate njeno barvo v rdečo, debelino črte na 4 in slog črte na črtkano.
+2. Nato izberite točki `C` in `D` in zamenjate njun slog točke in barvo, tako da oboje točki sta zeleni in obliki točk sta križ (to lahko delate v en korak z izbiro obeh točk hkrati).
+3. Izberite trikotnik `EFG` in zamenjate barvo polnila na modro z 50% prosojnostjo.
+4. Z uporabo gumba <img src="./geogebra/images/32px-Settings.svg.png" class="inline" width="22px"> *Nastavitve* dodajte *Napis* (ang. *Caption*) k dalici `AB`, ki naj bo "Daljica AB" in k točko `C`, ki naj bo "Središče krožnice". 
+6. Z uporabo gumba <img src="./geogebra/images/32px-Mode_showhidelabel.svg.png" class="inline" width="22px"> *Prikaži / skrij oznako* (ang. *Show/Hide Label*) prikažite napise, ki ste jih dodali v prejšnjem koraku; skrijte vse druge oznake.
+5. Prav tako uporabite gumb <img src="./geogebra/images/32px-Settings.svg.png" class="inline" width="22px"> *Nastavitve* za spreminjanje sloga pogleda, tako da so osi $x$ in $y$ prikazane z krepkim črto in zeleno barvo.
+6. Z uporaba orodja <img src="./geogebra/images/32px-Mode_move.svg.png" class="inline" width="22px"> *Move* premaknite vse objekte, tako da bo daljica čim bolj vodoravna, krožnica ima središče na točki `(0,0)` in vse tri ogliščo trikotnika so v prvem kvadrantu.
+:::
+
+```{margin}
+[Seznam vaj](#07_geogebraUvod_vaje)
+```
+
+::::{solution} ex_Stylebar
+:class: tip dropdown
+Na koncu, vaša konstrukcija naj izgleda nekako takole:
+
+:::{code-cell} python
+:tags: remove-input
+IFrame("https://www.geogebra.org/material/iframe/id/ajgm7nav/width/600/height/600/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false", width="600px", height="600px", allowfullscreen=True)
+:::
+::::
+
+
+(07_geogebraUvod_vaje)=
+## Vaje
+
+
+- [Vaje %s](#ex_GeogebraAccount): Ustvarjanje računa Geogebra.
+- [Vaje %s](#ex_GeogebraTools): Vaje za spoznavanje orodij Geogebre.
+- [Vaje %s](#ex_Stylebar): Vaje za uporabo vrstice za zamenjavo sloga.
