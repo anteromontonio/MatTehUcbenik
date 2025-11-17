@@ -102,6 +102,11 @@
   text-align: center;
 }
 
+.flushleft{
+  display: inline;
+  text-align: left;
+}
+
 .text-green{
   color: #4e9a06;
 }

@@ -27,7 +27,7 @@ project:
         - file: 06_latexBeamer.md
     - title: GeoGebra
       children:
-        - file: 07_geogebra_uvod.ipynb
+        # - file: 07_geogebra_uvod.ipynb
         - file: 07_geogebra_uvod.md
         - file: 08_geogebra_geometrija.md
         - file: 09_geogebra_analiza.md
