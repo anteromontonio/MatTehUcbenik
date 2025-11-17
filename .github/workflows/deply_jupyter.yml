@@ -43,7 +43,7 @@ jobs:
       - name: Install ipykernel
         run: pip install ipykernel
       - name: Build HTML Assets
-        run: myst build --html
+        run: myst build --execute
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
