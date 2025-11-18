@@ -226,7 +226,7 @@ Drugi vnosi nad gumbom <img src="./geogebra/images/16px-Menu-button-open-menu.sv
 - <img src="./geogebra/images/24px-Menu-account.png" class="inline" width="22px"> _Račun_ (ang. <img src="./geogebra/images/24px-Menu-account.png" class="inline" width="22px"> _Account_): Prijava in odjava iz računa Geogebra.
 
 :::{warning} Opomba
-Geogebra se lahko uporablja v slovenskem jeziku, vmesnik je preveden, prav tako pa tudi ukazi, žal pa ni dokumentacije v slovenskem jeziku za ukaze (ki jih uporabljamo za ustvarjanje gradiva). Zaradi tega bomo vmesnik ohranili v angleščini, vendar upoštevajte, da če želite Geogebro uporabljati z otroki ali učenci, lahko jezik spremenite v meniju <img src="./geogebra/images/16px-Menu-options.svg.png" class="inline" width="22px">_Settings_.
+Geogebra se lahko uporablja v slovenskem jeziku, vmesnik je preveden, prav tako pa tudi ukazi, žal pa ni dokumentacije v slovenskem jeziku za ukaze (ki jih uporabljamo za ustvarjanje gradiva). Zaradi tega bomo vmesnik ohranili v angleščini, vendar upoštevajte, da če želite Geogebro uporabljati z otroki ali učenci, lahko jezik spremenite v meniju <img src="./geogebra/images/16px-Menu-options.svg.png" class="inline" width="22px">*Settings*.
 :::
 
 
@@ -567,18 +567,18 @@ IFrame("https://www.geogebra.org/material/iframe/id/bmajgbvx/width/600/height/45
 Ko izberete objekt v grafičnem oknu, se vrstica za zamenjavo sloga prikaže pod orodjarno in ponuja različne možnosti za prilagajanje videza izbranega objekta. 
 Možnosti so odvisne od vrste izbranega objekta, če ni objekta izbranega, vrstica za zamenjavo sloga prikaže možnosti sloga za pogled. 
 
-V vrstici za zamenjavo sloga se nahajajo samo osnovne možnosti, za dostop do naprednih možnosti sloga pa lahko kliknete na gumb <img src="./geogebra/images/32px-Settings.svg.png" class="inline" width="22px"> *Nastavitve* (ang. *Settings*), ki odpre pogovorno okno z več možnostmi za prilagajanje sloga izbranega objekta. Če ni izbranega objekta, gumb <img src="./geogebra/images/32px-Settings.svg.png" class="inline" width="22px"> *Nastavitve* odpre pogovorno okno z možnostmi za prilagajanje sloga pogleda.
+V vrstici za zamenjavo sloga se nahajajo samo osnovne možnosti, za dostop do naprednih možnosti sloga pa lahko kliknete na gumb <img src="./geogebra/images/32px-Settings.svg.png" class="inline" width="18px"> *Nastavitve* (ang. *Settings*), ki odpre pogovorno okno z več možnostmi za prilagajanje sloga izbranega objekta. Če ni izbranega objekta, gumb <img src="./geogebra/images/32px-Settings.svg.png" class="inline" width="18px"> *Nastavitve* odpre pogovorno okno z možnostmi za prilagajanje sloga pogleda.
 
 
 :::{exercise}
 :label: ex_Stylebar
 1. V datoteki, ki ste jo ustvarili v vaji [Vaje %s](#ex_GeogebraTools), izberite daljico `AB` in zamenjate njeno barvo v rdečo, debelino črte na 4 in slog črte na črtkano.
-2. Nato izberite točki `C` in `D` in zamenjate njun slog točke in barvo, tako da oboje točki sta zeleni in obliki točk sta križ (to lahko delate v en korak z izbiro obeh točk hkrati).
+2. Nato izberite točki `C` in `D` in zamenjate njun slog točke in barvo, tako da oboje točki sta zeleni in obliki točk sta križ <img src="./geogebra/images/16px-Stylingbar_point_cross.svg.png" class="inline" width="16px"> (to lahko delate v en korak z izbiro obeh točk hkrati).
 3. Izberite trikotnik `EFG` in zamenjate barvo polnila na modro z 50% prosojnostjo.
-4. Z uporabo gumba <img src="./geogebra/images/32px-Settings.svg.png" class="inline" width="22px"> *Nastavitve* dodajte *Napis* (ang. *Caption*) k dalici `AB`, ki naj bo "Daljica AB" in k točko `C`, ki naj bo "Središče krožnice". 
-6. Z uporabo gumba <img src="./geogebra/images/32px-Mode_showhidelabel.svg.png" class="inline" width="22px"> *Prikaži / skrij oznako* (ang. *Show/Hide Label*) prikažite napise, ki ste jih dodali v prejšnjem koraku; skrijte vse druge oznake.
-5. Prav tako uporabite gumb <img src="./geogebra/images/32px-Settings.svg.png" class="inline" width="22px"> *Nastavitve* za spreminjanje sloga pogleda, tako da so osi $x$ in $y$ prikazane z krepkim črto in zeleno barvo.
-6. Z uporaba orodja <img src="./geogebra/images/32px-Mode_move.svg.png" class="inline" width="22px"> *Move* premaknite vse objekte, tako da bo daljica čim bolj vodoravna, krožnica ima središče na točki `(0,0)` in vse tri ogliščo trikotnika so v prvem kvadrantu.
+4. Z uporabo gumba <img src="./geogebra/images/32px-Settings.svg.png" class="inline" width="18px"> *Nastavitve* dodajte *Napis* (ang. *Caption*) k dalici `AB`, ki naj bo "Daljica AB" in k točko `C`, ki naj bo "Središče krožnice". 
+6. Z uporabo gumba <img src="./geogebra/images/32px-Mode_showhidelabel.svg.png" class="inline" width="18px"> *Prikaži / skrij oznako* (ang. *Show/Hide Label*) prikažite napise, ki ste jih dodali v prejšnjem koraku; skrijte vse druge oznake.
+5. Prav tako uporabite gumb <img src="./geogebra/images/32px-Settings.svg.png" class="inline" width="18px"> *Nastavitve* za spreminjanje sloga pogleda, tako da so osi $x$ in $y$ prikazane z krepkim črto in zeleno barvo.
+6. Z uporaba orodja <img src="./geogebra/images/32px-Mode_move.svg.png" class="inline" width="18px"> *Move* premaknite vse objekte, tako da bo daljica čim bolj vodoravna, krožnica ima središče na točki `(0,0)` in vse tri ogliščo trikotnika so v prvem kvadrantu.
 :::
 
 ```{margin}
@@ -595,6 +595,244 @@ IFrame("https://www.geogebra.org/material/iframe/id/ajgm7nav/width/600/height/60
 :::
 ::::
 
+## Ukaze
+
+GeoGebra poleg grafičnih orodij ponuja tudi algebrske vnose in ukaze. Vsako orodje ima ustrezen ukaz, zato ga je mogoče uporabljati brez miške.
+
+:::{tip} Nasvet
+Dokumentacija za ukaze je v angleščini, zato je priporočljivo, da imate ukaze uporabite v angleščini. 
+Več o ukazih in njihovi uporabi najdete v [dokumentaciji Geogebre](https://geogebra.github.io/docs/manual/en/).
+:::
+
+:::{note} Opomba
+Vsaka orodoja ima svoj ukaz, obratno pa ne velja, obstajajo več ukazov kot orodij. 
+Večina uporabnikov Geogebra lahko brez težav dela z grafičnimi orodji, vendar moramo avtorji znati uporabljati ukaze. Tako bomo lahko delali hitreje in natančneje.
+:::
+
+Če hitro uporabimo ukaz, lahko ga vnesemo v _Vrstico za vnos_ (ang. _Input Bar_), ki se običajno nahaja na dnu zaslona. Alternativno, lahko ukaze vnesemo tudi neposredno v grafično okno ali v <img src="./geogebra/images/40px-Menu_view_algebra.svg.png" class="inline" width="22px"> _Algebrsko okno_ (ang. _Algebra View_). Oboje lahko najdemo v meni ju <img src="./geogebra/images/32px-Menu-view.svg.png" class="inline" width="22px"> _Views_.
+
+Naljažje način za spoznavanje ukazov je, da jih preizkusite sami v Geogebri!
+
+::::{exercise}
+:label: ex_GeogebraUkazi-1
+
+Sledite korake spodaj za ustvarjanje trikotnika v Geogebri.
+
+1. Odprite Geogebro in ustvarite novo datoteko (verjetno bo to že privzeto narejeno).
+2. Izberite prikaz v <img src="./geogebra/images/16px-Menu_view_graphics.svg.png" class="inline" width="22px"> *Geometry*.
+3. Odprite *Input bar* (če ni že odprta) iz menija <img src="./geogebra/images/32px-Menu-view.svg.png" class="inline" width="22px"> *Views*.
+--- 
+Namesto prvih treh korakov lahko poskusite s konstrukcijo tukaj:
+
+:::{code-cell} python
+:tags: remove-input
+IFrame("https://www.geogebra.org/material/iframe/id/s57srg3g/width/500/height/500/border/888888/sfsb/true/smb/true/stb/true/stbh/false/ai/true/asb/false/sri/false/rc/true/ld/true/sdz/true/ctl/false/szb/true", width="500px", height="500px", allowfullscreen=True)
+:::
+
+4. Vnosite `(0,0)` v vrstico za vnos in pritisnite {kbd}`Enter` za ustvarjanje točke $A$. Upoštevajte, da ime točke samodejno dodeli Geogebra.
+5. Vnosite `C=(4,0)` v vrstico za vnos in pritisnite {kbd}`Enter` za ustvarjanje točke $C$. To je alternativni način za ustvarjanje točke z določenim imenom.
+6. Vnosite niz `Cir` v vrstico za vnos in opazujte, kako se prikaže seznam ukazov, ki se začnejo z `Cir`. Izberite ukaz `Circle( <Point>, <Point> )` s seznama (lahko uporabite puščične tipke in {kbd}`Enter`. V vrstico za vnos se bo vnesel ukaz `Circle( <Point>, <Point> )` (prva beseda `<Point`> bo označena).
+7. Napišite `A` namesto `<Point>` (pritisnite {kbd}`Tab` za samodejno dokončanje) in `C` namesto drugega `<Point>`, tako da bo ukaz videti takole: `Circle( A, C )`. Pritisnite {kbd}`Enter` za ustvarjanje krožnice s središčem v točki $A$ in polmerom $AC$.
+8. Vnosite ukaz `d=Circle(C,A)` v vrstico za vnos in pritisnite {kbd}`Enter` za ustvarjanje krožnice s središčem v točki $C$ in polmerom $CA$. 
+9. Opazujte, kako je krožnica samodejno poimenovana `d`; za to, uporabite <img src="./geogebra/images/40px-Stylingbar_icon_graphics.svg.png" class="inline" width="22px">_Stylebar_ za oznaki krožnic, da prikažete imeni. Spremenite slog krožnic, tako da bo oboje črtkane.
+10. Z ukazom `Intersect(c,d)` ustvarite točki $B$ in $D$, ki je presečišče krožnic `c` in `d`.
+11. Uporabite ukaz `t=Polygon(A,C,B)` za ustvarjanje trikotnika z oglišči $A$, $C$ in $B$.
+12. Uporabite ukaz `InteriorAngles(t)` za prikaz notranjih kotov trikotnika $t$.
+13. Z uporabo orodje <img src="./geogebra/images/32px-Mode_distance.svg.png" class="inline" width="22px"> *Distance or Length* izmerite dolžine stranice trikotnika $AB$. Za to, kliknite na orodje in nato kliknite na točko $A$ in torej na točko $B$. 
+14. Uporabite orodje <img src="./geogebra/images/32px-Mode_move.svg.png" class="inline" width="22px"> *Move* za premijanje besedila z dolžinami stranica trikotnika, tako da vse je jasno vidno.
+---
+15. Dvakrat kliknite na besedilo, ki prikazuje dolžino AC, s čimer se odpre okno za urejanje besedila. Prikaže se nekaj podobnega kot `AC=distanceAC`. Kliknite na {kbd}`> Advanced`, uredite besedilo tako, da je zdaj `\operatorname{d}(A,C)=f` (**uredite, ne izbrizite**). Če LaTeX formule ne prikaže, kliknite na gumb {kbd}`LaTeX formula` in nato na {kbd}`Serif` (gumba so v zgornjem delu okna). V tab {kbd}`Preview` lahko vidite, kako bo besedilo videti, mora biti nekaj podobnega kot $\operatorname{d}(A,C)=4$. Kliknite na {kbd}`OK`, da shranite spremembe.
+16. Ponovite prejšnji korak za dolžino stranice $BC$, vendar tokrat prikaze $\operatorname{d}(B,C)=4$ v besedilu. 
+---
+17. Ponovite korake 13-15 za dolžino stranice $
+AB. Upoštevajte, da ni mogoče premakniti besedila tako, da se ne prekriva s sliko. Da bi to popravili, odprite okno za urejane nastavitve (<img src="./geogebra/images/16px-Menu-options.svg.png" class="inline" width="22px">*Settings*), pojdite na tab {kbd}`Position` in spremenite vrednosti v polji `Starting point` iz `Midpoint(A,B)` na `Midpoint(A,B)+(-1,0)`. Zaprite okno in premikanje besedilo, da bo vse jasno vidno.
+
+::::
+
+```{margin}
+[Seznam vaj](#07_geogebraUvod_vaje)
+```
+
+::::{solution} ex_GeogebraUkazi-1
+:class: tip dropdown
+Na koncu, vaša konstrukcija naj izgleda nekako takole:
+
+:::{code-cell} python
+:tags: remove-input
+IFrame("https://www.geogebra.org/material/iframe/id/qjmkhkwg/width/900/height/600/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/false/ctl/false", width="580px", height="600px", allowfullscreen=True)
+:::
+::::
+
+:::{tip} Nasvet
+Ko uporabite ukazi v Geogebri, je pomembno, da 
+upoštevate naslednje nasvete:
+- Točke so definirane z velikimi črkami (npr. A, B, C), medtem ko so premice, daljice in krožnice definirane z malimi črkami (npr. a, b, c).
+- Pri vnosu koordinat točk uporabite oklepaje in vejice, npr. (2,3) za točko z $x$ koordinato 2 in $y$ koordinato 3.
+- Ukaz $v=(1,2)$ ne definira točke, ampak vektor z komponentama 1 in 2.
+- Uporabite {kbd}`Tab` za samodejno dokončanje imen ukazov in objektov.
+- Uporabite {kbd}`↑` in {kbd}`↓` za navigacijo po zgodovini ukazov v vrstici za vnos.
+- Z gumbom <img src="./geogebra/images/24px-Menu-help.svg.png" class="inline" width="18px"> *Help* (sl. *Pomoč*) (na desno od vrstice za vnos) lahko dostopate do dokumentacije Geogebre za ukaze.
+:::
+
+V [Vaji %s](#ex_GeogebraUkazi-1) ste se naučili
+- Ustvariti geometrijske objekte z uporabo ukazov v vrstici za vnos.
+- Meriti kotov in dolžin in z uporabo orodje.
+- Prilagoditi besedilo z uporabo LaTeX formul.
+- Nastavitev `Starting point` za pozicioniranje besedila.
+
+---
+Geogebra nam omogoča vizualizacijo osnovnih geometrijskih konstrukcij in iskanje vzorcev v njih. 
+Na primer, pri konstrukciji v [Vaji %s](#ex_GeogebraUkazi-1) lahko opazimo, da je trikotnik $ABC$ vedno enakostraničen, ne samo za izbiro točko $A=(0,0)$ in $C=(4,0)$, ampak za katerokoli izbiro točk $A$ in $C$. 
+To lahko vidimo, če povlečemo točki $A$ in $C$ z orodjem <img src="./geogebra/images/32px-Mode_move.svg.png" class="inline" width="18px"> *Move*. 
+Opazimo da so dolžini stranici $AB$, $BC$ in $CA$ vedno enaki.
+V Geogebri je to znano kot **test vlečenja** (ang. *dragging test*), ki nam pomaga pri odkrivanju in dokazovanju geometrijskih lastnosti.
+
+::::{exercise}
+:label: ex_dokazTrikotnik
+1. Uporabite orodje <img src="./geogebra/images/32px-Mode_move.svg.png" class="inline" width="18px"> *Move* za premikanje točk $A$ in $C$ v konstrukciji iz [Vaje %s](#ex_GeogebraUkazi-1).
+2. Opazujte dolžini stranici trikonike ter preverite, ali ostajata vedno enaki.
+3. Na podlagi vaših opažanj, zapišite kratko izjavo, ki dokazuje, da je trikotnik $ABC$ vedno enakokrak.
+
+Lahko poskusite s konstrukcijo tukaj:
+
+:::{code-cell} python
+:tags: remove-input
+IFrame("https://www.geogebra.org/material/iframe/id/qjmkhkwg/width/900/height/600/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/false/ctl/true", width="560px", height="400px", allowfullscreen=True)
+:::
+
+::::
+
+```{margin}
+[Seznam vaj](#07_geogebraUvod_vaje)
+```
+
+:::{solution} ex_dokazTrikotnik
+:class: tip dropdown
+
+**Dokaz.** Dolžina strani $AB$ je enaka dolžini strani $AC$ ker sta točki $C$ in $B$ v krožnici s središčem v točki $A$. 
+Podobno, dolžina strani $BC$ je enaka dolžini strani $AB$ ker sta točki $A$ in $B$ v krožnici s središčem v točki $C$.
+Tako so dolžine strani $AB$, $AC$ in $BC$ vedno enake.
+:::
+
+V prešnji konstrukciji smo uporabili **test vlečenja** (ang. *dragging test*), ki nam pomaga pri odkrivanju in dokazovanju, da je trikotnik $ABC$ vedno enakostraničen.
+S testom vlečenja lahko tudi vidimo, da so vsi koti v enakostraničnem trikotniku enaki in merijo $60^\circ$. To sledi iz dejstva, da je vsota notranjih kotov v trikotniku vedno $180^\circ$ in da so vsi trikotniki enakostranični.
+
+::::{exercise}
+:label: ex_TrikotnikKot
+Vstvarite novo konstrukcijo v Geogebri, ki prikazuje, da vsota notranjih kotov v trikotniku vedno meri $180^\circ$.
+::::
+
+```{margin}
+[Seznam vaj](#07_geogebraUvod_vaje)
+```
+
+::::{solution} ex_TrikotnikKot
+:class: tip dropdown
+1. Ustvarite tri točke `A`, `B` in `C` z orodjem <img src="./geogebra/images/32px-Mode_point.svg.png" class="inline" width="22px"> *Point*.
+2. Ustvarite daljice `AB`, `BC` in `CA` z orodjem <img src="./geogebra/images/32px-Mode_segment.svg.png" class="inline" width="22px"> *Segment* ali z uporabo ukaza `Segment(A,B)`, `Segment(B,C)` in `Segment(C,A)`.
+3. Ukaz `Angle(B,A,C)` uporabite za prikaz kota pri točki `A`; `Angle(A,B,C)` za prikaz kota pri točki `B` in `Angle(A,C,B)` za prikaz kota pri točki `C`.
+4. Uporabite ukaz `ParallelLine(C,AB)` za ustvarjanje premice, ki gre skozi točko `C` in je vzporedna z daljico `AB`. 
+5. Podobno vstvarite premico, ki gre skozi točko `A` in je vzporedna z daljico `BC` in premico, ki gre skozi točko `B` in je vzporedna z daljico `CA`.
+6. Uporabite orodje <img src="./geogebra/images/32px-Mode_intersect.svg.png" class="inline" width="22px"> *Intersect * za ustvarjanje točk presečišča vsakih parov teh premic.
+7. Uporabite ukaz `Angle` za prikaz kotov, ki jih tvorijo te premice z daljicami trikotnika. Za to, uporabite točke, ki ste jih ustvarili v prejšnjem koraku.
+8. Z uporabo vrstice za zamenjavo sloga prilagodite slog kotov, tako da bodo vsi koti, ki so enaki enake barve.
+
+Na koncu, vaša konstrukcija naj izgleda nekako takole:
+
+:::{code-cell} python
+:tags: remove-input
+IFrame("https://www.geogebra.org/material/iframe/id/kj3d2jem/width/580/height/400/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/true/ld/false/sdz/true/ctl/false", width="560px", height="600px", allowfullscreen=True)
+:::
+
+::::
+
+## Algebrsko okno, proste točke vs. odvisne točke in kontrolni okvirček
+
+Vrstica za vnos ni edini način za interakcijo z Geogebro z uporabo ukazov.
+Lahko uporabimo tudi <img src="./geogebra/images/40px-Menu_view_algebra.svg.png" class="inline" width="22px"> *Algebrsko okno* (ang. *Algebra View*), ki prikazuje seznam vseh objektov v konstrukciji skupaj z njihovimi lastnostmi in vrednostmi.
+
+:::{exercise}
+:label: ex_pentagram
+1. Ustvarite novo konstrukcijo v Geogebri.
+2. Odprite <img src="./geogebra/images/32px-Menu-view.svg.png" class="inline" width="22px"> *Views* in izberite <img src="./geogebra/images/40px-Menu_view_algebra.svg.png" class="inline" width="22px"> *Algebra View*.
+3. Z uporabo orodija <img src="./geogebra/images/32px-Mode_point.svg.png" class="inline" width="22px"> *Point* ustvarite točki `A` in `B`.
+4. Vnosite ukaz `p=Polygon(A,B,5)` v vrstico za vnos in pritisnite {kbd}`Enter` za ustvarjanje pravilnega petkotnika `p` z oglišči `A` in `B`.
+5. Vstvarite vse diagonale petkotnika, zato v vrstico za vnos vnesite ukazi:
+   - `d1=Segment(A,C)`
+   - `d2=Segment(C,E)`
+   - `d3=Segment(E,B)`
+   - `d4=Segment(B,D)`
+   - `d5=Segment(D,A)`
+6. Z uporabo orodj ali ukazov ustvarite presečišča diagonali in jih poimenujte `P`, `Q`, `R`, `S` in `T`.
+7. Z uporabo ukaza `Polygon` ustvarite zvezdo določeno s točkami `P`, `Q`, `R`, `S`,`T` in oglišci petkotnika.
+8. Skrijte petkotnik in diagonale z uporabo orodja <img src="./geogebra/images/32px-Mode_showhideobject.svg.png" class="inline" width="22px"> *Show/Hide Object* ali s klikom na krog levo od objektov v algebrskem oknu.
+:::
+
+```{margin}
+[Seznam vaj](#07_geogebraUvod_vaje)
+```
+
+::::{solution} ex_pentagram
+:class: tip dropdown
+Na koncu, vaša konstrukcija naj izgleda nekako takole:
+
+:::{code-cell} python
+:tags: remove-input
+IFrame("https://www.geogebra.org/material/iframe/id/keuambxs/width/1271/height/679/border/888888/sfsb/true/smb/true/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false", width="560px", height="600px", allowfullscreen=True)
+:::
+
+::::
+
+Upoštevajte, da so točke `A` in `B` **proste točke** (ang. *free points*), ker jih lahko premikamo kjerkoli v grafičnem oknu.
+Vse ostale točke v konstrukciji so **odvisne točke** (ang. *dependent points*), ker so določene z drugimi objekti v konstrukciji in se premikajo glede na spremembe teh objektov.
+Proste točke so običajno modre barve, medtem ko so odvisne točke sive barve. 
+Seveda, to lahko spremenimo z uporabo vrstice za zamenjavo sloga ali v nastavitvah objekta, in torej barva ni zanesljiv indikator vrste točke.
+V algebrskem oknu lahko vidimo katere objekte so proste in katere odvisne, saj so uporabimo gump *Sort by* in torej *Dependency* v vrstico za zamenjavo sloga algebrskega okna.
+
+---
+
+Kot smo videli, lahko uporabimo orodje <img src="./geogebra/images/32px-Mode_showhideobject.svg.png" class="inline" width="22px"> *Show/Hide Object* za prikaz ali skrivanje objektov v grafičnem oknu. 
+To lahko storimo tudi v algebrskem oknu, kjer lahko kliknemo na krog levo od imena objekta za prikaz ali skrivanje objekta.
+Poleg tega, lahko uporabimo tudi kontrolni okvirček (ang. *checkbox*), ki ga lahko ustvarimo z orodjem <img src="./geogebra/images/32px-Mode_showcheckbox.svg.png" class="inline" width="22px"> *Check Box* ali z ukazom `CheckBox()`.
+Kontrolni okvirček vstavirte *Check Box* v grafično okno in booleansko vrednost v algebrskem oknu.
+Nato lahko uporabimo to vrednost za nadzor vidljivosti drugih objektov v konstrukciji.
+
+
+:::{exercise}
+:label: ex_checkbox
+1. V konstrukciji iz [Vaje %s](#ex_pentagram) ustvarite kontrolni okvirček, za kateri vnesete besedilo "Prikaži petkotnik in diagonale".
+2. Uporabite ta kontrolni okvirček za nadzor vidljivosti petkotnika in njegovih diagonal.
+:::
+
+```{margin}
+[Seznam vaj](#07_geogebraUvod_vaje)
+```
+
+::::{solution} ex_checkbox
+:class: tip dropdown
+1. Lahko uporabite ukaz `cb=CheckBox("Prikaži petkotnik in diagonale", p)` v vrstico za vnos za ustvarjanje kontrolnega okvirčka.
+2. Upoštevajte, da je drugi argument ukaza `CheckBox` objekt ali seznam objektov, katerih vidljivost bo nadzorovana s kontrolnim okvirčkom. V tem primeru je to petkotnik `p` ampak diagonale niso vključene.
+3. Če želite vključiti diagonale, odprite okno <img src="./geogebra/images/16px-Menu-options.svg.png" class="inline" width="22px">_Settings_) za vzake objekte, ki jih želite nadzorovati in pojdite na tab {kbd}`Advanced`. V polje {kbd}`Condition to show object` vnesite `cb` (ime kontrolnega okvirčka) in zaprite okno.
+
+Na koncu, vaša konstrukcija naj izgleda nekako takole:
+
+:::{code-cell} python
+:tags: remove-input
+IFrame("https://www.geogebra.org/material/iframe/id/rwcmkgfe/width/600/height/582/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/false", width="570px", height="600px", allowfullscreen=True)
+:::
+
+::::
+
+## Izvoz konstrukcij kot slike.
+
+Lahko izvozimo naše konstrukcije iz Geogebre kot slike v različnih formatih, kot so `PNG`, `SVG` ali `PDF`.
+Za izvoz konstrukcije kot slike, sledite tem korakom:
+1. Pojdite na meni <img src="./geogebra/images/16px-Menu-file.svg.png" class="inline" width="22px"> *File* in izberite <img src="./geogebra/images/24px-Menu-download.svg.png" class="inline" width="22px"> *Download as...*.
+2. V pogovornem oknu izberite želeni format slike (npr. `.png`, `.svg` ali `.pdf`).
+3. Posebni format je `PGF/TikZ`, ki omogoča izvoz konstrukcije kot kode, ki jo lahko uporabimo v LaTeX dokumentih.
+
+
+
 
 (07_geogebraUvod_vaje)=
 ## Vaje
@@ -603,3 +841,38 @@ IFrame("https://www.geogebra.org/material/iframe/id/ajgm7nav/width/600/height/60
 - [Vaje %s](#ex_GeogebraAccount): Ustvarjanje računa Geogebra.
 - [Vaje %s](#ex_GeogebraTools): Vaje za spoznavanje orodij Geogebre.
 - [Vaje %s](#ex_Stylebar): Vaje za uporabo vrstice za zamenjavo sloga.
+- [Vaje %s](#ex_GeogebraUkazi-1): Vaje za spoznavanje ukazov Geogebre.
+- [Vaje %s](#ex_dokazTrikotnik): Vaje za dokazovanje lastnosti trikotnika z uporabo Geogebre.
+- [Vaje %s](#ex_TrikotnikKot): Vaje za dokazovanje vsote notranjih kotov v trikotniku z uporabo Geogebre.
+- [Vaje %s](#ex_pentagram): Vaje za ustvarjanje petkotnika in zvezde z uporabo Geogebre.
+- [Vaje %s](#ex_checkbox): Vaje za uporabo kontrolnega okvirčka za nadzor vidljivosti objektov v Geogebri.
+
+
+:::{exercise}
+:label: ex_anglesCircle
+Ustvarite konstrukcijo v Geogebri, kjer raziskujete razmerje med kotom $\alpha$ in kotom $\beta$, ki sta opisana v [Sliki %s](#fig:angles_circle). V tej konstrukciji je točka $A$ središče krožnice. 
+
+Ugotovite in dokažite povezavo med tema kotoma z uporabo Geogebre in testa vlečenja.
+
+```{figure} ./geogebra/ex_anglesCircle.png
+:label: fig:angles_circle
+:align: center
+:width: 500px
+
+Koti $\alpha$ in $\beta$ v krožnici.
+```
+
+:::
+:::{exercise}
+:label: ex_TriangleCenters
+Ustvarite konstrukcijo v Geogebri, ki prikazuje ortocenter, težišče in središče krožnice opisanega trikotnika. 
+:::
+
+:::{exercise}
+:label: ex_midPointsCuadrilateral
+Ustvarite konstrukcijo v Geogebri z naslednjimi elementi:
+1. Štirikotnik $\square ABCD$.
+2. Sredine stranic $E$, $F$, $G$ in $H$.
+3. Štirikotnik $\square EFGH$.
+4. Ne glede na točke $A$, $B$, $C$ in $D$, štirikotnik $\square EFGH$ ima vedno posebno lastnost. Ugotovite katero in dokažite z uporabo Geogebre in testa vlečenja.
+:::
