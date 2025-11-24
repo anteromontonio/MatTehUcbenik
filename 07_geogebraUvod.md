@@ -3,8 +3,6 @@ kernelspec:
   name: python
   display_name: Python 3
 ---
-<script src="https://www.geogebra.org/apps/deployggb.js"></script>
-
 
 # GeoGebra: Uvod
 
