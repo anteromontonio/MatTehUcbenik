@@ -158,6 +158,205 @@ Lahko tudi jo [odprite v GeoGebri](https://www.geogebra.org/classic/ajje5wsn).
 
 ::::
 
+Drsniki lahko tudi uporabimo za ustvarjanje animacij. To naredimo tako, da izberemo drsnik in kliknemo na gumb <img src="./geogebra/images/18px-Nav_play_circle.svg.png" class="inline" width="16px"> *Play* v algebrskem oknu ali uporabimo ukaz `StartAnimation(<drsnik>)`. S tem se bo vrednost drsnika začela spreminjati samodejno z določenim prirastkom, kar omogoča ustvarjanje animacij v konstrukciji.
+
+:::{exercise}
+:label: ex-drsniki-3
+1. Ustvarite novo datoteko na GeoGebri v prikaznem načinu *Geometry* (*Geometrija*). Odprite algebrske okno v meniju *View* (*Pogled*) in izberite *Algebra* (*Algebra*).
+2. Ustvarite drsnik $t$ z ukazom `t=1`, torej kliknite na tri pike poleg imena spremenljivke v algebrskem oknu in nato izberite *Create slider* (*Ustvari drsnik*). Nastavite drsnik tako, da ima naslednjimi lastnostmi: `Min=0`, `Max=1`, `Increment=0.01`.
+3. Ustvarite drsnik $\alpha$ z naslednjimi lastnostmi: `Min=0`, `Max=2 pi`, `Increment=0.01`. Lahko uporabite tipkovni bližnjico {kbd}`pi` za vnos vrednosti $\pi$ ali tipkovnico v zaslon.
+4. Ustvarite točko $A$ z ukazom `A=Rotate((1,0), α)` , ki vrti točko $(1,0)$ okoli izhodišča za kot $\alpha$. Za vnos kota lahko uporabite tipkovnico iz GeoGebre.
+5. Ustvarite točko $B$ z koordinatami $(0,2)$.
+6. Ustvarite točko $C$ z ukazom `C=Translate(B, t*(1,1))`.
+7. Kliknite na gumb <img src="./geogebra/images/18px-Nav_play_circle.svg.png" class="inline" width="16px"> *Play* v algebrskem oknu poleg drsnika $t$, da začnete animacijo.
+8. Ponovite korak 7 za drsnik $\alpha$.
+9. Spremenite parametra `Speed` in `Repeat` v oknu z nastavitvami drsnikov, da prilagodite hitrost in način ponavljanja animacije.
+:::
+
+```{margin}
+[Seznam vaj](_vaje)
+```
+
+::::{solution} ex-drsniki-3
+:class: tip dropdown
+
+Spodaj lahko vidite rešitev v GeoGebri.
+
+:::{code-cell} python
+:tags: remove-input
+IFrame("https://www.geogebra.org/material/iframe/id/z9cvwq23/width/1140/height/591/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false", width="570", height="295px", allowfullscreen=True)
+:::
+
+Lahko tudi jo [odprite v GeoGebri](https://www.geogebra.org/classic/z9cvwq23).
+::::
+
+::::{exercise}
+:label: ex-drsniki-4
+Ustvarite datoteko v GeoGebri, ki prikazuje seštevanje dveh cela števil v intervalu od $-10$ do $10$. 
+Uporabite drsnika za vsako število in prikažite rezultat seštevanja v dinamični obliki. 
+Navdih lahko poiščite v naslednji GeoGebri konstrukciji:
+
+
+:::{code-cell} python
+:tags: remove-input
+IFrame("https://www.geogebra.org/material/iframe/id/jganuymt/width/1140/height/591/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/false", width="570", height="340px", allowfullscreen=True)
+:::
+
+
+::::
+
+```{margin}
+[Seznam vaj](_vaje)
+```
+
+:::{solution} ex-drsniki-4
+:class: tip dropdown
+Konstrukcija, ki je prikazana zgoraj, je ena možna rešitev. 
+Lahko jo [odprete v GeoGebri](https://www.geogebra.org/classic/jganuymt).
+
+Koraki za ustvarjanje te konstrukcije so naslednji:
+1. Ustvarite drsnika `a` in `b` z lastnostmi: `Min=-10`, `Max=10`, `Increment=1`.
+2. Ustvarite točko pomožne točke $O=(0,0)$, $X=(0,1)$ in $Y=(a,2)$ z ukazi `O=(0,0)`, `X=(0,1)` in `Y=(a,2)`.
+3. Ustvarite točki $A=(a,1)$ in $B=(a+b,2)$ z ukazi `A=(a,1)` in `B=(a+b,2)`.
+4. Ustvarite vektorji `v1=Vector(X,A)` in `v2=Vector(Y,B)`.
+5. Ustvarite točko $C$, ki prikaže rezultat seštevanja z ukazom `C=(a+b,0)`.
+6. Dodajte oznake in prilagodite slog po želji.
+7. Skrijte objekte, ki niso potrebni za prikaz rezultata.
+:::
+
+## Zaporedja
+
+Ukaz `Sequence()` omogoča ustvarjanje zaporedij objektov v GeoGebri. Splošna oblika ukaza je `Sequence(<izraz>, <spremenljivka>, <začetek>, <konec>, <korak>)`, kjer `<izraz>` je izraz (običajno ukaz GeoGebre), ki ga želimo ponoviti, `<spremenljivka>` je spremenljivka, ki se spreminja v zaporedju, `<začetek>` in `<konec>` določata obseg vrednosti za spremenljivko, in `<korak>` določa, za koliko se spremenljivka poveča v vsakem koraku.
+Variantne ukaza so:
+- `Sequence(<konec>)` - ustvari zaporedje števil od 1 do `<konec>`.
+- `Sequence(<začetek>,<konec>)` - ustvari zaporedje števil od `<začetek>` do `<konec>`.
+- `Sequence(<izraz>, <spremenljivka>, <začetek>, <konec>)` - ustvari zaporedje z privzetim korakom 1.
+
+
+
+:::{exercise}
+:label: ex_sequences-1
+
+Ustvarite zaporedje točk na krožnici s središčem v izhodišču in polmerom 3, kjer so točke enakomerno razporejene po krožnici. Uporabite ukazi `Sequence()` in `Rotate()` za ustvarjanje točk. Nastavite število točk na 12.
+:::
+
+```{margin}
+[Seznam vaj](#08_geogebraDinGeometrija_vaje)
+```
+
+:::{solution} ex_sequences-1
+:class: tip dropdown
+1. Ustvarite krožnico s središčem v izhodišču in polmerom 3 z ukazom `c=Circle((0,0), 3)`.
+2. Ustvarimo točko $P=(3,0)$.
+3. Z uporaba ukazom `Sequence(Rotate(P, i*(2*pi)/12), i, 0, 11)` ustvarimo zaporedje točk, kjer se vsaka točka ustvari z vrtenjem točke $P$ za kot $\frac{2\pi}{12}$ glede na izhodišče. Lahko tudi uporabimo ukaz `Sequence(Rotate(P, i*30°), i, 0, 11)`, kjer je kot izražen v stopinjah.
+:::
+
+
+::::{exercise}
+:label: ex_sequences-2
+Uporabite ukaz `Sequence()` za ustvarjanje naslednje konstrukcije v GeoGebri. Konstrukcija vsebuje premice, ki povezujejo točke $(10,0)$ z točkama $(0,1)$ in $(0,-1)$; $(9,0)$ z točkama $(0,2)$ in $(0,-2)$; in tako naprej do točke $(1,0)$ z točkama $(0,10)$ in $(0,-10)$ in podoben vzorec na levi strani.
+
+:::{code-cell} python
+:tags: remove-input
+IFrame("https://www.geogebra.org/material/iframe/id/tbecwvzw/width/1140/height/700/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/false", width="570", height="340px", allowfullscreen=True)
+:::
+
+::::
+
+```{margin}
+[Seznam vaj](#08_geogebraDinGeometrija_vaje)
+```
+
+:::{solution} ex_sequences-2
+:class: tip dropdown
+1. Ukaz `Sequence(Segment((10-i,0),(0,i+1)),i,0,9)` ustvari premice na prvim kvadrantu;
+2. Podobno, ukaz `Sequence(Segment((10-i,0),(0,-(i+1))),i,0,9)` ustvari premice na četrtem kvadrantu;
+3. Ukaz `Sequence(Segment((i-10,0),(0,i+1)),i,0,9)` ustvari premice na drugem kvadrantu;
+4. Na koncu, ukaz `Sequence(Segment((i-10,0),(0,-(i+1))),i,0,9)` ustvari premice na tretjem kvadrantu.
+
+Lahko odprite to konstrukcijo v GeoGebri [tukaj](https://www.geogebra.org/classic/tbecwvzw).
+:::
+
+Ukaz `Sequence()` ustvari zaporedje objektov, če hočemo izbrati posamezne objekte iz zaporedja, lahko uporabimo ukaz`Element(<zaporedje>, <indeks>)`, kjer `<zaporedje>` je zaporedje objektov in `<indeks>` je indeks objekta, ki ga želimo izbrati (indeksi se začnejo pri 1).
+
+Če hočemo izgraditi več objektov (namesto zaporedje objektov), lahko uporabimo naslednje način:
+- Ustvarimo zaporedje objektov z ukazom `Sequence()`, npr. `kroznice = Sequence(Circle((0,0), i), i, 1, 5)`, ki ustvari zaporedje krožnic s polmeri od 1 do 5.
+- Nato uporabimo ukazi `Sequence()` in `Element()` za ustvarjanje zaporedja ukazov, npr. `kroU=Sequence("K_{"+i+"} = Element(kroznice, "+i+")", i, 1, 5)`, ki ustvari zaporedje ukazov za vsako krožnico v zaporedju z imenom `krogU`. V tem primeru ustvarimo ukaze `K_{1} = Element(kroznice, 1)`, `K_{2} = Element(kroznice, 2)`, itd.
+- Na koncu uporabimo ukaz `Execute()` za izvedbo vsakega ukaza.
+
+:::{exercise}
+:label: ex_sequences-3
+1. Skrijte štiri zaporedja ki so bila ustvarjena v prejšnji vaji z klikom na krog poleg imena zaporedij v algebrskem oknu.
+2. Uporabite način opisano zgoraj za izgraditi 40 daljic, namesto 4 zaporedij. Ugotovite, da imena daljic sledijo vzorcu `L_{1}`, `L_{2}`, ..., `L_{40}`.
+
+:::
+
+```{margin}
+[Seznam vaj](_vaje)
+```
+
+:::{solution} ex_sequences-3
+:class: tip dropdown
+1. Predpostavimo, da so bila zaporedja ustvarjena z imeni `zap1`, `zap2`, `zap3` in `zap4`.
+2. Najprej uporabimo ukaz `vseDaljice=Join(zap1, zap2, zap3, zap4)` za združitev štirih zaporedij v eno samo zaporedje `vseDaljice`.
+3. Nato uporabimo ukaz `daljiceU=Sequence("L_{"+i+"} = Element(vseDaljice, "+i+")", i, 1, 40)` za ustvarjanje zaporedja ukazov za vsako daljico v zaporedju z imenom `daljiceU`.
+4. Na koncu uporabimo ukaz `Execute(daljiceU)`.
+:::
+
+Ta način lahko uporabimo za ustvarjanje zaporedje ukazov, da ni nujno ustvariti objekte. Na primer z ukazom
+`barv=Sequence("SetDynamicColor(L_{"+i+"}, random(), random(), random(), 0.5)", i, 1, 40)`, ustvarimo zaporedje ukazov za nastavitev naključne barve za vsako daljico, nato pa z ukazom `Execute(barv)` izvedemo te ukaze in tako nastavimo barve za vse daljice naenkrat. *Pozkusite to sami*!
+
+
+---
+
+Zaporedje in drsniki postanejo zelo močna orodja, ko jih kombiniramo skupaj. Na primer, lahko ustvarimo drsnik, ki določa število objektov v zaporedju, in nato uporabimo ta drsnik za ustvarjanje dinamične konstrukcije, ki se spreminja glede na vrednost drsnika. Ta način bomo raziskali v naslednjih vajah.
+
+
+::::{exercise}
+:label: ex_sequences-4
+Ustvarite dinamično konstrukcijo, ki uporabi drsnika za določanje vrednosti dveh celih števil v intervalu od $1$ do $10$ in z uporabo ukaza `Sequence()` ustvari zaporedje točk v ravnini, da bi prikazala množenje teh dveh števil kot pravokotnik s točkami. 
+Navdih lahko poiščete v naslednji GeoGebri konstrukciji:
+
+:::{code-cell} python
+:tags: remove-input
+IFrame("https://www.geogebra.org/material/iframe/id/nkczhbrd/width/800/height/800/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/false", width="570", height="570", allowfullscreen=True)
+:::
+
+::::
+
+```{margin}
+[Seznam vaj](#08_geogebraDinGeometrija_vaje)
+```
+
+:::{solution} ex_sequences-4
+:class: tip dropdown
+Lahko uporabite naslednje korake za ustvarjanje te konstrukcije:
+1. Ustvarite drsnika `a` in `b` z lastnostmi: `Min=1`, `Max=10`, `Increment=1`.
+2. Upoštevajte da ukaz `Sequence((i,j),i,1,a)` ustvari zaporedje točk v dani vrstici z drugim koordinato `j`. 
+3. Uporabite ukaz `točke=Sequence(Sequence((i,j),i,1,a),j,1,b)` za ustvarjanje zaporedja točk v pravokotniku z dolžino `a` in širino `b`.
+5. Z uporabo ukaza `FormulaText("$"+a+"\times"+b+"="+(a*b)+"$")` ustvarite dinamično besedilo, ki prikazuje rezultat množenja `a` in `b`.
+6. Uredite položaj besedila in slog po želji.
+
+Lahko odprete to konstrukcijo v GeoGebri [tukaj](https://www.geogebra.org/classic/nkczhbrd).
+
+:::
+
+::::{exercise}
+:label: ex_pythagoras
+
+Ustvarite konstrukcijo v GeoGebri, ki prikazuje dokaz Pitagorovega izreka z uporabo drsnikov.
+Navdih lahko poiščete v naslednji GeoGebri konstrukciji:
+
+:::{code-cell} python
+:tags: remove-input
+IFrame("https://www.geogebra.org/material/iframe/id/hcpn8ym4/width/1140/height/884/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/true/ld/false/sdz/false/ctl/false", width="570", height="442", allowfullscreen=True)
+:::
+
+
+::::
+
+
+
 
 
 
@@ -168,6 +367,12 @@ Lahko tudi jo [odprite v GeoGebri](https://www.geogebra.org/classic/ajje5wsn).
 - [Vaje %s](#ex-paralelogram) - Ustvarite dinamični paralelogram in opazujte, kako se spreminja njegova površina.
 - [Vaje %s](#ex-drsniki-1) - Ustvarite premico z drsniki za naklon in presečišče z osjo y ter opazujte, kako se spreminja premica.
 - [Vaje %s](#ex-drsniki-2) - Ustvarite dinamično konstrukcijo, ki prikazuje veljavnost trikotne neenakosti s pomočjo drsnikov in dinamičnih barv.
+- [Vaje %s](#ex-drsniki-3) - Ustvarite animacijo z uporabo drsnikov za premikanje točk v ravnini.
+- [Vaje %s](#ex-drsniki-4) - Ustvarite dinamično konstrukcijo za seštevanje dveh celih števil z uporabo drsnikov.
+- [Vaje %s](#ex_sequences-1) - Ustvarite zaporedje točk na krožnici z uporabo ukaza `Sequence()`.
+- [Vaje %s](#ex_sequences-2) - Uporabite ukaz `Sequence()` za ustvarjanje vzorca premic v GeoGebri.
+- [Vaje %s](#ex_sequences-3) - Uporabite ukazi `Element()` in `Execute()` za ustvarjanje posamezni objektov iz zaporedje.
+
 
 ## Dodatne vaje
 
