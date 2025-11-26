@@ -352,14 +352,45 @@ Navdih lahko poiščete v naslednji GeoGebri konstrukciji:
 IFrame("https://www.geogebra.org/material/iframe/id/hcpn8ym4/width/1140/height/884/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/true/ld/false/sdz/false/ctl/false", width="570", height="442", allowfullscreen=True)
 :::
 
+Lahko tudi jo [odprete v GeoGebri](https://www.geogebra.org/classic/hcpn8ym4).
 
 ::::
 
+```{margin}
+[Seznam vaj](#08_geogebraDinGeometrija_vaje)
+```
+
+:::{solution} ex_pythagoras
+:class: tip dropdown
+Koraki za ustvarjanje te konstrukcije so naslednji:
+1. Ustvarite točki $A$ in $B$.
+2. Ustvarite polkrožnico s premerom $AB$.
+3. Ustvarite točko $C$ na polkrožnici, tako ugotovimo da je trikotnik $ABC$ pravokoten pri točki $C$ (zakaj?). Če želite, lahko prikažete tudi pravokotni kot z orodjem <img src="./geogebra/images/32px-Mode_Angle.svg.png" class="inline" width="22px"> *Angle* (*Kot*).
+4. Ustvarite use tri kvadrat na na stranicah trikotnika.
+5. Ustvarite naslednje premice:
+    - Premica preko $C$ pravokotna na $AB$.
+    - Premica vzporedna s $AC$ skozi nasprotno oglišče kvadrata na $AB$.
+    - Premica vzporedna s $BC$ skozi nasprotno oglišče kvadrata na $AB$.
+6. Ustvarite eno kopijo kvadrata na $AC$ in eno kopijo kvadrata na $BC$.
+7. Animirajte te kopiji tako, da se preoblikujeta v paralelogrami do presičišča z ustreznimi premicami (kot prva animacija v konstrukciji).
+8. Ustvarite paralelogrami na stranicah $AC$ in $BC$ da prestavita zadnja položaja kopij kvadratov.
+9. Animirajte tako da strani, ki imata na premici skozi $C$. Premikajte točke, dokler ena stran paralelograma ni na premici skozi $C$ (kot druga animacija v konstrukciji).
+10. Ustvarite kvadrat, ki ga dobimo, ko združimo paralelograma, in ga animirajte, dokler ne doseže kvadrata nad strani $AB$.
+
+:::
 
 
+::::{exercise}
+:label: ex-circleArea
+Ustvarite dinamično konstrukcijo, ki prikazuje izračun površine kroga s pomočjo drsnika za polmer kroga. 
+Navdih lahko poiščete v naslednji GeoGebri konstrukciji:
 
 
-
+:::{code-cell} python
+:tags: remove-input
+IFrame("https://www.geogebra.org/material/iframe/id/rzqs7ets/width/1512/height/884/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false", width="570", height="340px", allowfullscreen=True)
+:::
+::::
 
 (08_geogebraDinGeometrija_vaje)=
 ## Vaje
@@ -372,8 +403,9 @@ IFrame("https://www.geogebra.org/material/iframe/id/hcpn8ym4/width/1140/height/8
 - [Vaje %s](#ex_sequences-1) - Ustvarite zaporedje točk na krožnici z uporabo ukaza `Sequence()`.
 - [Vaje %s](#ex_sequences-2) - Uporabite ukaz `Sequence()` za ustvarjanje vzorca premic v GeoGebri.
 - [Vaje %s](#ex_sequences-3) - Uporabite ukazi `Element()` in `Execute()` za ustvarjanje posamezni objektov iz zaporedje.
+- [Vaje %s](#ex_sequences-4) - Ustvarite dinamično konstrukcijo za množenje dveh celih števil z uporabo drsnikov in ukaza `Sequence()`.
+- [Vaje %s](#ex_pythagoras) - Ustvarite konstrukcijo, ki prikazuje dokaz Pitagorovega izreka z uporabo drsnikov.
+- [Vaje %s](#ex-circleArea) - Ustvarite dinamično konstrukcijo za izračun površine kroga s pomočjo drsnika za polmer kroga.
 
-
-## Dodatne vaje
 
 
