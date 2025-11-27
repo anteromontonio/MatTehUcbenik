@@ -505,10 +505,10 @@ V nadelevanju opisujemo nekatere najpogosteje uporabljena orodja, celoten seznam
 * - <img src="./geogebra/images/32px-Mode_translateview.svg.png" class="inline" width="22px"> 
   - *Premakni pogled* (ang. *Move View*)  
   - Premakne pogled grafičnega okna.
-* - <img src="./geogebra/images/32px-Mode_zoomIn.svg.png" class="inline" width="22px">  
+* - <img src="./geogebra/images/32px-Mode_zoomin.svg.png" class="inline" width="22px">  
   - *Povečaj* (ang. *Zoom In*)  
   - Približa pogled.    
-* - <img src="./geogebra/images/32px-Mode_zoomOut.svg.png" class="inline" width="22px">  
+* - <img src="./geogebra/images/32px-Mode_zoomout.svg.png" class="inline" width="22px">  
   - *Pomanjšaj* (ang. *Zoom Out*)  
   - Oddalji pogled.  
 * - <img src="./geogebra/images/32px-Mode_showhideobject.svg.png" class="inline" width="22px">  
