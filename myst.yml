@@ -30,7 +30,7 @@ project:
         # - file: 07_geogebra_uvod.ipynb
         - file: 07_geogebraUvod.md
         - file: 08_geogebraDinGeometrija.md
-        - file: 09_geogebra_analiza.md
+        - file: 09_geogebraAnaliza.md
         - file: 10_geogebra_3d.md
         - file: 11_geogebra_razno.md
     - title: SageMath
