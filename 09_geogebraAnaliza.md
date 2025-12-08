@@ -297,6 +297,27 @@ IFrame("https://www.geogebra.org/material/iframe/id/s9gtp7rn/width/1250/height/7
 
 ::::
 
+## Parametrične krivulje
+
+Polarne krivulje so posebna vrsta parametričnih krivulj, kjer je polmer funkcija kota. Vendar pa lahko ustvarimo tudi splošne parametrične krivulje v GeoGebri z uporabo ukaza `Curve`. Ta ukaz omogoča definiranje krivulje z uporabo dveh funkcij, ki določata $x$ in $y$ koordinate glede na parameter $t$. Na primer, ukaz `Curve((cos(t), sin(t)), t, 0, 2*π)` ustvari enoto krožnico.
+
+<!-- :::{exercise}
+:label: ex-paramentric
+
+Ustvarite datoteko GeoGebra, ki prikazuje parametrično krivuljo.
+
+1. Ustvarite spremenljivki `max_t` in `min_t`.
+2. Ustvarite funkciji za $x(t)$ in $y(t)$.
+3. Ustvarite vhodno polje za `max_t` in `min_t`, da lahko spreminjate interval parametra $t$.
+::: -->
+
+<!-- ```{margin}
+[Seznam vaj](_vaje)
+```
+
+:::{solution} ex-label
+:class: tip dropdown
+::: -->
 
 <!-- ```{margin}
 [Seznam vaj](#vaje_geogebraAnaliza)
