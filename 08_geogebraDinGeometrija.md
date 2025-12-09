@@ -312,34 +312,7 @@ Ta način lahko uporabimo za ustvarjanje zaporedje ukazov, da ni nujno ustvariti
 Zaporedje in drsniki postanejo zelo močna orodja, ko jih kombiniramo skupaj. Na primer, lahko ustvarimo drsnik, ki določa število objektov v zaporedju, in nato uporabimo ta drsnik za ustvarjanje dinamične konstrukcije, ki se spreminja glede na vrednost drsnika. Ta način bomo raziskali v naslednjih vajah.
 
 
-::::{exercise}
-:label: ex_sequences-4
-Ustvarite dinamično konstrukcijo, ki uporabi drsnika za določanje vrednosti dveh celih števil v intervalu od $1$ do $10$ in z uporabo ukaza `Sequence()` ustvari zaporedje točk v ravnini, da bi prikazala množenje teh dveh števil kot pravokotnik s točkami. 
-Navdih lahko poiščete v naslednji GeoGebri konstrukciji:
 
-:::{code-cell} python
-:tags: remove-input
-IFrame("https://www.geogebra.org/material/iframe/id/nkczhbrd/width/800/height/800/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/false", width="570", height="570", allowfullscreen=True)
-:::
-
-::::
-
-```{margin}
-[Seznam vaj](#08_geogebraDinGeometrija_vaje)
-```
-
-:::{solution} ex_sequences-4
-:class: tip dropdown
-Lahko uporabite naslednje korake za ustvarjanje te konstrukcije:
-1. Ustvarite drsnika `a` in `b` z lastnostmi: `Min=1`, `Max=10`, `Increment=1`.
-2. Upoštevajte da ukaz `Sequence((i,j),i,1,a)` ustvari zaporedje točk v dani vrstici z drugim koordinato `j`. 
-3. Uporabite ukaz `točke=Sequence(Sequence((i,j),i,1,a),j,1,b)` za ustvarjanje zaporedja točk v pravokotniku z dolžino `a` in širino `b`.
-5. Z uporabo ukaza `FormulaText("$"+a+"\times"+b+"="+(a*b)+"$")` ustvarite dinamično besedilo, ki prikazuje rezultat množenja `a` in `b`.
-6. Uredite položaj besedila in slog po želji.
-
-Lahko odprete to konstrukcijo v GeoGebri [tukaj](https://www.geogebra.org/classic/nkczhbrd).
-
-:::
 
 
 
@@ -357,9 +330,57 @@ Lahko odprete to konstrukcijo v GeoGebri [tukaj](https://www.geogebra.org/classi
 - [Vaje %s](#ex_sequences-1) - Ustvarite zaporedje točk na krožnici z uporabo ukaza `Sequence()`.
 - [Vaje %s](#ex_sequences-2) - Uporabite ukaz `Sequence()` za ustvarjanje vzorca premic v GeoGebri.
 - [Vaje %s](#ex_sequences-3) - Uporabite ukazi `Element()` in `Execute()` za ustvarjanje posamezni objektov iz zaporedje.
-- [Vaje %s](#ex_sequences-4) - Ustvarite dinamično konstrukcijo za množenje dveh celih števil z uporabo drsnikov in ukaza `Sequence()`.
+<!-- - [Vaje %s](#ex_sequences-4) - Ustvarite dinamično konstrukcijo za množenje dveh celih števil z uporabo drsnikov in ukaza `Sequence()`. -->
 <!-- - [Vaje %s](#ex_pythagoras) - Ustvarite konstrukcijo, ki prikazuje dokaz Pitagorovega izreka z uporabo drsnikov. -->
 <!-- - [Vaje %s](#ex-circleArea) - Ustvarite dinamično konstrukcijo za izračun površine kroga s pomočjo drsnika za polmer kroga. -->
+
+::::{exercise} Domača naloga 
+:label: ex_sequences-4
+Ustvarite dinamično konstrukcijo, ki uporabi drsnika za določanje vrednosti dveh celih števil v intervalu od $1$ do $10$ in z uporabo ukaza `Sequence()` ustvari zaporedje točk v ravnini, da bi prikazala množenje teh dveh števil kot pravokotnik s točkami. 
+Navdih lahko poiščete v naslednji GeoGebri konstrukciji:
+
+:::{code-cell} python
+:tags: remove-input
+IFrame("https://www.geogebra.org/material/iframe/id/nkczhbrd/width/800/height/800/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/false", width="570", height="570", allowfullscreen=True)
+:::
+
+::::
+
+
+
+<!-- ```{margin}
+[Seznam vaj](#08_geogebraDinGeometrija_vaje)
+``` -->
+
+<!-- :::{solution} ex_sequences-4
+:class: tip dropdown
+Lahko uporabite naslednje korake za ustvarjanje te konstrukcije:
+1. Ustvarite drsnika `a` in `b` z lastnostmi: `Min=1`, `Max=10`, `Increment=1`.
+2. Upoštevajte da ukaz `Sequence((i,j),i,1,a)` ustvari zaporedje točk v dani vrstici z drugim koordinato `j`. 
+3. Uporabite ukaz `točke=Sequence(Sequence((i,j),i,1,a),j,1,b)` za ustvarjanje zaporedja točk v pravokotniku z dolžino `a` in širino `b`.
+5. Z uporabo ukaza `FormulaText("$"+a+"\times"+b+"="+(a*b)+"$")` ustvarite dinamično besedilo, ki prikazuje rezultat množenja `a` in `b`.
+6. Uredite položaj besedila in slog po želji.
+
+Lahko odprete to konstrukcijo v GeoGebri [tukaj](https://www.geogebra.org/classic/nkczhbrd).
+
+::: -->
+
+
+::::{exercise}
+:label: ex-gauss
+Oglejte si naslednjo GeoGebro konstrukcijo, kateri znani rezultat predstavlja?
+Ponovno ustvarite to konstrukcijo in dodajte potrebne elemente, da bo čim bolj razumljiva, glede na izračun, ki ga prikazuje.
+
+:::{code-cell} python
+:tags: remove-input
+IFrame("https://www.geogebra.org/material/iframe/id/f3he3pxy/width/700/height/724/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false", width="570", height="559", allowfullscreen=True)
+:::
+
+
+::::
+
+
+
 
 
 ::::{exercise} Domača naloga
