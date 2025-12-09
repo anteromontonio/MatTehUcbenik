@@ -8,7 +8,7 @@ project:
   copyright: "2025"
   license: CC-BY-NC-SA-4.0
   bibliography:
-    - references.bib
+    - matteh.bib
   exports:
     - format: pdf
       template: plain_latex_book
@@ -31,7 +31,7 @@ project:
         - file: 07_geogebraUvod.md
         - file: 08_geogebraDinGeometrija.md
         - file: 09_geogebraAnaliza.md
-        - file: 10_geogebra_3d.md
+        - file: 10_geogebra3D.md
         - file: 11_geogebra_razno.md
     - title: SageMath
       children:

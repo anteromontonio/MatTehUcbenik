@@ -348,9 +348,6 @@ IFrame("https://www.geogebra.org/material/iframe/id/nkczhbrd/width/800/height/80
 
 
 
-<!-- ```{margin}
-[Seznam vaj](#08_geogebraDinGeometrija_vaje)
-``` -->
 
 <!-- :::{solution} ex_sequences-4
 :class: tip dropdown
@@ -366,6 +363,7 @@ Lahko odprete to konstrukcijo v GeoGebri [tukaj](https://www.geogebra.org/classi
 ::: -->
 
 
+
 ::::{exercise}
 :label: ex-gauss
 Oglejte si naslednjo GeoGebro konstrukcijo, kateri znani rezultat predstavlja?
@@ -375,7 +373,6 @@ Ponovno ustvarite to konstrukcijo in dodajte potrebne elemente, da bo čim bolj 
 :tags: remove-input
 IFrame("https://www.geogebra.org/material/iframe/id/f3he3pxy/width/700/height/724/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false", width="570", height="559", allowfullscreen=True)
 :::
-
 
 ::::
 
@@ -439,7 +436,7 @@ Koraki za ustvarjanje te konstrukcije so naslednji:
     - Premica vzporedna s $AC$ skozi nasprotno oglišče kvadrata na $AB$.
     - Premica vzporedna s $BC$ skozi nasprotno oglišče kvadrata na $AB$.
 6. Ustvarite eno kopijo kvadrata na $AC$ in eno kopijo kvadrata na $BC$.
-7. Animirajte te kopiji tako, da se preoblikujeta v paralelogrami do presičišča z ustreznimi premicami (kot prva animacija v konstrukciji).
+7. Animirajte te kopiji tako, da se preoblikujeta v paralelogrami do presečišča z ustreznimi premicami (kot prva animacija v konstrukciji).
 8. Ustvarite paralelogrami na stranicah $AC$ in $BC$ da prestavita zadnja položaja kopij kvadratov.
 9. Animirajte tako da strani, ki imata na premici skozi $C$. Premikajte točke, dokler ena stran paralelograma ni na premici skozi $C$ (kot druga animacija v konstrukciji).
 10. Ustvarite kvadrat, ki ga dobimo, ko združimo paralelograma, in ga animirajte, dokler ne doseže kvadrata nad strani $AB$.
