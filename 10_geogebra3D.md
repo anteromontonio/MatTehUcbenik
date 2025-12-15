@@ -31,7 +31,7 @@ Najlažje način za učenje orodje je, da jih raziskujete.
 2. Uporabite orodje <img src="./geogebra/images/24px-Mode_sphere2.svg.png" class="inline" width="22px"> *Sphere: Centre & Point* (*Sfera: središče & točka *) za ustvarjanje krogle s središčem v točki $A$ in skozi točko $B$.
 3. Ustvarite drsnik $r$ z vrednostmi od `1` do `5` in korakom `0.1`. To lahko storite z vnosom `r` v algebrsko okno, nato pa nastavite lastnosti drsnika točno tako, kot smo to storili v 2D primeru. Upoštevajte, da je drsnik prikazen samo v algebrskem oknu. 
 4. Ustvarite točko $C$ z koordinatami po želji.
-5. Uporabite orodje <img src="./geogebra/images/24px-Mode_spherepointradius.svg.png" class="inline" width="22px"> *Sphere: Centre & Radius* (*Sfera: središče & polmer*) za ustvarjanje krogle s središčem v točki $A$ in polmerom $r$. 
+5. Uporabite orodje <img src="./geogebra/images/24px-Mode_spherepointradius.svg.png" class="inline" width="22px"> *Sphere: Centre & Radius* (*Sfera: središče & polmer*) za ustvarjanje krogle s središčem v točki $C$ in polmerom $r$. 
 6. Premikajte točko $C$ oz. drsnik $r$, tako da se krogli sekajo. 
 7. Z orodjem <img src="./geogebra/images/24px-Mode_intersectioncurve.svg.png" class="inline" width="22px"> *Intersect two surfaces* (*Presečišče dveh ploskev*) ustvarite presečišče obeh krogli. To lahko naredite tudi z ukazom `Intersect(<krogla1>,<krogla2>)`.
 8. Z orodjem <img src="./geogebra/images/32px-Mode_midpoint.svg.png" class="inline" width="22px"> *Midpoint or Center* (*Sredina ali središče*), kliknite na presečišče krogel in ustvarite točko (recimo $D$).
@@ -57,7 +57,7 @@ Lahko tudi jo odprite v [GeoGebri](https://www.geogebra.org/classic/wxj6e3br).
 
 ::::
 
-Včasih je težko vse viditi v 3D prostoru. Priporočamo, da eksperimentirate z različnimi pogledi in orodji za navigacijo v GeoGebri 3D. Vse najdete v <img src="./geogebra/images/32px-Stylingbar_icon_graphics3D.svg.png" class="inline" width="22px"> *Styling bar* (*Vrstici za spremenite sloga pogleda*). Če želite ročno spremeniti pogled, uporabite orodje <img src="./geogebra/images/24px-Mode_rotateview.svg.png" class="inline" width="22px"> *Rotate View* (*Zasukaj pogled*) ali orodje <img src="./geogebra/images/32px-Mode_translateview.svg.png" class="inline" width="22px"> *Translate View* (*Premakni pogled*). 
+Včasih je težko vse videti v 3D prostoru. Priporočamo, da eksperimentirate z različnimi pogledi in orodji za navigacijo v GeoGebri 3D. Vse najdete v <img src="./geogebra/images/32px-Stylingbar_icon_graphics3D.svg.png" class="inline" width="22px"> *Styling bar* (*Vrstici za spremenite sloga pogleda*). Če želite ročno spremeniti pogled, uporabite orodje <img src="./geogebra/images/24px-Mode_rotateview.svg.png" class="inline" width="22px"> *Rotate View* (*Zasukaj pogled*) ali orodje <img src="./geogebra/images/32px-Mode_translateview.svg.png" class="inline" width="22px"> *Translate View* (*Premakni pogled*). 
 
 
 ## Premice in ravnine
@@ -101,8 +101,8 @@ Lahko tudi jo odprite v [GeoGebri](https://www.geogebra.org/classic/nga8tzfc).
 :::{exercise} [Seznam vaj ⤵️ ](#10_geogebra3D_vaje)
 :label: ex-cube
 
-1. Ustvarite kocko s središčem v izhodišču in tako da točka $(1,1,1)$ in $(-1,-1,-1)$ sta nasprotni oglišči kocke. 
-2. Ustvarite ravnino z enačbo $ax + by + cz +d = 0$, kjer so $a$, $b$, $c$ in $d$ poljubne vrednosti (na primer, uporabite drsnike za določitev teh vrednosti).
+1. Ustvarite ravnino z enačbo $ax + by + cz +d = 0$, kjer so $a$, $b$, $c$ in $d$ poljubne vrednosti (na primer, uporabite drsnike za določitev teh vrednosti).
+2. Ustvarite kocko s središčem v izhodišču in tako da točka $(1,1,1)$ in $(-1,-1,-1)$ sta nasprotni oglišči kocke. 
 3. Poiščite presečišče kocke in ravnine. To lahko naredite z orodjem <img src="./geogebra/images/24px-Mode_intersectioncurve.svg.png" class="inline" width="22px"> *Intersect two surfaces* (*Presečišče dveh ploskev*) ali z ukazom `Intersect(<kocka>,<ravnina>)`.
 4. Kakšna je oblika presečišča kocke in ravnine? Poskusite z različnimi vrednostimi za koeficiente $a$, $b$, $c$ in $d$ v enačbi ravnine. Za katere vrednosti je presečišče:
     - prazen množica?
@@ -150,13 +150,16 @@ IFrame("https://www.geogebra.org/material/iframe/id/gehhdz9r/width/1512/height/9
 4. Z orodjem <img src="./geogebra/images/24px-Mode_cube.svg.png" class="inline" width="22px"> *Cube* (*Kocka*), ustvarite kocko z točkama $M$ in $N$ kot oglišči. To lahko storite z klikom na točki $M$ in $N$. Upoštevajte, da vrstni red točk je pomemben.
 5. Premaknite tretjo točko kocke in jo obrnite tako, da bo zdaj pod sivo ravnino.
 6. Orodje <img src="./geogebra/images/24px-Mode_tetrahedron.svg.png" class="inline" width="22px"> *Tetrahedron* (*Tetraedar*) deluje podobno kot orodje za kocko. Z njim zgradite tetraeder na odseku $PO$.
-7. Z ukazom `Octahedron(R,Q)` lahko sestavite oktaeder s stranico $RQ$. Ta ukaz nima orodja v vrstici orodij. Ukaza `Dodecahedron` in `Icosahedron` lahko uporabite na podoben način za ustvarjanje dodekaedra in ikosaedra.
-8. Z orodjem <img src="./geogebra/images/24px-Mode_cone.svg.png" class="inline" width="22px"> *Cone* (*Stožec*) kliknite na točko $I$ in nato na točko $J$. Ko vas GeoGebra vprašuje za polmer, vstavite $2$.
-9. Orodje <img src="./geogebra/images/24px-Mode_cylinder.svg.png" class="inline" width="22px"> *Cylinder* (*Valj*) deluje podobno kot orodje za stožec. Uporabite ga za ustvarjanje valja, katerega os je daljica $KL$ in polmer je $2$. Prejšnji konstrukciji lahko naredite z ukaza `Cone(I,J,2)` in `Cylinder(K,L,2)`.
+7. Z ukazom `Octahedron(R,Q)` lahko sestavite oktaeder s stranico $RQ$. Ta ukaz nima orodja v vrstici orodij. Ukaza `Dodecahedron` in `Icosahedron` lahko uporabite na podoben način za ustvarjanje dodekaedra in ikozaedra.
+8. Z orodjem <img src="./geogebra/images/24px-Mode_net.svg.png" class="inline"  width="22px"> *Net* (*Mreža*), ustvarite mrežo za oktaeder. Kliknite na orodje in nato na oktaeder, ki ste ga ustvarili v koraku 6.
+9. Z orodjem <img src="./geogebra/images/24px-Mode_cone.svg.png" class="inline" width="22px"> *Cone* (*Stožec*) kliknite na točko $I$ in nato na točko $J$. Ko vas GeoGebra vprašuje za polmer, vstavite $2$.
+10. Orodje <img src="./geogebra/images/24px-Mode_cylinder.svg.png" class="inline" width="22px"> *Cylinder* (*Valj*) deluje podobno kot orodje za stožec. Uporabite ga za ustvarjanje valja, katerega os je daljica $KL$ in polmer je $2$. Prejšnji konstrukciji lahko naredite z ukaza `Cone(I,J,2)` in `Cylinder(K,L,2)`.
 
 
 **Bonus**: Če GeoGebro uporabljate s tablici/telefonom, lahko s kamero projicirate objekte v razširjeni resničnosti.
 ::::
+
+
 
 ## Rotacijska ploskev
 
@@ -165,7 +168,7 @@ IFrame("https://www.geogebra.org/material/iframe/id/gehhdz9r/width/1512/height/9
 
 1. Ustvarite drsnike `a`, `b` in `c` z vrednostmi od `-5` do `5` in korakom `0.01`. 
 2. Ustvarite točko $A$ z koordinatami $(a,b,0)$ in točko $B$ z koordinatami $(0,3,0)$.
-3. Z ukazom `f=Segmente(A,B)` ustvarite daljico med točkama $A$ in $B$. To lahko naredite tudi z orodjem <img src="./geogebra/images/32px-Mode_segment.svg.png" class="inline" width="22px"> *Segment* (*Daljica*).
+3. Z ukazom `f=Segment(A,B)` ustvarite daljico med točkama $A$ in $B$. To lahko naredite tudi z orodjem <img src="./geogebra/images/32px-Mode_segment.svg.png" class="inline" width="22px"> *Segment* (*Daljica*).
 4. Ustvarite drsnik `r` z lastnostmi `Min=0`, `Max=2*pi` in `Increment=0.01`.
 5. Z ukazom `Surface(f,r,xAxis)` ustvarite rotacijsko ploskev, ki nastane z vrtenjem daljice $f$ okoli osi $x$.
 6. Premikajte drsnike $a$ in $b$ ter opazujte, kako se spreminja rotacijska ploskev. Kakšna je ploskev, ko je $a=0$? Kaj se zgodi, ko je $b=0$?
