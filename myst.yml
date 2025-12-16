@@ -13,6 +13,9 @@ project:
     - format: pdf
       template: plain_latex_book
       output: exports/book.pdf
+    - format: tex
+      template: plain_latex_book
+      output: exports/book.tex
   source_url: null
   downloads: null
   toc:
@@ -35,7 +38,7 @@ project:
         - file: 11_geogebra_razno.md
     - title: SageMath
       children:
-        - file: 12_sage_uvod.md
+        - file: 12_sageUvod.md
         - file: 13_sage_algebra.md
         - file: 14_sage_analiza.md
     - title: Priloge

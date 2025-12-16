@@ -1,0 +1,141 @@
+\subsection{Matematika v LaTeXu}
+
+LaTeX je še posebej primeren za pisanje matematičnih izrazov in ena izmed njegovih glavnih prednosti je prav podpora za matematične simbole in formule.
+LaTeX je že sam po sebi zelo zmogljiv. Vendar pa obstaja tudi veliko paketov, ki še dodatno razširijo njegove zmogljivosti na področju matematike.
+
+Standardni paket za matematiko so:
+
+\begin{itemize}
+\item \texttt{amsmath}: paket, ki ga je razvila Ameriška matematična družba (American Mathematical Society) in ponuja številne izboljšave za pisanje matematičnih izrazov.
+\item \texttt{amssymb}: paket, ki ponuja dodatne matematične simbole.
+\item \texttt{amsfonts}: paket, ki omogoča uporabo dodatnih matematičnih pisav.
+\item \texttt{amsthm}: paket za definiranje in oblikovanje matematičnih izrekov, trditve, definicij itd.
+\end{itemize}
+
+Ti paketi so pogosto vključeni v predloge dokumentov, vendar jih je mogoče vključiti tudi ročno z ukazom \texttt{{\textbackslash}usepackage\{amsmath, amssymb, amsfonts, amsthm\}} v preambuli vašega LaTeX dokumenta.
+
+V sodoben LaTeX dokument je priporočljivo vključiti paket \texttt{mathtools}, ki je razširitev paketa \texttt{amsmath} in ponuja dodatne funkcije in izboljšave za pisanje matematičnih izrazov.
+
+\begin{framed}
+\textbf{Pomembno!}\\
+V tem poglavju bomo predpostavljali, da so ti paketi že vključeni v vaš dokument. Lahko jih vključite z naslednjim ukazom v preambuli vašega LaTeX dokumenta:
+
+\begin{verbatim}
+\usepackage{mathtools}  % mathtools vključuje tudi amsmath
+\usepackage{amssymb, amsfonts, amsthm}
+\end{verbatim}
+\end{framed}
+
+\subsubsection{Osnovni matematični izrazi}
+
+LaTeX omogoča pisanje matematičnih izrazov na dva načina: znotraj besedila (\textit{vrstični način}; ang. \textit{inline mode} ) in v ločenih vrsticah (\textit{prikazen način}; ang. \textit{display mode}).
+
+Matematika v vrstičnem načinu se vstavlja z uporabo znakov \texttt{\$...\$} ali \texttt{{\textbackslash}(...{\textbackslash})}. Na primer, izraz za Pitagorov izrek lahko zapišemo kot \texttt{\$a\^2 + b\^2 = c\^2\$} (ali \texttt{{\textbackslash}(a\^2 + b\^2 = c\^2{\textbackslash})}), ki je natisnjen kot $a^2 + b^2 = c^2$.
+
+Za prikaz matematičnih izrazov v ločenih vrsticah (in osredotočeno poravnano) se uporabljajo znaki \texttt{{\textbackslash}[...{\textbackslash}]} ali okolje \texttt{equation*} (sta enakomerna). Na primer, če je $ax^2 + bx +c = c$ kvadratna enačba, potem je rešitev te enačbe:
+
+\begin{verbatim}
+\[x_{1,2} = \frac{ -b \pm \sqrt{b^2 - 4ac}}{2} \]
+\end{verbatim}
+
+kar je natisnjeno kot
+
+\begin{equation}
+x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2}.
+\end{equation}
+
+Ta izraz v vrstičnem načinu bi bil zapisan kot \texttt{\$x\_\{1,2\} = {\textbackslash}frac\{-b {\textbackslash}pm {\textbackslash}sqrt\{b\^2 - 4ac\}\}\{2\}\$}, kar je natisnjeno kot $x_{1,2} = \frac{ -b \pm \sqrt{b^2 - 4ac}}{2}$.
+
+\begin{framed}
+\textbf{Opomba}\\
+Matematika v vrstičnem načinu zapisana z \texttt{\$...\$} včasih se šteje za zastarelo. Priporočljivo je uporabljati \texttt{{\textbackslash}(...{\textbackslash})}. Vendar, v praksi večinoma avtorjev uporabijo \texttt{\$...\$}, ker je hitreje za tipkanje in dobi se enak rezultat.
+
+Podobno je tudi pri prikaznem načinu, kjer je priporočljivo uporabljati \texttt{{\textbackslash}[...{\textbackslash}]} (ali okolja \texttt{equation*}) namesto \texttt{\$\$ ... \$\$}s. Vendar je \texttt{\$\$...\$\$} resnično zastarelo in \textbf{se ne sme uporabljati}.
+\end{framed}
+
+Matematične izraze v prikaznem načinu je mogoče tudi oštevilčiti z uporabo okolja \texttt{equation} (brez zvezdice). Rezultat je podoben kot zgoraj, vendar bo enačba oštevilčena. Seveda, lahko sklicujemo na to enačbo v besedilu z uporabo ukazov \texttt{{\textbackslash}label\{\textless oznaka\textgreater \}} in \texttt{{\textbackslash}ref\{\textless oznaka\textgreater \}}:
+
+\begin{example}\label{eg_matematika_equation_1}\end{example}Za enačbe lahko tudi uporabimo ukaze \texttt{{\textbackslash}eqref\{\textless oznaka\textgreater \}} in \texttt{{\textbackslash}tag\{\textless opis\textgreater \}}, ki omogočata bolj prilagojeno sklicevanje in označevanje enačb:
+
+\begin{example}\label{eg_matematika_equation_2}\end{example}\begin{example}\label{eg_matematika_equation_3}\end{example}Ukazi in okolja za pisanje matematičnih aktivirajo matematični način, kjer so nekateri znaki in ukazi drugačni kot v običajnem besedilnem načinu. Na primer, presledki v matematičnem načinu nimajo pomena, medtem ko so v besedilnem načinu pomembni:
+
+Vse črke so v matematičnem načinu obravnavane kot spremenljivke in so zato natisnjene v poševni pisavi (italics). Razmik med črkami je večji kot v običajnem besedilu.
+
+Zaradi zgoraj navedenih razlogov moramo matematično besedilo \textbf{vedno} zapisovati v matematičnem načinu (v vrstici ali prikazano).
+
+Če želimo v matematičnem načinu uporabiti običajno besedilo, lahko uporabimo ukaz \texttt{{\textbackslash}text\{...\}}: why?
+
+\subsubsection{Stavljenje matematičnih formul}
+
+Možnosti za matematične simbole je ogromno, zato bomo prikazali le nekaj
+primerov.
+Seznam primerov tukaj je namenjen prikazu nekaterih najpogostejših primerov uporabe, vendar nikakor ni izčrpen.
+
+Pri sestavljanju matematičnih formul vam bodo morda v pomoč naslednji viri.
+
+\begin{itemize}
+\item \href{https://tug.ctan.org/info/symbols/comprehensive/symbols-a4.pdf}{Comprehensive LaTeX Symbol List}: Obsežen seznam LaTeX simbolov, ki vključuje simbole iz različnih paketov \textbf{Skoraj 500 strani}.
+\item \href{http://detexify.kirelabs.org/classify.html}{Detexify}: Orodje, ki vam omogoča, da narišete simbol, ki ga iščete, in orodje vam bo predlagalo ustrezne LaTeX ukaze za ta simbol.
+\item \href{./img/04\_seznamSimbolov.pdf}{Seznam osnovnih matematičnih simbolov}\{target=``\_blank''\}: Kratek seznam pogosto uporabljenih LaTeX matematičnih simbolov.
+\end{itemize}
+
+\subsubsection{Izreki, dokazi, definicije, itd..}
+
+Ko sestavljanju matematičnih besedil je pogosto potrebno vključiti izreke, dokaze, definicije in podobne strukture (ki jih bomo zaradi enostavnosti imenovali ``teoremi'').
+Paket \texttt{amsthm}, ponuja enostaven način za ustvarjanje teh struktur z uporabo okolij.
+
+Najprej moramo definirati nova okolja za naše teoreme v preambuli dokumenta.
+To storimo z uporabo ukaza
+
+\begin{verbatim}
+\newtheorem{<ime_okolja>}[<drugi_teorem>]{<Napis>}[<razdelek>]
+\end{verbatim}
+
+kjer je \texttt{\textless ime\_okolja\textgreater } ime novega okolja in
+\texttt{\textless Napis\textgreater } je besedilo, ki se bo prikazalo pred številko teorema.
+Neobvezna argumenta \texttt{\textless drugi\_teorem\textgreater } in \texttt{\textless razdelek\textgreater } določata, kako se bodo teoremi številčili (in lahko uporabimo samo ena od njih ali nobene).
+Uporabimo \texttt{\textless drugi\_teorem\textgreater }, če želimo, da se novi teoremi številčijo skupaj z obstoječim teoremom, kjer je \texttt{\textless drugi\_teorem\textgreater } ime okolja.
+Če želimo, da se številčenje teoremov ponastavi v vsakem razdelku, uporabimo \texttt{\textless razdelek\textgreater }, kjer je \texttt{\textless razdelek\textgreater } ime števca razdelkov (npr. \texttt{section} ali \texttt{subsection}).
+Če ne uporabimo nobenega od teh dveh argumentov, se bodo teoremi številčili neodvisno skozi celoten dokument (1, 2, 3, ...).
+Ukaz \texttt{{\textbackslash}newtheorem*\{\textless ime\_okolja\textgreater \}\{\textless Naslov\textgreater \}} definira različico okolja, ki ne bo imela številke.
+
+Po definiciji okolja lahko uporabimo novo okolje v našem dokumentu z uporabo standardnega LaTeX okolja sintakse:
+
+\begin{verbatim}
+\begin{<ime_okolja>}[<Naslov>]
+Vsebina teorema.
+\end{<ime_okolja>}
+\end{verbatim}
+
+Neobvezni argument \texttt{\textless Naslov\textgreater } omogoča dodajanje naslova teorema, ki bo prikazan poleg številke teorema.
+
+\begin{example}\label{eg_theorems_1}\end{example}V LaTeXu obstajajo tri različne sloge teoremov:
+
+\begin{itemize}
+\item \texttt{plain}: privzeti slog, krepko naslov in poševno telo.
+\item \texttt{definition}: krepko naslov in pokončno telo.
+\item \texttt{remark}: poševno naslov in pokončno telo.
+\end{itemize}
+
+Za nastavitev sloga teorema uporabimo ukaz
+
+\begin{verbatim}
+\theoremstyle{<slog>}
+\end{verbatim}
+
+pred definicijo okolja teorema.
+Vsak teorem, ki je definiran po tem ukazu, bo uporabil določen slog.
+
+\begin{example}\label{eg_theorems_2}\end{example}Paket \texttt{amsthm} ponuja tudi okolje \texttt{proof} za pisanje dokazov.
+Okolje samodejno doda besedo ``Dokaz'' na začetek in simbol kvadrata na konec dokaza.
+
+\begin{example}\label{eg-theorems_3}\end{example}Ukaz \texttt{{\textbackslash}qedhere} lahko uporabimo znotraj okolja \texttt{proof}, da postavimo simbol kvadrata na določeno mesto, običajno na konec enačbe.
+
+\begin{example}\label{eg-theorems_4}\end{example}\subsubsection{Vaje}\label{latexMatematika_vaje}
+
+\begin{itemize}
+\item Exercise~\ref{ex-matematika-1}: Napišite LaTeX kodo za osnovne matematične izraze.
+\item Exercise~\ref{ex-matematika-2}: Napišite LaTeX kodo za matematične izraze z uporaba okolji \texttt{align} in \texttt{align*} in \texttt{aligned}.
+\item Exercise~\ref{ex-matematika-3}: Napišite LaTeX kodo, da reproducira Maxwellove enačbe.
+\item Exercise~\ref{ex-matematika-4}: Napišite LaTeX kodo za izreke in dokaze.
+\end{itemize}

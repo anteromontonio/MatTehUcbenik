@@ -1,0 +1,96 @@
+\subsection{Dolžine v LaTeXu}
+
+Dolžine (\textit{lengths}) so pomemben del LaTeXa, saj omogočajo natančen nadzor nad razmikom, velikostjo elementov, zamiki, robovi in še več.
+Vsaka dolžina je shranjena kot spremenljivka, ki ji lahko dodelimo vrednost, jo povečamo ali zmanjšamo, in uporabimo pri različnih ukazih.
+
+\subsubsection{Osnovne merske enote}
+
+V LaTeXu lahko dolžine izrazimo z različnimi enotami. Najpogosteje uporabljene so:
+
+\bigskip\noindent
+\begin{tabular}{p{\dimexpr 0.500\linewidth-2\tabcolsep}p{\dimexpr 0.500\linewidth-2\tabcolsep}}
+\toprule
+Enota & Opis \\
+\hline
+\texttt{pt} & točka (1/72,27 palca) -- osnovna enota v TeXu \\
+\texttt{mm} & milimeter \\
+\texttt{cm} & centimeter \\
+\texttt{in} & palec (2.54 cm) \\
+\texttt{ex} & višina male črke \textit{x} v trenutni pisavi \\
+\texttt{em} & širina črke \textit{M} v trenutni pisavi \\
+\texttt{bp} & velika točka (1/72 palca) \\
+\texttt{pc} & pica = 12 točk \\
+\texttt{dd} & didotova točka \\
+\texttt{cc} & cicer = 12 didotov \\
+\texttt{sp} & najmanjša notranja enota v TeXu (65536 sp = 1 pt) \\
+\bottomrule
+\end{tabular}
+
+\bigskip\subsubsection{Privzete dolžinske spremenljivke}
+
+LaTeX ima več že vnaprej določenih dolžin, ki vplivajo na izgled dokumenta:
+
+\bigskip\noindent
+\begin{tabular}{p{\dimexpr 0.500\linewidth-2\tabcolsep}p{\dimexpr 0.500\linewidth-2\tabcolsep}}
+\toprule
+Dolžina & Opis \\
+\hline
+\texttt{{\textbackslash}textwidth} & širina glavnega besedila \\
+\texttt{{\textbackslash}textheight} & višina glavnega besedila \\
+\texttt{{\textbackslash}linewidth} & širina vrstice znotraj okolja (npr. v \texttt{minipage}) \\
+\texttt{{\textbackslash}columnwidth} & širina stolpca v dvostolpčnem načinu \\
+\texttt{{\textbackslash}paperwidth}, \texttt{{\textbackslash}paperheight} & dimenzije papirja \\
+\texttt{{\textbackslash}parindent} & zamik prve vrstice odstavka \\
+\texttt{{\textbackslash}parskip} & razmik med odstavki \\
+\texttt{{\textbackslash}baselineskip} & navpična razdalja med vrsticami besedila \\
+\texttt{{\textbackslash}topmargin}, \texttt{{\textbackslash}oddsidemargin}, \texttt{{\textbackslash}evensidemargin} & robovi strani \\
+\bottomrule
+\end{tabular}
+
+\bigskip
+%  Primer uporabe:
+% 
+% ```latex
+% \setlength{\parindent}{0pt}
+% \setlength{\parskip}{1em}
+% ```
+% 
+% S tem odstranimo zamik odstavkov in dodamo več prostora med njimi.
+% 
+% ## Določanje in spreminjanje dolžin
+% 
+% Za delo z dolžinami uporabljamo naslednje ukaze:
+% 
+% ```latex
+% \setlength{\ime}{vrednost}
+% \addtolength{\ime}{vrednost}
+% ```
+% 
+% Primer:
+% 
+% ```latex
+% \setlength{\textwidth}{14cm}
+% \addtolength{\textwidth}{1cm}
+% ```
+% 
+% Ukaz `\setlength` nastavi absolutno vrednost, medtem ko `\addtolength` doda (ali odšteje) določeno dolžino.
+% 
+% ## Uporaba dolžin v izrazih
+% 
+% LaTeX omogoča uporabo relativnih vrednosti in računanje z dolžinami z uporabo ukaza `\dimexpr`. Primer:
+% 
+% ```latex
+% \setlength{\textwidth}{\dimexpr\paperwidth-2in\relax}
+% ```
+% 
+% Ta ukaz nastavi širino besedila tako, da je za 2 palca manjša od širine papirja.
+
+%  ## Uporabni namigi
+% 
+% - Dolžine lahko definirate tudi sami z `\newlength`:
+%   ```latex
+%   \newlength{\mojadolzina}
+%   \setlength{\mojadolzina}{5cm}
+%   ```
+% - Za začasne spremembe uporabite okolje `minipage`, kjer lahko lokalno spremenite `\linewidth`.
+% - Za bolj napreden nadzor nad postavitvijo lahko uporabite pakete kot so `geometry`, `calc` ali `layouts`.

@@ -1,0 +1,205 @@
+\subsection{Sklicevanje in literatura}
+
+Z LaTeXom lahko oblikujemo ne le dokumente, ki so visoke kakovosti za tiskanje. Vendar pa je danes veliko dokumentov prebrati na zaslonu računalnika ali mobilne naprave.
+Paket \href{https://ctan.org/pkg/hyperref}{\texttt{hyperref}} omogoča ustvarjanje dokumentov PDF z aktivnimi povezavami oz. \textit{hiperpovezavami}.
+To pomeni, da lahko kliknemo na sklic in nas ta pripelje do ustreznega dela dokumenta ali na zunanjo spletno stran.
+Paket \texttt{hyperref} omogoča tudi ustvarjanje kazal, ki so interaktivni in omogočajo enostavno navigacijo po dokumentu.
+
+Za zdaj bomo uporabili paket \texttt{hyperref} za sklicevanje na literaturo v našem dokumentu.
+Seveda, najprej moramo nalovziti paket v preambuli našega dokumenta:
+
+\begin{verbatim}
+\usepackage{hyperref}
+\end{verbatim}
+
+\begin{framed}
+\textbf{Pazite!}\\
+Paket \texttt{hyperref} mora biti naložen kot zadnji paket v preambuli, saj lahko povzroči konflikte z drugimi paketi, če ni naložen na koncu.
+\end{framed}
+
+\subsubsection{Sklicevanje}
+
+V dokumentu lahko sklicujemo na različne elemente, kot so slike, tabele, enačbe, razdelki, itd.
+Za sklicevanje uporabimo ukaza \texttt{{\textbackslash}label\{\textless oznaka\textgreater \}} in \texttt{{\textbackslash}ref\{\textless oznaka\textgreater \}}.
+Ukaz \texttt{{\textbackslash}label\{\textless oznaka\textgreater \}} postavimo takoj za element, na katere se želimo sklicevati. Ukaz \texttt{{\textbackslash}ref\{\textless oznaka\textgreater \}} pa uporabimo na mestu, kjer želimo vstaviti sklic. Argument \texttt{\textless oznaka\textgreater } je poljuben niz znakov, ki ga izberemo sami, vendar mora biti edinstven v celotnem dokumentu.
+
+\begin{example}\label{eg_sklici_1}\end{example}\begin{framed}
+\textbf{Nasvet}\\
+Oznake je priporočljivo oblikovati tako, da so opisne ampak kratke. Na primer, za razdelek o sklicevanju,\texttt{sec:sklicevanje}, je boljša oznaka kot \texttt{s1} ali \texttt{razdelek1}.
+
+Dobra praksa je tudi, da uporabljamo predpone za različne vrste elementov, kot so \texttt{sec:} za razdelke, \texttt{fig:} za slike, \texttt{tab:} za tabele in \texttt{eq:} za enačbe.
+\end{framed}
+
+\begin{framed}
+\textbf{Opomba}\\
+Ukaz \texttt{{\textbackslash}ref} vrne le številko elementa, na primer številko razdelka ali slike. Potrebno je, da ročno dodamo besedilo, kot je ``Razdelek'', ``Slika'' ali ``Tabela'', pred številko.
+
+Obstajajo paketi, kot je \href{https://ctan.org/pkg/cleveref?lang=en}{\texttt{cleveref}}, ki omogočajo samodejno dodajanje besedila pred številko. Na žalost, paket \texttt{cleveref} ni podpira slovenskega jezika, in čeprav je mogoče definirati nove jezike, je trenutno slovenski jezik težko implementirati zaradi sklanjatev (prim. „glej  Slik\textbf{o} 1'' v „na Slik\textbf{i} 1'').
+\end{framed}
+
+Če uporabimo ukaz \texttt{{\textbackslash}ref\{\textless oznaka\textgreater \}} z razdelki ``z zvezdico'' (npr. \texttt{{\textbackslash}section*\{...\}}), ki niso oštevilčeni, bo ukaz vrnil nič ali nepričakovano vrednost, saj ti razdelki nimajo številk.
+Zato je priporočljivo, da se na razdelke ``z zvezdico'' ne sklicujemo z ukazom \texttt{{\textbackslash}ref}.
+Možna alternativa je uporaba ukaza \texttt{{\textbackslash}nameref\{\textless oznaka\textgreater \}}, ki vrne ime razdelka.
+
+Ukaz \texttt{{\textbackslash}pageref\{\textless oznaka\textgreater \}} vrne številko strani, na kateri se nahaja element z dano oznako.
+Ta ukaz lahko uporabimo z razdelki ``z zvezdico'', saj nam ni treba pridobiti številke razdelka, ampak le številko strani.
+
+Za plavajoče elemente, kot so slike in tabele, je priporočljivo, da oznako dodamo znotraj okolja \texttt{figure} ali \texttt{table}, takoj po ukazu \texttt{{\textbackslash}caption\{...\}}.
+To zagotavlja, da se oznaka nanaša na pravilno številko slike ali tabele.
+
+\begin{example}\label{eg_sklici_2}\end{example}Označujmo in sklicujmo lahko vse, čemur LaTeX dodeli številko. Na primer, točke v seznamih.
+
+\begin{example}\label{eg_sklici_3}\end{example}\subsubsection{Literartura}
+
+\textbf{Klasični način}
+
+Za vključitev literature v dokument LaTeX, lahko uporabimo okolje \texttt{thebibliography}.
+To je le poseben seznam, kjer vsaka referenca dobi svojo oznako z ukazom \texttt{{\textbackslash}bibitem\{\textless oznaka\textgreater \}}.
+Nato se na referenco sklicujemo z ukazom \texttt{{\textbackslash}cite\{\textless oznaka\textgreater \}}.
+
+\begin{example}\label{eg_literatura_1}\end{example}Ta način je enostaven in hiter, vendar ima nekaj pomanjkljivosti:
+
+\begin{itemize}
+\item Ročno moramo vnašati vse podatke o referencah, kar je lahko zamudno in nagnjeno k napakam.
+\item Ni standardiziranega formata za vnos referenc, kar lahko vodi do neenotnosti v slogu citiranja.
+\item Enostavne spremembe sloga citiranja so težavne, saj moramo ročno prilagoditi vsako referenco.
+\item Ni ločnega/struturnega označevanja, ki bi nakazovalo, kateri del bibliografskega vnosa je avtor, naslov, leto izdaje itd.
+\item Sortiranje referenc je ročno in lahko vodi do napak. Urejanje (npr. po letu izdaje namesto po priimku avtorja) je prav tako ročno in zamudno.
+\item Na splošno to ni pristop, ki bi bil značilen za LaTeX.
+\end{itemize}
+
+Zaradi teh razlogov je priporočljivo uporabiti bolj napredne metode za upravljanje literature v LaTeX dokumentih, kot je BibTeX ali/in BibLaTeX.
+
+\textbf{BibLaTeX način}
+
+BibTex je orodje za upravljanje bibliografskih podatkov, ki deluje skupaj z LaTeXom.
+Omogoča nam, da shranimo vse naše reference v ločeno datoteko \texttt{.bib}, kar olajša upravljanje in ponovno uporabo referenc v različnih dokumentih.
+BibLaTeX je sodobnejša alternativa BibTeX-u, ki ponuja več funkcionalnosti in prilagodljivosti.
+
+Uporaba BibLaTeX-a vključuje naslednje korake:
+
+\begin{enumerate}
+\item Ustvarimo datoteko z bibliografskimi podatki z razširitvijo \texttt{.bib}. V tej datoteki so reference shranjene v posebnem formatu.
+\item V preambulo našega LaTeX dokumenta vključimo paket \texttt{biblatex} in določimo slog citiranja ter datoteko z bibliografskimi podatki.
+\end{enumerate}
+
+Datoteka \texttt{.bib} je sestavljena iz vnosa, kjer vsak vnos predstavlja eno referenco.
+Vsak vnos ima svoj edinstven ključ, ki ga uporabimo za sklicevanje na to referenco v našem dokumentu.
+Vsak vnos vsebuje različna polja, kot so avtor, naslov, leto izdaje, itd. in izgledajo nekako takole:
+
+\begin{verbatim}
+@<vrsta_Vnosa>{<kjluč>,
+<polje1>    = {vrednost1},
+<polje2>    = {vrednost2},
+<polje3>    = {vrednost3}, 
+<poljeN>    = {vrednostN}, 
+}
+\end{verbatim}
+
+kjer je \texttt{\textless vrsta\_Vnosa\textgreater } lahko \texttt{book}, \texttt{article}, \texttt{inproceedings}, \texttt{misc}, itd., odvisno od vrste reference.
+\texttt{\textless ključ\textgreater } je edinstven identifikator za ta vnos, ki ga bomo uporabili v ukazu \texttt{{\textbackslash}cite\{\textless ključ\textgreater \}} v našem LaTeX dokumentu.
+\texttt{\textless polje1\textgreater }, \texttt{\textless polje2\textgreater }, itd. so različna polja, ki vsebujejo informacije o referenci, kot so avtor, naslov, leto izdaje, itd. Npr. za knjigo \textit{Harry Potter in kamen modrosti} bi bil vnos videti takole:
+
+\begin{verbatim}
+@book{hp1,
+author    = {J. K. Rowling},
+title     = {Harry Potter in kamen modrosti},
+publisher = {Založba EPTA},
+year      = {1997}
+}
+\end{verbatim}
+
+Polja so odvisna od vrste vnosa in slog bibligrafije, ki ga uporabljamo (več o tem kasneje). Za knjige so običajna polja \texttt{author}, \texttt{title}, \texttt{publisher} in \texttt{year}. Za članke v revijah bi lahko uporabili polja, kot so \texttt{journal}, \texttt{volume}, \texttt{number} in \texttt{pages}. Za spletne vire je pogosto uporabno polje \texttt{url} in \texttt{note}.
+Celoten seznam vrst vnosov in polj najdete v dokumentaciji paketa \href{https://ctan.org/pkg/biblatex?lang=en}{BibLaTeX} ali tem članku na \href{https://en.wikibooks.org/wiki/LaTeX/Bibliography\_Management\#Entry\_and\_field\_types\_in\_.bib\_files}{wikibooks}.
+
+Dobra novica je, da običajno ni potrebno ročno pisati datoteke \texttt{.bib}, saj obstajajo številna orodja in spletne strani, ki lahko samodejno generirajo vnose v pravilnem formatu.
+Nekatera orodja, ki jih lahko uporabite za ustvarjanje in upravljanje datotek \texttt{.bib}, vključujejo:
+
+\begin{itemize}
+\item \href{https://scholar.google.com/}{Google Scholar}: omogoča izvoz posameznih referenc v format \texttt{.bib}.
+\item \href{https://www.cobiss.si/}{COBISS}: slovenski sistem za iskanje in izposojo knjižničnih gradiv, ki omogoča izvoz bibliografskih podatkov v format \texttt{.bib}.
+\item \href{https://zbib.org/}{ZoteroBib}: spletno orodje za hitro ustvarjanje bibliografij, ki podpira izvoz v format \texttt{.bib}.
+\item \href{https://mathscinet.ams.org/mathscinet}{MathSciNet}: spletna baza podatkov za matematiko.
+\item \href{https://dblp.org/}{DBLP}: baza podatkov za računalništvo.
+\end{itemize}
+
+Ko smo pripravili našo bazo podatkov referenc (tj. našo datoteko \texttt{.bib}, recimo \texttt{literatura.bib}), moramo v našem LaTeX dokumentu naložiti paket \texttt{biblatex} in povezati datoteko z bibliografskimi podatki.
+To storimo z naslednjimi ukazi v preambuli:
+
+\begin{verbatim}
+\usepackage{biblatex} % Naloži paket biblatex
+\addbibresource{literatura.bib} % Poveže datoteko z bibliografskimi podatki, recimo literatura.bib
+\end{verbatim}
+
+V besedilu našega dokumenta se na reference sklicujemo z ukazom \texttt{{\textbackslash}cite\{\textless ključ\textgreater \}}, kjer je \texttt{\textless ključ\textgreater } ključ vnosa v naši datoteki \texttt{.bib}.
+Parameter \texttt{\textless ključ\textgreater } lahko je tudi seznam ključev, ločenih z vejico, če želimo sklicevati na več referenc hkrati.
+
+Na koncu dokumenta (ali, kjerkoli  že želimo natisniti seznam referenc), dodamo ukaz \texttt{{\textbackslash}printbibliography}, ki natisne seznam vseh referenc, na katere smo se sklicevali v besedilu.
+Upoštevajte, da čeprav nismo uporabili vseh referenc iz datoteke \texttt{.bib}, bo \texttt{{\textbackslash}printbibliography} natisnil le tiste, na katere smo se sklicevali z ukazom \texttt{{\textbackslash}cite\{\textless ključ\textgreater \}}.
+
+Z uporabo BibLaTeX lahko na nadzorovan način prilagodimo videz naših citatov in sklicev. To storimo z izbiro sloga citiranja, ki ga določimo kot možnost pri nalaganju paketa \texttt{biblatex}.
+Na primer,
+
+\begin{verbatim}
+\usepackage[style=alphabetic]{biblatex}
+\end{verbatim}
+
+naloži slog \texttt{alphabetic}, ki uporablja črke iz imen avtorjev in leto izdaje za označevanje citatov v besedilu. Privzeto je slog \texttt{numeric}, ki uporablja številke za označevanje citatov.
+Obstaja veliko različnih slogov citiranja, ki jih lahko uporabimo, odvisno od naših potreb in preferenc.
+Obsežen seznam slogov najdete v dokumentaciji paketa \href{https://ctan.org/pkg/biblatex?lang=en}{BibLaTeX} ali na \href{https://www.overleaf.com/learn/latex/Biblatex\_bibliography\_styles}{Overleaf}.
+
+\begin{framed}
+\textbf{Pazite!}\\
+Slog citatov lahko spreminjamo neodvisno, to pomeni, da lahko spreminjamo, kaj ukaz \texttt{{\textbackslash}cite} natisne v našem besedilu in kako se natisnejo oznake, ko natisnemo bibliografijo, vendar je dobro ohraniti enak slog.
+\end{framed}
+
+Če damo možnost \texttt{sorting=ynt} razvrsti bibliografijo po letu izdaje (\texttt{y}), nato po imenu avtorja (\texttt{n}) in nato po naslovu (\texttt{t}). Privzeto je \texttt{sorting=nty}, kar pomeni, da se najprej razvrsti po imenu avtorja, nato po naslovu in nato po letu izdaje.
+
+Celoten seznam možnosti za razvrščanje najdete v dokumentaciji paketa \href{https://ctan.org/pkg/biblatex?lang=en}{\texttt{BibLaTeX}} ali na \href{https://tug.org/biblatex-cheatsheet/biblatex-cheatsheet.pdf}{BibLaTeX cheat sheet}.
+
+Kot smo že omenili, ukaz \texttt{{\textbackslash}printbibliography} natisne seznam vseh referenc, na katere smo se sklicevali v besedilu.
+Če želimo natisniti reference, na katere se nismo sklicevali, lahko uporabimo ukaz \texttt{{\textbackslash}nocite\{\textless ključ\textgreater \}}.
+Ta ukaz nam omogoča, da vključimo določene vnose v bibliografijo, tudi če se nanje nismo sklicevali v besedilu.
+Če želimo vključiti vse vnose iz naše datoteke \texttt{.bib}, lahko uporabimo ukaz \texttt{{\textbackslash}nocite\{*\}}.
+
+Ukaz \texttt{{\textbackslash}printbibliography} lahko sprejme različne možnosti, ki nadzorujejo videz bibliografije.
+Na primer, lahko uporabimo možnost \texttt{title}, da spremenimo naslov bibliografije, kot je prikazano spodaj:
+
+\begin{example}\label{eg_literatura_2}\end{example}Referenca lahko organizirate z uporabo filtrov.
+Na primer, lahko natisnemo samo knjige z uporabo možnosti \texttt{type=book}:
+
+\begin{example}\label{eg_literatura_3}\end{example}Na voljo so filtri \texttt{type}, \texttt{keywords} in \texttt{category} in lahko uporabimo tudi njihove negacije. Z ukazom \texttt{{\textbackslash}defbibfilter\{\textless ime\_filtra\textgreater \}} lahko definiramo tudi svoje filtre.
+
+\begin{example}\label{eg_literatura_4}\end{example}\begin{example}\label{eg_literatura_5}\end{example}Privzeto se bibliografija ne prikaže v kazalu vsebine. Če želimo, da se prikaže, lahko uporabimo možnost \texttt{heading}.
+Različen vrednosti za možnost \texttt{heading} so v  Table~\ref{tab:heading_options}`.
+
+\begin{table}
+\centering
+\caption[]{Naslov bibliografije v kazalu.}
+\label{tab:heading_options}
+\begin{tabular}{p{\dimexpr 0.500\linewidth-2\tabcolsep}p{\dimexpr 0.500\linewidth-2\tabcolsep}}
+\toprule
+Vrednost & Opis \\
+\hline
+\texttt{bibliography} & privzeto, kot je razdelek >>z zvezdico<<. \\
+\texttt{bibintoc} & kot razdelek z zvezdico, vendar se bo pojavil v kazalu. \\
+\texttt{subbibliography} & bo bibliografija padla za eno stopnjo v hierarhiji (\texttt{{\textbackslash}section*} namesto \texttt{{\textbackslash}chapter*}, \texttt{{\textbackslash}subsection*} namesto \texttt{{\textbackslash}section*} in tako naprej). \\
+\texttt{bibnumbered} & naraven razdelek (brez zvezdice), torej s številko in v kazalu. \\
+\texttt{subbibintoc} & podobno kot subbibliography, vendar bo prikazana v kazalu. \\
+\texttt{subbibnumbered} & podobno kot subbibliography, vendar brez zvezdice. \\
+\texttt{none} & ne bo natisnil naslova. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{example}\label{eg_literatura_heading_1}\end{example}\begin{example}\label{eg_literatura_heading_2}\end{example}\begin{example}\label{eg_literatura_heading_3}\end{example}\begin{example}\label{eg_literatura_heading_4}\end{example}\begin{example}\label{eg_literatura_heading_5}\end{example}\begin{example}\label{eg_literatura_heading_6}\end{example}\begin{example}\label{eg_literatura_heading_7}\end{example}\subsubsection{Vaje}\label{latexLiteratura_vaje}
+
+\begin{itemize}
+\item Exercise~\ref{ex_hyperref}: Sklicevanje z uporabo paketa \texttt{hyperref}.
+\item Exercise~\ref{ex_sklici}: Sklicevanje na različne elemente v dokumentu.
+\item Exercise~\ref{ex_biblatex}: Uporaba BibLaTeX-a za upravljanje literature.
+\end{itemize}
+
+%  - [ ] {numref}`Vaja {number} <ex_hyperref>`
+% - [ ] {numref}`Vaja {number} <ex_sklici>`
+% - [ ] {numref}`Vaja {number} <ex_biblatex>`

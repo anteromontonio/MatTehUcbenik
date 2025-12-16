@@ -1,0 +1,323 @@
+\subsection{Osnovna okolja}
+
+\begin{framed}
+\textbf{Opomba}\\
+Včasih, ko vadimo z LaTeXom, se znajdemo v situaciji, ko moramo vstaviti lažno besedilo, tj. besedilo, katerega vsebina ni pomembna.
+LaTeX ima za to poseben paket, in sicer \texttt{lipsum}.
+Ta paket nam omogoča dostop do 150 odstavkov besedila \href{https://www.lipsum.com/}{Lorem Ipsum},ki je delček besedila \textit{``De finibus bonorum et malorum''} avtorja Cicero.
+
+Ko pri vsakem paketu, ga morate naložiti z ukazom \texttt{{\textbackslash}usepackage\{lipsum\}} v preambuli.
+Nato lahko vstavite lažno besedilo z ukazom \texttt{{\textbackslash}lipsum[\textless razpon odstavkov\textgreater ][\textless razpon stavkov\textgreater ]}, kjer sta \texttt{\textless razpon odstavkov\textgreater } in \texttt{\textless razpon stavkov\textgreater } razpon odstavkov in stavkov, ki jih želimo vstaviti.
+
+Na primer, \texttt{{\textbackslash}lipsum[1-3]} bo vstavilo prve tri odstavke besedila Lorem Ipsum, medtem ko bo \texttt{{\textbackslash}lipsum[4][1]} vstavilo samo prvi stavek četrtega odstavka.
+\end{framed}
+
+\subsubsection{Logična struktura dokumenta}
+
+LaTeX ima na voljo posebni ukazi za logično strukturo dokumenta.
+Sintaksa teh ukazov je \texttt{{\textbackslash}ime\_enote\{naslov\}}, kjer je \texttt{ime\_enote} ime loginčne enote, npr. \texttt{section}, medtem ko je \texttt{naslov} besedilo naslova, ki ga želimo prikazati v dokumentu.
+
+Dejanske logične enote, ki so na voljo, so odvisne od razreda dokumenta, npr. za razred \texttt{article} so na voljo enote \texttt{section}, \texttt{subsection}, \texttt{subsubsection}, \texttt{paragraph} in \texttt{supargraph}.\newline
+Razreda \texttt{report} in \texttt{book} imata na voljo tudi ukazi \texttt{{\textbackslash}chapter\{naslov\}}.
+
+\begin{example}\label{latexuvod_razdelki}\end{example}Vse te razrede dokumentov imajo tudi enote \texttt{part}, ki ga lahko uporabite za razdelitev dokumenta na več delov, ne da bi to vplivalo na oštevilčenje poglavij, razdelkov itd.
+
+Razmik med odstavki, oštevilčenje in velikost pisave naslovov bo samodejno nastavil LaTeX. To pomeni, da vam ni treba ročno oštevilčevati naslovov in da se, če na primer, odločite, da boste dodali novo poglavje na začetek dokumenta, vsa oštevilčenje poglavij, razdelkov itd. se bo samodejno posodobilo.
+
+Ukaz \texttt{{\textbackslash}tableofcontents} natisne kazalo našega dokumenta, ki sledi strukturi, ki smo jo določili z zgoraj opisanimi ukazi.
+Upoštevajte, da je treba ta ukaz uporabiti v telesu datoteke, da se kazalo natisne na ustrezno mesto.
+
+Vsi ukazi za logično strukturo dokumenta imajo tudi \textit{``z zvezdico''} različico, npr. \texttt{{\textbackslash}section*\{naslov\}}, ki ustvari naslov brez oštevilčenja in ne vključuje naslova v kazalo.
+
+Včasih je naslov našega razdelka zelo dolg in ne želimo, da se tako natisne v kazalu. V tem primeru lahko uporabimo naslednjo sintakso, da natisnemo krajšo različico naslova.
+
+\begin{verbatim}
+\section[Kratki naslov za kazalo]{Dolgi in še posebno dologočasen naslov,
+ki se izpiše na začetku razdelka
+ampak noro bi bilo,
+če bi se tako izpisal tudi v kazalu}
+\end{verbatim}
+
+\subsubsection{Poravnava besedila}\label{latexOsnovnaOkolja_poravnavaBesedila}
+
+LaTeX privzeto poravna besedilo z obeh strani, kar pomeni, da prilagodi prostor med besedami, tako da so vse vrstice približno enake dolžine.
+V urejevalnikih WYSIWYG se ta nastavitev pogosto imenuje \textit{obojestransko poravnano}.
+
+Včasih želimo besedilo poravnati drugače, zato ima LaTeX tri različne okolja: \texttt{flushleft}, \texttt{flushright} in \texttt{center}.
+Vendar je izvedba tega okolja nekoliko zastarela in povzroča težave z razdeljevanjem besed (kar LaTeX običajno opravi sam).
+Sodobne različice teh okolij so bile implementirane v paketu \texttt{ragged2e}.
+Ta paket morate naložiti v preambuli z ukazom \texttt{{\textbackslash}usepackage\{ragged2e\}}.
+Ta paket ponuja okolja \texttt{FlushLeft}, \texttt{FlushRight} in \texttt{Center}, ki so izboljšane različice zgoraj omenjenih okolij.
+
+Njegova uporaba je preprosta in lažje razumljiva s pomočjo vaje.
+
+\subsubsection{Seznami}\label{latexOsnovnaOkolja_seznami}
+
+LaTeX ima tri vrste seznamov: \textit{urejene sezname}, \textit{neurejene sezname} in \textit{opise}.
+Sintaksa za vse tri vrste seznamov je podobna.
+Začnemo z okoljem, ki ga želimo uporabiti, nato pa vsak element seznama začnemo z ukazom \texttt{{\textbackslash}item}.
+Za urejene sezname uporabimo okolje \texttt{enumerate}, za neurejene sezname okolje \texttt{itemize}, za opise pa okolje \texttt{description}.
+
+\begin{example}\label{latexuvod_seznami}\end{example}Podobno kot pri logičnih enotah, LaTeX samodejno izvede oštevilčenje urejenih seznamov.
+
+Lahko tudi gnezditi sezname, tj. imeti seznam znotraj seznama.
+
+\begin{example}\label{latexuvod_gnezdeniseznami}\end{example}Paket \href{https://ctan.org/pkg/enumitem?lang=en}{\texttt{enumitem}} (v ang.), nam omogoča prilagoditev videza seznamov.
+Na primer, lahko spremenimo oznake neurejenih seznamov ali prilagodimo zamik elementov seznama.
+Za uporabo tega paketa ga moramo naložiti v preambuli z ukazom \texttt{{\textbackslash}usepackage\{enumitem\}}.
+Ko smo naložili paket, lahko uporabimo seznam lastnosti po začetku ustreznega okolja.
+
+Možnosti uporabe tega paketa so ogromne in vključujejo prilagajanje oznak, boljši razmik med seznami, sezname v vrstici, različne sloge za opisne sezname in drugo. Tukaj bomo obravnavali le nekaj osnovnih primerov.
+
+\begin{example}\label{latexuvod_enumitem-1}\end{example}\begin{example}\label{latexuvod_enumitem-2}\end{example}Seveda, ročno nastavljanje lastnosti vsakega seznama je nevarno in v nasprotju s filozofijo~LaTeXa.
+Globalne lastnosti lahko nastavimo na naslednji način.
+
+\begin{example}\label{latexuvod_enumitem-3}\end{example}\begin{framed}
+\textbf{Opozorilo!}\\
+Dejstvo, da lahko sezname močno prilagodimo, še ne pomeni, da bi to morali storiti.
+Na splošno bi morali izbrati slog in se ga držati.
+Poleg tega je privzeti slog pogosto dovolj dober za mnoge namene.
+\end{framed}
+
+\subsubsection{Tabele}\label{latexOsnovnaOkolja_tabele}
+
+Tabele v LaTeXu so bile obravnavane na več načinov.
+LaTeX ima zelo primitivni način obravnavanja navpično poravnanih vsebin, ki jih je mogoče enostavno pretvoriti v tabelo.
+Obstaja več paketov, ki razširjajo to funkcionalnost.
+Eden od prvih in najpogosteje uporabljanih je paket \texttt{array}.
+Ta paket morate običajno naložiti, ko delate s tabelami.
+
+\begin{framed}
+\textbf{Glej tudi}\\
+Obstaja veliko paketov, ki na različne načine razširjajo paket \texttt{array}.
+Vsi niso medsebojno združljivi, zato njihovo podrobno raziskovanje presega obseg tega učbenika.
+Vendar pa so najpogosteje uporabljane funkcionalnosti za tabele zajete v enem od naslednjih dveh virov (v angleščini):
+
+\begin{itemize}
+\item \href{https://www.overleaf.com/learn/latex/Tables}{Tabele --- Dokumentacija Overleaf}.
+\item \href{https://en.wikibooks.org/wiki/LaTeX/Tables}{LaTeX wikibooks --- tabele}.
+\end{itemize}
+\end{framed}
+
+LaTeX uporablja okolje \texttt{tabular} za tiskanje vsebine, ki je poravnana tako navpično kot vodoravno, torej nekaj, kar je zelo podobno tabeli.
+Sintaksa prva vrstica okolja je
+
+\begin{verbatim}
+\begin{tabular}[pos]{<poravnava stolpcev>}
+\end{verbatim}
+
+kjer je \texttt{pos} neobvezna možnost, ki določa navpično poravnavo tabele glede na preostali del besedila (privzeto je \texttt{c}, tj. središče, Vendar sta možna tudi \texttt{b} (za dno) in \texttt{t} (za vrh)).
+Argument \texttt{\textless poravnava stolpcev\textgreater } je niz, ki določajo številko in poravnavo stolpcev.
+Možnosti za ta niz so pojasnjene v Table~\ref{tab-specifikacija-stolpca}. Nekatere od njih lahko zahtevajo paket \texttt{array}.
+
+\begin{table}
+\centering
+\caption[]{Specifikacija stolpca za okolje \texttt{tabular}}
+\label{tab-specifikacija-stolpca}
+\begin{tabular}{p{\dimexpr 0.500\linewidth-2\tabcolsep}p{\dimexpr 0.500\linewidth-2\tabcolsep}}
+\toprule
+Znak & Opis \\
+\hline
+\texttt{l} & Poravnava besedila v stolpcu na levo. \\
+\texttt{c} & Poravnava besedila v stolpcu na sredino. \\
+\texttt{r} & Poravnava besedila v stolpcu na desno. \\
+\texttt{p\{\textless širina\textgreater \}} & Besedilo v stolpcu bo zavito, če preseže določeno širino. \\
+\texttt{m\{\textless širina\textgreater \}} & Kot \texttt{p\{\textless širina\textgreater \}}, vendar bo besedilo navpično poravnano na sredino celice. \\
+\texttt{b\{\textless širina\textgreater \}} & Kot \texttt{p\{\textless širina\textgreater \}}, vendar bo besedilo navpično poravnano na dno celice. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{example}\end{example}\begin{example}\label{latexuvod_tabular-poravnava}\end{example}\begin{example}\end{example}Za ločevanje stolpcev v tabeli uporabimo znak \texttt{\&}, za začetek nove vrstice pa ukaz \texttt{{\textbackslash}{\textbackslash}}.
+Če želimo navpično črto med stolpci, uporabimo znak \texttt{|} v nizu \texttt{\textless poravnava stolpcev\textgreater }.
+Za vodoravne črte, ki se raztezajo čez celotno širino tabele, uporabimo ukaz \texttt{{\textbackslash}hline} na koncu vrstice.
+Za vodoravne črte, ki se raztezajo čez določene stolpce, uporabimo ukaz \texttt{{\textbackslash}cline\{i-j\}}, kjer \texttt{i} in \texttt{j} določata začetni in končni stolpec, čez katerega se črta razteza.
+
+\begin{example}\end{example}Zgoraj opisani ukazi so že dovolj za izdelavo kompleksnih tabel v LaTeXu. Vendar pa končni rezultat ni nujno lep in izgleda nekoliko zastarel.
+
+Obstaja veliko paketov, ki razširjajo funkcionalnosti okolja \texttt{tabular}. Osredotočili se bomo na paket \href{https://ctan.org/pkg/booktabs?lang=en}{\texttt{booktabs}}, ki je zasnovan za izdelavo tabel v LaTeXu, ki so primerne za objavo. Ta paket velja za sodoben standard za izdelavo tabel v LaTeXu.
+
+Ta paket ustvarja tabele v skladu z naslednjima dvema konvencijama:
+
+\begin{enumerate}
+\item Lepe tabele ne potrebujejo navpičnih črt.
+\item Lepe tabele ne zlorabljajo vodoravnih črt, zlasti pa nikoli ne smemo uporabljati dvojnih vodoravnih črt.
+\end{enumerate}
+
+Vse, kar je izrecno obravnavano v tej knjigi, je združljivo s paketom \texttt{booktabs}, vendar lahko nekateri drugi klasični pristopi (zlasti navpične črte na tabelah) povzročijo nepričakovane rezultate.
+
+Najprej moramo naložiti paket z ukazom \texttt{{\textbackslash}usepackage\{booktabs\}} v preambuli.
+Nato lahko uporabimo ukaze \texttt{{\textbackslash}toprule}, \texttt{{\textbackslash}midrule} in \texttt{{\textbackslash}bottomrule} za ustvarjanje vodoravnih črt na vrhu, sredini in dnu tabele.
+
+\begin{example}\label{eg_booktabs}\end{example}Simbol \texttt{@\{sep\}} lahko uporabimo za vstavljanje vsebine \textit{med stolpce}. Tukaj je \texttt{sep} niz, ki bo vstavljen med celice ustreznih stolpcev.
+Ta sintaksa je uporabna za vstavljanje dodatnega prostora med stolpci z uporabo ukaza \texttt{{\textbackslash}hspace\{\textless širina\textgreater \}} kot vrednost za niz \texttt{sep}.
+Lahko jo uporabimo tudi za vstavljanje posebnih znakov.
+Naslednji primer naj pojasni ta koncept.
+
+\begin{example}\label{eg_booktabs-2}\end{example}Ukaz \texttt{{\textbackslash}multicolumn\{n\}\{\textless poravnava\textgreater \}\{besedilo\}} združi \texttt{n} stolpcev v en stolpec, ki vsebuje \texttt{besedilo} in je poravnan glede na \texttt{\textless poravnava\textgreater }.
+Ta ukaz je uporaben, kadar želimo, da se besedilo razteza čez več stolpcev, na primer za naslove stolpcev.
+
+Delno vodoravno črto iz stolpca \texttt{i} v stolpec \texttt{j} natisnemo z ukazom \texttt{{\textbackslash}cmidrule\{i-j\}}. To je podobno ukazu \texttt{{\textbackslash}cline}, ki smo ga preučili prej, vendar je del paketa \texttt{booktabs}.
+Črta, ki jo dobimo, je tanjša in izgleda bolj estetsko.
+
+Včasih potrebujemo, da se celica razteza čez več vrstic (v nasprotju z več stolpci). To je mogoče v LaTeXu, ko naložimo paket \href{https://ctan.org/pkg/multirow?lang=en}{\texttt{multirow}}.
+Ta paket nam omogoča uporabo ukaza \texttt{{\textbackslash}multirow}, ki ima naslednjo sintakso.
+
+\begin{verbatim}
+\multirow[np]{<štVrstic>}{<širina>}[nGibanje]{besedilo}
+\end{verbatim}
+
+kjer je \texttt{np} navpična poravnava celice glede na preostali del besedila (privzeto je \texttt{c}, tj. središče, vendar sta možna tudi \texttt{b} (za dno) in \texttt{t} (za vrh)).
+Argument \texttt{štVrstic} je število vrstic, čez katere se celica razteza, \texttt{širina} pa širina celice (lahko uporabimo \texttt{*}, da LaTeX sam določi širino ali \texttt{=} za enako kot stolpec, v tem primeru, da je stolpec določen z \texttt{p\{\textless širina\textgreater \}}, \texttt{m\{\textless širina\textgreater \}} ali \texttt{b\{\textless širina\textgreater \}}).
+Neobvezni argument \texttt{nGibanje} določa navpično premikanje besedila v celici (privzeto je \texttt{0pt}, kar pomeni, da je besedilo navpično poravnano na sredino celice).
+Nazadnje je \texttt{besedilo} vsebina celice.
+
+Za razliko od ukaza \texttt{{\textbackslash}multicolumn}, ukaz \texttt{{\textbackslash}multirow} ne nadomesti celic v vrsticah, ki jih pokriva.
+To pomeni, da moramo v teh vrsticah pustiti prazne celice (tj. uporabiti \texttt{\&} za ločevanje stolpcev, vendar brez vsebine med njimi).
+
+Ko je treba stolpec oblikovati na določen način, je neprijetno v vsako celico vstaviti iste ukaze.
+Poleg tega, če se odločite, da je treba nekaj spremeniti v oblikovanju, bi morali vsako celico urediti posebej.
+Da bi se temu izognili, paket array
+opredeljuje \texttt{\textgreater \{〈ukazi〉\}} in \texttt{\textless \{〈ukazi〉\}} specifikacije stolpcev, ki se lahko uporabijo
+za vstavljanje kode pred in za stolpec.
+
+\begin{example}\label{eg_tables_cmdcols}\end{example}Čeprav je uporaba ukazov \texttt{\textgreater \{...\}} in \texttt{\textless \{...\}} priročna, če imamo samo en tak stolpec, postane hitro neprijetna, ko se v kateri koli tabeli pojavi več stolpcev istega tipa.
+V tem primeru je morda zaželeno uporabiti ukaz
+
+\begin{verbatim}
+\newcolumntype{<ime>}{<definicija>}
+\end{verbatim}
+
+za definiranje nove vrste stolpca, ki ga lahko uporabimo v okolju \texttt{tabular}.
+Tukaj je \texttt{\textless ime\textgreater } ime nove vrste stolpca (ena črka), \texttt{\textless definicija\textgreater } pa je definicija vrste stolpca, ki lahko vključuje ukaze \texttt{\textgreater \{...\}} in \texttt{\textless \{...\}}.
+
+\begin{example}\label{eg_tables_newcol}\end{example}\begin{framed}
+\textbf{Glej tudi!}\\
+Ukazi, opisani v tem razdelku, so dovolj za izdelavo lepih tabel v LaTeXu.
+Vendar pa obstaja veliko paketov, ki razširjajo funkcionalnosti okolja \texttt{tabular}.
+Če bralca zanimajo bolj napredne funkcije, naj si ogleda naslednje vire (v angleščini):
+
+\begin{itemize}
+\item Paket \href{https://ctan.org/pkg/longtable?lang=en}{\texttt{longtable}}. za tabele, ki se raztezajo čez več strani: [dokumentacija]
+\item Paket \href{https://ctan.org/pkg/colortbl?lang=en}{\texttt{colortbl}} za barvne tabele.
+\item Paket \href{https://ctan.org/pkg/tabularx?lang=en}{\texttt{tabularx}} za tabele, ki se prilagajo širini strani.
+\end{itemize}
+\end{framed}
+
+\subsubsection{Slike}\label{latexOsnovnaOkolja_slike}
+
+LaTeX sam po sebi ne podpira vključevanja slik, vendar pa to omogoča paket \href{https://ctan.org/pkg/graphicx?lang=en}{\texttt{graphicx}}.
+Ta paket moramo naložiti v preambuli z ukazom \texttt{{\textbackslash}usepackage\{graphicx\}}.
+Nato lahko uporabimo ukaz \texttt{{\textbackslash}includegraphics} za vključevanje slik v dokument.
+Ta ukaz ima naslednjo sintakso.
+
+\begin{verbatim}
+\includegraphics[<lastnosti>]{<pot do slike>}
+\end{verbatim}
+
+kjer je \texttt{\textless pot do slike\textgreater } pot do datoteke s sliko (relativna ali absolutna). Datoteka slike je lahko v različnih formatih, vendar so najbolj podprti formati \texttt{.png}, \texttt{.jpeg} in \texttt{.pdf}.
+Lahko izpustite končnico datoteke in LaTeX bo poskusil naslednje (v tem vrstnem redu): \texttt{.pdf}, \texttt{.png}, \texttt{.jpg}, \texttt{.mps}, \texttt{.jpeg}, \texttt{.jbig2}, \texttt{.jb2}.
+
+Neobvezni argument \texttt{\textless lastnosti\textgreater } je seznam lastnosti, ki jih želimo uporabiti pri vključitvi slike.
+Najpogosteje uporabljena lastnost sta \texttt{width} in \texttt{height}, ki določata širino oz. višino slike. Če samo ena od teh lastnosti določi, bo druga samodejno prilagojena, da ohrani razmerje stranic slike.
+
+\begin{example}\label{eg-slike-includegraphics-widthheight}\end{example}Namesto ročnega določanja širine ali višine slike lahko uporabimo tudi možnosti \texttt{scale} za povečanje ali pomanjšanje slike za določen faktor.
+Prenos negativnih vrednosti bo zrcalil sliko.
+
+\begin{example}\label{eg-slike-includegraphics-scale}\end{example}Če želimo sliko zavrteti, lahko uporabimo možnost \texttt{angle}, ki določa kot vrtenja v stopinjah (v nasprotni smeri urinega kazalca).
+Privzeto je slika zavrtana okoli svojega spodnjega levega kota, vendar lahko uporabimo možnost \texttt{origin}, da spremenimo to točko.
+Možne vrednosti za \texttt{origin} so \texttt{c} (središče), \texttt{l} (levo), \texttt{r} (desno), \texttt{t} (zgoraj), \texttt{b} (spodaj) in kombinacije teh vrednosti, kot so \texttt{lt} (levo zgoraj), \texttt{rb} (desno spodaj) itd.
+
+\begin{example}\label{eg-slike-includegraphics-angle}\end{example}\subsubsection{Plavajoči elementi}
+
+Če poskusite napisati daljši tekst z več tabelami in slikami, boste kmalu opazili problem: vključitev teh elementov v običajni tekstovni tok bo povzročila veliko praznega prostora.
+
+Poglejmo naslednji primer:
+
+\begin{example}\label{eg-floating-1}\end{example}V privi strani je veliko praznega prostora, ki ga povzroča slika.
+Da bi se temu izognili, LaTeX ponuja koncept plavajočih elementov, ki vključuje slike in tabele.
+Plavajoči elementi so lahko postavljeni na najbolj primerno mesto v dokumentu, ne da bi motili besedilo.
+
+LaTeX ponuja dve okolji za plavajoče elemente: \texttt{figure} za slike in \texttt{table} za tabele.
+Ta okolja imajo podobno sintakso.
+
+\begin{verbatim}
+\begin{figure}[<pozicija>]
+%...Vsebina slike, običajno z ukazom \includegraphics...
+\end{figure}
+
+\begin{table}[<pozicija>]
+%... Vsebina tabele, običajno z okoljem tabular...
+\end{table}
+\end{verbatim}
+
+kjer je \texttt{\textless pozicija\textgreater } neobvezna možnost, ki določa, kje naj LaTeX poskuša postaviti plavajoči element.
+Možne vrednosti so v Table~\ref{tab-floating-positions}.
+
+\begin{table}
+\centering
+\caption[]{Pozicije plavajočih elementov}
+\label{tab-floating-positions}
+\begin{tabular}{p{\dimexpr 0.500\linewidth-2\tabcolsep}p{\dimexpr 0.500\linewidth-2\tabcolsep}}
+\toprule
+Oznaka & Objekt lahko stoji... \\
+\hline
+\texttt{h} & tukaj, na mestu, kjer je definiran v besedilu (samo za majhne elemente). \\
+\texttt{t} & na vrhu strani. \\
+\texttt{b} & na dnu strani. \\
+\texttt{p} & na posebni strani, ki vsebuje samo plavajoče elemente. \\
+\texttt{!} & brez upoštevanja večine vgrajenih parametrov, ki bi lahko preprečile, da je objekt postavljen na to mesto. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Na primer, \texttt{{\textbackslash}begin\{table\}[!hbp]} pomeni, da naj LaTeX poskuša postaviti tabelo tukaj, če je mogoče (\texttt{h}), sicer na dno strani (\texttt{b}), če to ni mogoče, pa na posebno stran samo za plavajoče elemente (\texttt{p}); to vse pa lahko naredi tudi, če rezultat ni najlepši možen (\texttt{!}).
+Če ne podamo nobene možnosti, LaTeX privzeto uporabi \texttt{tbp}.
+
+Z ukazom \texttt{{\textbackslash}caption\{\textless pojasnilo\textgreater \}} lahko dodamo pojasnilo plavajočemu elementu.
+Ta ukaz mora biti znotraj okolja \texttt{figure} ali \texttt{table}.
+Oštevilčenje in niz ``Table'' oziroma ``Figure'' se dodata samodejno.
+Seveda, če smo v preambuli spremenili jezik dokumenta z ukazom \texttt{{\textbackslash}usepackage[\textless jezik\textgreater ]\{babel\}}, se bosta spremenila tudi ta niza.
+Običajno uporabljuamo ukaz \texttt{{\textbackslash}centering} znotraj okolja \texttt{figure} ali \texttt{table}, da centriramo vsebino.
+
+\begin{example}\label{eg-floating-2}\end{example}S ukazi \texttt{{\textbackslash}listoftables} in \texttt{{\textbackslash}listoffigures} lahko ustvarimo seznam tabel oziroma seznam slik, podobno kot z ukazom \texttt{{\textbackslash}tableofcontents} za kazalo vsebine.
+Če uporabljamo dolga pojasnila, lahko podobno kot pri naslovih logičnih enot kot dodatni argument zapišemo kratko pojasnilo, ki se bo pojavilo v seznamu tabel oziroma seznamu slik:
+
+\begin{verbatim}
+\caption[<kratko pojasnilo>]{<dolgo pojasnilo>}
+\end{verbatim}
+
+Včasih želimo vključiti več slik skupaj. To lahko storimo z uporabo paketa \texttt{subcaption}.
+Ta paket nam omogoča uporabo okolja \texttt{subfigure} znotraj okolja \texttt{figure}.
+Vsaka podslika lahko ima svoje pojasnilo z ukazom \texttt{{\textbackslash}caption\{\textless pojasnilo\textgreater \}}.
+Celotna figura lahko ima tudi svoje pojasnilo z ukazom \texttt{{\textbackslash}caption\{\textless pojasnilo\textgreater \}} znotraj okolja \texttt{figure}.
+Okolje \texttt{subfigure} ima podobno sintakso kot okolje \texttt{figure}, vendar mora imeti tudi obvezni argument, ki določa širino podslike.
+
+\begin{example}\label{eg-floating-3}\end{example}Ukaz \texttt{{\textbackslash}centering} znotraj okolja figure obravnava obe sliki kot eno samo sliko.
+Na splošno je dobro uporabiti relativne dolžine za razporeditev slik. V tem primeru določamo, da je vsaka podslika 40 \% širine strani.
+Ukaz \texttt{{\textbackslash}hfill} med podslikama vstavi vodoravni prostor, ki se razteza, da zapolni prostor med njima.
+Namesto \texttt{{\textbackslash}hfill} lahko uporabimo tudi \texttt{{\textbackslash}hspace\{\textless širina\textgreater \}}, da vstavimo fiksno širino prostora med podslikama.
+Podnaslovi se ne prikažejo pri tiskanju seznama slik (z uporabo ukaza \texttt{{\textbackslash}listofigures}), temveč le napisi, povezani s sliko.
+Okolje \texttt{subfigure} ima tudi neobvezni argument, ki določa pozicijo podslike glede na slike okoli nje; množne vrednosti so \texttt{t}, \texttt{b} in \texttt{c} (za vrh, dno, sredino).
+
+Podobno kot podslike lahko ustvarimo tudi podtabele z uporabo okolja \texttt{subtable} znotraj okolja \texttt{table}.
+Uporaba je enaka kot pri podslikah, ampak ni priporočljiva.
+Za razliko od slik, skoraj ni primerov, ko bi imeli dve tabeli pod istim naslovom boljšo berljivost kot pod različnimi naslovi.
+
+\subsubsection{Vaje}\label{latexOsnovnaOkolja_vaje}
+
+\begin{itemize}
+\item Exercise~\ref{ex_razdelki}: Ustvarite dokument z več razdelki in podrazdelki.
+\item Exercise~\ref{ex_poravnava}: Ustvarite tabelo z različnimi poravnavami stolpcev in vrstic.
+\item Exercise~\ref{ex_seznami}: Ustvarite različne vrste seznamov (oštevilčene, neoštevilčene, opisne).
+\item Exercise~\ref{ex_booktabs_1}: Ustvarite tabelo s paketom \texttt{booktabs}.
+\item Exercise~\ref{ex_booktabs_2}: Uredite tabelo iz prejšnje vaje z uporabo ukaza \texttt{{\textbackslash}multicolumn}.
+\item Exercise~\ref{ex_booktabs_3}: Uredite tabelo iz prejšnje vaje z uporabo ukaza \texttt{{\textbackslash}cmidrule}.
+\item Exercise~\ref{ex_booktabs_4}: Uredite tabelo iz prejšnje vaje z uporabo ukaza \texttt{{\textbackslash}multirow}.
+\item Exercise~\ref{ex_plavajoce}: Ustvarite dokument z vsaj tremi tabelami in dvema slikama kot plavajoče elemente.
+\end{itemize}
+
+%  :::{exercise} Domača naloga
+% :nonumber: 
+% 
+% :::

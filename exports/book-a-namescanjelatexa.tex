@@ -1,0 +1,90 @@
+\subsection{Nameščanje LaTeXa na svoj računalnik}
+
+LaTeX je popolnoma brezplačen in ga lahko enostavno namestite na svoj računalnik.
+Uradno spletno stran za namestitev si lahko ogledate \href{https://www.latex-project.org/get/}{tukaj} (v angleščini).
+
+Za uporabo LaTeXa potrebujete v bistvu dve orodji:
+
+\begin{itemize}
+\item distribucijo LaTeX, ki je sam program LaTeX, s katerim boste ustvarjali svoje dokumente.
+\item urejevalnik besedil, ki je vmesnik, ki ga boste uporabljali za pisanje in izdelavo dokumentov. Verjetno že imate urejevalnik besedil na svojem računalniku (npr. Notepad ali TextEdit). Ti urejevalniki so večnamenski in imajo običajno zelo malo orodij. Na tej strani priporočamo nekaj možnosti, ki vam bodo olajšale delo.
+\end{itemize}
+
+\subsubsection{Windows}
+
+\paragraph{Namestitev distribucije}
+
+\begin{enumerate}
+\item Odprite spletno stran \href{https://miktex.org/download}{MiKTeX}.
+\item Prenesite namestitveni program za Windows.
+\item Zaženite namestitev in sledite navodilom (pustite privzete nastavitve).
+\item Po zaključku preverite namestitev tako, da v ukazni vrstici (Command Prompt) vpišete:
+
+\begin{verbatim}
+pdflatex - -version
+\end{verbatim}
+\end{enumerate}
+
+\paragraph{Priporočeni urejevalniki}
+
+\begin{itemize}
+\item \href{https://code.visualstudio.com/}{Visual Studio Code} (potrebujete tudi razširitev \textit{LaTeX Workshop}). Še bolje, predlagamo, da namestite \href{https://vscodium.com/}{VSCodium}, brezplačno/odprtokodno različico vscode.
+\item \href{https://www.tug.org/texworks/}{TeXworks} (preprost, pogosto nameščen z MiKTeX).
+\item \href{https://www.texstudio.org/}{TeXstudio} (bolj napreden, uporabniku prijazen).
+\end{itemize}
+
+\subsubsection{macOS}
+
+\paragraph{Namestitev distribucije}
+
+\begin{enumerate}
+\item Odprite spletno stran \href{https://tug.org/mactex/}{MacTeX}.
+\item Prenesite paket \textbf{MacTeX.pkg} (velik {\textasciitilde}4 GB).
+\item Odprite preneseno datoteko in sledite navodilom za namestitev.
+\item Preverite namestitev v Terminalu:
+
+\begin{verbatim}
+pdflatex - -version
+\end{verbatim}
+\end{enumerate}
+
+\paragraph{Priporočeni urejevalniki}
+
+\begin{itemize}
+\item \href{https://code.visualstudio.com/}{Visual Studio Code} (razširitev \textit{LaTeX Workshop}).
+Še bolje, predlagamo, da namestite \href{https://vscodium.com/}{VSCodium}, brezplačno/odprtokodno različico vscode.
+\item \href{https://pages.uoregon.edu/koch/texshop/}{TeXShop} (priložen MacTeX-u).
+\item \href{https://www.texstudio.org/}{TeXstudio}.
+\end{itemize}
+
+\subsubsection{Linux (primer: Ubuntu/Debian)}
+
+Če uporabljate Linux, verjetno ne potrebujete naših navodil.
+
+\paragraph{Namestitev distribucije}
+
+\begin{enumerate}
+\item Odprite Terminal.
+\item Namestite TeX Live:
+
+\begin{verbatim}
+sudo apt update
+sudo apt install texlive -full
+\end{verbatim}
+
+
+\item Preverite namestitev:
+
+\begin{verbatim}
+pdflatex - -version
+\end{verbatim}
+\end{enumerate}
+
+\paragraph{Priporočeni urejevalniki}
+
+\begin{itemize}
+\item \href{https://code.visualstudio.com/}{Visual Studio Code}. (razširitev \textit{LaTeX Workshop}). Še bolje, predlagamo, da namestite \href{https://vscodium.com/}{VSCodium}, brezplačno/odprtokodno različico vscode.
+\item \href{https://kile.sourceforge.io/}{Kile} (posebej priljubljen v Linux okolju).
+\item \href{https://www.texstudio.org/}{TeXstudio}.
+\item \href{https://www.tug.org/texworks/}{TeXworks}.
+\end{itemize}

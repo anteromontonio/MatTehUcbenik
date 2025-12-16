@@ -1,0 +1,255 @@
+\subsection{Beamer: Prestavitve v LaTeXu}
+
+% https://www.overleaf.com/learn/latex/Beamer_Presentations%3A_A_Tutorial_for_Beginners_(Part_1)%E2%80%94Getting_Started
+
+Beamer je LaTeX razširitev za izdelavo drsnic (``slajdov'').
+Za izdelavo predstavitve z Beamerjem uporabimo razred \texttt{beamer} namesto \texttt{article}.
+Nato uporabimo okolja \texttt{frame} za vsak posamezen diapozitiv.
+
+\begin{framed}
+\textbf{Glej tudi: Beamer uporabniški vodič.}\\
+V tem poglaviu bomo predstavili osnovne koncepte in ukaze za ustvarjanje predstavitev z Beamerjem.
+Za podrobnejše informacije in napredne funkcije si oglejte uradno \href{https://tug.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf}{Beamer user guide}.
+\end{framed}
+
+\begin{framed}
+\textbf{Opozorilo}\\
+Razred \texttt{beamer} uporaba paket \texttt{babel} za jezike malo drugače kot običajni razredi dokumentov (kot so \texttt{article} ali \texttt{report}).
+V tem razredu je priporočljivo, da je jezik dokumenta določen kot možnost razreda dokumenta (npr. \texttt{{\textbackslash}documentclass[slovene]\{beamer\}}) in da se paket \texttt{babel} naloži brez možnosti jezika (npr. \texttt{{\textbackslash}usepackage\{babel\}}).
+\end{framed}
+
+Ukaz \texttt{{\textbackslash}frametitle\{\}} določi naslov drsnice. Lahko tudi uporabimo ukaz \texttt{framesubtitle\{\}} za podnaslov drsnice.
+Krajša možnost je, da naslov oz. podnaslov drsnice podamo kot možnost okolja \texttt{frame}; Example~\ref{eg_beamer_1}.
+
+\begin{example}\label{eg_beamer_1}\end{example}\subsubsection{Pomembne drsnice}
+
+Podobno kot pri člankih lahko tudi pri Beamer predstavitvah ustvarimo naslovni diapozitiv z uporabo ukazov \texttt{{\textbackslash}title\{\}}, \texttt{{\textbackslash}author\{\}} in \texttt{{\textbackslash}date\{\}} v preambuli dokumenta.
+
+Zdaj ukaz \texttt{{\textbackslash}maketitle} v telesu dokumenta ustvari naslovni diapozitiv. Ukaz \texttt{{\textbackslash}maketitle} je enakomerno kot
+
+\begin{verbatim}
+\begin{frame}
+\titlepage
+\end{frame}
+\end{verbatim}
+
+Običajno ukaz \texttt{{\textbackslash}date} nastavimo na ime konference ali dogodek, kjer bo predstavitev prikazana.
+V razreed beamer lahko tudi uporabljamo ukaze \texttt{{\textbackslash}institute\{\}}, \texttt{{\textbackslash}subtitle\{\}} in \texttt{{\textbackslash}titlegraphic\{\}} za dodajanje dodatnih informacij na naslovno drsnico; poglejte Example~\ref{eg_beamer-title-1}.
+
+\begin{example}\label{eg_beamer-title-1}\end{example}Nekatere teme Bemerja (glej Teme~in~barvne~sheme) dodajo informacije o avtorju in datumu na vsako drsnico.
+Če je vsebina teh polj predolga, ne bo dovolj prostora; v tem primeru lahko dodamo neobvezni kratek argument v ukaze (npr. \texttt{{\textbackslash}author[\textless kratek\textgreater ]\{\textless dolg\textgreater \}}), ki se bo prikazal v glavi ali nogi drsnice, poglejte Example~\ref{eg_beamer-title-2}.
+
+\begin{example}\label{eg_beamer-title-2}\end{example}Ukaz \texttt{{\textbackslash}titlegraphic\{\}} doda sliko na naslovno drsnico.
+Če želimo dodati logotip na vse drsnice, lahko uporabimo ukaz \texttt{{\textbackslash}logo\{\}} v preambuli dokumenta, poglejte Example~\ref{eg_beamer-logo}.
+Upoštevajte, da je pozicija logotipa odvisna od uporabljene teme. Poleg tega, nekatere teme ne podpirajo logotipov/grafik na naslovni drsnici.
+
+\begin{example}\label{eg_beamer-logo}\end{example}V razredu beamer lahko tudi uporabimo ukaze za \textit{logične strukture} kot so \texttt{{\textbackslash}section\{\}} in \texttt{{\textbackslash}subsection\{\}} za organizacijo predstavitve.
+Ti ukazi ne ustvarijo drsnic, vendar jih lahko uporabimo za generiranje kazala vsebine.
+To lahko storimo z uporabo ukaza \texttt{{\textbackslash}tableofcontents} v okolju \texttt{frame}, poglejte Example~\ref{eg_beamer-toc-1}.
+Upoštevajte, da razdelek \texttt{Literatura} ni v kazalo vključen, ker je definiran z ukazom \texttt{{\textbackslash}section*\{\}}.
+
+\begin{example}\label{eg_beamer-toc-1}\end{example}Če želimo kazalo prikazati postopoma, lahko k ukazom \texttt{{\textbackslash}tableofcontents} dodamo možnost \texttt{pausesections}. Poglejte Example~\ref{eg_beamer-toc-2}.
+
+\begin{example}\label{eg_beamer-toc-2}\end{example}Ukaze kot \texttt{{\textbackslash}section} ne ustvarijo drsnic, vendar lahko z ukazom \texttt{{\textbackslash}sectionpage} znotraj okolja \texttt{frame} ustvarimo drsnico, ki prikazuje naslov razdelka.
+
+%  Na žalost, ukaz `\sectionpage` ni dela skupaj z paketom `babel`.
+
+Druga možnost je ponatis kazala na začetku vsakega poglavja, da bralce spomnimo, kje smo.
+To lahko storimo z uporabo ukazov \texttt{{\textbackslash}AtBeginSection[]} in \texttt{{\textbackslash}tableofcontents[currentsection]} poglejte Example~\ref{eg_beamer-toc-3}. Če želimo, da se v kazalu prikažejo samo razdelek (in ne podrazdelek), dodamo ukaz {\textbackslash}tableofcontents opcijo \texttt{hidesubsections}.
+
+\begin{example}\label{eg_beamer-toc-3}\end{example}Poleg ukazov \texttt{{\textbackslash}section} in \texttt{{\textbackslash}subsection}, Beamer podpira tudi ukaz \texttt{{\textbackslash}part\{\}} za večje logične enote.
+Vsak del prestavitve (definiran z \texttt{{\textbackslash}part\{\}}) lahko začne z drsnico, ki prikazuje naslov dela z uporabo ukaza \texttt{{\textbackslash}partpage} v okolju \texttt{frame}. Poleg tega, ima vsak del lahko svoje kazalo vsebine; poglejte Example~\ref{eg_beamer-parts}.
+
+\begin{example}\label{eg_beamer-parts}\end{example}\subsubsection{Specifikacije prekrivanja}\label{beamer_prekrivanje}
+
+Izhodna datoteka Beamer je običajno v formatu \texttt{PDF} kar je v principu statična datoteka. Beamer pa omogoča ustvarjanje dinamičnih učinkov z uporabo \textit{specifikacij prekrivanja} (ang. \textit{overlay specifications}).
+
+Prestavitve Beamer sestoji iz serie drsnic, vsaka drsnica pa je lahko razdeljena na več slojev oz. stran (ang. \textit{slides}). V izhodni \texttt{PDF} datoteki vsak sloj ustreza eni strani. Specfikacije prekrivanja so ukazi, ki določajo, kateri deli vsebine so prikazani na določenem sloju.
+
+Najlažji način za uporabo specifikacij prekrivanja je z uporabo ukaza \texttt{{\textbackslash}pause}, ki ustvari prekinitev na trenutni točki v drsnici.
+Če dodamo ukaz \texttt{{\textbackslash}pause} v okolje \texttt{frame}, prvi sloj drsnice prikaže vsebino do prva uporaba ukaza \texttt{{\textbackslash}pause}, drugi sloj prikaže vsebino do druge uporabe ukaza \texttt{{\textbackslash}pause} in tako naprej. Poglejte Example~\ref{eg_beamer-pause}.
+
+\begin{example}\label{eg_beamer-pause}\end{example}Ukaz \texttt{{\textbackslash}pause} je enostaven za uporabo, vendar ponuja omejene možnosti prilagajanja. Za bolj natančno kontrolo nad tem, kdaj se posamezni deli vsebine prikažejo, lahko uporabimo \textit{specifikacije prekrivanja} znotraj ukazov kot so \texttt{{\textbackslash}textbf}, \texttt{{\textbackslash}textit}, \texttt{{\textbackslash}textcolor} in druge (poglejte Table~\ref{tab-prekrivanje-ukaze}).
+
+Sintaksa za specifikacije prekrivanja je naslednja:
+
+\begin{verbatim}
+\ukaz<spec_prek>{<besedilo>}
+\end{verbatim}
+
+Kjer \texttt{{\textbackslash}ukaz} predstavlja ukaz, ki ga želimo nadzorovati (npr. \texttt{{\textbackslash}textbf}), \texttt{spec\_prek} pa določa, na katerih slojih bo ukaz uporabljen. Na primer, \texttt{{\textbackslash}textbf\textless 2\textgreater \{\textless besedilo\textgreater \}} bo prikazalo \texttt{\textless besedilo\textgreater } krepko le na drugem sloju drsnice (ostali sloji bodo prikazali \texttt{\textless besedilo\textgreater } v običajnem slogu); poglejte Example~\ref{eg_beamer-overlay-1}.
+
+\begin{example}\label{eg_beamer-overlay-1}\end{example}Nekatere ukaze, kot so \texttt{{\textbackslash}item} v okolju \texttt{itemize} in \texttt{enumerate}, imajo vgrajeno podporo za specifikacije prekrivanja; poglejte Example~\ref{eg_beamer-overlay-2}.
+
+\begin{example}\label{eg_beamer-overlay-2}\end{example}Ukaz {\textbackslash}includegraphics podpira tudi specifikacije prekrivanja, kar omogoča prikazovanje različnih slik na različnih slojih drsnice. To je uporabno za simulacijo animacij z zaporednim prikazovanjem slik;
+poglejte Example~\ref{eg_beamer-overlay-3}.
+
+\begin{example}\label{eg_beamer-overlay-3}\end{example}\href{/stick-3a960172ac01f90300a20c6f2227b668.zip}{\texttt{stick.zip}} vsebuje slike, uporabljene v zgornjem primeru.
+
+Naslednje tri ukaze delujejo zelo podobno. Prikazujejo \texttt{\textless besedilo\textgreater } v skladu z \texttt{\textless spec\_prek\textgreater }. Razlika med njimi je v tem, kako se obnašajo, ko besedilo ni prikazano.
+
+\begin{itemize}
+\item \texttt{{\textbackslash}only\textless spec\_prek\textgreater \{\textless besedilo\textgreater \}}: Prikaže \texttt{\textless besedilo\textgreater } samo na slojih, določenih z \texttt{\textless spec\_prek\textgreater }. Na drugih slojih \texttt{\textless besedilo\textgreater } ni prisotno (ne zavzame prostora).
+\item \texttt{{\textbackslash}visible\textless spec\_prek\textgreater \{\textless besedilo\textgreater \}}: Prikaže \texttt{\textless besedilo\textgreater } na slojih, določenih z \texttt{\textless spec\_prek\textgreater }, in na drugih slojih ohrani prostor, ki ga \texttt{\textless besedilo\textgreater } zavzema (vendar je \textbf{nevidno}).
+\item \texttt{{\textbackslash}uncover\textless spec\_prek\textgreater \{\textless besedilo\textgreater \}}: Prikaže \texttt{\textless besedilo\textgreater } na slojih, določenih z \texttt{\textless spec\_prek\textgreater }, in na drugih slojih ohrani prostor, ki ga \texttt{\textless besedilo\textgreater } zavzema (vendar je \textbf{prozoren}).
+\end{itemize}
+
+Razlika med \texttt{{\textbackslash}visible} in \texttt{{\textbackslash}uncover} je odvisno od uporabe \textit{prosojnosti} (ang. \textit{transparency}). To se nadzoruje z ukazom \texttt{{\textbackslash}setbeamercovered\{\textless možnost\textgreater \}} v preambuli dokumenta. Možnosti vključujejo:
+
+\begin{itemize}
+\item \texttt{invisible}: Besedilo je popolnoma nevidno (privzeta možnost).
+\item \texttt{transparent=\textless neprosojnost\textgreater }: Besedilo je prikazano z določeno stopnjo prosojnosti: \texttt{\textless neprosojnost\textgreater } je vrednost med \texttt{0} (popolnoma prozorno) in \texttt{100} (popolnoma neprozorno); privzeta vrednost je \texttt{15}.
+\item \texttt{dynamic}: Vse prekrite besede postanejo precej prosojne, vendar na dinamičen način. Daljši čas potreben za odkritje besedila, močnejša je prosojnost. Poglejte Example~\ref{eg_overlays-only-1}.
+\end{itemize}
+
+\begin{example}\label{eg_overlays-only-1}\end{example}Obstajajo še drugi ukazi za specifikacije prekrivanja, kot so:
+
+\begin{itemize}
+\item \texttt{{\textbackslash}invisible\textless spec\_prek\textgreater \{\textless besedilo\textgreater \}}: Točno nasprotje ukaza \texttt{{\textbackslash}visible}. Prikaže \texttt{\textless besedilo\textgreater } na slojih, določenih z \texttt{\textless spec\_prek\textgreater }, in na drugih slojih besedilo ni prisotno.
+\item \texttt{{\textbackslash}alt\textless spec\_prek\textgreater \{\textless besedilo1\textgreater \}\{\textless besedilo2\textgreater \}}: Prikaže \texttt{\textless besedilo1\textgreater } na slojih določenih z \texttt{\textless spec\_prek\textgreater }, in \texttt{\textless besedilo2\textgreater } na ostalih slojih.
+\item \texttt{{\textbackslash}temporal\textless spec\_prek\textgreater \{\textless besedilo1\textgreater \}\{\textless besedilo2\textgreater \}\{\textless besedilo3\textgreater \}}: Prikaže \texttt{\textless besedilo1\textgreater } pred prvi sloji določenimi z \texttt{\textless spec\_prek\textgreater }, \texttt{\textless besedilo2\textgreater } na slojih določenih z \texttt{\textless spec\_prek\textgreater }, in \texttt{\textless besedilo3\textgreater } po zadnji sloji določeni z \texttt{\textless spec\_prek\textgreater }.
+\end{itemize}
+
+V Example~\ref{eg_overlays-only-2} so prikazani ti ukazi v akciji.
+
+\begin{example}\label{eg_overlays-only-2}\end{example}Nekatere okolje v Beamerju podpirajo specifikacije prekrivanja.
+Sintaksa je običajno \texttt{{\textbackslash}begin\{okolja\}\textless spec\_prek\textgreater } in rezultat je, da se celotno okolje prikaže samo na slojih določenih z \texttt{\textless spec\_prek\textgreater }.
+
+Vsak od ukazov \texttt{{\textbackslash}only}, \texttt{{\textbackslash}alt}, \texttt{{\textbackslash}visible}, \texttt{{\textbackslash}uncover} in \texttt{{\textbackslash}invisible} ima svojo različico okolja, in sicer, \texttt{onlyenv}, \texttt{altenv}, \texttt{visibleenv}, \texttt{uncoverenv} in \texttt{invisibleenv}.
+Vsi razen \texttt{altenv} ima sintakso
+
+\begin{verbatim}
+\begin{okolja}<spec_prek>
+  <vsebina>
+\end{okolja}
+\end{verbatim}
+
+in delujejo podobno kot njihovi ukazni ekvivalenti.
+Okolje \texttt{altenv} ima sintakso
+
+\begin{verbatim}
+\begin{altenv}<spec_prek>
+{<begin_privzeto>}{<end_privzeto>}
+{<begin_alternativno>}{<end_alternativno>}
+  <vsebina>
+\end{altenv}
+\end{verbatim}
+
+V določenih slojih določenih z \texttt{\textless spec\_prek\textgreater }, se \texttt{\textless vsebina\textgreater } obdana med \texttt{\textless begin\_privzeto\textgreater } in \texttt{\textless end\_privzeto\textgreater }, medtem ko se v ostalih slojih prikaže vsebina obdana z \texttt{\textless begin\_alternativno\textgreater } in \texttt{\textless begin\_alternativno\textgreater }.
+
+Lahko uporabimo ukaze kot je \texttt{{\textbackslash}only} za dinamično spremeniti vsebino drsnice, npr.
+
+\begin{verbatim}
+\only<1>{Besedilo za prvi sloj.}
+  \only<2>{Besedilo za drugi sloj, ki je lahko daljše. Če je besedilo daljše, se okvir prilagodi višini vsebine.}
+  \only<3>{Tretji sloj ima spet krajše besedilo.}
+\end{verbatim}
+
+Težava pri tem pristopu je, da lahko pride do nadležnih razlik v višini
+elementov, kar lahko povzroči, da se celoten okvir >>trese<< od sloja do sloja.
+
+Za rešitev tega problema lahko uporabimo okolje \texttt{overlayarea}, ki ima naslednjo sintakso:
+
+\begin{verbatim}
+\begin{overlayarea}{<širina>}{<višina>}
+  <vsebina>
+\end{overlayarea}
+\end{verbatim}
+
+To okolje ustvari območje \texttt{\textless širina\textgreater } krat \texttt{\textless višina\textgreater }, v katerem se vsebina lahko dinamično spreminja brez vpliva na višino okvirja drsnice; poglejte Example~\ref{eg_overlayarea}.
+
+\begin{example}\label{eg_overlayarea}\end{example}\subsubsection{Vsebina predstavitve}\label{beamer_vsebina}
+
+\paragraph{Seznami}
+
+Navadna okolja za sezname, kot so \texttt{itemize}, \texttt{enumerate} in \texttt{description}, so podprta v Beamerju.
+
+Seveda lahko uporabimo tudi ukaz \texttt{{\textbackslash}pause} ali specifikacije prekrivanja kot prikazano v Example~\ref{eg_beamer-overlay-2} za postopno prikazovanje elementov seznama.
+Druga možnost je uporaba speficikacije \texttt{[\textless +-\textgreater ]} v okolju seznama, kar samodejno prikaže vsak element na naslednjem sloju; poglejte Example~\ref{eg_beamer-lists-1}.
+
+V tem primeru tudi pokažemo uporabo ukaza \texttt{{\textbackslash}vspace\{\textless višina\textgreater \}} za ustvarjanje navpičnega prostora med seznami in ukaza \texttt{{\textbackslash}vfill}, ki potisne vsebino navzdol do dna okvirja drsnice.
+
+\begin{example}\label{eg_beamer-lists-1}\end{example}Če je seznam predolg, da bi ga lahko prikazali na eni drsnici. V tem primeru lahko uporabimo pristop, ki ga prikazuje Example~\ref{eg_beamer-lists-2}.
+
+\begin{example}\label{eg_beamer-lists-2}\end{example}\paragraph{Stolpci}
+
+Beamer omogoča ustvarjanje stolpcev z uporabo okolja \texttt{columns}. Vsak stolpec je definiran z okoljem \texttt{column}, ki ima naslednjo sintakso:
+
+\begin{verbatim}
+\begin{columns}
+  \begin{column}<spec_prek>{<širina>}
+    <vsebina stolpca 1>
+  \end{column}
+  \begin{column}<spec_prek>{<širina>}
+    <vsebina stolpca 2>
+  \end{column}
+  ...
+\end{columns}
+\end{verbatim}
+
+Kjer \texttt{\textless širina\textgreater } določa širino stolpca (lahko je absolutna vrednost, npr. \texttt{5cm}, ali relativna vrednost, npr. \texttt{0.5{\textbackslash}textwidth}), \texttt{\textless spec\_prek\textgreater } pa so opcijske specifikacije prekrivanja, ki določajo, na katerih slojih bo stolpec prikazan.
+Poglejte Example~\ref{eg_beamer-columns-1}.
+
+\begin{example}\label{eg_beamer-columns-1}\end{example}Ta pristop lahko uporabimo za ustvarjanje drsnic z besedilom na eni strani in sliko na drugi strani; poglejte Example~\ref{eg_beamer-columns-2}.
+
+\begin{example}\label{eg_beamer-columns-2}\end{example}\paragraph{Tabele}
+
+Na splošno večina ukazov, ki smo jih opisali
+v poglavju \href{/latexosnovnaokolja}{Osnovna okolja} za ustvarjanje tabel v LaTeX-u deluje tudi v Beamerju, dokler naložimo ustrezne pakete (npr. \texttt{booktabs}, \texttt{array}, \texttt{multrow}).
+
+Poleg tega lahko uporabimo specifikacije prekrivanja za postopno prikazovanje vrstic ali stolpcev v tabeli; poglejte Example~\ref{eg_beamer-tables-1}.
+
+\begin{example}\label{eg_beamer-tables-1}\end{example}Če je tabela preširoka ali predolga za drsnico, lahko uporabimo okolje \texttt{resizebox} iz paketa \texttt{graphicx}. Sintaksa je \texttt{{\textbackslash}resizebox\{\textless širina\textgreater \}\{\textless višina\textgreater \}\{\textless vsebina\textgreater \}}, kjer lahko uporabimo \texttt{!} za samodejno prilagoditev višine ali širine glede na drugo dimenzijo.
+Poglejte Example~\ref{eg_beamer-tables-2}.
+
+\begin{example}\label{eg_beamer-tables-2}\end{example}\paragraph{Bloki}
+
+Beamer ponuja okolje \texttt{block} za ustvarjanje poudarjenih vsebinskih blokov znotraj drsnic. Sintaksa je naslednja:
+
+\begin{verbatim}
+\begin{block}{<naslov bloka>}
+  <vsebina bloka>
+\end{block}
+\end{verbatim}
+
+Poleg tega Beamer ponuja posebne vrste blokov, kot so \texttt{exampleblock} in \texttt{alertblock}, ki imajo različne sloge za poudarjanje vsebine. Slog bloka je odvisen od izbrane teme Beamerja. Poglejte Example~\ref{eg_beamer-blocks-1}.
+
+\begin{example}\label{eg_beamer-blocks-1}\end{example}Okolje za teoreme, kot so \texttt{theorem}, \texttt{lemma}, \texttt{definition}, \texttt{proof}, itd. so prav tako podprta v Beamerju in imajo slog, ki je podobno kot bloki. Poglejte Example~\ref{eg_beamer-blocks-2}.
+
+\begin{example}\label{eg_beamer-blocks-2}\end{example}Lahko tudi definiramo svoje matematične bloke z uporabo ukaza \texttt{{\textbackslash}newtheorem} točno tako, kot v običajnem LaTeXu.
+
+\subsubsection{Teme in barvne sheme}\label{beamer_teme}
+
+Beamer ponuja različne teme in barvne sheme za prilagoditev videza predstavitve. Teme določajo splošno postavitev in slog drsnic, in barvno paleto.
+
+Obstajajo štiri parametri za prilagoditev videza predstavitve v Beamerju:
+
+\begin{itemize}
+\item Tema barv (ang. \texttt{color theme}): Določa barvno shemo predstavitve.
+\item Tema pisave (ang. \texttt{font theme}): Določa slog pisave.
+\item Notranje teme (ang. \texttt{inner theme}): Določa slog notranjih elementov, kot so sezname, bloki, kazalo, itd.
+\item Zunanje teme (ang. \texttt{outer theme}): Določa slog zunanjih elementov, kot so glave, noge, okvirji drsnic, itd.
+\end{itemize}
+
+Poleg teh štirih parametrov lahko izberemo tudi celotno temo, ki združuje vse te vidike v eno samo temo. Večinoma časa, je dovolj, da izberemo samo temo, saj bo ta samodejno nastavila ustrezne barvne sheme, pisave in notranje ter zunanje teme in če želimo, lahko dodatno prilagodimo posamezne parametre.
+
+Teme se naložijo z ukazom \texttt{{\textbackslash}usetheme\{\textless ime\_teme\textgreater \}}, medtem ko se posamezni parametri naložijo z ukazi
+
+\begin{itemize}
+\item \texttt{{\textbackslash}usecolortheme\{\textless ime\_barvne\_sheme\textgreater \}}
+\item \texttt{{\textbackslash}usefonttheme\{\textless ime\_pisave\textgreater \}}
+\item \texttt{{\textbackslash}useinnertheme\{\textless ime\_notranje\_teme\textgreater \}}
+\item \texttt{{\textbackslash}useoutertheme\{\textless ime\_zunanje\_teme\textgreater \}}
+\end{itemize}
+
+Število možnosti za te ukaze je ogromno in nemogoče je prikazati vse relevantne primere.
+Lahko pa ponudimo zunanje vire za raziskovanje različnih tem.
+
+\begin{itemize}
+\item \href{https://hartwork.org/beamer-theme-matrix/}{Beamer Theme Matrix}: Interaktivno orodje za raziskovanje različnih kombinacij tem in barvnih shem v Beamerju.
+\item \href{https://deic.uab.es/~iblanes/beamer\_gallery/index.html}{Beamer Theme Gallery}: Galerija različnih tem Beamer, tem pisave in tem barv.
+\item \href{https://tug.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf}{Beamer User Guide}: Del III vodiča za uporabnike Beamerja vsebuje podrobne informacije o temah in barvnih shemah.
+\item \href{https://www.overleaf.com/gallery/tagged/beamer}{Overleaf beamer templates}: Sodobne teme Beamer na Overleafu.
+\end{itemize}
+
+\subsubsection{Vaje}\label{06_latexBeamer_vaje}
