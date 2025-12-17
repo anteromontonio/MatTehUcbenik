@@ -45,7 +45,7 @@ jobs:
       - name: Install ImageMagick
         run: sudo apt install imagemagick
       - name: Install sagemath
-        run: sudo apt-get install sagemath sagemath-doc sagemath-jupyter
+        run: sudo apt-get install sagemath-jupyter
       - name: Build HTML Assets
         run: myst build --execute --html
       - name: Upload artifact
