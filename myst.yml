@@ -35,10 +35,10 @@ project:
         - file: 08_geogebraDinGeometrija.md
         - file: 09_geogebraAnaliza.md
         - file: 10_geogebra3D.md
-        - file: 11_geogebra_razno.md
+        # - file: 11_geogebra_razno.md
     - title: SageMath
       children:
-        - file: 12_sageUvod.md
+        - file: 12_sageUvod.ipynb
         - file: 13_sage_algebra.md
         - file: 14_sage_analiza.md
     - title: Priloge
