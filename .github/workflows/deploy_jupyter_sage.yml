@@ -3,9 +3,9 @@
 
 name: MyST GitHub Pages Deploy With Jupyter
 on:
-  push:
+  # push:
     # Runs on pushes targeting the default branch
-    branches: [main]
+    # branches: [main]
   workflow_dispatch:
 env:
   # `BASE_URL` determines, relative to the root of the domain, the URL that your site is served from.
@@ -45,7 +45,7 @@ jobs:
       - name: Install ImageMagick
         run: sudo apt install imagemagick
       - name: Install sagemath
-        run: sudo apt-get install sagemath sagemath-doc sagemath-jupyter
+        run: sudo apt-get install sagemath
       - name: Build HTML Assets
         run: myst build --execute --html
       - name: Upload artifact
