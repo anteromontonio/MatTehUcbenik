@@ -13,9 +13,6 @@ project:
     - format: pdf
       template: plain_latex_book
       output: exports/book.pdf
-    - format: tex
-      template: plain_latex_book
-      output: exports/book.tex
   source_url: null
   downloads: null
   toc:
