@@ -1,7 +1,7 @@
 ---
 kernelspec:
-  name: sagemath
-  display_name:  SageMath
+  name: python 
+  display_name:  Python 3 (ipykernel)
 ---
 
 (12_sageUvod)=
