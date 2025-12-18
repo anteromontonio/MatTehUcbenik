@@ -1,7 +1,7 @@
 # This file was created automatically with `myst init --gh-pages` 🪄 💚
 # Ensure your GitHub Pages settings for this repository are set to deploy with **GitHub Actions**.
 
-name: MyST GitHub Pages Deploy With Jupyter
+name: MyST GitHub Pages Deploy With Jupyter Installing SageMath
 on:
   # push:
     # Runs on pushes targeting the default branch
