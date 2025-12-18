@@ -36,7 +36,7 @@ project:
     - title: SageMath
       children:
         # - file: 12_sageUvod.ipynb
-        - file: 03-Plotting.ipynb
+        # - file: 03-Plotting.ipynb
         - file: 13_sage_algebra.md
         - file: 14_sage_analiza.md
     - title: Priloge
