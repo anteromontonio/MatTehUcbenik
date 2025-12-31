@@ -428,3 +428,65 @@ Lahko preverimo, ali so ta števila praštevila:
 
 ::::
 
+
+## Matematične konstante in funkcije
+
+SageMath vključuje številne matematične konstante in funkcije, ki jih lahko uporabimo v svojih izračunih. Nekatere izmed najbolj znanih konstant so:
+
+- $\pi$: `pi`
+- $e$: `e`
+- $\phi$ (zlati rez): `golden_ratio`
+- $i$ (imaginarna enota): `I`
+
+Pogoste funkcije so tudi uklučene, na primer:
+
+- Trigonometrične funkcije: `sin()`, `cos()`, itd.
+- Eksponentna funkcija: `exp()`
+- Logaritemska funkcija: `log()`
+
+:::{code-cell} python
+sin(pi)
+:::
+
+:::{code-cell} python
+cos(pi/4)
+:::
+
+Sage ima poseben ukaz `latex()` za prikaz matematičnih izrazov v LaTeX obliki. Na primer:
+
+:::{code-cell} python
+latex(cos(pi/4))
+:::
+
+Če želimo da izhod je predstavljen v LaTeX-u, uporabimo čarobni ukaz `%display latex`. Če želimo, da se izhod prikaže kot običajen besedilni izhod, uporabimo čarobni ukaz `%display text`.
+
+Poglejmo še primere:
+
+:::{code-cell} python
+ln(e)
+:::
+ 
+V sage `log()` pomeni naraven lograritem, torej logaritem pri osnovni $e$:
+
+:::{code-cell} python
+log(e) == ln(e)
+:::
+
+Če želimo logaritem pri drugi osnovi, na primer $10$, uporabimo drugi argument:
+
+:::{code-cell} python
+log(1000, 10)
+::: 
+
+Nekateri viri namesto $e$ raje pišejo $\exp$ in SageMath meni, da je to v redu.
+
+:::{code-cell} python
+exp(3) - e^3
+:::
+
+
+V SageMath lahko delamo tudi z kompleksnimi števili. Imaginarno število $i$ je označeno z `i` in z `I`. Ker pa se `i` pogosto uporablja pri programiranju, je dobra praksa, da se označi z `I`.
+
+:::{code-cell} python
+arg(1+I)
+:::

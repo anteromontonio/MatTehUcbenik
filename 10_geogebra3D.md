@@ -212,6 +212,40 @@ Drugi način za prikaz rotacijske ploskve je z orodjem <img src="./geogebra/imag
 :::
 
 
+## Dodatne vaje
+
+:::{exercise} [Seznam vaj ⤵️ ](#10_geogebra3D_vaje)
+:label: ex-conics
+
+Stožnice so dobro razumljene krivulje na ravnini. Svoje ime so dobile, ker na različne načine nastanejo, ko se (dvojni) stožec preseka z ravnino:
+
+- Če je ravnina pravokotna na os stožca, dobimo krožnico.
+- Če ravnina seka le eno stranico dvojnega stožca, vendar ni vzporedna s stranico stožca, dobimo elipso.
+- Če je ravnina vzporedna s stranico stožca, dobimo parabolo.
+- V vseh preostalih primerih dobimo hiperbolo.
+
+
+1. Ustvarite konstrukcijo v Geogebri 3D, ki prikazuje dvojni stožec in ravnino, ki ga seka.
+2. Presečišče ravnine s stožci mora biti jasno prikazano.
+3. Ravnino lahko premikate, da pokažete različne vrste stožnic, ki nastanejo kot presečišče. To lahko naredite z uporabo drsnikov ali katere koli druge metode.
+4. Vključujete element (na primer besedilno polje), ki vam pove, katero vrsto stožca dobite glede na položaj te ravnine.
+:::
+
+
+:::{exercise} [Seznam vaj ⤵️ ](#10_geogebra3D_vaje)
+:label: ex-platonski-telesa
+Ustvarite konstrukcijo v Geogebra 3D, ki prikazuje, da lahko pet platonskih teles sestavite na naslednji način:
+
+- Oglišča oktaedra s koordinatami $(1,0,0)$, $(0,1,0)$, $(0,0,1)$ in negativi (6 oglišč).
+- Tetraeder, pri katerem so središčne točke njegovih šestih robov oglišče zgornjega oktaedra. **Namig**: najprej sestavite spodnjo kocko.
+- Kocka, katere 4 od 8 oglišč so vrhovi zgornjega tetraedra in središča njegovih stranic so oglišča oktaedra.
+- Dodekaeder, pri katerem je 8 od 20 oglišč enakih ogliščki kocke.
+- Ikozaeder, tako da so središča njegovih 20 ploskev enaka 20 oglišči dodekaedra zgoraj.
+:::
+
+
+
+
 
 
 (10_geogebra3D_vaje)=
@@ -224,3 +258,5 @@ Drugi način za prikaz rotacijske ploskve je z orodjem <img src="./geogebra/imag
 - [ ] [Vaja %s.](#ex-rotational-surfaces): Ustvarite rotacijske ploskve v GeoGebri 3D z vrtenjem daljic in krožnic okoli osi.
 - [ ] [Vaja %s.](#ex-rotate-funkcije): Ustvarite rotacijske ploskve z vrtenjem grafov funkcij okoli osi v GeoGebri 3D.
 - [ ] [Vaja %s.](#ex-multivariable-functions): Raziščujte funkcije z več spremenljivkami v GeoGebri 3D.
+- [ ] [Vaja %s.](#ex-conics): Ustvarite konstrukcijo v GeoGebri 3D, ki prikazuje nastanek stožnic kot presečišče dvojnega stožca in ravnine.
+- [ ] [Vaja %s.](#ex-platonski-telesa): Ustvarite konstrukcijo v GeoGebri 3D, ki prikazuje pet platonskih teles.

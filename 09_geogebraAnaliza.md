@@ -301,31 +301,52 @@ IFrame("https://www.geogebra.org/material/iframe/id/s9gtp7rn/width/1250/height/7
 
 Polarne krivulje so posebna vrsta parametričnih krivulj, kjer je polmer funkcija kota. Vendar pa lahko ustvarimo tudi splošne parametrične krivulje v GeoGebri z uporabo ukaza `Curve`. Ta ukaz omogoča definiranje krivulje z uporabo dveh funkcij, ki določata $x$ in $y$ koordinate glede na parameter $t$. Na primer, ukaz `Curve((cos(t), sin(t)), t, 0, 2*π)` ustvari enoto krožnico.
 
-<!-- :::{exercise}
+::::{exercise}
 :label: ex-paramentric
 
 Ustvarite datoteko GeoGebra, ki prikazuje parametrično krivuljo.
 
-1. Ustvarite spremenljivki `max_t` in `min_t`.
-2. Ustvarite funkciji za $x(t)$ in $y(t)$.
-3. Ustvarite vhodno polje za `max_t` in `min_t`, da lahko spreminjate interval parametra $t$.
-::: -->
+1. Ustvarite vhodni polji za parametrično krivuljo z imeni `x(t)` in `y(t)`. Pazite da uporabite pravilno ime za funkciji.
+2. Prikažete kako teh funkcij določata $x$ in $y$ koordinate glede na parameter $t$.
+3. Ustvarite drsnik da določite interval za parameter $t$.
+4. Ustvarite parametrično krivuljo z uporabo ukaza `Curve((x(t), y(t)), t, <min t>, <max t>)`, kjer `<min t>` in `<max t>` sta vrednosti drsnika.
 
-<!-- ```{margin}
-[Seznam vaj](_vaje)
-```
 
-:::{solution} ex-label
-:class: tip dropdown
-::: -->
 
-<!-- ```{margin}
-[Seznam vaj](#vaje_geogebraAnaliza)
-```
+Navdih lahko poiščete na naslednji konstrukciji:
 
-:::{solution} ex-polarni
-:class: tip dropdown
-::: -->
+:::{code-cell} python
+:tags: remove-input
+IFrame("https://www.geogebra.org/material/iframe/id/fpgw6jst/width/1512/height/884/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false", width="570", height="340px", allowfullscreen=True)
+:::
+
+::::
+
+::::{exercise} 
+:label: ex-taylor
+Ustvarite datoteko GeoGebra, ki prikazuje Taylorjevo približek funkcije okoli točke $a$.    
+
+1. Funkcija $f(x)$ naj bo definirana z vhodnim poljem.
+2. Točka $a$ naj bo definirana z vhodnim poljem ali drsnikom.
+3. Stopinja približek $n$ naj bo definirana z drsnikom.
+
+**Namig**: Ni treba ročno vnašati Taylorjevega polinoma. 
+
+
+Navdih lahko poiščete na naslednji konstrukciji:    
+
+:::{code-cell} python
+:tags: remove-input
+IFrame("https://www.geogebra.org/material/iframe/id/axay7bqj/width/1512/height/884/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false", width="570", height="340px", allowfullscreen=True)
+:::
+
+::::
+
+
+
+
+
+
 
 
 
@@ -339,3 +360,5 @@ Ustvarite datoteko GeoGebra, ki prikazuje parametrično krivuljo.
 - [Vaja %s](#ex-odvod) V konstrukciji iz prejšnje vaje, dodajte možnost za prikaz grafa odvoda funkcije.
 - [Vaja %s](#ex-integral) Ustvarite konstrukcijo v GeoGebri, ki omogoča prikaz določenega integrala funkcije med točkama $a$ in $b$.
 - [Vaja %s](#ex-polarni) Ustvarite polarne krivulje in analizirajte njihove lastnosti z orodji GeoGebre.
+- [Vaja %s](#ex-paramentric) Ustvarite datoteko GeoGebra, ki prikazuje parametrično krivuljo.
+- [Vaja %s](#ex-taylor) Ustvarite datoteko GeoGebra, ki prikazuje Taylorjevo približek funkcije okoli točke $a$.
