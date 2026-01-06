@@ -490,3 +490,365 @@ V SageMath lahko delamo tudi z kompleksnimi števili. Imaginarno število $i$ je
 :::{code-cell} python
 arg(1+I)
 :::
+
+:::{code-cell} python
+latex(1+i)
+:::
+
+Ukaza `max()` in `min()` vrneta največje in najmanjše število v seznamu števil.
+
+:::{code-cell} python
+max([1,2,3])
+:::
+
+Seznam lahko damo z oklepaji `[` `]` ali brez njih.
+
+:::{code-cell} python
+min(1,2,3)
+::: 
+
+Z ukazom `floor()` dobimo največje celo število, ki ni večje od danega števila, z ukazom `ceil()` pa najmanjše celo število, ki ni manjše od danega števila.
+
+:::{code-cell} python
+floor(2.1)
+:::
+
+:::{code-cell} python
+ceil(2.1)
+:::
+
+*Pazite*: 
+
+:::{code-cell} python
+floor(1/(2.1-2))
+:::
+
+Ampak 
+
+$$
+\left\lfloor \frac{1}{2.1-2} \right\rfloor = \left\lfloor \frac{1}{0.1} \right\rfloor = 10
+$$
+
+Kaj se je zgodilo? 
+
+Računalniki shranjujejo realna števila v binarni obliki, mi pa smo navajeni uporabljati desetiško predstavitev. Število $2.1$ v desetiškem zapisu je precej preprosto in kratko, vendar je po pretvorbi v binarni zapis $10.0\overline{0011} = 10.0001100110011 \dots$
+
+Ker računalniki ne morejo shraniti neskončnega števila številk, se to število nekje zaokroži, kar povzroči manjšo napako, ki smo jo videli.
+V SageMathu pa so racionalna števila (ulomki) natančna, zato te napake pri zaokroževanju nikoli ne bomo videli.
+
+:::{code-cell} python
+floor(1/ ( (21/10) - 2) )
+:::
+
+:::{exercise}
+:label: ex-matemKonstSageMath
+
+1. Izračunajte celi del (oz. najbližje celo število) za število $e^{\pi}$.
+2. Izračunajte logaritma z osnovo $e$ števila $1/1000000$, izračunajte logaritma z osnovo $10$ števila $1/1000000$, nato izračunajte razmerje. Kakšen naj bo odgovor?
+3. Izračunajte logaritma z osnovo 2 števila 64.
+4. Primerjaj $e^{i \pi}$ z njegovim numeričnim približkom z uporabo `pi.n()`.
+5. Izračunajte $\sin(\pi/2)$, $\cot(0)$ in $\csc(\pi/16)$.
+
+Rešitve napišite v ločeno celico besedila z uporabo LaTeXa.
+:::
+
+
+::::{solution} ex-matemKonstSageMath
+:class: tip dropdown
+
+1. Celi del števila $e^{\pi}$ je:
+:::{code-cell} python
+floor(e^pi)
+:::
+
+---
+
+2. Logaritma z osnovo $e$ in $10$ števila $1/1000000$ ter njuno razmerje:
+:::{code-cell} python
+log(1/1000000)
+:::
+
+logaritma z osnovo $10$:
+:::{code-cell} python
+log(1/1000000, 10)
+:::
+
+Razmerje:
+
+$$
+\ln\left(\frac{1}{1000000}\right) \bigg/ \log_{10}\left(\frac{1}{1000000}\right) = \ln(10)
+$$
+
+---
+
+3. Logaritem z osnovo 2 števila 64 je:
+:::{code-cell} python
+log(64, 2)  
+:::
+
+---
+
+4. Primerjava $e^{i \pi}$ z njegovim numeričnim približkom:
+
+
+:::{code-cell} python
+e^(I * pi.n())
+:::
+
+:::{code-cell} python
+e^(I * pi)
+:::
+
+$$e^{i \pi} = -1$$
+velja in je znana kot Eulerjeva identiteta. Numerični približek je zelo blizu $-1$, vendar ni natančno enak zaradi omejene natančnosti numeričnih izračunov.
+
+::::
+
+## Pripisovanje, enakost, enačbe in neenačbe.
+
+SageMath uporablja simbol `=` za **pripisovanje vrednosti spremenljivkam**. 
+
+:::{code-cell} python
+a = 5
+a 
+:::
+
+Za primerjavo uporablja `==`, `!=`, `<`, `>`, `<=`, `>=`.
+
+:::{code-cell} python
+2==2
+:::
+
+:::{code-cell} python
+2!=2
+:::
+
+:::{code-cell} python
+2 < 2
+:::
+
+:::{code-cell} python
+a <= 5
+:::
+
+Seveda, lahko uporabimo `=` za shraniti rezultat izračuna v spremenljivko:
+
+:::{code-cell} python 
+b = 2 + 3 * 4
+b
+:::
+
+:::{warning}
+**Pazite**: `=` ni enako kot `==`. Prvi je za pripisovanje, drugi pa za primerjavo. Pogosta napaka je uporaba izraza `a = b` za primerjavo `a` in `b`, kar v resnici pomeni, da se vrednost `b` pripiše `a`.
+:::
+
+Rezultat izračuna se ne natisne samodejno, ko je pripisan spremenljivki. Če želite videti vrednost spremenljivke, jo morate izrecno navesti v celici ali uporabiti ukaz `print()`. Poglejte primeri:
+
+:::{code-cell} python
+y = 1 + 2; print(y)
+y = 3 * y + 1; print(y)
+y = 3 * y + 1; print(y)
+y = 3 * y + 1; print(y)
+:::
+
+Znak `;` je uporabno za ločevanje več ukazov v eni celici.
+
+Načeloma nam nič ne preprečuje, da bi ponovno definirali obstoječe spremenljivke.
+
+:::{code-cell} python
+pi=-I/2
+:::
+
+:::{code-cell} python
+exp(2*pi*I)
+:::
+
+Z ukazom `restore()` lahko obnovimo privzeto vrednost spremenljivke.
+
+:::{code-cell} python
+restore()
+:::
+
+:::{code-cell} python
+y+pi
+:::
+
+Ukaz `reset()` pa ponastavi celoten delovni prostor in izbriše vse spremenljivke.
+
+:::{code-cell} python
+reset()
+::: 
+
+:::{code-cell} python
+:tags: [raises-exception]
+y
+:::
+
+Opazite tudi, da SageMath včasih razlikuje med simbolnimi izračuni in števili:
+
+:::{code-cell} python
+e^(2*pi*I)
+:::
+
+:::{code-cell} python
+e^(2*pi*I) == 1
+:::
+
+SageMath zgornjega izraza ne razume ko primerjavo, temveč kot enačbo. V tem primeru, ne moremo jo rešiti, ampak lahko preverimo, ali je enačba resnična z uporabo ukaza `bool()`:
+
+:::{code-cell} python
+bool(e^(2*pi*I) == 1)
+::: 
+
+Enačbe in neenakosti lahko rešujemo z ukazoma `solve()`:
+
+:::{code-cell} python
+solve(3*x - 2 == 5,x)
+:::
+
+Črka `x` v SageMath-u predstavlja simbolično spremenljivko in lahko jo uporabimo v enačbah in izrazih:
+
+:::{code-cell} python
+solve( 2*x - 5 >= 17,x)
+:::
+
+:::{code-cell} python
+solve( x^2 + x == 6, x)
+:::
+
+:::{code-cell} python
+solve(2*x^2 - x + 1 == 0, x)
+:::
+
+Ukaz `solve()` poskuša rešiti enačbe brez numeričnih približkov, če je le mogoče. Ko tega ni možno, bo vrnil rešitev v simbolni obliki.
+
+:::{code-cell} python
+solve(sin(x)==x,x)
+:::
+
+Za iskanje numeričnega približka rešitev lahko uporabimo ukaz `find_root()`; ta ukaz zahteva začetni interval, v katerem iščemo rešitev.
+
+:::{code-cell} python
+find_root(sin(x) == x, -pi/2 , pi/2)
+:::
+
+Ob začetku seje SageMath eno simbolno spremenljivko, in sicer `x`, ki se lahko uporablja v enačbah in izrazih. Če želimo uporabiti druge spremenljivke, jih moramo najprej definirati z ukazom `var()`:
+
+:::{code-cell} python
+y = var("y")
+:::
+
+Lahko pa definiramo več spremenljivk hkrati:
+
+:::{code-cell} python
+phi, theta, rho = var("phi theta rho")
+:::
+
+
+
+Imena spremenljivk lahko vsebujejo črke, številke in podčrtaje, vendar se ne smejo začeti s številko in presledkov ne smejo vsebovati. Npr. `x_1`, `var123`, in `my_variable` so veljavna imena spremenljivk, medtem ko `1var`, `my variable`, in `var-2` niso veljavna imena spremenljivk.
+
+:::{code-cell} python
+x1, x2 = var("x1 x2")
+:::
+
+Poskus uporabe neveljavnega imena spremenljivke bo povzročil napako `NameError`:
+
+:::{code-cell} python
+:tags: [raises-exception]
+u
+:::
+
+Simbolno spremenljivko lahko izbrišemo s ukazom `restore()`:
+
+:::{code-cell} python
+restore('phi')
+:::
+
+:::{code-cell} python
+:tags: [raises-exception]
+phi
+:::
+
+Majhne sisteme linearnih enačb lahko rešimo z ukazom `solve()`, dokler so spremenljivke definirane.
+
+:::{code-cell} python
+x, y, z = var("x y z")
+:::
+
+:::{code-cell} python
+solve( [3*x - y == 2,-2*x -y == 1 ], x,y)
+:::
+
+:::{code-cell} python
+solve( [ 2*x - y == -1 , 2*x - y == 2],x,y)
+:::
+
+:::{code-cell} python
+solve( [ 2*x + y == -1 ,-4*x - 2*y == 2],x,y)
+:::
+
+Vrednost `r1` označuje, da obstaja prosta spremenljivka, ki določa množico rešitev.
+Če je več prostih spremenljivk, bo rezultat vseboval več parametrov `r1`, `r2`, itd.
+
+:::{code-cell} python
+solve([ 2*x + 3*y + 5*z == 1, 4*x + 6*y + 10*z == 2, 6*x + 9*y + 15*z == 3], x,y,z)
+:::
+
+Ukaz `solve()` je lahko pri velikih enačb zelo počasen. V takih primerih je bolje uporabiti matrike (poglej [](./13_sageAlgebra.md))
+
+Reševanje neenakosti z več spremenljivkami je možno, ampak lahko rezultati postanejo zelo zapleteni in težko berljivi. 
+
+:::{code-cell} python
+solve([ x-y >=2, x+y <=3], x,y)
+:::
+
+:::{exercise}
+:label: ex-enacbe
+1. Poiščite vse rešitve enačbe $x^{3} - x = 7x^{2}-7$
+2. Poišči celotno množico rešitev za neenačbo $|t-7| \geq 3$
+3. Poiščite vsa $x$ in $y$, ki izpolnjujejo tako $2𝑥+ 𝑦= 17$ kot $𝑥-3𝑦=-16$.
+4. S funkcijo `find_root()` poiščite rešitev enačbe $e^{x} = \cos(𝑥)$ na intervalu $[-\pi/2,0]$.
+5. Zgornji ukaz spremenite tako, da `find_root()` najde drugo rešitev na istem intervalu.
+:::
+
+
+
+::::{solution} ex-enacbe
+:class: tip dropdown
+1. Rešitve enačbe $x^{3} - x = 7x^{2}-7$ so $x = 7$, $x = -1$ in $x = 1$:
+
+:::{code-cell} python
+solve( x^3 - x == 7*x^2 - 7, x) 
+:::
+
+2. Celotna množica rešitev za neenačbo $|t-7| \geq 3$ je $(-\infty, 4] \cup [10, \infty)$:
+
+:::{code-cell} python
+t=var("t")
+solve( abs(t - 7) >= 3, t)  
+:::
+
+3. Edina rešitev za sistem enačb $2x+ y= 17$ in $x-3y=-16$ je $x = 5$ in $y = 7$:
+
+:::{code-cell} python
+x, y = var("x y")
+solve( [2*x + y == 17, x - 3*y == -16], x, y)   
+:::
+
+4. Ena rešitev enačbe $e^{x} = \cos(x)$ na intervalu $[-\pi/2,0]$ je seveda $x=0$,
+ker je $e^{0} = \cos(0) = 1$:
+
+:::{code-cell} python
+find_root( exp(x) == cos(x), -pi/2 , 0) 
+:::
+
+5. Druga rešitev enačbe $e^{x} = \cos(x)$ na intervalu $[-\pi/2,0]$ je približno $-1.2926957193733983$, kar lahko najdemo z uporabo `find_root()` z drugačnim začetnim intervalom:
+
+:::{code-cell} python
+find_root( exp(x) == cos(x), -pi/2 , -0.1) 
+:::
+
+
+
+::::
