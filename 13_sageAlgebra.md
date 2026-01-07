@@ -158,7 +158,7 @@ v = V([1,2,3]) # (1,2,3) kot vector v prostoru V
 Včasih SageMath ugiba, kaj smo mislili:
 
 :::{code-cell} python
-w = vector(RR, [1,2,3]) #w kot vector over RR
+w = vector(RR, [1,2,3]) #w kot vector nad RR
 print(w == v)
 print(w in V)
 :::
@@ -166,7 +166,7 @@ print(w in V)
 včasih pa ne:
 
 :::{code-cell} python
-w=vector(CC,[1,2,3]) #w kot vector over CC
+w=vector(CC,[1,2,3]) #w kot vector nad CC
 print(w==v)
 print(w in V)
 :::
