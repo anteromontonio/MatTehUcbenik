@@ -762,7 +762,7 @@ M*x
 1. Naj bo $A$ matrika $$ \left(\begin{array}{rrr} 3 & 17 & 23 \\ \frac{1}{32} & 2 & 17 \\ 16 & -23 & 27 \end{array}\right). $$
 Uporabite osnovne operacije, opisane v tem poglavju, da pretvorite $A$ v ešelonsko obliko. Preverite, ali je vaš rezultat pravilen, tako da izračunate ešelonsko obliko s pomočjo SageMath-a. 
 
-2. Z uporaba ukazov iz tega poglavja pretvorite matriko na levi v matriko na desni.
+<!-- 2. Z uporaba ukazov iz tega poglavja pretvorite matriko na levi v matriko na desni.
 
 
 $$\begin{aligned}
@@ -775,10 +775,10 @@ $$\begin{aligned}
 \left(\begin{array}{rrr} 0 & -1 & 1 \\ -2 & 1 & -1 \\ 1 & 0 & 1 \end{array}\right) 
 &\qquad
 \left(\begin{array}{rrrr} 0 & -1 & 1 & 4 \\ -2 & 1 & -1 & -1 \\ 1 & 0 & 1 & 1 \end{array}\right)
-\end{aligned}$$
+\end{aligned}$$ -->
 
 
-3. Poiščite rešitve naslednjega sistema enačb
+2. Poiščite rešitve naslednjega sistema enačb
 $$ \begin{aligned}
 x_1 + 2x_2 + x_4 &= 7\\
 x_1 +x_2 +x_2 -x_4 &= 3\\
@@ -789,6 +789,41 @@ x_1 +x_2 +x_2 -x_4 &= 3\\
 
 
 
-:::{solution} ex-matrikeEnacbe
+::::{solution} ex-matrikeEnacbe
 :class: tip dropdown
+1. Uporabimo osnovne operacije za pretvorbo matrike v ešelonsko obliko:
+
+:::{code-cell} python
+A = matrix(QQ, [[3,17,23],[1/32,2,17],[16,-23,27]]); print(A, "\n")
+A.rescale_row(1,32); print(A, "\n")
+A.swap_rows(0,1); print(A, "\n")
+A.add_multiple_of_row(1,0,-3); print(A, "\n")
+A.add_multiple_of_row(2,0,-16); print(A, "\n")
+A.rescale_row(1,-1/175); print(A, "\n")
+A.add_multiple_of_row(0,1,-64); print(A, "\n")
+A.add_multiple_of_row(2,1,1047); print(A, "\n")
+A.rescale_row(2,175/166148); print(A, "\n")
+A.add_multiple_of_row(0,2,7776/175); print(A, "\n")
+A.add_multiple_of_row(1,2,-1609/175); print(A, "\n")
 :::
+
+:::{code-cell} python
+A = matrix(QQ, [[3,17,23],[1/32,2,17],[16,-23,27]]); # definicija
+A.echelon_form() #preverimo z metodo
+:::
+
+2. Najprej sestavimo matriko in vektor desne strani:
+:::{code-cell} python
+M=matrix(QQ, [[1,2,0,1],[1,1,1,-1],[3,1,5,-7]])
+b=vector(QQ,[7,3,1])
+:::
+Nato ustvarimo povečano matriko in izračunamo njeno ešelonsko obliko:
+:::{code-cell} python
+M_aug=M.augment(b)
+M_aug.echelon_form()
+:::
+
+Iz ešelonske oblike vidimo, da je rešitev sistema ima dva prosti spremenljivki, recimo, $x_3 =t$ in $x_4 =s$. Zato je splošna rešitev
+$$ (x_1,x_2,x_3,x_4) = t(-2,1,1,0) + s(1,2,0,1) + (1,2,0,0) $$
+
+::::
