@@ -38,7 +38,7 @@ project:
         - file: 12_sageUvod.md
         # - file: 03-Plotting.ipynb
         - file: 13_sageAlgebra.md
-        - file: 14_sage_analiza.md
+        - file: 14_sageAnaliza.md
     - title: Priloge
       children:
         - file: A_namescanjeLatexa.md
