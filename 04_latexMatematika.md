@@ -129,19 +129,15 @@ V enačbi \eqref{eq:kvadratna_formula} je prikazana kvadratna formula.
 ```
 ````
 `````
-
 ::::::
 
 Ukazi in okolja za pisanje matematičnih aktivirajo matematični način, kjer so nekateri znaki in ukazi drugačni kot v običajnem besedilnem načinu. Na primer, presledki v matematičnem načinu nimajo pomena, medtem ko so v besedilnem načinu pomembni:
 
 ::::{grid} 2 2 2 2
-
 :::{card} LaTeX
-
 ```latex
 $123xyz$ je enako kot \(1 2 3 x y z \)
 ```
-
 :::
 :::{card} PDF
 
@@ -149,7 +145,6 @@ $123xyz$ je enako kot \(1 2 3 x y z \)
 :label: fig:eg-math-mode-1
 :width: 80%
 ```
-
 :::
 ::::
 
@@ -157,21 +152,17 @@ Vse črke so v matematičnem načinu obravnavane kot spremenljivke in so zato na
 
 :::::{grid} 2 2 2 2
 ::::{card} LaTeX
-
 ```latex
 Primerjaj besedo \textit{office}
 z besedo $office$.
 ```
-
 ::::
 
 ::::{card} PDF
-
 ```{figure} ./img/04_eg-math-mode-2.png
 :label: fig:eg-math-mode-2
 :width: 110%
 ```
-
 ::::
 :::::
 
@@ -197,19 +188,15 @@ Zaradi zgoraj navedenih razlogov moramo matematično besedilo **vedno** zapisova
 :::::{grid} 2 2 2 2
 
 ::::{card} LaTeX
-
-    ```latex
-    \[2+\text{enka}=3\]
-    ```
-
+```latex
+\[2+\text{enka}=3\]
+```
 ::::
 
 ::::{card} PDF
-
 $$
  2+\text{enka}=3
 $$
-
 ::::
 :::::
 
@@ -229,114 +216,114 @@ Pri sestavljanju matematičnih formul vam bodo morda v pomoč naslednji viri.
 
 ::::{grid} 2 2 2 2
 
-    :::{card} LaTeX
+:::{card} LaTeX
 
-      ```latex
-      \[a^{2}+b^{2} = c^{2}\]
-      ```
-    :::
+```latex
+\[a^{2}+b^{2} = c^{2}\]
+```
+:::
 
-    :::{card} PDF
+:::{card} PDF
 
-    $$
-    a^{2}+b^{2} = c^{2}
-    $$
-    :::
+$$
+a^{2}+b^{2} = c^{2}
+$$
+:::
 
-    :::{card} LaTeX
+:::{card} LaTeX
 
-      ```latex
-      \[A_x = B_{foo} \neq B_foo\]
-      ```
-    :::
-    :::{card} PDF
+```latex
+\[A_x = B_{foo} \neq B_foo\]
+```
+:::
+:::{card} PDF
 
-    $$
-    A_x = B_{foo} \neq B_foo
-    $$
-    :::
-    :::{card} LaTeX
+$$
+A_x = B_{foo} \neq B_foo
+$$
+:::
+:::{card} LaTeX
 
-      ```latex
-      \[(4 \times 6) \div 3 = 8\]
-      ```
-    :::
-    :::{card} PDF
+```latex
+\[(4 \times 6) \div 3 = 8\]
+```
+:::
+:::{card} PDF
 
-    $$
-    (4 \times 6) \div 3 = 8
-    $$
-    :::
-    :::{card} LaTeX
+$$
+(4 \times 6) \div 3 = 8
+$$
+:::
+:::{card} LaTeX
 
-      ```latex
-      \[(5 \cdot 3) / 2 \not = 7\]
-      ```
-    :::
-    :::{card} PDF
+```latex
+\[(5 \cdot 3) / 2 \not = 7\]
+```
+:::
+:::{card} PDF
 
-    $$
-    (5 \cdot 3) / 2 \not = 7
-    $$
-    :::
-    :::{card} LaTeX
+$$
+(5 \cdot 3) / 2 \not = 7
+$$
+:::
+:::{card} LaTeX
 
-      ```latex
-      \[1 \leq 2 \text{ vs.} 1 \leqslant 2\]
-      ```
-    :::
-    :::{card} PDF
+```latex
+\[1 \leq 2 \text{ vs.} 1 \leqslant 2\]
+```
+:::
+:::{card} PDF
 
-    $$
-    1 \leq 2 \text{ vs.} 1 \leqslant 2
-    $$
-    :::
-    :::{card} LaTeX
+$$
+1 \leq 2 \text{ vs.} 1 \leqslant 2
+$$
+:::
+:::{card} LaTeX
 
-      ```latex
-      \[\sqrt{a} \cdot \sqrt{b} = \sqrt{ab}\]
-      ```
-    :::
-    :::{card} PDF
+```latex
+\[\sqrt{a} \cdot \sqrt{b} = \sqrt{ab}\]
+```
+:::
+:::{card} PDF
 
-    $$
-    \sqrt{a} \cdot \sqrt{b} = \sqrt{ab}
-    $$
-    :::
-    :::{card} LaTeX
+$$
+\sqrt{a} \cdot \sqrt{b} = \sqrt{ab}
+$$
+:::
+:::{card} LaTeX
 
-      ```latex
-      \[a = \sqrt[7]{b^7 + c^7}\]
-      ```
-    :::
-    :::{card} PDF
+```latex
+\[a = \sqrt[7]{b^7 + c^7}\]
+```
+:::
+:::{card} PDF
 
-    $$
-    a = \sqrt[7]{b^7 + c^7}
-    $$
-    :::
-    :::{card} LaTeX
+$$
+a = \sqrt[7]{b^7 + c^7}
+$$
+:::
+:::{card} LaTeX
 
-      ```latex
-      $3 + \frac{a+c}{b+d}$
-      ```
-    :::
-    :::{card} PDF
+```latex
+$3 + \frac{a+c}{b+d}$
+```
+:::
+:::{card} PDF
 
-    $3 + \frac{a+c}{b+d}$
-    :::
-    :::{card} LaTeX
+$3 + \frac{a+c}{b+d}$
+:::
+:::{card} LaTeX
 
-      ```latex
-      \[3 + \frac{a+c}{b+d}\]
-      ```
-    :::
-    :::{card} PDF
+```latex
+\[3 + \frac{a+c}{b+d}\]
+```
+:::
+:::{card} PDF
 
-    $$
-    3 + \frac{a+c}{b+d}
-    $$
-    :::
+$$
+3 + \frac{a+c}{b+d}
+$$
+:::
 
 ::::
 :::::
@@ -344,85 +331,83 @@ Pri sestavljanju matematičnih formul vam bodo morda v pomoč naslednji viri.
 :::::{dropdown} Logika in množice
 
 ::::{grid} 2 2 2 2
+:::{card} LaTeX
+```latex
+\[
+p \land q \iff
+\lnot ( p \implies \lnot q )
+\]
+```
+:::
+:::{card} PDF
 
-    :::{card} LaTeX
+$$
+p \land q \iff
+  \lnot ( p \implies \lnot q )
+$$
+:::
+:::{card} LaTeX
 
-      ```latex
-      \[
-        p \land q \iff
-        \lnot ( p \implies \lnot q )
-      \]
-      ```
-    :::
-    :::{card} PDF
+```latex
+\[ \lnot \forall q P(q) \iff \exists q \lnot P(q)\]
+```
+:::
+:::{card} PDF
 
-      $$
-      p \land q \iff
-        \lnot ( p \implies \lnot q )
-      $$
-    :::
-    :::{card} LaTeX
+$$
+\lnot \forall q P(q) \iff \exists q \lnot P(q)
+$$
+:::
+:::{card} LaTeX
 
-      ```latex
-      \[ \lnot \forall q P(q) \iff \exists q \lnot P(q)\]
-      ```
-    :::
-    :::{card} PDF
+```latex
+\[\{1, 2, 3, \ldots, 100 \}]
+```
+:::
+:::{card} PDF
 
-    $$
-    \lnot \forall q P(q) \iff \exists q \lnot P(q)
-    $$
-    :::
-    :::{card} LaTeX
+$$
+\{1, 2, 3, \ldots, 100\}
+$$
+:::
 
-      ```latex
-      \[\{1, 2, 3, \ldots, 100 \}]
-      ```
-    :::
-    :::{card} PDF
+:::{card} LaTeX
 
-    $$
-    \{1, 2, 3, \ldots, 100\}
-    $$
-    :::
+```latex
+\[ \{x \in X \colon\ \exists y \ x^2+y^2 = 1 \} \]
+```
+:::
+:::{card} PDF
 
-    :::{card} LaTeX
+$$
+\{x \in X \colon\ \exists y \ x^2+y^2 = 1 \}
+$$
+:::
 
-      ```latex
-      \[ \{x \in X \colon\ \exists y \ x^2+y^2 = 1 \} \]
-      ```
-    :::
-    :::{card} PDF
+:::{card} LaTeX
 
-    $$
-    \{x \in X \colon\ \exists y \ x^2+y^2 = 1 \}
-    $$
-    :::
+```latex
+\[ \emptyset \subset X \cap Y \]
+```
+:::
+:::{card} PDF
 
-    :::{card} LaTeX
+$$
+\emptyset \subset X \cap Y
+$$
+:::
+:::{card} LaTeX
 
-      ```latex
-      \[ \emptyset \subset X \cap Y \]
-      ```
-    :::
-    :::{card} PDF
+```latex
+\[ X \subseteq (X \cup Y) \setminus Y \]
+```
+:::
+:::{card} PDF
 
-    $$
-      \emptyset \subset X \cap Y
-    $$
-    :::
-    :::{card} LaTeX
-
-      ```latex
-      \[ X \subseteq (X \cup Y) \setminus Y \]
-      ```
-    :::
-    :::{card} PDF
-
-    $$
-    X \subseteq (X \cup Y) \setminus Y
-    $$
-    :::
+$$
+X \subseteq (X \cup Y) \setminus Y
+$$
+:::
 
 ::::
 :::::
@@ -434,7 +419,6 @@ Nekaj malih grških črk ima tudi variante, ki se v LaTeXu vpišejo z uporabo uk
 
 ::::{list-table} Mali grške črke
 :header-rows: 1
-
 * - LaTeX
   - PDF
   - LaTeX
@@ -500,13 +484,13 @@ Nekaj malih grških črk ima tudi variante, ki se v LaTeXu vpišejo z uporabo uk
   - `\varpi`
   - $\varpi$
 * - `\varrho`
-    - $\varrho$
-    - `\varsigma`
-    - $\varsigma$
-    - `\varphi`
-    - $\varphi$
-    -
-    - 
+  - $\varrho$
+  - `\varsigma`
+  - $\varsigma$
+  - `\varphi`
+  - $\varphi$
+  -
+  - 
 ::::
 
 Nekaj velikih grških črk ima variante, ki se v LaTeXu vpišejo z uporabo ukaza `\varIme_črka` (npr. `\varTheta`, `\varGamma`, ...):
@@ -539,13 +523,14 @@ Nekaj velikih grških črk ima variante, ki se v LaTeXu vpišejo z uporabo ukaza
   - `\varUpsilon`
   - $\varUpsilon$
 * - `\varPhi`
-    - $\varPhi$
-    - `\varPsi`
-    - $\varPsi$
-    - `\varOmega`
-    - $\varOmega$
-    -
-    - ::::
+  - $\varPhi$
+  - `\varPsi`
+  - $\varPsi$
+  - `\varOmega`
+  - $\varOmega$
+  -
+  - 
+::::
 :::::
 
 :::::{dropdown} Operatorji in funkcije
@@ -744,9 +729,9 @@ Ukaz `\mathbb{...}` se običajno uporablja za množice števil, kot so naravna �
 
 :::{card} LaTeX
 
-    ```latex
-    \[4 \in \mathbb{N}, -5 \in \mathbb{Z},\frac{1}{2} \in \mathbb{Q}, \sqrt{2} \in \mathbb{R}\]
-    ```
+```latex
+\[4 \in \mathbb{N}, -5 \in \mathbb{Z},\frac{1}{2} \in \mathbb{Q}, \sqrt{2} \in \mathbb{R}\]
+```
 
 :::
 
@@ -768,26 +753,26 @@ Poleg oklepajev `(`, `)`, oglatih oklepajev `[`, `]` in zavitih oklepajev `\{`, 
 
 :::{card} LaTeX
 
-    ```latex
-    \[
-    \langle x \rangle,
-    \lVert x \rVert,
-    \lfloor x \rfloor,
-    \lceil x \rceil,
-    \lvert x \rvert
-    \]
-    ```
+```latex
+\[
+\langle x \rangle,
+\lVert x \rVert,
+\lfloor x \rfloor,
+\lceil x \rceil,
+\lvert x \rvert
+\]
+```
 
 :::
 :::{card} PDF
 
-    $$
-    \langle x \rangle,
-    \lVert x \rVert,
-    \lfloor x \rfloor,
-    \lceil x \rceil,
-    \lvert x \rvert
-    $$
+$$
+\langle x \rangle,
+\lVert x \rVert,
+\lfloor x \rfloor,
+\lceil x \rceil,
+\lvert x \rvert
+$$
 
 :::
 ::::
@@ -798,26 +783,26 @@ Poleg oklepajev `(`, `)`, oglatih oklepajev `[`, `]` in zavitih oklepajev `\{`, 
 
 :::{card} LaTeX
 
-    ```latex
-    \[
-    {\lfloor
-      \frac
-      {{\langle\sum_{k=1}^{\infty} k^{-4}\rangle}^3}
-      {\frac{{\lvert\{a,b,c\}\rvert}^8}{{(x^4)}^3}}
-    \rfloor}^6
-    \]
-    ```
+```latex
+\[
+{\lfloor
+\frac
+{{\langle\sum_{k=1}^{\infty} k^{-4}\rangle}^3}
+{\frac{{\lvert\{a,b,c\}\rvert}^8}{{(x^4)}^3}}
+\rfloor}^6
+\]
+```
 
 :::
 :::{card} PDF
 
-    $$
-    {\lfloor
-      \frac
-      {{\langle\sum_{k=1}^{\infty} k^{-4}\rangle}^3}
-      {\frac{{\lvert\{a,b,c\}\rvert}^8}{{(x^4)}^3}}
-      \rfloor}^6
-    $$
+$$
+{\lfloor
+\frac
+{{\langle\sum_{k=1}^{\infty} k^{-4}\rangle}^3}
+{\frac{{\lvert\{a,b,c\}\rvert}^8}{{(x^4)}^3}}
+\rfloor}^6
+$$
 
 :::
 ::::
@@ -828,30 +813,30 @@ V takih primerih je priporočljivo uporabiti ukaza `\left` in `\right`, ki samod
 
 :::{card} LaTeX
 
-    ```latex
-    \[
-    \left(
+```latex
+\[
+\left(
+\frac{1}{1 +
+  \frac{1}{1 +
+    \frac{1}{1 +
       \frac{1}{1 +
-        \frac{1}{1 +
-          \frac{1}{1 +
-            \frac{1}{1 +
-              \sqrt{2}}}}}
-    \right]
-    \]
-    ```
+        \sqrt{2}}}}}
+\right]
+\]
+```
 
 :::
 :::{card} PDF
 
-    $$
-    \left(
+$$
+\left(
+\frac{1}{1 +
+  \frac{1}{1 +
+    \frac{1}{1 +
       \frac{1}{1 +
-        \frac{1}{1 +
-          \frac{1}{1 +
-            \frac{1}{1 +
-              \sqrt{2}}}}}
-    \right]
-    $$
+        \sqrt{2}}}}}
+\right]
+$$
 
 :::
 ::::
@@ -862,24 +847,24 @@ V takih primerih je priporočljivo uporabiti ukaza `\left` in `\right`, ki samod
 
 :::{card} LaTeX
 
-    ```latex
-    \[
-    x = \left.
-      \sum_{k=1}^{\infty}
-      \frac{1}{k^2}
-      \right\}
-    \]
-    ```
+```latex
+\[
+x = \left.
+\sum_{k=1}^{\infty}
+\frac{1}{k^2}
+\right\}
+\]
+```
 
 :::
 :::{card} PDF
 
-    $$
-    x = \left.
-      \sum_{k=1}^{\infty}
-      \frac{1}{k^2}
-      \right\}
-    $$
+$$
+x = \left.
+\sum_{k=1}^{\infty}
+\frac{1}{k^2}
+\right\}
+$$
 
 :::
 ::::
@@ -896,29 +881,29 @@ v preambuli dokumenta. Nato lahko uporabimo ukaz `\ime_ločivalnika{...}` v mate
 
 :::{card} LaTeX
 
-    ```latex
-    %V preambuli:
-    \DeclarePairedDelimiter{\set}{\{}{\}}
-    \[
-    %...
-    % V telesu dokumenta:
-    \[
-    \mathbb{Q} = \set*{
-      \frac{a}{b} \colon\
-      a,b \in \mathbb{Z}, b \neq 0
-    }
-    \]
-    ```
+```latex
+%V preambuli:
+\DeclarePairedDelimiter{\set}{\{}{\}}
+\[
+%...
+% V telesu dokumenta:
+\[
+\mathbb{Q} = \set*{
+\frac{a}{b} \colon\
+a,b \in \mathbb{Z}, b \neq 0
+}
+\]
+```
 
 :::
 :::{card} PDF
 
-    $$
-    \mathbb{Q} = \left\{
-      \frac{a}{b} \colon\
-      a,b \in \mathbb{Z}, b \neq 0
-    \right\}
-    $$
+$$
+\mathbb{Q} = \left\{
+\frac{a}{b} \colon\
+a,b \in \mathbb{Z}, b \neq 0
+\right\}
+$$
 
 :::
 ::::
@@ -933,13 +918,13 @@ Te ukaze morate dodati pred `l` ali `r` (odvisno od tega, ali želite odpreti al
 ```latex
 \[
 \Biggl(
-  \biggl(
-    \Bigl(
-      \bigl(
-        \sqrt{2}
-      \bigr)
-    \Bigr)
-  \biggr)
+\biggl(
+\Bigl(
+\bigl(
+  \sqrt{2}
+\bigr)
+\Bigr)
+\biggr)
 \Biggr)
 \]
 ```
@@ -949,15 +934,15 @@ Te ukaze morate dodati pred `l` ali `r` (odvisno od tega, ali želite odpreti al
 :::{card} PDF
 
 $$
-  \Biggl(
-    \biggl(
-      \Bigl(
-        \bigl(
-          \sqrt{2}
-        \bigr)
-      \Bigr)
-    \biggr)
-  \Biggr)
+\Biggl(
+\biggl(
+\Bigl(
+  \bigl(
+    \sqrt{2}
+  \bigr)
+\Bigr)
+\biggr)
+\Biggr)
 $$
 
 :::
@@ -973,11 +958,11 @@ Za poudarjanje delov matematičnih izrazov lahko uporabimo različne ukaze za ak
 
 ```latex
 \[
-  \bar{a},
-  \vec{v},
-  \hat{n},
-  \dot{x},
-  \ddot{y}
+\bar{a},
+\vec{v},
+\hat{n},
+\dot{x},
+\ddot{y}
 \]
 ```
 
@@ -985,11 +970,11 @@ Za poudarjanje delov matematičnih izrazov lahko uporabimo različne ukaze za ak
 :::{card} PDF
 
 $$
-  \bar{a},
-  \vec{v},
-  \hat{n},
-  \dot{x},
-  \ddot{y}
+\bar{a},
+\vec{v},
+\hat{n},
+\dot{x},
+\ddot{y}
 $$
 
 ::::
@@ -1004,8 +989,8 @@ Primerjajte `\hat` z `\widehat` v primeru spodaj.
 
 ```latex
 \[
-  \hat{ABC},
-  \widehat{ABC}
+\hat{ABC},
+\widehat{ABC}
 \]
 ```
 
@@ -1013,8 +998,8 @@ Primerjajte `\hat` z `\widehat` v primeru spodaj.
 :::{card} PDF
 
 $$
-  \hat{ABC},
-  \widehat{ABC}
+\hat{ABC},
+\widehat{ABC}
 $$
 
 :::
@@ -1028,9 +1013,9 @@ $$
 
 ```latex
 \[
-  \frac{9}{14} = 0,6\overline{428571},
-  \vec{AB},
-  \overrightarrow{AB}
+\frac{9}{14} = 0,6\overline{428571},
+\vec{AB},
+\overrightarrow{AB}
 \]
 ```
 
@@ -1038,9 +1023,9 @@ $$
 :::{card} PDF
 
 $$
-  \frac{9}{14} = 0,6\overline{428571},
-  \vec{AB},
-  \overrightarrow{AB}
+\frac{9}{14} = 0,6\overline{428571},
+\vec{AB},
+\overrightarrow{AB}
 $$
 
 :::
@@ -1054,11 +1039,11 @@ Nekateri akcenti celo sprejemajo omejitve:
 
 ```latex
 \[
-  \underbrace{
-  \overbrace{(3!)}^6
-  \times
-  \overbrace{(2^3 - 1)}^7
-  }_{\text{odgovor na vprašanje o vsem}}=42
+\underbrace{
+\overbrace{(3!)}^6
+\times
+\overbrace{(2^3 - 1)}^7
+}_{\text{odgovor na vprašanje o vsem}}=42
 \]
 ```
 
@@ -1067,11 +1052,11 @@ Nekateri akcenti celo sprejemajo omejitve:
 :::{card} PDF
 
 $$
-  \underbrace{
-  \overbrace{(3!)}^6
-  \times
-  \overbrace{(2^3 - 1)}^7
-  }_{\text{odgovor na vprašanje o vsem}}=42
+\underbrace{
+\overbrace{(3!)}^6
+\times
+\overbrace{(2^3 - 1)}^7
+}_{\text{odgovor na vprašanje o vsem}}=42
 $$
 
 :::
@@ -1085,8 +1070,8 @@ Lahko celo ustvarite svoje matematični akcenti z uporabo ukazov `\overset` in `
 
 ```latex
 \[
-  \overset{\heartsuit}{x},
-  \underset{\rightarrow}{A}
+\overset{\heartsuit}{x},
+\underset{\rightarrow}{A}
 \]
 ```
 
@@ -1095,8 +1080,8 @@ Lahko celo ustvarite svoje matematični akcenti z uporabo ukazov `\overset` in `
 :::{card} PDF
 
 $$
-  \overset{\heartsuit}{x},
-  \underset{\rightarrow}{A}
+\overset{\heartsuit}{x},
+\underset{\rightarrow}{A}
 $$
 
 :::
@@ -1116,13 +1101,13 @@ Okolje tabular, skupaj z ločilniki, lahko uporabimo za ustvarjanje matrik z raz
 
 ```latex
 \[
-  \left(
-  \begin{array}{ccc}
-  a & b & c \\
-  d & e & f \\
-  g & h & i
-  \end{array}
-  \right)
+\left(
+\begin{array}{ccc}
+a & b & c \\
+d & e & f \\
+g & h & i
+\end{array}
+\right)
 \]
 ```
 
@@ -1131,13 +1116,13 @@ Okolje tabular, skupaj z ločilniki, lahko uporabimo za ustvarjanje matrik z raz
 :::{card} PDF
 
 $$
-  \left(
-  \begin{array}{ccc}
-  a & b & c \\
-  d & e & f \\
-  g & h & i
-  \end{array}
-  \right)
+\left(
+\begin{array}{ccc}
+a & b & c \\
+d & e & f \\
+g & h & i
+\end{array}
+\right)
 $$
 
 :::
@@ -1150,18 +1135,18 @@ Za ustvarjanje matematičnih izrazov, opredeljenih s primeri, lahko uporabimo ok
 :::{card} LaTeX
 
 ```latex
-  \[
-    y= \left\{
-    \begin{array}{ll}
-    y=
-    \left\{
-    \begin{array}{ll}
-      a & \text{če }d>c\\
-      b+x & \text{zjutraj}\\
-      l & \textrm{čez cel dan}
-      \end{array}
-    \right.
-  \]
+\[
+y= \left\{
+\begin{array}{ll}
+y=
+\left\{
+\begin{array}{ll}
+a & \text{če }d>c\\
+b+x & \text{zjutraj}\\
+l & \textrm{čez cel dan}
+\end{array}
+\right.
+\]
 ```
 
 :::
@@ -1169,14 +1154,14 @@ Za ustvarjanje matematičnih izrazov, opredeljenih s primeri, lahko uporabimo ok
 :::{card} PDF
 
 $$
-  y=
-  \left\{
-    \begin{array}{ll}
-      a & \text{če }d>c\\
-      b+x & \text{zjutraj}\\
-      l & \textrm{čez cel dan}
-    \end{array}
-  \right.
+y=
+\left\{
+\begin{array}{ll}
+a & \text{če }d>c\\
+b+x & \text{zjutraj}\\
+l & \textrm{čez cel dan}
+\end{array}
+\right.
 $$
 
 :::
@@ -1192,13 +1177,13 @@ The okolje `matrix` omogoča ustvarjanje matrik brez oklepajev in je naravni nad
 
 ```latex
 \[
-  \left(
-  \begin{matrix}
-  a & b & c \\
-  d & e & f \\
-  g & h & i
-  \end{matrix}
-  \right)
+\left(
+\begin{matrix}
+a & b & c \\
+d & e & f \\
+g & h & i
+\end{matrix}
+\right)
 \]
 ```
 
@@ -1207,13 +1192,13 @@ The okolje `matrix` omogoča ustvarjanje matrik brez oklepajev in je naravni nad
 :::{card} PDF
 
 $$
-  \left(
-  \begin{matrix}
-  a & b & c \\
-  d & e & f \\
-  g & h & i
-  \end{matrix}
-  \right)
+\left(
+\begin{matrix}
+a & b & c \\
+d & e & f \\
+g & h & i
+\end{matrix}
+\right)
 $$
 
 :::
@@ -1250,16 +1235,16 @@ Matrike, ki so ustvarili z uporabo teh okolij so precej velike, ker so namenjene
 ```latex
 Primerjajte
 $\left(
-  \begin{smallmatrix}
-  a & b \\
-  c & d
-  \end{smallmatrix}
-  \right)
+\begin{smallmatrix}
+a & b \\
+c & d
+\end{smallmatrix}
+\right)
 $ z
 $\begin{pmatrix}
-  a & b \\
-  c & d
-  \end{pmatrix}$
+a & b \\
+c & d
+\end{pmatrix}$
 ```
 
 :::
@@ -1268,17 +1253,17 @@ $\begin{pmatrix}
 
 Primerjajte
 $
-    \left(
-    \begin{smallmatrix}   
-    a & b \\
-    c & d
-    \end{smallmatrix}
-    \right)
-  $ z
-  $\begin{pmatrix}   
-    a & b \\
-    c & d 
-    \end{pmatrix}$
+\left(
+\begin{smallmatrix}   
+a & b \\
+c & d
+\end{smallmatrix}
+\right)
+$ z
+$\begin{pmatrix}   
+a & b \\
+c & d 
+\end{pmatrix}$
 :::
 ::::
 
@@ -1290,26 +1275,26 @@ Vendar, okolje `cases` ponuja boljšo obliko za ta namen.
 :::{card} LaTeX
 
 ```latex
-  \[
-    y= \begin{cases}
-      a & \text{če }d>c\\
-      b+x & \text{zjutraj}\\
-      l & \textrm{čez cel dan}
-    \end{cases}
-  \]
+\[
+y= \begin{cases}
+a & \text{če }d>c\\
+b+x & \text{zjutraj}\\
+l & \textrm{čez cel dan}
+\end{cases}
+\]
 ```
 
 :::
 
 :::{card} PDF
 
-    $$
-      y= \begin{cases}
-        a & \text{če }d>c\\
-        b+x & \text{zjutraj}\\
-        l & \textrm{čez cel dan}
-      \end{cases}
-    $$
+$$
+y= \begin{cases}
+  a & \text{če }d>c\\
+  b+x & \text{zjutraj}\\
+  l & \textrm{čez cel dan}
+\end{cases}
+$$
 
 :::
 ::::
@@ -1338,7 +1323,7 @@ a = b + c + d + e + f
 :::{card} PDF
 
 $$
-  a = b + c + d + e + f
+a = b + c + d + e + f
 + g + h + i + j
 + k + l + m + n + o + p
 $$
@@ -1387,10 +1372,10 @@ a + b + c + d + e \\
 
 ```latex
 \begin{multline}
-  a + b + c \\
-  \shoveleft{+ d + e + f} \\
-  \shoveright{+ g + h + i} \\
-  = j + k + l + m + n
+a + b + c \\
+\shoveleft{+ d + e + f} \\
+\shoveright{+ g + h + i} \\
+= j + k + l + m + n
 \end{multline}
 ```
 
@@ -1417,13 +1402,13 @@ Pri sestavljanju več enačb v več okoljih `equation` se med njimi pojavi nepot
 
 ```latex
 \begin{equation}
-  2 + 2 = 4
+2 + 2 = 4
 \end{equation}
 \begin{equation}
-  2 \times 2 = 4
+2 \times 2 = 4
 \end{equation}
 \begin{equation}
-  2 + 2 \times 2 = 6
+2 + 2 \times 2 = 6
 \end{equation}
 ```
 
@@ -1451,9 +1436,9 @@ Da se temu izognemo, lahko uporabimo okolje `gather`, ki omogoča več enačb br
 
 ```latex
 \begin{gather}
-  2 + 2 = 4 \\
-  2 \times 2 = 4 \notag \\
-  2 + 2 \times 2 = 6
+2 + 2 = 4 \\
+2 \times 2 = 4 \notag \\
+2 + 2 \times 2 = 6
 \end{gather}
 ```
 
@@ -1483,11 +1468,11 @@ Okolje `align` omogoča pisanje več enačb, ki so poravnane glede na določen z
 :::{card} LaTeX
 
 ```latex
-  \begin{align}
-  2 + 2 & = 2 \times 2 \\
-  3 + 3 & \neq 3 \times 3 \\
-  2 + 2 \times 2 & < 8
-  \end{align}
+\begin{align}
+2 + 2 & = 2 \times 2 \\
+3 + 3 & \neq 3 \times 3 \\
+2 + 2 \times 2 & < 8
+\end{align}
 ```
 
 :::
@@ -1511,8 +1496,8 @@ Elementi se obravnavajo kot pari, zato bo vsak drugi znak poravnave ustvaril ve�
 
 ```latex
 \begin{align}
-  a & \succeq b & c & \leq d \\
-  a & \geq d & d & \prec c
+a & \succeq b & c & \leq d \\
+a & \geq d & d & \prec c
 \end{align}
 ```
 
@@ -1535,10 +1520,10 @@ Okolje `align*` (z zvezdico) je tudi zelo uporabno za pisanje zaporedij izračun
 
 ```latex
 \begin{align*}
-  \sum_{k=0}^n k
-  &= \sum_{k=0}^{n-1} k + n \\
-  &= \frac{n(n-1)}{2} + n \\
-  &= \frac{n(n+1)}{2}
+\sum_{k=0}^n k
+&= \sum_{k=0}^{n-1} k + n \\
+&= \frac{n(n-1)}{2} + n \\
+&= \frac{n(n+1)}{2}
 \end{align*}
 ```
 
@@ -1567,10 +1552,10 @@ To so uporabno, kadar želite vključiti večvrstične enačbe, da dobi samo eno
 ```latex
 \begin{equation}
 \begin{aligned}
-  \sum_{k=0}^n k
-  &= \sum_{k=0}^{n-1} k + n \\
-  &= \frac{n(n-1)}{2} + n \\
-  &= \frac{n(n+1)}{2}
+\sum_{k=0}^n k
+&= \sum_{k=0}^{n-1} k + n \\
+&= \frac{n(n-1)}{2} + n \\
+&= \frac{n(n+1)}{2}
 \end{aligned}
 \end{equation}
 ```
@@ -1602,7 +1587,7 @@ V matematičnem načinu lahko vstavimo vodoravni presledek z uporabo ukaza `\msp
 :::{card} LaTeX
 
 ```latex
-  $a \mspace{18mu} 2$
+$a \mspace{18mu} 2$
 ```
 
 :::
@@ -1671,7 +1656,7 @@ Vendar pa je uporaba ukaza `\mspace` redka. Pogosteje se uporabljajo vnaprej dol
 
 ```latex
 \[
-  a^{\varphi(n)} \equiv 1 \pmod n
+a^{\varphi(n)} \equiv 1 \pmod n
 \]
 ```
 
@@ -1679,7 +1664,7 @@ Vendar pa je uporaba ukaza `\mspace` redka. Pogosteje se uporabljajo vnaprej dol
 :::{card} PDF
 
 $$
-  a^{\varphi(n)} \equiv 1 \pmod{n}
+a^{\varphi(n)} \equiv 1 \pmod{n}
 $$
 
 :::
@@ -1692,7 +1677,7 @@ $$
 
 ```latex
 \[
-  \binom{n}{k} = \frac{n!}{k!(n-k)!}
+\binom{n}{k} = \frac{n!}{k!(n-k)!}
 \]
 ```
 
@@ -1700,7 +1685,7 @@ $$
 :::{card} PDF
 
 $$
-  \binom{n}{k} = \frac{n!}{k!(n-k)!}
+\binom{n}{k} = \frac{n!}{k!(n-k)!}
 $$
 
 :::
@@ -1717,8 +1702,8 @@ LaTeX poskuša prilagoditi svoj izpis na podlagi okoliških simbolov.
 
 ```latex
 \begin{gather*}
-  1, 2, 3, \dots, 100 \\
-  1 + 2 + 3 + \dots + 100 = 5050
+1, 2, 3, \dots, 100 \\
+1 + 2 + 3 + \dots + 100 = 5050
 \end{gather*}
 ```
 
@@ -1747,8 +1732,8 @@ LaTeX poskuša prilagoditi svoj izpis na podlagi okoliških simbolov.
 
 ```latex
 \begin{gather*}
-  1 + 2 + 3 + \dots \\
-  1 + 2 + 3 + \dotsb \\
+1 + 2 + 3 + \dots \\
+1 + 2 + 3 + \dotsb \\
 \end{gather*}
 ```
 
@@ -1773,10 +1758,10 @@ Ko delate z matrikami, lahko uporabite `\vdots` za navpične tri pike in `\ddots
 
 ```latex
 \[  \begin{bmatrix}
-    a_{1,1} & \cdots & a_{1,n} \\
-    \vdots & \ddots & \vdots \\
-    a_{m,1} & \cdots & a_{m,n} \\
-    \end{bmatrix} \]
+a_{1,1} & \cdots & a_{1,n} \\
+\vdots & \ddots & \vdots \\
+a_{m,1} & \cdots & a_{m,n} \\
+\end{bmatrix} \]
 ```
 
 :::
@@ -1784,11 +1769,11 @@ Ko delate z matrikami, lahko uporabite `\vdots` za navpične tri pike in `\ddots
 :::{card} PDF
 
 $$
-  \begin{bmatrix}
-      a_{1,1} & \cdots & a_{1,n} \\
-      \vdots & \ddots & \vdots \\
-      a_{m,1} & \cdots & a_{m,n} \\
-  \end{bmatrix}
+\begin{bmatrix}
+a_{1,1} & \cdots & a_{1,n} \\
+\vdots & \ddots & \vdots \\
+a_{m,1} & \cdots & a_{m,n} \\
+\end{bmatrix}
 $$
 
 :::
@@ -1805,19 +1790,19 @@ Ukaza `\hphantom{izraz}` in `\vphantom{izraz}` ustvarita neviden element z enako
 :::{card} LaTeX
 
 ```latex
-  \begin{multline*}
-    f(a, b) = \left(
-      \int_a^b f(x)
-    dooooooooolgo
-    \right. \\
-    \left.
-      \vphantom{
-        \int_a^b f(x)
-    dooooooooolgo
-    }
-    kratko d x
-    \right)
-  \end{multline*}
+\begin{multline*}
+f(a, b) = \left(
+\int_a^b f(x)
+dooooooooolgo
+\right. \\
+\left.
+\vphantom{
+  \int_a^b f(x)
+dooooooooolgo
+}
+kratko d x
+\right)
+\end{multline*}
 ```
 
 :::
@@ -1840,14 +1825,14 @@ Napišite LaTeX kodo za naslednje matematične izraze:
 2. $\displaystyle \int_{0}^{\infty} e^{-x^2} \, dx = \frac{\sqrt{\pi}}{2}$
 3. $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}$
 4. Če je
-   $A =\begin{pmatrix} 2 & 1 & 1 \\ 1 & 1 & 0 \\ 1 & 0 & 1 \end{pmatrix}$ torej je
-   $
-  A^{-1} = 
-  \begin{pmatrix}1 & -1 & -1 \\
-  -1 & 2 & 1 \\
-  -1 & 1 & 2
-  \end{pmatrix}
-  $
+$A =\begin{pmatrix} 2 & 1 & 1 \\ 1 & 1 & 0 \\ 1 & 0 & 1 \end{pmatrix}$ torej je
+$
+A^{-1} = 
+\begin{pmatrix}1 & -1 & -1 \\
+-1 & 2 & 1 \\
+-1 & 1 & 2
+\end{pmatrix}
+$
 
 5. $\displaystyle |x| = \begin{cases}
 x & \text{če } x \geq 0 \\
@@ -1855,8 +1840,8 @@ x & \text{če } x \geq 0 \\
 \end{cases}$
 
 6. Če je $\vec{v} = (v_1, \dots, v_n)$, torej je njena norma definirana kot
-   $\lvert \vec{v}\rvert = \sqrt{v_1^2 + v_2^2 + \dots + v_n^2}$.
-   :::
+$\lvert \vec{v}\rvert = \sqrt{v_1^2 + v_2^2 + \dots + v_n^2}$.
+:::
 
 ```{margin}
 [Seznam vaj](#latexMatematika_vaje)
@@ -1866,39 +1851,38 @@ x & \text{če } x \geq 0 \\
 :class: tip, dropdown
 
 1. ```latex
-   \[
-   \cos^2 \theta + \sin^2 \theta = 1
-   \]
-   ```
+\[
+\cos^2 \theta + \sin^2 \theta = 1
+\]
+```
 2. ```latex
-   \[
-   \int_{0}^{\infty} e^{-x^2} \, dx = \frac{\sqrt{\pi}}{2}
-   \]
-   ```
+\[
+\int_{0}^{\infty} e^{-x^2} \, dx = \frac{\sqrt{\pi}}{2}
+\]
+```
 3. ```latex
-   \[
-    \sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}
-    \]
-   ```
+\[
+\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}
+\]
+```
 4. ```latex
-   Če je $A =\begin{pmatrix} 2 & 1 & 1 \\ 1 & 1 & 0 \\ 1 & 0 & 1 \end{pmatrix}$  torej je
-     $ A^{-1} = \begin{pmatrix}1 & -1 & -1 \\ -1 & 2 & 1 \\ -1 & 1 & 2\end{pmatrix}$
-   ```
+Če je $A =\begin{pmatrix} 2 & 1 & 1 \\ 1 & 1 & 0 \\ 1 & 0 & 1 \end{pmatrix}$  torej je
+$ A^{-1} = \begin{pmatrix}1 & -1 & -1 \\ -1 & 2 & 1 \\ -1 & 1 & 2\end{pmatrix}$
+```
 5. ```latex
-   \[
-   |x| = \begin{cases}
-   x & \text{če } x \geq 0 \\
-   -x & \text{če } x < 0
-   \end{cases}
-   \]
-   ```
-
+\[
+|x| = \begin{cases}
+x & \text{če } x \geq 0 \\
+-x & \text{če } x < 0
+\end{cases}
+\]
+```
 ````
+
 6. ```latex
- Če je $\vec{v} = (v_1, \dots, v_n)$, torej je njena norma definirana kot
- $\lvert \vec{v}\rvert = \sqrt{v_1^2 + v_2^2 + \dots + v_n^2}$.
+Če je $\vec{v} = (v_1, \dots, v_n)$, torej je njena norma definirana kot
+$\lvert \vec{v}\rvert = \sqrt{v_1^2 + v_2^2 + \dots + v_n^2}$.
 ````
-
 :::
 
 :::{exercise}
@@ -1906,20 +1890,20 @@ x & \text{če } x \geq 0 \\
 Napišite LaTeX kodo za naslednje matematične izraze:
 
 - \begin{align}
-  x^2 + y^2 &= 1\\
-  y &= \sqrt{1-x^2} && \text{če je } y \geq 0\\
-  \end{align}
+x^2 + y^2 &= 1\\
+y &= \sqrt{1-x^2} && \text{če je } y \geq 0\\
+\end{align}
 
 - \begin{align}
-  x+2y+3z & = 6\\
-  2x+3y+z & = 5\\
-  3x+y+2z & = 7
-  \end{align}
+x+2y+3z & = 6\\
+2x+3y+z & = 5\\
+3x+y+2z & = 7
+\end{align}
 
 - \begin{align}
-  (x+y)^n & = \sum\_{k=0}^{n} \binom{n}{k} x^{n-k} y^k\\
-  & = x^n + \binom{n}{1} x^{n-1} y + \binom{n}{2} x^{n-2} y^2 + \dots + y^n
-  \end{align}
+(x+y)^n & = \sum\_{k=0}^{n} \binom{n}{k} x^{n-k} y^k\\
+& = x^n + \binom{n}{1} x^{n-1} y + \binom{n}{2} x^{n-2} y^2 + \dots + y^n
+\end{align}
 
 :::
 
@@ -1931,32 +1915,32 @@ Napišite LaTeX kodo za naslednje matematične izraze:
 :class: tip, dropdown
 
 - ```latex
-  \begin{align}
-    x^2 + y^2  &= 1\\
-    y &= \sqrt{1-x^2} && \text{če je } y \geq 0\\
-  \end{align}
-  ```
+\begin{align}
+x^2 + y^2  &= 1\\
+y &= \sqrt{1-x^2} && \text{če je } y \geq 0\\
+\end{align}
+```
 - ```latex
-  \begin{align}
-    x+2y+3z & = 6\\
-    2x+3y+z & = 5\\
-    3x+y+2z & = 7
-  \end{align}
-  ```
+\begin{align}
+x+2y+3z & = 6\\
+2x+3y+z & = 5\\
+3x+y+2z & = 7
+\end{align}
+```
 - ```latex
-    \begin{align}
-      (x+y)^n & = \sum_{k=0}^{n} \binom{n}{k} x^{n-k} y^k\\
-      & = x^n + \binom{n}{1} x^{n-1} y + \binom{n}{2} x^{n-2} y^2 + \dots + y^n
-    \end{align}
-  ```
-  :::
+\begin{align}
+(x+y)^n & = \sum_{k=0}^{n} \binom{n}{k} x^{n-k} y^k\\
+& = x^n + \binom{n}{1} x^{n-1} y + \binom{n}{2} x^{n-2} y^2 + \dots + y^n
+\end{align}
+```
+:::
 
 :::{exercise}
 :label: ex-matematika-3
 Napišite LaTeX kodo, da reproducira besedilo prikazano na sliki spodaj:
 
 ```{figure} ./img/04_ex-maxwell.png
-  :name: fig_ex_maxwell
+:name: fig_ex_maxwell
 ```
 
 :::
@@ -1971,10 +1955,10 @@ Napišite LaTeX kodo, da reproducira besedilo prikazano na sliki spodaj:
 ```latex
 Maxwellove enačbe v vakuumu so:
 \begin{align}
-  \nabla \cdot \mathbf{E} & = \frac{\rho}{\varepsilon_0} \label{eq:GaussE} \\
-  \nabla \cdot \mathbf{B} & = 0 \label{eq:GaussB} \\
-  \nabla \times \mathbf{E} & = -\frac{\partial \mathbf{B}}{\partial t} \label{eq:Faraday} \\
-  \nabla \times \mathbf{B} & = \mu_0 \mathbf{J} + \mu_0 \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t} \label{eq:Ampere}
+\nabla \cdot \mathbf{E} & = \frac{\rho}{\varepsilon_0} \label{eq:GaussE} \\
+\nabla \cdot \mathbf{B} & = 0 \label{eq:GaussB} \\
+\nabla \times \mathbf{E} & = -\frac{\partial \mathbf{B}}{\partial t} \label{eq:Faraday} \\
+\nabla \times \mathbf{B} & = \mu_0 \mathbf{J} + \mu_0 \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t} \label{eq:Ampere}
 \end{align}
 
 Enačba \ref{eq:GaussE} opisuje Gaussov zakon za električno polje, enačba \ref{eq:GaussB} pa Gaussov zakon za magnetno polje. Enačba \ref{eq:Faraday} predstavlja Faradayev zakon elektromagnetne indukcije, medtem ko enačba \ref{eq:Ampere} predstavlja Amperov zakon z Maxwellovim dodatkom.
@@ -2155,7 +2139,7 @@ Ukaz `\qedhere` lahko uporabimo znotraj okolja `proof`, da postavimo simbol kvad
 V svoj dokument napišite LaTeX kodo za naslednje besedilo:
 
 ```{figure} ./img/04_ex-theorems.png
-  :name: fig_ex_theorems
+:name: fig_ex_theorems
 ```
 
 :::
