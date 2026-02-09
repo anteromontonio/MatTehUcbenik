@@ -383,7 +383,7 @@ $$ f(x)= x^{2} e^{3x} \cos(2x) \qquad g(x)=\frac{x^2+1}{x-2} \qquad h(x) = x \co
 
 SageMath lahko izračuna določene in nedoločene integrale.
 
-Najprej se bomo osredotočili na nedoločeni integral, ki ga izračunamo z ukazom `integral()`, ki ima podobne argumente kot ukaz 'derivative()'.  
+Najprej se bomo osredotočili na nedoločeni integral, ki ga izračunamo z ukazom `integral()`, ki ima podobne argumente kot ukaz `derivative()`.  
 
 :::{code-cell} python
 f(x) = x*exp(x)
