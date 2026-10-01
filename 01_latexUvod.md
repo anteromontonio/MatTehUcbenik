@@ -23,10 +23,11 @@ Zgrajen je na programu TeX, ki ga je leta 1978 razvil Donald E. Knuth.
 Prvo različico LaTeXa je leta 1983 napisal Leslie Lamport (od tod ime: **La**mport **TeX**).
 Gre za zbirko dodatnih ukazov za TeX, ki avtorju omogočajo, da dokument opiše po njegovi _zgradbi_ (naslov, razdelek, poudarek), oblikovanje pa prepusti že pripravljenim profesionalnim vzorcem.
 
-Trenutna standardna verzija je LaTeX2e (1994), zanj pa je odgovoren Frank Mittelbach. LaTeX se izgovori 'láteh', po angleško pa običajno rečemo 'lejteh'.
-
+Trenutna standardna verzija je LaTeX2e (1994), zanj pa je odgovoren Frank Mittelbach. 
 Čeprav je LaTeX2e star že več kot trideset let, se njegovo jedro posodablja dvakrat letno.
 Zato marsikateri nasvet, ki ga najdete na spletu, danes ni več potreben. Na to bomo sproti opozarjali.
+
+LaTeX se izgovori 'láteh', po angleško pa običajno rečemo 'lejteh'.
 
 Ko želi _avtor_ kaj objaviti, pošlje svoj rokopis založniku.
 Tam _knjižni opremljevalec_ določi obliko dokumenta (širino stolpcev, obliko črk, velikost presledkov pred in po naslovih ...).
@@ -126,7 +127,7 @@ Izkazalo se je, da njegov tiskalnik tiska samo črno-belo, zato vaši barvi zanj
 
 Enostavna rešitev! Vse zeleno besedilo spremenite v kurzivno pisavo, ostalo pa pustite pokončno.
 Ko ste ročno predelali že prvih 120 strani, pa ste se spomnili, da kurzivno pisavo ponekod uporabljate tudi za poudarjanje, na primer:
-[Ali boš *to* jedla?]{.latex-line .text-green}
+{span .latex-line .text-green}`Ali boš *to* jedla?`
 Zdaj boste morali pregledati še vsak odstavek posebej, poiskati vse take poudarke in jih spremeniti v kak drug slog. Šele nato lahko preostalo zeleno besedilo mirno spremenite v kurzivo.
 
 **Vidite neskončni problem?**
@@ -925,11 +926,11 @@ Ukaz `\textnormal` je le kombinacija obeh.
 size (velikost)
 : To se večinoma nadzira z možnostmi ukaza `\documentclass`, vendar o tem več kasneje.
 
-Če želite spremeniti enega od prvih treh parametrov v danem besedilu, preprosto uporabite ukaze, kot je `\ukaz{dano besedilo}`. Npr. z ukazom `\textbf{To je krepko besedilo}` dobimo [**To je krepko besedilo**]{.latex-line} in z ukazom `\textit{To je ležeče besedilo}` dobimo [*To je ležeče besedilo*]{.latex-line}.
+Če želite spremeniti enega od prvih treh parametrov v danem besedilu, preprosto uporabite ukaze, kot je `\ukaz{dano besedilo}`. Npr. z ukazom `\textbf{To je krepko besedilo}` dobimo {span .latex-line}`**To je krepko besedilo**` in z ukazom `\textit{To je ležeče besedilo}` dobimo {span .latex-line}`*To je ležeče besedilo*`.
 
 :::{admonition} Pazite!
 :class: warning
-Zgoraj prikazane ukaze lahko tudi združujemo, npr. `\textit{\textbf{To je krepko in ležeče besedilo}}` da [**_To je krepko in ležeče besedilo_**]{.latex-line}.
+Zgoraj prikazane ukaze lahko tudi združujemo, npr. z ukazom `\textit{\textbf{To je krepko in ležeče besedilo}}` dobimo {span .latex-line}`**_To je krepko in ležeče besedilo_**`.
 Vendar niso vse kombinacije na voljo: če poskusite uporabiti kombinacijo, ki ne obstaja, se bo LaTeX pritožil.
 :::
 
