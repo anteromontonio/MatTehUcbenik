@@ -5,7 +5,8 @@ project:
     - name: Antonio Montero
       affiliation: Univerza v Ljubljani, Pedagoška fakulteta
       website: https://anteromontonio.github.io
-  copyright: "2025"
+      email: antonio.montero@pef.uni-lj.si
+  copyright: "Antonio Montero - 2026"
   license: CC-BY-NC-SA-4.0
   bibliography:
     - matteh.bib
