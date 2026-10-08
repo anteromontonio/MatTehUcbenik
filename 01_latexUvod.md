@@ -1224,6 +1224,7 @@ Vsako poglavje v tej knjigi se konča s seznamom vaj ter dodatnimi ali domačimi
 
 
 :::{exercise} Domača naloga
+:label: dn_povcevanjeSlovenscine
 :nonumber:
 1. Napišite novo datoteko z imenom `DN1.tex`.
 1. Z njo ustvarite dokument z naslovom _Poučevanje slovenščine mojega učitelja_.
