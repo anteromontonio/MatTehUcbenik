@@ -2,7 +2,7 @@
 # Uvod v LaTeX
 
 :::{admonition} Cilji poglavja
-:class: seealso
+:class: tip
 Po tem poglavju boste znali:
 
 - ustvariti in prevesti dokument v Overleafu,
@@ -189,7 +189,7 @@ Ustvarite si račun v Overleafu.
 :::
 
 :::{margin}
-[Seznam vaj](#latexUvod_vaje)
+[Seznam nalog](#latexUvod_vaje)
 :::
 
 :::{solution} ex-overleafRacun
@@ -346,7 +346,7 @@ Napišite svoj prvi dokument z LaTeXom:
 :::
 
 :::{margin}
-[Seznam vaj](#latexUvod_vaje)
+[Seznam nalog](#latexUvod_vaje)
 :::
 
 ::::::{solution} ex_latex_prvaDatoteka
@@ -436,7 +436,7 @@ V tem dokumentu bom napisal ljubezensko pismo Juliji.
 :::
 
 :::{margin}
-[Seznam vaj](#latexUvod_vaje)
+[Seznam nalog](#latexUvod_vaje)
 :::
 
 ::::::{solution} ex_latex_avtorNaslovDatum
@@ -521,7 +521,7 @@ Paket `babel` poskrbi za pravilno oblikovanje besedila glede na izbrani jezik, n
 :::
 
 :::{margin}
-[Seznam vaj](#latexUvod_vaje)
+[Seznam nalog](#latexUvod_vaje)
 :::
 
 ::::::{solution} ex_latex_babel
@@ -633,7 +633,7 @@ Paket `fontenc` z možnostjo `T1` pa je pri uporabi programa `pdflatex` še vedn
 ::::
 
 :::{margin}
-[Seznam vaj](#latexUvod_vaje)
+[Seznam nalog](#latexUvod_vaje)
 :::
 
 :::{solution} ex_latex_komentarji
@@ -698,7 +698,7 @@ Pogosta napaka v LaTeXu je, da se pozabi uporabiti ukaz za enega od posebnih sim
 ::::
 
 :::{margin}
-[Seznam vaj](#latexUvod_vaje)
+[Seznam nalog](#latexUvod_vaje)
 :::
 
 ::::::{solution} ex_latex_posebniZnaki
@@ -752,7 +752,7 @@ V slovenščini ga skoraj ne uporabljamo, pogost pa je v angleških besedilih.
 Vezaj `-` ni isto kot minus.
 Minus je matematični znak in ga zapišemo v matematičnem načinu, torej `$-5$`: {span .latex-line}`&minus;5`.
 Če napišemo samo `-5`, dobimo {span .latex-line}`-5`, kar je krajše in tipografsko napačno.
-Zaenkrat o tem ne skrbite, saj se bomo o matematičnem načinu pogovarjali v razdelku [](./03_latexMatematika.md).
+Zaenkrat o tem ne skrbite, saj se bomo o matematičnem načinu pogovarjali v poglavju [](./04_latexMatematika.md).
 :::
 
 
@@ -779,7 +779,7 @@ V svojem dokumentu napišite naslednje besedilo. Pazite, da uporabite pravilne z
 ::::
 
 :::{margin}
-[Seznam vaj](#latexUvod_vaje)
+[Seznam nalog](#latexUvod_vaje)
 :::
 
 :::{solution} ex_VezajiPomisljajiNarekovaji
@@ -839,7 +839,7 @@ Prazen komentar ni prazna vrstica.
 
 ::::{tab-item} PDF
 :::{figure} ./img/01_presledki.png
-:name: presledki
+:name: eg-presledki
 :alt: Izpis besedila, ki prikazuje, kako LaTeX obravnava presledke in prazne vrstice.
 :::
 ::::
@@ -1057,7 +1057,7 @@ Delajte s besedilom v res majhnih delih.
 ::::
 
 :::{margin}
-[Seznam vaj](#latexUvod_vaje)
+[Seznam nalog](#latexUvod_vaje)
 :::
 
 :::{solution} ex_pisave
@@ -1174,7 +1174,7 @@ Uporabite različne velikosti pisave in pisave, da reproducirajte naslednje bese
 ::::
 
 :::{margin}
-[Seznam vaj](#latexUvod_vaje)
+[Seznam nalog](#latexUvod_vaje)
 :::
 ::::{solution} ex_VelikostiPisave
 :class: tip dropdown
@@ -1207,20 +1207,20 @@ Ne pozabite, da moramo LaTeXu prepustiti oblikovanje, medtem ko se **mi osredoto
 :::
 
 (latexUvod_vaje)=
-## Vaje
+## Naloge
 
 
-Vsako poglavje v tej knjigi se konča s seznamom vaj ter dodatnimi ali domačimi nalogami. Tukaj so vaje prvega poglavja:
+Vsako poglavje v tej knjigi se konča s seznamom nalog ter z dodatnimi ali domačimi nalogami. Tukaj so naloge prvega poglavja:
 
-- [ ] [Vaja %s](#ex-overleafRacun): Ustvarjanje računa v Overleafu.
-- [ ] [Vaja %s](#ex_latex_prvaDatoteka): Ustvarjanje prve datoteke LaTeX.
-- [ ] [Vaja %s](#ex_latex_avtorNaslovDatum): Dodajanje avtorja, naslova in datuma.
-- [ ] [Vaja %s](#ex_latex_babel): Uporaba paketa `babel`.
-- [ ] [Vaja %s](#ex_latex_komentarji): Znak `%` in komentarji.
-- [ ] [Vaja %s](#ex_latex_posebniZnaki): Uporaba posebnih znakov.
-- [ ] [Vaja %s](#ex_VezajiPomisljajiNarekovaji): Uporaba vezajev, pomišljajev in narekovajev.
-- [ ] [Vaja %s](#ex_pisave): Uporaba različnih pisav.
-- [ ] [Vaja %s](#ex_VelikostiPisave): Uporaba različnih velikosti pisav.
+- [ ] [Naloga %s](#ex-overleafRacun): Ustvarjanje računa v Overleafu.
+- [ ] [Naloga %s](#ex_latex_prvaDatoteka): Ustvarjanje prve datoteke LaTeX.
+- [ ] [Naloga %s](#ex_latex_avtorNaslovDatum): Dodajanje avtorja, naslova in datuma.
+- [ ] [Naloga %s](#ex_latex_babel): Uporaba paketa `babel`.
+- [ ] [Naloga %s](#ex_latex_komentarji): Znak `%` in komentarji.
+- [ ] [Naloga %s](#ex_latex_posebniZnaki): Uporaba posebnih znakov.
+- [ ] [Naloga %s](#ex_VezajiPomisljajiNarekovaji): Uporaba vezajev, pomišljajev in narekovajev.
+- [ ] [Naloga %s](#ex_pisave): Uporaba različnih pisav.
+- [ ] [Naloga %s](#ex_VelikostiPisave): Uporaba različnih velikosti pisav.
 
 
 :::{exercise} Domača naloga
