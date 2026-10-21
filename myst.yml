@@ -8,6 +8,9 @@ project:
       email: antonio.montero@pef.uni-lj.si
   copyright: "Antonio Montero - 2026"
   license: CC-BY-NC-SA-4.0
+  numbering:
+    exercise:
+      template: Naloga %s
   bibliography:
     - matteh.bib
   exports:

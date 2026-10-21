@@ -25,7 +25,7 @@ Najlažje način za učenje orodje je, da jih raziskujete.
 
 ## Točke in krogle
 
-:::{exercise} [Seznam vaj ⤵️ ](#10_geogebra3D_vaje)
+:::{exercise} [Seznam nalog ⤵️ ](#10_geogebra3D_vaje)
 :label: ex-spheres
 1. Ustvarite točki $A = (0,0,0)$ in $B = (2,3,2)$. To lahko naredite z orodjem <img src="./geogebra/images/32px-Mode_point.svg.png" class="inline" width="22px"> *Point* (*Točka*) ali z vnosom koordinat v algebrsko okno.
 2. Uporabite orodje <img src="./geogebra/images/24px-Mode_sphere2.svg.png" class="inline" width="22px"> *Sphere: Centre & Point* (*Sfera: središče & točka *) za ustvarjanje krogle s središčem v točki $A$ in skozi točko $B$.
@@ -62,7 +62,7 @@ Včasih je težko vse videti v 3D prostoru. Priporočamo, da eksperimentirate z 
 
 ## Premice in ravnine
 
-:::{exercise} [Seznam vaj ⤵️ ](#10_geogebra3D_vaje)
+:::{exercise} [Seznam nalog ⤵️ ](#10_geogebra3D_vaje)
 :label: ex-distance
 Kako izmeriti razdaljo medo točkama v GeoGebri 3D?
 
@@ -98,7 +98,7 @@ Lahko tudi jo odprite v [GeoGebri](https://www.geogebra.org/classic/nga8tzfc).
 ::::
 
 
-:::{exercise} [Seznam vaj ⤵️ ](#10_geogebra3D_vaje)
+:::{exercise} [Seznam nalog ⤵️ ](#10_geogebra3D_vaje)
 :label: ex-cube
 
 1. Ustvarite ravnino z enačbo $ax + by + cz +d = 0$, kjer so $a$, $b$, $c$ in $d$ poljubne vrednosti (na primer, uporabite drsnike za določitev teh vrednosti).
@@ -134,7 +134,7 @@ Lahko tudi jo odprite v [GeoGebri](https://www.geogebra.org/classic/pquesa7u).
 
 ## Poliedri in drugi 3D objekti
 
-::::{exercise} [Seznam vaj ⤵️ ](#10_geogebra3D_vaje)
+::::{exercise} [Seznam nalog ⤵️ ](#10_geogebra3D_vaje)
 :label: ex-polyhedra
 
 Oglejte si datoteko GeoGebre spodaj, lahko jo tudi odprite v GeoGebri s klikom na [povezavo](https://www.geogebra.org/classic/gehhdz9r) in torej prenesite ga na svoj računalnik.
@@ -163,7 +163,7 @@ IFrame("https://www.geogebra.org/material/iframe/id/gehhdz9r/width/1512/height/9
 
 ## Rotacijska ploskev
 
-:::{exercise} [Seznam vaj ⤵️ ](#10_geogebra3D_vaje)
+:::{exercise} [Seznam nalog ⤵️ ](#10_geogebra3D_vaje)
 :label: ex-rotational-surfaces
 
 1. Ustvarite drsnike `a`, `b` in `c` z vrednostmi od `-5` do `5` in korakom `0.01`. 
@@ -184,7 +184,7 @@ IFrame("https://www.geogebra.org/material/iframe/id/gehhdz9r/width/1512/height/9
 
 Drugi način za prikaz rotacijske ploskve je z orodjem <img src="./geogebra/images/rotateAxis.png" class="inline" width="22px"> *Rotate around Line* (*Vrtenje okoli premice*).
 
-:::{exercise} [Seznam vaj ⤵️ ](#10_geogebra3D_vaje)
+:::{exercise} [Seznam nalog ⤵️ ](#10_geogebra3D_vaje)
 :label: ex-rotate-funkcije
 1. Z ukazom `f(x)=sin(x)` ustvarite funkcijo $f(x)=\sin(x)$.
 2. Ustvarite drsnik `t` z lastnostmi `Min=0`, `Max=2*pi` in `Increment=0.01`. Nastavite Polje `Repeat` na `Increasing (Once)`. 
@@ -201,10 +201,10 @@ Drugi način za prikaz rotacijske ploskve je z orodjem <img src="./geogebra/imag
 
 ## Funkcije z več spremenljivkami.
 
-:::{exercise} [Seznam vaj ⤵️ ](#10_geogebra3D_vaje)
+:::{exercise} [Seznam nalog ⤵️ ](#10_geogebra3D_vaje)
 :label: ex-multivariable-functions
 1. Z ukazom `f(x,y)=sin(x+y)` ustvarite funkcijo z dvema spremenljivkama $f(x,y)=\sin(x+y)$.
-2. Odprite pogled *Graphics* kot v koraku 9. [prejšnje vaje](#ex-rotate-funkcije).
+2. Odprite pogled *Graphics* kot v koraku 9. [prejšnje naloge](#ex-rotate-funkcije).
 3. V pogledu *Graphics* ustvarite točko $A$. 
 4. Ustvarite točko $B$ z ukazom `B=(x(A),y(A),f(x(A),y(A)))`. Točka $B$ leži na površini funkcije $f$ nad točko $A$ v ravnini $xy$.
 5. Ustvarite daljico med točkama $A$ in $B$ z orodjem <img src="./geogebra/images/32px-Mode_segment.svg.png" class="inline" width="22px"> *Segment* (*Daljica*) oz. z ukazom `Segment(A,B)`.
@@ -212,9 +212,9 @@ Drugi način za prikaz rotacijske ploskve je z orodjem <img src="./geogebra/imag
 :::
 
 
-## Dodatne vaje
+## Dodatne naloge
 
-:::{exercise} [Seznam vaj ⤵️ ](#10_geogebra3D_vaje)
+:::{exercise} [Seznam nalog ⤵️ ](#10_geogebra3D_vaje)
 :label: ex-conics
 
 Stožnice so dobro razumljene krivulje na ravnini. Svoje ime so dobile, ker na različne načine nastanejo, ko se (dvojni) stožec preseka z ravnino:
@@ -232,7 +232,7 @@ Stožnice so dobro razumljene krivulje na ravnini. Svoje ime so dobile, ker na r
 :::
 
 
-:::{exercise} [Seznam vaj ⤵️ ](#10_geogebra3D_vaje)
+:::{exercise} [Seznam nalog ⤵️ ](#10_geogebra3D_vaje)
 :label: ex-platonski-telesa
 Ustvarite konstrukcijo v Geogebra 3D, ki prikazuje, da lahko pet platonskih teles sestavite na naslednji način:
 
@@ -249,14 +249,14 @@ Ustvarite konstrukcijo v Geogebra 3D, ki prikazuje, da lahko pet platonskih tele
 
 
 (10_geogebra3D_vaje)=
-## Vaje
+## Naloge
 
-- [ ] [Vaja %s.](#ex-spheres): Ustvarite dve krogli v GeoGebri 3D in raziskujte njihovo presečišče.
-- [ ] [Vaja %s.](#ex-distance): Kako izmeriti razdaljo medo točkama v GeoGebri 3D?
-- [ ] [Vaja %s.](#ex-cube): Ustvarite kocko in ravnino v GeoGebri 3D ter poiščite njihovo presečišče.
-- [ ] [Vaja %s.](#ex-polyhedra): Ustvarite različne poliedre in 3D oblike v GeoGebri 3D.
-- [ ] [Vaja %s.](#ex-rotational-surfaces): Ustvarite rotacijske ploskve v GeoGebri 3D z vrtenjem daljic in krožnic okoli osi.
-- [ ] [Vaja %s.](#ex-rotate-funkcije): Ustvarite rotacijske ploskve z vrtenjem grafov funkcij okoli osi v GeoGebri 3D.
-- [ ] [Vaja %s.](#ex-multivariable-functions): Raziščujte funkcije z več spremenljivkami v GeoGebri 3D.
-- [ ] [Vaja %s.](#ex-conics): Ustvarite konstrukcijo v GeoGebri 3D, ki prikazuje nastanek stožnic kot presečišče dvojnega stožca in ravnine.
-- [ ] [Vaja %s.](#ex-platonski-telesa): Ustvarite konstrukcijo v GeoGebri 3D, ki prikazuje pet platonskih teles.
+- [ ] [Naloga %s.](#ex-spheres): Ustvarite dve krogli v GeoGebri 3D in raziskujte njihovo presečišče.
+- [ ] [Naloga %s.](#ex-distance): Kako izmeriti razdaljo medo točkama v GeoGebri 3D?
+- [ ] [Naloga %s.](#ex-cube): Ustvarite kocko in ravnino v GeoGebri 3D ter poiščite njihovo presečišče.
+- [ ] [Naloga %s.](#ex-polyhedra): Ustvarite različne poliedre in 3D oblike v GeoGebri 3D.
+- [ ] [Naloga %s.](#ex-rotational-surfaces): Ustvarite rotacijske ploskve v GeoGebri 3D z vrtenjem daljic in krožnic okoli osi.
+- [ ] [Naloga %s.](#ex-rotate-funkcije): Ustvarite rotacijske ploskve z vrtenjem grafov funkcij okoli osi v GeoGebri 3D.
+- [ ] [Naloga %s.](#ex-multivariable-functions): Raziščujte funkcije z več spremenljivkami v GeoGebri 3D.
+- [ ] [Naloga %s.](#ex-conics): Ustvarite konstrukcijo v GeoGebri 3D, ki prikazuje nastanek stožnic kot presečišče dvojnega stožca in ravnine.
+- [ ] [Naloga %s.](#ex-platonski-telesa): Ustvarite konstrukcijo v GeoGebri 3D, ki prikazuje pet platonskih teles.

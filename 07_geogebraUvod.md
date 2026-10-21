@@ -171,7 +171,7 @@ Ustvarite račun Geogebra.
 :::
 
 ```{margin}
-[Seznam vaj](#07_geogebraUvod_vaje)
+[Seznam nalog](#07_geogebraUvod_vaje)
 ```
 
 :::{solution} ex_GeogebraAccount
@@ -541,7 +541,7 @@ Seveda, najlažji način za spoznavanje orodij je, da jih preizkusite sami v Geo
 :::
 
 ```{margin}
-[Seznam vaj](#07_geogebraUvod_vaje)
+[Seznam nalog](#07_geogebraUvod_vaje)
 ```
 
 ::::{solution} ex_GeogebraTools
@@ -570,7 +570,7 @@ V vrstici za zamenjavo sloga se nahajajo samo osnovne možnosti, za dostop do na
 
 :::{exercise}
 :label: ex_Stylebar
-1. V datoteki, ki ste jo ustvarili v vaji [Vaje %s](#ex_GeogebraTools), izberite daljico `AB` in zamenjate njeno barvo v rdečo, debelino črte na 4 in slog črte na črtkano.
+1. V datoteki, ki ste jo ustvarili v [nalogi %s](#ex_GeogebraTools), izberite daljico `AB` in zamenjate njeno barvo v rdečo, debelino črte na 4 in slog črte na črtkano.
 2. Nato izberite točki `C` in `D` in zamenjate njun slog točke in barvo, tako da oboje točki sta zeleni in obliki točk sta križ <img src="./geogebra/images/16px-Stylingbar_point_cross.svg.png" class="inline" width="16px"> (to lahko delate v en korak z izbiro obeh točk hkrati).
 3. Izberite trikotnik `EFG` in zamenjate barvo polnila na modro z 50% prosojnostjo.
 4. Z uporabo gumba <img src="./geogebra/images/32px-Settings.svg.png" class="inline" width="18px"> *Nastavitve* dodajte *Napis* (ang. *Caption*) k dalici `AB`, ki naj bo "Daljica AB" in k točko `C`, ki naj bo "Središče krožnice". 
@@ -580,7 +580,7 @@ V vrstici za zamenjavo sloga se nahajajo samo osnovne možnosti, za dostop do na
 :::
 
 ```{margin}
-[Seznam vaj](#07_geogebraUvod_vaje)
+[Seznam nalog](#07_geogebraUvod_vaje)
 ```
 
 ::::{solution} ex_Stylebar
@@ -648,7 +648,7 @@ AB. Upoštevajte, da ni mogoče premakniti besedila tako, da se ne prekriva s sl
 ::::
 
 ```{margin}
-[Seznam vaj](#07_geogebraUvod_vaje)
+[Seznam nalog](#07_geogebraUvod_vaje)
 ```
 
 ::::{solution} ex_GeogebraUkazi-1
@@ -672,7 +672,7 @@ upoštevate naslednje nasvete:
 - Z gumbom <img src="./geogebra/images/24px-Menu-help.svg.png" class="inline" width="18px"> *Help* (sl. *Pomoč*) (na desno od vrstice za vnos) lahko dostopate do dokumentacije Geogebre za ukaze.
 :::
 
-V [Vaji %s](#ex_GeogebraUkazi-1) ste se naučili
+V [Nalogi %s](#ex_GeogebraUkazi-1) ste se naučili
 - Ustvariti geometrijske objekte z uporabo ukazov v vrstici za vnos.
 - Meriti kotov in dolžin in z uporabo orodje.
 - Prilagoditi besedilo z uporabo LaTeX formul.
@@ -680,14 +680,14 @@ V [Vaji %s](#ex_GeogebraUkazi-1) ste se naučili
 
 ---
 Geogebra nam omogoča vizualizacijo osnovnih geometrijskih konstrukcij in iskanje vzorcev v njih. 
-Na primer, pri konstrukciji v [Vaji %s](#ex_GeogebraUkazi-1) lahko opazimo, da je trikotnik $ABC$ vedno enakostraničen, ne samo za izbiro točko $A=(0,0)$ in $C=(4,0)$, ampak za katerokoli izbiro točk $A$ in $C$. 
+Na primer, pri konstrukciji v [Nalogi %s](#ex_GeogebraUkazi-1) lahko opazimo, da je trikotnik $ABC$ vedno enakostraničen, ne samo za izbiro točko $A=(0,0)$ in $C=(4,0)$, ampak za katerokoli izbiro točk $A$ in $C$. 
 To lahko vidimo, če povlečemo točki $A$ in $C$ z orodjem <img src="./geogebra/images/32px-Mode_move.svg.png" class="inline" width="18px"> *Move*. 
 Opazimo da so dolžini stranici $AB$, $BC$ in $CA$ vedno enaki.
 V Geogebri je to znano kot **test vlečenja** (ang. *dragging test*), ki nam pomaga pri odkrivanju in dokazovanju geometrijskih lastnosti.
 
 ::::{exercise}
 :label: ex_dokazTrikotnik
-1. Uporabite orodje <img src="./geogebra/images/32px-Mode_move.svg.png" class="inline" width="18px"> *Move* za premikanje točk $A$ in $C$ v konstrukciji iz [Vaje %s](#ex_GeogebraUkazi-1).
+1. Uporabite orodje <img src="./geogebra/images/32px-Mode_move.svg.png" class="inline" width="18px"> *Move* za premikanje točk $A$ in $C$ v konstrukciji iz [Naloge %s](#ex_GeogebraUkazi-1).
 2. Opazujte dolžini stranici trikonike ter preverite, ali ostajata vedno enaki.
 3. Na podlagi vaših opažanj, zapišite kratko izjavo, ki dokazuje, da je trikotnik $ABC$ vedno enakokrak.
 
@@ -701,7 +701,7 @@ IFrame("https://www.geogebra.org/material/iframe/id/qjmkhkwg/width/900/height/60
 ::::
 
 ```{margin}
-[Seznam vaj](#07_geogebraUvod_vaje)
+[Seznam nalog](#07_geogebraUvod_vaje)
 ```
 
 :::{solution} ex_dokazTrikotnik
@@ -721,7 +721,7 @@ Vstvarite novo konstrukcijo v Geogebri, ki prikazuje, da vsota notranjih kotov v
 ::::
 
 ```{margin}
-[Seznam vaj](#07_geogebraUvod_vaje)
+[Seznam nalog](#07_geogebraUvod_vaje)
 ```
 
 ::::{solution} ex_TrikotnikKot
@@ -767,7 +767,7 @@ Lahko uporabimo tudi <img src="./geogebra/images/40px-Menu_view_algebra.svg.png"
 :::
 
 ```{margin}
-[Seznam vaj](#07_geogebraUvod_vaje)
+[Seznam nalog](#07_geogebraUvod_vaje)
 ```
 
 ::::{solution} ex_pentagram
@@ -798,12 +798,12 @@ Nato lahko uporabimo to vrednost za nadzor vidljivosti drugih objektov v konstru
 
 :::{exercise}
 :label: ex_checkbox
-1. V konstrukciji iz [Vaje %s](#ex_pentagram) ustvarite kontrolni okvirček, za kateri vnesete besedilo "Prikaži petkotnik in diagonale".
+1. V konstrukciji iz [Naloge %s](#ex_pentagram) ustvarite kontrolni okvirček, za kateri vnesete besedilo "Prikaži petkotnik in diagonale".
 2. Uporabite ta kontrolni okvirček za nadzor vidljivosti petkotnika in njegovih diagonal.
 :::
 
 ```{margin}
-[Seznam vaj](#07_geogebraUvod_vaje)
+[Seznam nalog](#07_geogebraUvod_vaje)
 ```
 
 ::::{solution} ex_checkbox
@@ -833,17 +833,17 @@ Za izvoz konstrukcije kot slike, sledite tem korakom:
 
 
 (07_geogebraUvod_vaje)=
-## Vaje
+## Naloge
 
 
-- [Vaje %s](#ex_GeogebraAccount): Ustvarjanje računa Geogebra.
-- [Vaje %s](#ex_GeogebraTools): Vaje za spoznavanje orodij Geogebre.
-- [Vaje %s](#ex_Stylebar): Vaje za uporabo vrstice za zamenjavo sloga.
-- [Vaje %s](#ex_GeogebraUkazi-1): Vaje za spoznavanje ukazov Geogebre.
-- [Vaje %s](#ex_dokazTrikotnik): Vaje za dokazovanje lastnosti trikotnika z uporabo Geogebre.
-- [Vaje %s](#ex_TrikotnikKot): Vaje za dokazovanje vsote notranjih kotov v trikotniku z uporabo Geogebre.
-- [Vaje %s](#ex_pentagram): Vaje za ustvarjanje petkotnika in zvezde z uporabo Geogebre.
-- [Vaje %s](#ex_checkbox): Vaje za uporabo kontrolnega okvirčka za nadzor vidljivosti objektov v Geogebri.
+- [Naloga %s](#ex_GeogebraAccount): Ustvarjanje računa Geogebra.
+- [Naloga %s](#ex_GeogebraTools): Spoznavanje orodij Geogebre.
+- [Naloga %s](#ex_Stylebar): Uporaba vrstice za zamenjavo sloga.
+- [Naloga %s](#ex_GeogebraUkazi-1): Spoznavanje ukazov Geogebre.
+- [Naloga %s](#ex_dokazTrikotnik): Dokazovanje lastnosti trikotnika z uporabo Geogebre.
+- [Naloga %s](#ex_TrikotnikKot): Dokazovanje vsote notranjih kotov v trikotniku z uporabo Geogebre.
+- [Naloga %s](#ex_pentagram): Ustvarjanje petkotnika in zvezde z uporabo Geogebre.
+- [Naloga %s](#ex_checkbox): Uporaba kontrolnega okvirčka za nadzor vidljivosti objektov v Geogebri.
 
 
 :::{exercise}

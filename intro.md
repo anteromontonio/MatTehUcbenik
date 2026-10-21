@@ -10,7 +10,7 @@ Predmet obravnava naslednje teme:
 - Ustvarjanje dinamičnih geometrijskih vsebin z uporabo GeoGebra.
 - Uporaba SageMath kot simboličnega matematičnega sistema za učitelje matematike.
 
-Cilj knjige je združiti pojasnila, primere in zanimive vaje, da bi študentom pomagali razviti digitalne veščine, potrebne za sodobno poučevanje matematike. Gradivo se nenehno posodablja in izboljšuje, zato je knjiga živi dokument, ki se sčasoma razvija. Posledično knjiga ni statičen vir in lahko vsebuje občasne napake ali neskladja. Avtor se veseli povratnih informacij in predlogov za izboljšave, ki jih je mogoče poslati na e-poštni naslov, naveden v metapodatkih knjige.
+Cilj knjige je združiti pojasnila, primere in zanimive naloge, da bi študentom pomagali razviti digitalne veščine, potrebne za sodobno poučevanje matematike. Gradivo se nenehno posodablja in izboljšuje, zato je knjiga živi dokument, ki se sčasoma razvija. Posledično knjiga ni statičen vir in lahko vsebuje občasne napake ali neskladja. Avtor se veseli povratnih informacij in predlogov za izboljšave, ki jih je mogoče poslati na e-poštni naslov, naveden v metapodatkih knjige.
 
 **English:**
 

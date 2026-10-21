@@ -33,7 +33,7 @@ Najlažje način za ustvarjanje dinamične konstrukcije je uporaba točke, ki je
 :::
 
 ```{margin}
-[Seznam vaj](#08_geogebraDinGeometrija_vaje)
+[Seznam nalog](#08_geogebraDinGeometrija_vaje)
 ```
 
 ::::{solution} ex-paralelogram
@@ -79,7 +79,7 @@ Za ustvarjanje drsnika lahko uporabimo orodje <img src="./geogebra/images/32px-M
 
 
 ```{margin}
-[Seznam vaj](#08_geogebraDinGeometrija_vaje)
+[Seznam nalog](#08_geogebraDinGeometrija_vaje)
 ```
 
 ::::{solution} ex-drsniki-1
@@ -107,7 +107,7 @@ a + c &> b \\
 b + c &> a
 \end{align*}
 
-Sgornje neenakosti so znanje kot *trikotne neenakosti*. V tej vaji bomo ustvarili dinamično konstrukcijo, ki bo prikazala, kdaj je mogoče sestaviti trikotnik s pomočjo drsnikov za dolžine stranic.
+Sgornje neenakosti so znanje kot *trikotne neenakosti*. V tej nalogi bomo ustvarili dinamično konstrukcijo, ki bo prikazala, kdaj je mogoče sestaviti trikotnik s pomočjo drsnikov za dolžine stranic.
 
 
 1. Ustvarite novo datoteko na GeoGebri v prikaznem načinu *Geometry* (*Geometrija*). Odprite algebrske okno v meniju *View* (*Pogled*) in izberite *Algebra* (*Algebra*).
@@ -141,7 +141,7 @@ Geogebra nam omogoča, da uporabimo dinamične barve. Barvo lahko določimo z up
 
 
 ```{margin}
-[Seznam vaj](_vaje)
+[Seznam nalog](_vaje)
 ```
 
 ::::{solution} ex-drsniki-2
@@ -174,7 +174,7 @@ Drsniki lahko tudi uporabimo za ustvarjanje animacij. To naredimo tako, da izber
 :::
 
 ```{margin}
-[Seznam vaj](_vaje)
+[Seznam nalog](_vaje)
 ```
 
 ::::{solution} ex-drsniki-3
@@ -206,7 +206,7 @@ IFrame("https://www.geogebra.org/material/iframe/id/jganuymt/width/1140/height/5
 ::::
 
 ```{margin}
-[Seznam vaj](_vaje)
+[Seznam nalog](_vaje)
 ```
 
 :::{solution} ex-drsniki-4
@@ -241,7 +241,7 @@ Ustvarite zaporedje točk na krožnici s središčem v izhodišču in polmerom 3
 :::
 
 ```{margin}
-[Seznam vaj](#08_geogebraDinGeometrija_vaje)
+[Seznam nalog](#08_geogebraDinGeometrija_vaje)
 ```
 
 :::{solution} ex_sequences-1
@@ -264,7 +264,7 @@ IFrame("https://www.geogebra.org/material/iframe/id/tbecwvzw/width/1140/height/7
 ::::
 
 ```{margin}
-[Seznam vaj](#08_geogebraDinGeometrija_vaje)
+[Seznam nalog](#08_geogebraDinGeometrija_vaje)
 ```
 
 :::{solution} ex_sequences-2
@@ -286,13 +286,13 @@ Ukaz `Sequence()` ustvari zaporedje objektov, če hočemo izbrati posamezne obje
 
 :::{exercise}
 :label: ex_sequences-3
-1. Skrijte štiri zaporedja ki so bila ustvarjena v prejšnji vaji z klikom na krog poleg imena zaporedij v algebrskem oknu.
+1. Skrijte štiri zaporedja ki so bila ustvarjena v prejšnji nalogi z klikom na krog poleg imena zaporedij v algebrskem oknu.
 2. Uporabite način opisano zgoraj za izgraditi 40 daljic, namesto 4 zaporedij. Ugotovite, da imena daljic sledijo vzorcu `L_{1}`, `L_{2}`, ..., `L_{40}`.
 
 :::
 
 ```{margin}
-[Seznam vaj](_vaje)
+[Seznam nalog](_vaje)
 ```
 
 :::{solution} ex_sequences-3
@@ -309,7 +309,7 @@ Ta način lahko uporabimo za ustvarjanje zaporedje ukazov, da ni nujno ustvariti
 
 ---
 
-Zaporedje in drsniki postanejo zelo močna orodja, ko jih kombiniramo skupaj. Na primer, lahko ustvarimo drsnik, ki določa število objektov v zaporedju, in nato uporabimo ta drsnik za ustvarjanje dinamične konstrukcije, ki se spreminja glede na vrednost drsnika. Ta način bomo raziskali v naslednjih vajah.
+Zaporedje in drsniki postanejo zelo močna orodja, ko jih kombiniramo skupaj. Na primer, lahko ustvarimo drsnik, ki določa število objektov v zaporedju, in nato uporabimo ta drsnik za ustvarjanje dinamične konstrukcije, ki se spreminja glede na vrednost drsnika. Ta način bomo raziskali v naslednjih nalogah.
 
 
 
@@ -320,19 +320,19 @@ Zaporedje in drsniki postanejo zelo močna orodja, ko jih kombiniramo skupaj. Na
 
 
 (08_geogebraDinGeometrija_vaje)=
-## Vaje
+## Naloge
 
-- [Vaje %s](#ex-paralelogram) - Ustvarite dinamični paralelogram in opazujte, kako se spreminja njegova površina.
-- [Vaje %s](#ex-drsniki-1) - Ustvarite premico z drsniki za naklon in presečišče z osjo y ter opazujte, kako se spreminja premica.
-- [Vaje %s](#ex-drsniki-2) - Ustvarite dinamično konstrukcijo, ki prikazuje veljavnost trikotne neenakosti s pomočjo drsnikov in dinamičnih barv.
-- [Vaje %s](#ex-drsniki-3) - Ustvarite animacijo z uporabo drsnikov za premikanje točk v ravnini.
-- [Vaje %s](#ex-drsniki-4) - Ustvarite dinamično konstrukcijo za seštevanje dveh celih števil z uporabo drsnikov.
-- [Vaje %s](#ex_sequences-1) - Ustvarite zaporedje točk na krožnici z uporabo ukaza `Sequence()`.
-- [Vaje %s](#ex_sequences-2) - Uporabite ukaz `Sequence()` za ustvarjanje vzorca premic v GeoGebri.
-- [Vaje %s](#ex_sequences-3) - Uporabite ukazi `Element()` in `Execute()` za ustvarjanje posamezni objektov iz zaporedje.
-<!-- - [Vaje %s](#ex_sequences-4) - Ustvarite dinamično konstrukcijo za množenje dveh celih števil z uporabo drsnikov in ukaza `Sequence()`. -->
-<!-- - [Vaje %s](#ex_pythagoras) - Ustvarite konstrukcijo, ki prikazuje dokaz Pitagorovega izreka z uporabo drsnikov. -->
-<!-- - [Vaje %s](#ex-circleArea) - Ustvarite dinamično konstrukcijo za izračun površine kroga s pomočjo drsnika za polmer kroga. -->
+- [Naloga %s](#ex-paralelogram) - Ustvarite dinamični paralelogram in opazujte, kako se spreminja njegova površina.
+- [Naloga %s](#ex-drsniki-1) - Ustvarite premico z drsniki za naklon in presečišče z osjo y ter opazujte, kako se spreminja premica.
+- [Naloga %s](#ex-drsniki-2) - Ustvarite dinamično konstrukcijo, ki prikazuje veljavnost trikotne neenakosti s pomočjo drsnikov in dinamičnih barv.
+- [Naloga %s](#ex-drsniki-3) - Ustvarite animacijo z uporabo drsnikov za premikanje točk v ravnini.
+- [Naloga %s](#ex-drsniki-4) - Ustvarite dinamično konstrukcijo za seštevanje dveh celih števil z uporabo drsnikov.
+- [Naloga %s](#ex_sequences-1) - Ustvarite zaporedje točk na krožnici z uporabo ukaza `Sequence()`.
+- [Naloga %s](#ex_sequences-2) - Uporabite ukaz `Sequence()` za ustvarjanje vzorca premic v GeoGebri.
+- [Naloga %s](#ex_sequences-3) - Uporabite ukazi `Element()` in `Execute()` za ustvarjanje posamezni objektov iz zaporedje.
+<!-- - [Naloga %s](#ex_sequences-4) - Ustvarite dinamično konstrukcijo za množenje dveh celih števil z uporabo drsnikov in ukaza `Sequence()`. -->
+<!-- - [Naloga %s](#ex_pythagoras) - Ustvarite konstrukcijo, ki prikazuje dokaz Pitagorovega izreka z uporabo drsnikov. -->
+<!-- - [Naloga %s](#ex-circleArea) - Ustvarite dinamično konstrukcijo za izračun površine kroga s pomočjo drsnika za polmer kroga. -->
 
 ::::{exercise} Domača naloga 
 :label: ex_sequences-4

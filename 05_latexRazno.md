@@ -51,7 +51,7 @@ Ukaz `\input{}` lahko uporabimo tudi za vključitev datotek z ukazi LaTeX-a, kot
    :::
 
 ```{margin}
-[Seznam vaj](#05_latexRazno_vaje)
+[Seznam nalog](#05_latexRazno_vaje)
 ```
 
 :::{solution} ex_input_include
@@ -167,7 +167,7 @@ Z uporabo ukaza za mešanje barv, reproducirajte barvni gradient prikazan na spo
 :::
 
 ```{margin}
-[Seznam vaj](#05_latexRazno_vaje)
+[Seznam nalog](#05_latexRazno_vaje)
 ```
 
 :::{solution} ex-gradient
@@ -705,7 +705,7 @@ Nazadnje, lahko tudi uporabljamo znak `s` za niz `<vrsta_argumentov>`, da defini
    :::
 
 ```{margin}
-[Seznam vaj](#05_latexRazno_vaje)
+[Seznam nalog](#05_latexRazno_vaje)
 ```
 
 :::{solution} ex_ukazi
@@ -889,8 +889,8 @@ Kraljičine besede.
 
 (05_latexRazno_vaje)=
 
-## Vaje
+## Naloge
 
-- [Vaja %s](#ex_input_include): Vaje o ukazih `\input{}` in `\include{}`.
-- [Vaja %s](#ex-gradient): Vaja o mešanju barv.
-- [Vaja %s](#ex_ukazi): Vaje o definiciji novih ukazov z `\NewDocumentCommand`.
+- [Naloga %s](#ex_input_include): Ukaza `\input{}` in `\include{}`.
+- [Naloga %s](#ex-gradient): Mešanje barv.
+- [Naloga %s](#ex_ukazi): Definicija novih ukazov z `\NewDocumentCommand`.

@@ -45,7 +45,7 @@ Sledi se izbrišejo, ko pogled osvežimo (npr. z Zoom In/Out or Move View). Če 
 ::::
 
 ```{margin}
-[Seznam vaj](#vaje_geogebraAnaliza)
+[Seznam nalog](#vaje_geogebraAnaliza)
 ```
 
 ::::{solution} ex-peaucellier
@@ -84,7 +84,7 @@ Predstavljajte si 5-metrsko lestev, ki leži na steni (os y) in tleh (os x). Če
 :::
 
 ```{margin}
-[Seznam vaj](#vaje_geogebraAnaliza)
+[Seznam nalog](#vaje_geogebraAnaliza)
 ```
 
 ::::{solution} ex-cat
@@ -148,7 +148,7 @@ Nekatera pomembna orodja za delo s funkcijami so:
 ::::
 
 ```{margin}
-[Seznam vaj](#vaje_geogebraAnaliza)
+[Seznam nalog](#vaje_geogebraAnaliza)
 ```
 
 ::::{solution} ex-functions-1
@@ -204,7 +204,7 @@ Ustvarite konstrukcijo v GeoGebri, ki omogoča prikaz definicije odvoda funkcije
 :::
 
 ```{margin}
-[Seznam vaj](#vaje_geogebraAnaliza)
+[Seznam nalog](#vaje_geogebraAnaliza)
 ```
 
 ::::{solution} ex-odvod-def
@@ -222,7 +222,7 @@ Ali v GeoGebri [tukaj](https://www.geogebra.org/classic/xjbmjrbm).
 
 :::{exercise}
 :label: ex-odvod
-V konstrukciji iz prejšnje vaje, dodajte možnost za prikaz grafa odvoda funkcije $f$. 
+V konstrukciji iz prejšnje naloge dodajte možnost za prikaz grafa odvoda funkcije $f$. 
 
 1. Ustvarite točko $Y$ z koordinatama $(a, m)$, kjer je $m$ naklon tangente.
 1. Aktivirajte možnost *Trace On* (*Sledi vklopljeno*) za točko $Y$.
@@ -254,7 +254,7 @@ Ustvarite konstrukcijo v GeoGebri, ki omogoča prikaz določenega integrala funk
 :::
 
 ```{margin}
-[Seznam vaj](_vaje)
+[Seznam nalog](_vaje)
 ```
 
 ::::{solution} ex-integral
@@ -351,14 +351,14 @@ IFrame("https://www.geogebra.org/material/iframe/id/axay7bqj/width/1512/height/8
 
 
 (vaje_geogebraAnaliza)=
-## Vaje
+## Naloge
 
-- [Vaja %s](#ex-peaucellier) Ustvarite Peaucellier-Lipkinov mehanizem v GeoGebri in analizirajte sled točke $F$.
-- [Vaja %s](#ex-cat) Kako se premika mačka, ko se lestev zdrsne po tleh?
-- [Vaja %s](#ex-functions-1) Ustvarite funkcijo in analizirajte njene lastnosti z orodji GeoGebre. 
-- [Vaja %s](#ex-odvod-def) Ustvarite konstrukcijo v GeoGebri, ki omogoča prikaz definicije odvoda funkcije.
-- [Vaja %s](#ex-odvod) V konstrukciji iz prejšnje vaje, dodajte možnost za prikaz grafa odvoda funkcije.
-- [Vaja %s](#ex-integral) Ustvarite konstrukcijo v GeoGebri, ki omogoča prikaz določenega integrala funkcije med točkama $a$ in $b$.
-- [Vaja %s](#ex-polarni) Ustvarite polarne krivulje in analizirajte njihove lastnosti z orodji GeoGebre.
-- [Vaja %s](#ex-paramentric) Ustvarite datoteko GeoGebra, ki prikazuje parametrično krivuljo.
-- [Vaja %s](#ex-taylor) Ustvarite datoteko GeoGebra, ki prikazuje Taylorjevo približek funkcije okoli točke $a$.
+- [Naloga %s](#ex-peaucellier) Ustvarite Peaucellier-Lipkinov mehanizem v GeoGebri in analizirajte sled točke $F$.
+- [Naloga %s](#ex-cat) Kako se premika mačka, ko se lestev zdrsne po tleh?
+- [Naloga %s](#ex-functions-1) Ustvarite funkcijo in analizirajte njene lastnosti z orodji GeoGebre. 
+- [Naloga %s](#ex-odvod-def) Ustvarite konstrukcijo v GeoGebri, ki omogoča prikaz definicije odvoda funkcije.
+- [Naloga %s](#ex-odvod) V konstrukciji iz prejšnje naloge dodajte možnost za prikaz grafa odvoda funkcije.
+- [Naloga %s](#ex-integral) Ustvarite konstrukcijo v GeoGebri, ki omogoča prikaz določenega integrala funkcije med točkama $a$ in $b$.
+- [Naloga %s](#ex-polarni) Ustvarite polarne krivulje in analizirajte njihove lastnosti z orodji GeoGebre.
+- [Naloga %s](#ex-paramentric) Ustvarite datoteko GeoGebra, ki prikazuje parametrično krivuljo.
+- [Naloga %s](#ex-taylor) Ustvarite datoteko GeoGebra, ki prikazuje Taylorjevo približek funkcije okoli točke $a$.

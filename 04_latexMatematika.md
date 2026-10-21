@@ -1844,7 +1844,7 @@ $\lvert \vec{v}\rvert = \sqrt{v_1^2 + v_2^2 + \dots + v_n^2}$.
 :::
 
 ```{margin}
-[Seznam vaj](#latexMatematika_vaje)
+[Seznam nalog](#latexMatematika_vaje)
 ```
 
 :::{solution} ex-matematika-1
@@ -1908,7 +1908,7 @@ x+2y+3z & = 6\\
 :::
 
 ```{margin}
-[Seznam vaj](#latexMatematika_vaje)
+[Seznam nalog](#latexMatematika_vaje)
 ```
 
 :::{solution} ex-matematika-2
@@ -1946,7 +1946,7 @@ Napišite LaTeX kodo, da reproducira besedilo prikazano na sliki spodaj:
 :::
 
 ```{margin}
-[Seznam vaj](#latexMatematika_vaje)
+[Seznam nalog](#latexMatematika_vaje)
 ```
 
 :::{solution} ex-matematika-3
@@ -2145,7 +2145,7 @@ V svoj dokument napišite LaTeX kodo za naslednje besedilo:
 :::
 
 ```{margin}
-[Seznam vaj](#latexMatematika_vaje)
+[Seznam nalog](#latexMatematika_vaje)
 ```
 
 :::{solution} ex-matematika-4
@@ -2217,12 +2217,12 @@ Obratno, naj bo $x \in (X \setminus A) \cup X \setminus B$. Potem
 
 (latexMatematika_vaje)=
 
-## Vaje
+## Naloge
 
-- [Vaja %s](#ex-matematika-1): Napišite LaTeX kodo za osnovne matematične izraze.
-- [Vaja %s](#ex-matematika-2): Napišite LaTeX kodo za matematične izraze z uporaba okolji `align` in `align*` in `aligned`.
-- [Vaja %s](#ex-matematika-3): Napišite LaTeX kodo, da reproducira Maxwellove enačbe.
-- [Vaja %s](#ex-matematika-4): Napišite LaTeX kodo za izreke in dokaze.
+- [Naloga %s](#ex-matematika-1): Napišite LaTeX kodo za osnovne matematične izraze.
+- [Naloga %s](#ex-matematika-2): Napišite LaTeX kodo za matematične izraze z uporaba okolji `align` in `align*` in `aligned`.
+- [Naloga %s](#ex-matematika-3): Napišite LaTeX kodo, da reproducira Maxwellove enačbe.
+- [Naloga %s](#ex-matematika-4): Napišite LaTeX kodo za izreke in dokaze.
 
 :::{exercise} Domača naloga
 :nonumber:

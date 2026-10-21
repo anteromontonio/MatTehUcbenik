@@ -675,7 +675,7 @@ Uporaba specifikacij prekrivanja v okoljih `enumerate` in `itemize`.
   :::
 
 ```{margin}
-[Seznam vaj](#06_latexBeamer_vaje)
+[Seznam nalog](#06_latexBeamer_vaje)
 ```
 
 :::{solution} ex_overlays-1
@@ -683,7 +683,7 @@ Uporaba specifikacij prekrivanja v okoljih `enumerate` in `itemize`.
 Možna rešitev:
 
 ```latex
-\begin{frame}{Vaja 6.1}
+\begin{frame}{Naloga 6.1}
   \begin{itemize}
     \item<4-8> \textcolor<4,6,8>{red}{Ena}
     \item<3-9> \textcolor<3,5,7,9>{red}{Dve}
@@ -1355,7 +1355,7 @@ Lahko pa ponudimo zunanje vire za raziskovanje različnih tem.
 
 (06_latexBeamer_vaje)=
 
-## Vaje
+## Naloge
 
 ::: {exercise} Domača naloga
 :nonumber:
