@@ -1,10 +1,3 @@
-<!-- TODO: slike, ki jih je treba ponovno ustvariti
-- img/03_eg-sklici-1.png: "S uporabo" -> "Z uporabo"
-- img/03_eg-sklici-3.png: "poszabite" -> "pozabite"
-- img/03_eg-literatura-4.png: naslov "s Fiziko" -> "s fiziko"; drugi naslov zdaj "povezanih z \LaTeX-om"
-- img/03_eg-literatura-heading-7.png: odstavek mora ustrezati kodi ("Ta besedilo", "uporabljam" sta napačna)
--->
-
 (03_latex_literatura)=
 # Sklicevanje in literatura
 
