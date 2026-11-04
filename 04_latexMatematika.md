@@ -1,154 +1,172 @@
----
-numbering: false
----
-
 (04_latexMatematika1)=
 
 # Matematika v LaTeXu
 
+:::{admonition} Cilji poglavja
+:class: tip
+Po tem poglavju boste znali:
+
+- zapisati matematiko v vrstičnem in prikaznem načinu ter oštevilčiti enačbe in se nanje sklicevati,
+- uporabljati indekse, ulomke, korene, grške črke, operatorje in matematične pisave,
+- pravilno uporabljati oklepaje, akcente in matrike,
+- zapisati dolge in poravnane enačbe z okolji, kot sta `align` in `multline`,
+- definirati in oblikovati izreke, definicije in dokaze s paketom `amsthm`.
+
+Predvideni čas: 3 do 4 pedagoških ur.
+:::
+
 LaTeX je še posebej primeren za pisanje matematičnih izrazov in ena izmed njegovih glavnih prednosti je prav podpora za matematične simbole in formule.
 LaTeX je že sam po sebi zelo zmogljiv. Vendar pa obstaja tudi veliko paketov, ki še dodatno razširijo njegove zmogljivosti na področju matematike.
 
-Standardni paket za matematiko so:
+Standardni paketi za matematiko so:
 
 - `amsmath`: paket, ki ga je razvila Ameriška matematična družba (American Mathematical Society) in ponuja številne izboljšave za pisanje matematičnih izrazov.
-- `amssymb`: paket, ki ponuja dodatne matematične simbole.
-- `amsfonts`: paket, ki omogoča uporabo dodatnih matematičnih pisav.
-- `amsthm`: paket za definiranje in oblikovanje matematičnih izrekov, trditve, definicij itd.
+- `amssymb`: paket, ki ponuja dodatne matematične simbole. Samodejno naloži tudi paket `amsfonts`.
+- `amsfonts`: paket, ki omogoča uporabo dodatnih matematičnih pisav (npr. $\mathbb{R}$ z ukazom `\mathbb{R}`).
+- `amsthm`: paket za definiranje in oblikovanje matematičnih izrekov, trditev, definicij itd.
 
-Ti paketi so pogosto vključeni v predloge dokumentov, vendar jih je mogoče vključiti tudi ročno z ukazom `\usepackage{amsmath, amssymb, amsfonts, amsthm}` v preambuli vašega LaTeX dokumenta.
+Ti paketi so pogosto vključeni v predloge dokumentov, vendar jih je mogoče vključiti tudi ročno z ukazom `\usepackage{amsmath, amssymb, amsthm}` v preambuli vašega dokumenta LaTeX.
 
-V sodoben LaTeX dokument je priporočljivo vključiti paket `mathtools`, ki je razširitev paketa `amsmath` in ponuja dodatne funkcije in izboljšave za pisanje matematičnih izrazov.
+V sodoben dokument LaTeX je priporočljivo vključiti paket `mathtools`, ki je razširitev paketa `amsmath` in ponuja dodatne funkcije in izboljšave za pisanje matematičnih izrazov.
 
 :::{admonition} Pomembno!
 :class: important
-V tem poglavju bomo predpostavljali, da so ti paketi že vključeni v vaš dokument. Lahko jih vključite z naslednjim ukazom v preambuli vašega LaTeX dokumenta:
+V tem poglavju bomo predpostavljali, da so ti paketi že vključeni v vaš dokument. Lahko jih vključite z naslednjima ukazoma v preambuli vašega dokumenta LaTeX:
 
 ```latex
 \usepackage{mathtools}  % mathtools vključuje tudi amsmath
-\usepackage{amssymb, amsfonts, amsthm}
+\usepackage{amssymb, amsthm}  % amssymb vključuje tudi amsfonts
 ```
 
 :::
 
 ## Osnovni matematični izrazi
 
-LaTeX omogoča pisanje matematičnih izrazov na dva načina: znotraj besedila (_vrstični način_; ang. _inline mode_ ) in v ločenih vrsticah (_prikazen način_; ang. _display mode_).
+LaTeX omogoča pisanje matematičnih izrazov na dva načina: znotraj besedila (_vrstični način_; ang. _inline mode_) in v ločenih vrsticah (_prikazni način_; ang. _display mode_).
 
 Matematika v vrstičnem načinu se vstavlja z uporabo znakov `$...$` ali `\(...\)`. Na primer, izraz za Pitagorov izrek lahko zapišemo kot `$a^2 + b^2 = c^2$` (ali `\(a^2 + b^2 = c^2\)`), ki je natisnjen kot $a^2 + b^2 = c^2$.
 
-Za prikaz matematičnih izrazov v ločenih vrsticah (in osredotočeno poravnano) se uporabljajo znaki `\[...\]` ali okolje `equation*` (sta enakomerna). Na primer, če je $ax^2 + bx +c = c$ kvadratna enačba, potem je rešitev te enačbe:
+Za prikaz matematičnih izrazov v ločenih vrsticah (in sredinsko poravnanih) se uporabljajo znaki `\[...\]` ali okolje `equation*` (učinek je enak). Na primer, če je $ax^2 + bx + c = 0$ kvadratna enačba, potem sta rešitvi te enačbe:
 
 ```latex
-\[x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2} \]
+\[x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.\]
 ```
 
 kar je natisnjeno kot
 
 $$
-x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2}.
+x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.
 $$
 
-Ta izraz v vrstičnem načinu bi bil zapisan kot `$x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2}$`, kar je natisnjeno kot $x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2}$.
+Ta izraz v vrstičnem načinu bi bil zapisan kot `$x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$`, kar je natisnjeno kot $x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$.
+Opazite, da je ulomek v vrstičnem načinu manjši, da ne razmakne vrstic besedila.
 
 :::{admonition} Opomba
 :class: note
-Matematika v vrstičnem načinu zapisana z `$...$` včasih se šteje za zastarelo. Priporočljivo je uporabljati `\(...\)`. Vendar, v praksi večinoma avtorjev uporabijo `$...$`, ker je hitreje za tipkanje in dobi se enak rezultat.
+Nekateri priporočajo, da matematiko v vrstičnem načinu pišemo z `\(...\)` namesto z `$...$`, saj LaTeX ob napaki (npr. pozabljenem zaključku) javi jasnejše sporočilo. V praksi pa večina avtorjev uporablja `$...$`, ker je hitreje za tipkanje, rezultat pa je enak.
 
-Podobno je tudi pri prikaznem načinu, kjer je priporočljivo uporabljati `\[...\]` (ali okolja `equation*`) namesto `$$ ... $$`s. Vendar je `$$...$$` resnično zastarelo in **se ne sme uporabljati**.
+Pri prikaznem načinu je drugače. Tam uporabljamo `\[...\]` (ali okolje `equation*`), nikoli pa `$$...$$`. Zapis `$$...$$` izvira iz TeXa in ga LaTeX uradno ne podpira: razmiki nad in pod enačbo so lahko napačni, nekatere možnosti razredov dokumentov (npr. `fleqn`) pa ga ne upoštevajo. Zato **se ne sme uporabljati**.
 :::
 
-Matematične izraze v prikaznem načinu je mogoče tudi oštevilčiti z uporabo okolja `equation` (brez zvezdice). Rezultat je podoben kot zgoraj, vendar bo enačba oštevilčena. Seveda, lahko sklicujemo na to enačbo v besedilu z uporabo ukazov `\label{<oznaka>}` in `\ref{<oznaka>}`:
+Matematične izraze v prikaznem načinu je mogoče tudi oštevilčiti z uporabo okolja `equation` (brez zvezdice). Rezultat je podoben kot zgoraj, vendar bo enačba oštevilčena. Seveda se lahko na enačbo v besedilu sklicujemo z ukazoma `\label{<oznaka>}` in `\ref{<oznaka>}` (glej poglavje [](./03_latexLiteratura.md)):
 
 ::::::{prf:example}
 :label: eg_matematika_equation_1
 
-`````{tab-set}
-````{tab-item} LaTeX
+:::::{tab-set}
+::::{tab-item} LaTeX
 ```latex
 \begin{equation}
 \label{eq:kvadratna_formula}
 x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 \end{equation}
-V enačbi \ref{eq:kvadratna_formula} je prikazana kvadratna formula.
+V enačbi~\ref{eq:kvadratna_formula} je prikazana kvadratna formula.
 ```
-````
-````{tab-item} PDF
-```{figure} ./img/04_eg-matematika-equation-1.png
+::::
+
+::::{tab-item} PDF
+:::{figure} ./img/04_eg-matematika-equation-1.png
 :label: fig:eg-math-equation-1
+:alt: Kvadratna formula v prikaznem načinu s številko (1) na desnem robu in stavek, ki se nanjo sklicuje s številko 1.
 :width: 100%
-```
-````
-`````
+:::
+::::
+:::::
 
 ::::::
 
-Za enačbe lahko tudi uporabimo ukaze `\eqref{<oznaka>}` in `\tag{<opis>}`, ki omogočata bolj prilagojeno sklicevanje in označevanje enačb:
+Za enačbe lahko uporabimo tudi ukaza `\eqref{<oznaka>}` in `\tag{<opis>}`. Ukaz `\eqref` številko enačbe samodejno zapiše v oklepaju, tako kot je izpisana ob enačbi. Ukaz `\tag` pa številko enačbe nadomesti s poljubnim besedilom:
 
 ::::::{prf:example}
 :label: eg_matematika_equation_2
 
-`````{tab-set}
-````{tab-item} LaTeX
+:::::{tab-set}
+::::{tab-item} LaTeX
 ```latex
 \begin{equation}
 \label{eq:kvadratna_formula}
 x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 \end{equation}
-V enačbi \eqref{eq:kvadratna_formula} je prikazana kvadratna formula.
+V enačbi~\eqref{eq:kvadratna_formula} je prikazana kvadratna formula.
 ```
-````
-````{tab-item} PDF
-```{figure} ./img/04_eg-matematika-equation-2.png
+::::
+
+::::{tab-item} PDF
+:::{figure} ./img/04_eg-matematika-equation-2.png
 :label: fig:eg-math-equation-2
+:alt: Kvadratna formula s številko (1) in stavek, ki se nanjo sklicuje s številko v oklepaju, (1).
 :width: 100%
-```
-````
-`````
+:::
+::::
+:::::
 
 ::::::
 
 ::::::{prf:example}
 :label: eg_matematika_equation_3
 
-`````{tab-set}
-````{tab-item} LaTeX
+:::::{tab-set}
+::::{tab-item} LaTeX
 ```latex
 \begin{equation}
 \label{eq:kvadratna_formula}
 \tag{Kvadratna formula}
 x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 \end{equation}
-V enačbi \eqref{eq:kvadratna_formula} je prikazana kvadratna formula.
+V enačbi~\eqref{eq:kvadratna_formula} je prikazana kvadratna formula.
 ```
-````
-````{tab-item} PDF
-```{figure} ./img/04_eg-matematika-equation-3.png
+::::
+
+::::{tab-item} PDF
+:::{figure} ./img/04_eg-matematika-equation-3.png
 :label: fig:eg-math-equation-3
+:alt: Kvadratna formula, ki ima namesto številke oznako (Kvadratna formula), in stavek, ki se nanjo sklicuje z enako oznako.
 :width: 100%
-```
-````
-`````
+:::
+::::
+:::::
+
 ::::::
 
-Ukazi in okolja za pisanje matematičnih aktivirajo matematični način, kjer so nekateri znaki in ukazi drugačni kot v običajnem besedilnem načinu. Na primer, presledki v matematičnem načinu nimajo pomena, medtem ko so v besedilnem načinu pomembni:
+Ukazi in okolja za pisanje matematičnih izrazov aktivirajo matematični način, kjer so nekateri znaki in ukazi drugačni kot v običajnem besedilnem načinu. Na primer, presledki v matematičnem načinu nimajo pomena, medtem ko so v besedilnem načinu pomembni:
 
-::::{grid} 2 2 2 2
-:::{card} LaTeX
+:::::{grid} 2 2 2 2
+::::{card} LaTeX
 ```latex
 $123xyz$ je enako kot \(1 2 3 x y z \)
 ```
-:::
-:::{card} PDF
-
-```{figure} ./img/04_eg-math-mode-1.png
-:label: fig:eg-math-mode-1
-:width: 80%
-```
-:::
 ::::
 
-Vse črke so v matematičnem načinu obravnavane kot spremenljivke in so zato natisnjene v poševni pisavi (italics). Razmik med črkami je večji kot v običajnem besedilu.
+::::{card} PDF
+:::{figure} ./img/04_eg-math-mode-1.png
+:label: fig:eg-math-mode-1
+:alt: Dvakrat enak izpis 123xyz, kjer so črke x, y in z ležeče.
+:width: 80%
+:::
+::::
+:::::
+
+Vse črke so v matematičnem načinu obravnavane kot spremenljivke in so zato natisnjene v ležeči pisavi. LaTeX jih razmakne kot produkt posameznih spremenljivk in ne uporablja ligatur (primerjajte _ffi_ v spodnjem primeru).
 
 :::::{grid} 2 2 2 2
 ::::{card} LaTeX
@@ -159,46 +177,51 @@ z besedo $office$.
 ::::
 
 ::::{card} PDF
-```{figure} ./img/04_eg-math-mode-2.png
+:::{figure} ./img/04_eg-math-mode-2.png
 :label: fig:eg-math-mode-2
-:width: 110%
-```
+:alt: Beseda office v ležeči pisavi s strnjeno ligaturo ffi in v matematičnem načinu, kjer so črke razmaknjene kot ločene spremenljivke.
+:width: 100%
+:::
 ::::
 :::::
 
-Zaradi zgoraj navedenih razlogov moramo matematično besedilo **vedno** zapisovati v matematičnem načinu (v vrstici ali prikazano).
+Zaradi zgoraj navedenih razlogov moramo matematično besedilo **vedno** zapisovati v matematičnem načinu (vrstičnem ali prikaznem).
 
-`````{tab-set}
-````{tab-item} LaTeX
+:::::{tab-set}
+::::{tab-item} LaTeX
 ```latex
   V \LaTeX u moramo matematični del besedila zapisati v matematičnem načinu.
   Tudi če je to nekaj tako preprostega kot ta številka $2$
   ali ta spremenljivka $x$.
 ```
-````
-````{tab-item} PDF
-``` {figure} ./img/04_eg-math-mode-3.png
-:label: fig-math-mode-3
-```
-````
-`````
+::::
 
-Če želimo v matematičnem načinu uporabiti običajno besedilo, lahko uporabimo ukaz `\text{...}`: why?
+::::{tab-item} PDF
+:::{figure} ./img/04_eg-math-mode-3.png
+:label: fig:eg-math-mode-3
+:alt: Odstavek besedila, v katerem sta številka 2 in ležeča spremenljivka x zapisani v matematičnem načinu.
+:::
+::::
+:::::
 
-:::::{grid} 2 2 2 2
+Če želimo v matematičnem načinu uporabiti običajno besedilo, uporabimo ukaz `\text{...}` iz paketa `amsmath`.
+Besedilo v njem je napisano v pokončni pisavi, presledki se ohranijo, v indeksih pa se samodejno pomanjša.
+Brez ukaza `\text` bi LaTeX besedo _enka_ obravnaval kot produkt štirih spremenljivk:
 
-::::{card} LaTeX
+::::{grid} 2 2 2 2
+
+:::{card} LaTeX
 ```latex
 \[2+\text{enka}=3\]
 ```
-::::
+:::
 
-::::{card} PDF
+:::{card} PDF
 $$
  2+\text{enka}=3
 $$
+:::
 ::::
-:::::
 
 ## Stavljenje matematičnih formul
 
@@ -208,11 +231,13 @@ Seznam primerov tukaj je namenjen prikazu nekaterih najpogostejših primerov upo
 
 Pri sestavljanju matematičnih formul vam bodo morda v pomoč naslednji viri.
 
-- [Comprehensive LaTeX Symbol List](https://tug.ctan.org/info/symbols/comprehensive/symbols-a4.pdf): Obsežen seznam LaTeX simbolov, ki vključuje simbole iz različnih paketov **Skoraj 500 strani**.
-- [Detexify](http://detexify.kirelabs.org/classify.html): Orodje, ki vam omogoča, da narišete simbol, ki ga iščete, in orodje vam bo predlagalo ustrezne LaTeX ukaze za ta simbol.
-- [Seznam osnovnih matematičnih simbolov](./img/04_seznamSimbolov.pdf){target="\_blank"}: Kratek seznam pogosto uporabljenih LaTeX matematičnih simbolov.
+- [Comprehensive LaTeX Symbol List](https://tug.ctan.org/info/symbols/comprehensive/symbols-a4.pdf): Obsežen seznam simbolov LaTeX, ki vključuje simbole iz različnih paketov. **Skoraj 500 strani!**
+- [Detexify](http://detexify.kirelabs.org/classify.html): Orodje, ki vam omogoča, da narišete simbol, ki ga iščete, in orodje vam bo predlagalo ustrezne ukaze LaTeX za ta simbol.
+- [Seznam osnovnih matematičnih simbolov](./img/seznamSimbolov.pdf): Kratek seznam pogosto uporabljenih matematičnih simbolov LaTeX.
 
 :::::{dropdown} Osnovni aritmetični izrazi
+
+Indekse pišemo z znakom `_`, potence z znakom `^`. Če je indeks ali potenca daljša od enega znaka, jo moramo zapisati v zavitih oklepajih, sicer se v indeks prenese le prvi znak (primerjajte `B_{foo}` in `B_foo` spodaj).
 
 ::::{grid} 2 2 2 2
 
@@ -269,13 +294,13 @@ $$
 :::{card} LaTeX
 
 ```latex
-\[1 \leq 2 \text{ vs.} 1 \leqslant 2\]
+\[1 \leq 2 \quad\text{in}\quad 1 \leqslant 2\]
 ```
 :::
 :::{card} PDF
 
 $$
-1 \leq 2 \text{ vs.} 1 \leqslant 2
+1 \leq 2 \quad\text{in}\quad 1 \leqslant 2
 $$
 :::
 :::{card} LaTeX
@@ -361,7 +386,7 @@ $$
 :::{card} LaTeX
 
 ```latex
-\[\{1, 2, 3, \ldots, 100 \}]
+\[\{1, 2, 3, \ldots, 100 \}\]
 ```
 :::
 :::{card} PDF
@@ -414,10 +439,10 @@ $$
 
 :::::{dropdown} Grške črke
 
-Mali grške črke se v LaTeXu vpišejo z uporabo ukaza `\ime_črka` (npr. `\alpha`, `\beta`, `\gamma`, ...), medtem ko se velike grške črke vpišejo z uporabo ukaza `\Ime_črka` (npr.`\Gamma`, ...). Vendar pa je treba opozoriti, da nekatere velike grške črke nimajo posebnega ukaza in se v LaTeXu pišejo enako kot njihove latinske ustreznice (npr. `A`, `B`, `E`, ...).
-Nekaj malih grških črk ima tudi variante, ki se v LaTeXu vpišejo z uporabo ukaza `\varIme_črka` (npr. `\varepsilon`, `\vartheta`, ...):
+Male grške črke se v LaTeXu vpišejo z ukazom, ki je enak imenu črke (npr. `\alpha`, `\beta`, `\gamma`, ...), velike grške črke pa z istim imenom z veliko začetnico (npr. `\Gamma`, `\Delta`, ...). Vendar pa je treba opozoriti, da nekatere velike grške črke nimajo posebnega ukaza in se v LaTeXu pišejo enako kot njihove latinske ustreznice (npr. `A`, `B`, `E`, ...). Enako velja za malo črko omikron, ki jo pišemo kar z `o`.
+Nekaj malih grških črk ima tudi različice, ki jih dobimo s predpono `var` (npr. `\varepsilon`, `\vartheta`, ...):
 
-::::{list-table} Mali grške črke
+::::{list-table} Male grške črke
 :header-rows: 1
 * - LaTeX
   - PDF
@@ -443,7 +468,7 @@ Nekaj malih grških črk ima tudi variante, ki se v LaTeXu vpišejo z uporabo uk
   - $\eta$
   - `\theta`
   - $\theta$
-* - `iota`
+* - `\iota`
   - $\iota$
   - `\kappa`
   - $\kappa$
@@ -475,9 +500,9 @@ Nekaj malih grških črk ima tudi variante, ki se v LaTeXu vpišejo z uporabo uk
   - $\omega$
   -
   -
-* - `varepsilon`
+* - `\varepsilon`
   - $\varepsilon$
-  - `vartheta`
+  - `\vartheta`
   - $\vartheta$
   - `\varkappa`
   - $\varkappa$
@@ -493,9 +518,9 @@ Nekaj malih grških črk ima tudi variante, ki se v LaTeXu vpišejo z uporabo uk
   - 
 ::::
 
-Nekaj velikih grških črk ima variante, ki se v LaTeXu vpišejo z uporabo ukaza `\varIme_črka` (npr. `\varTheta`, `\varGamma`, ...):
+Velike grške črke so v matematičnem načinu privzeto zapisane v pokončni pisavi. Paket `amsmath` za njih ponuja tudi ležeče različice, ki jih prav tako dobimo s predpono `var` (npr. `\varTheta`, `\varGamma`, ...):
 
-::::{list-table} Variante velikih grških črk
+::::{list-table} Ležeče različice velikih grških črk
 :header-rows: 1
 
 * - LaTeX
@@ -534,7 +559,7 @@ Nekaj velikih grških črk ima variante, ki se v LaTeXu vpišejo z uporabo ukaza
 :::::
 
 :::::{dropdown} Operatorji in funkcije
-Določene funkcije in operatorji morajo biti zapizani v rimski pisavi (upravičeno) (prim. $sin(x)$ in $\sin(x)$). Običajno, se to doseže z uporabo ukaza `\ime_funkcije` (npr. `\sin`, `\cos`, `\log`, ...). Tabela spodaj prikazuje funkcije in operatorje, ki so na voljo v LaTeXu:
+Določene funkcije in operatorji morajo biti zapisani v pokončni pisavi (prim. $sin(x)$ in $\sin(x)$). Za to uporabimo ukaz z imenom funkcije (npr. `\sin`, `\cos`, `\log`, ...), ki poskrbi tudi za pravilne razmike okoli imena funkcije. Tabela spodaj prikazuje funkcije in operatorje, ki so na voljo v LaTeXu:
 
 ::::{list-table} Operatorji in funkcije
 :header-rows: 1
@@ -548,7 +573,7 @@ Določene funkcije in operatorji morajo biti zapizani v rimski pisavi (upraviče
   - PDF
   - LaTeX
   - PDF
-* - `\arcos`
+* - `\arccos`
   - $\arccos$
   - `\arcsin`
   - $\arcsin$
@@ -592,7 +617,7 @@ Določene funkcije in operatorji morajo biti zapizani v rimski pisavi (upraviče
   - $\limsup$
   - `\log`
   - $\log$
-  - `\ln$`
+  - `\ln`
   - $\ln$
   - `\max`
   - $\max$
@@ -614,9 +639,9 @@ Določene funkcije in operatorji morajo biti zapizani v rimski pisavi (upraviče
   - $\tanh$
 ::::
 
-Če želimo napisati operatorje, ki niso vključeni v zgornjo tabelo, lahko uporabimo ukaz `\operatorname{ime_operatorja}`. Na primer, za pisanje operatorja "foo" bi uporabili ukaz `\operatorname{foo}`, kar bi dalo rezultat $\operatorname{foo}$.
+Če želimo napisati operatorje, ki niso vključeni v zgornjo tabelo, lahko uporabimo ukaz `\operatorname{<ime>}`. Na primer, za pisanje operatorja "foo" bi uporabili ukaz `\operatorname{foo}`, kar bi dalo rezultat $\operatorname{foo}$.
 
-Vendar, če pogosto uporabljamo določen operator, je priporočljivo definirati nov operator z uporabo ukaza `\DeclareMathOperator{\ime_operatorja}{opis_operatorja}` v preambuli dokumenta. Na primer, za definiranje operatorja "foo" bi dodali naslednjo vrstico v preambulo:
+Vendar če pogosto uporabljamo določen operator, je priporočljivo definirati nov operator z ukazom `\DeclareMathOperator{\<ukaz>}{<ime>}` v preambuli dokumenta. Na primer, za definiranje operatorja "foo" bi dodali naslednjo vrstico v preambulo:
 
 ```latex
 \DeclareMathOperator{\foo}{foo}
@@ -626,12 +651,12 @@ Nato lahko uporabimo ukaz `\foo` v matematičnem načinu, kar bo dalo rezultat $
 :::::
 
 :::::{dropdown} Veliki operatorji
-Nekateri matematični operaterji se štejejo za »velike« operaterje. Ti operatorji so običajno uporabljeni v prikaznem načinu in imajo večje simbole, medtem ko so v vrstičnem načinu manjši. Veliki operatorji vključujejo vsote, produkte, integrale, itd.
-Nekatere funkcije v [Tabeli %s](#tab_latex-operators) so tudi veliki operatorji.
+Nekateri matematični operatorji se štejejo za "velike" operatorje. Veliki operatorji vključujejo vsote, produkte, integrale itd. V prikaznem načinu so njihovi simboli večji, meje pa so (razen pri integralih) zapisane nad in pod simbolom. V vrstičnem načinu so simboli manjši, meje pa zapisane ob strani, da ne razmaknejo vrstic.
+Tudi nekatere funkcije iz [Tabele %s](#tab:latex_operators) (npr. `\lim`, `\max`, `\sup`) se obnašajo kot veliki operatorji: v prikaznem načinu je indeks zapisan pod njimi.
 
 ::::{list-table} Veliki operatorji
 :header-rows: 1
-:label: tab_latex-operators
+:label: tab:latex_veliki_operatorji
 
 * - LaTeX
   - PDF (prikazni način)
@@ -680,7 +705,7 @@ Nekatere funkcije v [Tabeli %s](#tab_latex-operators) so tudi veliki operatorji.
 Če želimo definirati nove velike operatorje, lahko uporabimo ukaz
 
 ```latex
-\DeclareMathOperator*{\ime_operatorja}{opis_operatorja}
+\DeclareMathOperator*{\<ukaz>}{<ime>}
 ```
 
 v preambuli dokumenta. Na primer, za definiranje velikega operatorja "Fun" bi dodali naslednjo vrstico v preambulo:
@@ -689,11 +714,11 @@ v preambuli dokumenta. Na primer, za definiranje velikega operatorja "Fun" bi do
 \DeclareMathOperator*{\Fun}{Fun}
 ```
 
-Nato lahko uporabimo ukaz `\Fun` v matematičnem načinu, kar bo dalo različne rezultate v vrstičnem in prikaznem načinu.
+Nato lahko uporabimo ukaz `\Fun` v matematičnem načinu. Zvezdica pomeni, da se `\Fun` obnaša kot veliki operator: `\Fun_{x \in A}` ima v prikaznem načinu indeks pod imenom, v vrstičnem pa ob strani.
 
 :::::
 :::::{dropdown} Matematične pisave
-Standardni ukazi za uporabo različnih pisav, kot je, `\textbf{...}`, ne delujejo v matematičnem načinu. Namesto tega LaTeX ponuja posebne ukaze za različne matematične pisave:
+Standardni ukazi za uporabo različnih pisav, kot je `\textbf{...}`, niso namenjeni matematičnemu načinu, saj vsebino zapišejo kot besedilo in ne kot matematiko. Namesto tega LaTeX ponuja posebne ukaze za različne matematične pisave:
 
 ::::{list-table} Matematične pisave
 :header-rows: 1
@@ -718,10 +743,16 @@ Standardni ukazi za uporabo različnih pisav, kot je, `\textbf{...}`, ne delujej
   - $\mathfrak{ABCxyz}$
 ::::
 
-Nekatere vir (npr. [Standard ISO 80000-2](https://www.sist.si/velicine-in-enote-2-del-matematika-sist-en-iso-80000-220196-prevod-v-slovenscino.html)) priporočajo, da se za matematične konstante in posebne funkcije uporablja rimska pisava (upravičeno). Na primer, Eulerjevo število $e$, imaginarna enota $i$ in diferencialni operator $d$ naj bodo zapisani v rimski pisavi kot `\mathrm{e}`: $\mathrm{e}$, `\mathrm{i}`:$\mathrm{i}$ in `\mathrm{d}`: $\mathrm{d}$.
-Ukaz `\mathrm{\pi}` bi uporabili za zapis števila pi v rimski pisavi: $\mathrm{\pi}$.
+::::{admonition} Pazite!
+:class: warning
+Ukazi `\mathrm`, `\mathbf` ipd. v LaTeXu vplivajo le na latinske črke, števke in velike grške črke. Malih grških črk ne spremenijo: `\mathrm{\alpha}` in `\mathbf{\alpha}` dasta v dokumentu PDF običajno ležečo $\alpha$, čeprav jih spletni prikaz v tabeli zgoraj lahko pokaže drugače.
+Za krepke male grške črke uporabimo ukaz `\boldsymbol{\alpha}` (paket `amsmath`), za pokončne pa paket `upgreek` (npr. `\uppi`).
+::::
 
-Seveda bi bilo preveč, če bi morali vsakič, ko želimo napisati znano konstanto, vpisati ukaz `\mathrm{\pi}`. Lahko pa opredelimo lasten ukaz, tako da v preambuli vstavimo ukaz `\NewDocumentCommand{\kpi}{}{\mathrm{\pi}}`, in nato uporabimo ukaz `\kpi` za pisanje števila pi v rimski pisavi. Poleg tega, ce se v nekem trenutku odločimo, da ne želimo, da se konstanta pi piše v rimski pisavi, lahko preprosto spremenimo ukaz `\kpi` v preambuli.
+Nekateri viri (npr. [Standard ISO 80000-2](https://www.sist.si/velicine-in-enote-2-del-matematika-sist-en-iso-80000-220196-prevod-v-slovenscino.html)) priporočajo, da se za matematične konstante in posebne funkcije uporablja pokončna pisava. Na primer, Eulerjevo število $e$, imaginarna enota $i$ in diferencialni operator $d$ naj bodo zapisani v pokončni pisavi kot `\mathrm{e}`: $\mathrm{e}$, `\mathrm{i}`: $\mathrm{i}$ in `\mathrm{d}`: $\mathrm{d}$.
+Za pokončno število pi ukaz `\mathrm{\pi}` ne zadošča (glej opozorilo zgoraj), zato naložimo paket `upgreek` in uporabimo ukaz `\uppi`.
+
+Seveda bi bilo preveč, če bi morali vsakič, ko želimo napisati znano konstanto, vpisati ukaz `\mathrm{e}`. Lahko pa opredelimo lasten ukaz, tako da v preambulo vstavimo ukaz `\NewDocumentCommand{\eu}{}{\mathrm{e}}`, in nato uporabimo ukaz `\eu` za pisanje Eulerjevega števila v pokončni pisavi. Poleg tega, če se v nekem trenutku odločimo, da ne želimo, da se Eulerjevo število piše v pokončni pisavi, lahko preprosto spremenimo ukaz `\eu` v preambuli. Več o definiranju lastnih ukazov boste izvedeli v poglavju [](./05_latexRazno.md).
 
 Ukaz `\mathbb{...}` se običajno uporablja za množice števil, kot so naravna števila $\mathbb{N}$, cela števila $\mathbb{Z}$, racionalna števila $\mathbb{Q}$, realna števila $\mathbb{R}$ in kompleksna števila $\mathbb{C}$.
 
@@ -730,7 +761,7 @@ Ukaz `\mathbb{...}` se običajno uporablja za množice števil, kot so naravna �
 :::{card} LaTeX
 
 ```latex
-\[4 \in \mathbb{N}, -5 \in \mathbb{Z},\frac{1}{2} \in \mathbb{Q}, \sqrt{2} \in \mathbb{R}\]
+\[4 \in \mathbb{N}, \quad -5 \in \mathbb{Z}, \quad \frac{1}{2} \in \mathbb{Q}, \quad \sqrt{2} \in \mathbb{R}\]
 ```
 
 :::
@@ -738,7 +769,7 @@ Ukaz `\mathbb{...}` se običajno uporablja za množice števil, kot so naravna �
 :::{card} PDF
 
 $$
-4 \in \mathbb{N}, -5 \in \mathbb{Z},\frac{1}{2} \in \mathbb{Q}, \sqrt{2} \in \mathbb{R}
+4 \in \mathbb{N}, \quad -5 \in \mathbb{Z}, \quad \frac{1}{2} \in \mathbb{Q}, \quad \sqrt{2} \in \mathbb{R}
 $$
 
 :::
@@ -807,7 +838,7 @@ $$
 :::
 ::::
 
-V takih primerih je priporočljivo uporabiti ukaza `\left` in `\right`, ki samodejno prilagodita velikost ločevalnikov glede na vsebino znotraj njih. **Morate pa paziti**, da vsak `\left` ima ustrezen `\right`, ampak ni nujno, da sta oba ločevalnika enaka.
+V takih primerih je priporočljivo uporabiti ukaza `\left` in `\right`, ki samodejno prilagodita velikost ločevalnikov glede na vsebino znotraj njih. **Morate pa paziti**, da ima vsak `\left` svoj `\right`, ni pa nujno, da sta oba ločevalnika enaka.
 
 ::::{grid} 2 2 2 2
 
@@ -869,22 +900,21 @@ $$
 :::
 ::::
 
-Čeprav je včasih potrebno neposredno uporabiti ukaza `\left` in `\right`, je najpogostejši primer uporabe nekaterih vnaprej določenih ločil na obeh straneh. Za to uporabo je ukaz
+Čeprav je včasih treba neposredno uporabiti ukaza `\left` in `\right`, najpogosteje isti par ločevalnikov uporabljamo vedno znova (npr. absolutna vrednost, norma, množica). Za to ima paket `mathtools` ukaz
 
 ```latex
-\DeclarePairedDelimiter{\ime_ločivalnika}{levo_ločivalnik}{desno_ločivalnik}
+\DeclarePairedDelimiter{\<ukaz>}{<levi ločevalnik>}{<desni ločevalnik>}
 ```
 
-v preambuli dokumenta. Nato lahko uporabimo ukaz `\ime_ločivalnika{...}` v matematičnem načinu, kar bo ustvarilo ločevalnike okoli vsebine znotraj `levo_ločivalnik` in `desno_ločivalnik`. Različica "z zvezdico" ta ukaza je enaka kot uporaba `\left` in `\right`, kar pomeni, da se velikost ločevalnikov samodejno prilagodi vsebini znotraj njih.
+ki ga zapišemo v preambulo dokumenta. Nato v matematičnem načinu ukaz `\<ukaz>{...}` vsebino obda z obema ločevalnikoma. Različica "z zvezdico", `\<ukaz>*{...}`, deluje kot `\left` in `\right`, kar pomeni, da se velikost ločevalnikov samodejno prilagodi vsebini. Velikost lahko določimo tudi ročno z neobveznim argumentom, npr. `\<ukaz>[\big]{...}`.
 
 ::::{grid} 2 2 2 2
 
 :::{card} LaTeX
 
 ```latex
-%V preambuli:
+% V preambuli:
 \DeclarePairedDelimiter{\set}{\{}{\}}
-\[
 %...
 % V telesu dokumenta:
 \[
@@ -909,7 +939,7 @@ $$
 ::::
 
 Včasih je potrebno prilagoditi velikost ločevalnikov ročno, ne glede na vsebino znotraj njih. V takih primerih lahko uporabimo ukaze `\big`, `\Big`, `\bigg` in `\Bigg` pred ločevalniki, da določimo njihovo velikost.
-Te ukaze morate dodati pred `l` ali `r` (odvisno od tega, ali želite odpreti ali zapreti) in ločevalnika.
+Ukazu dodamo črko `l` za levi (odprti) ali `r` za desni (zaprti) ločevalnik, za njo pa sam ločevalnik, npr. `\bigl(` in `\bigr)`.
 
 ::::{grid} 2 2 2 2
 
@@ -950,7 +980,7 @@ $$
 :::::
 
 :::::{dropdown} Matematični akcenti
-Za poudarjanje delov matematičnih izrazov lahko uporabimo različne ukaze za akcent:
+Za znake nad simboli (npr. za vektorje, odvode po času ali povprečja) uporabimo ukaze za matematične akcente:
 
 ::::{grid} 2 2 2 2
 
@@ -977,6 +1007,7 @@ $$
 \ddot{y}
 $$
 
+:::
 ::::
 
 Nekateri akcenti obstajajo tudi v _široki_ različici.
@@ -1005,7 +1036,8 @@ $$
 :::
 ::::
 
-Široka verzija obstaja tudi za `\bar` in `\vec`, ki se imenujeta `\overline` in `\overrightarrow`.
+Široka različica obstaja tudi za `\bar` in `\vec`; imenujeta se `\overline` in `\overrightarrow`.
+V spodnjem primeru je decimalna vejica zapisana kot `{,}`. V matematičnem načinu je vejica namreč ločilo, za katerim LaTeX doda presledek, zavita oklepaja pa to preprečita (lahko pa naložimo paket `icomma`).
 
 ::::{grid} 2 2 2 2
 
@@ -1013,7 +1045,7 @@ $$
 
 ```latex
 \[
-\frac{9}{14} = 0,6\overline{428571},
+\frac{9}{14} = 0{,}6\overline{428571},
 \vec{AB},
 \overrightarrow{AB}
 \]
@@ -1023,7 +1055,7 @@ $$
 :::{card} PDF
 
 $$
-\frac{9}{14} = 0,6\overline{428571},
+\frac{9}{14} = 0{,}6\overline{428571},
 \vec{AB},
 \overrightarrow{AB}
 $$
@@ -1031,7 +1063,7 @@ $$
 :::
 ::::
 
-Nekateri akcenti celo sprejemajo omejitve:
+Ukaza `\overbrace` in `\underbrace` sprejmeta celo oznako nad oz. pod zavitim oklepajem:
 
 ::::{grid} 2 2 2 2
 
@@ -1062,7 +1094,7 @@ $$
 :::
 ::::
 
-Lahko celo ustvarite svoje matematični akcenti z uporabo ukazov `\overset` in `\underset`.
+Lahko celo ustvarite svoje matematične akcente z ukazoma `\overset` in `\underset`.
 
 ::::{grid} 2 2 2 2
 
@@ -1092,8 +1124,8 @@ $$
 :::::{dropdown} Matrike in navpično poravnana matematika
 
 Za pisanje matrik in drugih navpično poravnanih matematičnih izrazov lahko uporabimo okolje `array`.
-Ta okolje deluje podobno kot okolje `tabular`, vendar je namenjeno za uporabo v matematičnem načinu.
-Okolje tabular, skupaj z ločilniki, lahko uporabimo za ustvarjanje matrik z različnimi vrstami oklepajev okoli njih:
+To okolje deluje podobno kot okolje `tabular`, vendar je namenjeno za uporabo v matematičnem načinu.
+Okolje `array` skupaj z ločevalniki lahko uporabimo za ustvarjanje matrik z različnimi vrstami oklepajev okoli njih:
 
 ::::{grid} 2 2 2 2
 
@@ -1128,7 +1160,7 @@ $$
 :::
 ::::
 
-Za ustvarjanje matematičnih izrazov, opredeljenih s primeri, lahko uporabimo okolje `array`.
+Za zapis izrazov, podanih po primerih (npr. funkcij, definiranih po delih), lahko uporabimo okolje `array`.
 
 ::::{grid} 2 2 2 2
 
@@ -1136,14 +1168,12 @@ Za ustvarjanje matematičnih izrazov, opredeljenih s primeri, lahko uporabimo ok
 
 ```latex
 \[
-y= \left\{
-\begin{array}{ll}
 y=
 \left\{
 \begin{array}{ll}
 a & \text{če }d>c\\
 b+x & \text{zjutraj}\\
-l & \textrm{čez cel dan}
+l & \text{čez cel dan}
 \end{array}
 \right.
 \]
@@ -1159,7 +1189,7 @@ y=
 \begin{array}{ll}
 a & \text{če }d>c\\
 b+x & \text{zjutraj}\\
-l & \textrm{čez cel dan}
+l & \text{čez cel dan}
 \end{array}
 \right.
 $$
@@ -1167,9 +1197,9 @@ $$
 :::
 ::::
 
-Okolje `array` je nekoliko zastarelo in razmik ni pravilno v primerjavi z drugimi matematičnimi objekti. Paket `amsmath` ponuja sodobna okolja, ki dosegajo enake funkcionalnosti.
+Za matrike in izraze po primerih ima paket `amsmath` primernejša okolja, ki poskrbijo za pravilne razmike, zato okolje `array` uporabimo le, kadar potrebujemo posebno poravnavo stolpcev.
 
-The okolje `matrix` omogoča ustvarjanje matrik brez oklepajev in je naravni nadomestek za okolje `array`. Upoštevajte, da okolje `matrix` ne sprejema specifikacije stolpcev. Največje število stolpcev za okolje `matrix` je 10.
+Okolje `matrix` omogoča ustvarjanje matrik brez oklepajev in je naravni nadomestek za okolje `array`. Upoštevajte, da okolje `matrix` ne sprejema specifikacije stolpcev: vsi stolpci so poravnani na sredino (paket `mathtools` ponuja okolje `matrix*`, npr. `\begin{matrix*}[r]` za desno poravnavo). Privzeto največje število stolpcev je 10, kar lahko povečamo z ukazom `\setcounter{MaxMatrixCols}{20}`.
 
 ::::{grid} 2 2 2 2
 
@@ -1204,7 +1234,7 @@ $$
 :::
 ::::
 
-Ker so matrike običajno ločene, obstaja pet dodatnih okolj, ki vsebino matrike preprosto obkrožajo z ločevalniki. Ti okolji so prikazen v [Tabeli %s](#tab:latex_matrike):
+Ker so matrike običajno ločene, obstaja pet dodatnih okolj, ki vsebino matrike preprosto obkrožajo z ločevalniki. Prikazana so v [Tabeli %s](#tab:latex_matrike):
 
 ::::{list-table} Okolja za matrike
 :header-rows: 1
@@ -1226,7 +1256,7 @@ Ker so matrike običajno ločene, obstaja pet dodatnih okolj, ki vsebino matrike
   - $\begin{Vmatrix} a & b \\ c & d \end{Vmatrix}$
 ::::
 
-Matrike, ki so ustvarili z uporabo teh okolij so precej velike, ker so namenjene za prikazni način. Če jih želite uporabiti v vrstičnem načinu, lahko uporabimo okolje `smallmatrix`, ki je manjše različica okolja `matrix`. Okolja `smallmatrix` ni mogoče uporabiti z ločevalniki, zato morate ročno dodati oklepaje ali druge ločevalnike okoli matrike.
+Matrike, ustvarjene s temi okolji, so precej velike, ker so namenjene za prikazni način. Če jih želimo uporabiti v vrstičnem načinu, lahko uporabimo okolje `smallmatrix`, ki je manjša različica okolja `matrix`. Okolje `smallmatrix` nima oklepajev, zato jih moramo dodati ročno (kot v spodnjem primeru) ali pa uporabimo okolja `psmallmatrix`, `bsmallmatrix` ipd. iz paketa `mathtools`.
 
 ::::{grid} 2 2 2 2
 
@@ -1267,8 +1297,8 @@ c & d
 :::
 ::::
 
-Okolje `matrix` lahko uporabimo tudi za ustvarjanje matematičnih izrazov, opredeljenih s primeri, točno kot okolje `array`.
-Vendar, okolje `cases` ponuja boljšo obliko za ta namen.
+Okolje `matrix` bi lahko uporabili tudi za izraze, podane po primerih, podobno kot okolje `array`.
+Vendar pa okolje `cases` ponuja boljšo obliko za ta namen.
 
 ::::{grid} 2 2 2 2
 
@@ -1279,7 +1309,7 @@ Vendar, okolje `cases` ponuja boljšo obliko za ta namen.
 y= \begin{cases}
 a & \text{če }d>c\\
 b+x & \text{zjutraj}\\
-l & \textrm{čez cel dan}
+l & \text{čez cel dan}
 \end{cases}
 \]
 ```
@@ -1292,7 +1322,7 @@ $$
 y= \begin{cases}
   a & \text{če }d>c\\
   b+x & \text{zjutraj}\\
-  l & \textrm{čez cel dan}
+  l & \text{čez cel dan}
 \end{cases}
 $$
 
@@ -1300,15 +1330,15 @@ $$
 ::::
 :::::
 
-:::::{dropdown} Večvrstne enačbe
+::::::{dropdown} Večvrstne enačbe
 
 **Dolge enačbe**
 
 Okolje `equation` omogoča pisanje enovrstičnih enačb. Vendar pa je včasih enačba predolga, da bi se prilegala eni vrstici:
 
-::::{grid} 2 2 2 2
+:::::{grid} 2 2 2 2
 
-:::{card} LaTeX
+::::{card} LaTeX
 
 ```latex
 \[
@@ -1318,9 +1348,9 @@ a = b + c + d + e + f
 \]
 ```
 
-:::
+::::
 
-:::{card} PDF
+::::{card} PDF
 
 $$
 a = b + c + d + e + f
@@ -1328,23 +1358,23 @@ a = b + c + d + e + f
 + k + l + m + n + o + p
 $$
 
-:::
 ::::
+:::::
 
 V tem primeru je treba v enačbo vstaviti prelome vrstic.
 Pri tem je pomembno upoštevati nekaj pravil za izboljšanje berljivosti:
 
 - Na splošno je treba enačbo vedno razdeliti _pred_ znakom enakosti ali operatorjem.
 - Prelom vrstice pred znakom za enakost je boljši kot prelom pred katerim koli drugim operatorjem.
-- Prelom vrstice pred znaki `+` ali `-` je boljši kot prelom pred znaki `*`, `/`.
-- Vsakršno drugo vrsto prelomov vrstic je treba po možnosti izogibati.
+- Prelom vrstice pred znaki `+` ali `-` je boljši kot prelom pred znaki za množenje in deljenje (`\cdot`, `\times`, `/`).
+- Drugim vrstam prelomov vrstic se po možnosti izognemo.
 
 Najlažji način za prikazovanje večvrstnih enačb je uporaba okolja `multline`.
 Omogoča prelom vrstic z uporabo ukaza `\\` in samodejno poravna prvo vrstico na levo in zadnjo vrstico na desno, medtem ko so vse vmesne vrstice poravnane na sredino.
 
-::::{grid} 2 2 2 2
+:::::{grid} 2 2 2 2
 
-:::{card} LaTeX
+::::{card} LaTeX
 
 ```latex
 \begin{multline}
@@ -1354,21 +1384,21 @@ a + b + c + d + e \\
 \end{multline}
 ```
 
-:::
-
-:::{card} PDF
-
-```{figure} ./img/04_eg-multline-2.png
-
-```
-
 ::::
+
+::::{card} PDF
+
+:::{figure} ./img/04_eg-multline-1.png
+:alt: Enačba v treh vrsticah: prva je poravnana levo, druga na sredino, tretja desno.
+:::
+::::
+:::::
 
 Če ne želite, da je določena notranja vrstica sredinsko poravnana, lahko uporabite ukaze `\shoveleft` ali `\shoveright`, da prisilite levo ali desno poravnavo določene vrstice.
 
-::::{grid} 2 2 2 2
+:::::{grid} 2 2 2 2
 
-:::{card} LaTeX
+::::{card} LaTeX
 
 ```latex
 \begin{multline}
@@ -1379,26 +1409,26 @@ a + b + c \\
 \end{multline}
 ```
 
-:::
-
-:::{card} PDF
-
-```{figure} ./img/04_eg-multline-2.png
-
-```
-
-:::
 ::::
 
-Podobno kot okolja `equation`, okolje `multline` samodejno doda številke vrsticam. Če želite odstraniti številke vrstic, lahko uporabite okolje `multline*`.
+::::{card} PDF
+
+:::{figure} ./img/04_eg-multline-2.png
+:alt: Enačba v štirih vrsticah: prvi dve sta poravnani levo, tretja in četrta desno.
+:::
+
+::::
+:::::
+
+Podobno kot okolje `equation` okolje `multline` enačbo samodejno oštevilči, in sicer z eno samo številko ob zadnji vrstici, saj gre za eno enačbo. Če številke ne želite, uporabite okolje `multline*`.
 
 **Večkratna neporavnana enačba**
 
 Pri sestavljanju več enačb v več okoljih `equation` se med njimi pojavi nepotrebni razmik.
 
-::::{grid} 2 2 2 2
+:::::{grid} 2 2 2 2
 
-:::{card} LaTeX
+::::{card} LaTeX
 
 ```latex
 \begin{equation}
@@ -1412,9 +1442,9 @@ Pri sestavljanju več enačb v več okoljih `equation` se med njimi pojavi nepot
 \end{equation}
 ```
 
-:::
+::::
 
-:::{card} PDF
+::::{card} PDF
 
 \begin{equation}
 2 + 2 = 4
@@ -1425,14 +1455,14 @@ Pri sestavljanju več enačb v več okoljih `equation` se med njimi pojavi nepot
 \begin{equation}
 2 + 2 \times 2 = 6
 \end{equation}
-:::
 ::::
+:::::
 
 Da se temu izognemo, lahko uporabimo okolje `gather`, ki omogoča več enačb brez dodatnega razmika med njimi. Vsaka vrstica je samodejno poravnana na sredino in oštevilčena.
 
-::::{grid} 2 2 2 2
+:::::{grid} 2 2 2 2
 
-:::{card} LaTeX
+::::{card} LaTeX
 
 ```latex
 \begin{gather}
@@ -1442,30 +1472,30 @@ Da se temu izognemo, lahko uporabimo okolje `gather`, ki omogoča več enačb br
 \end{gather}
 ```
 
-:::
+::::
 
-:::{card} PDF
+::::{card} PDF
 
 \begin{gather}
 2 + 2 = 4 \\
-2 \times 2 = 4 \\
+2 \times 2 = 4 \notag \\
 2 + 2 \times 2 = 6
 \end{gather}
-:::
 ::::
+:::::
 
-Vsaka enačba bo dobila svojo številko (tukaj v učbeniku ne, vendar v vašem dokumentu bo) in lahko uporabite ukaze `\label`, `\ref`, `\tag` in `\eqref` v vsaki enačbi.
-Lahko pa uporabite ukaz `\notag`, da preprečite oštevilčenje določene enačbe.
+Vsaka enačba bo dobila svojo številko (tukaj v učbeniku ne, vendar v vašem dokumentu bo). Vsako enačbo lahko označimo z ukazom `\label` in se nanjo sklicujemo z `\ref` ali `\eqref`, z ukazom `\tag` pa ji določimo svojo oznako.
+Z ukazom `\notag` preprečimo oštevilčenje določene enačbe (v zgornjem primeru druge).
 
-Kot vedno, različica okolja `gather*` odstrani številke vrstic.
+Kot vedno okolje `gather*` odstrani številke vseh vrstic.
 
 **Poravnane enačbe**
 
 Okolje `align` omogoča pisanje več enačb, ki so poravnane glede na določen znak, običajno znak enakosti. To storimo z uporabo znaka `&`, ki označuje mesto poravnave v vsaki vrstici.
 
-::::{grid} 2 2 2 2
+:::::{grid} 2 2 2 2
 
-:::{card} LaTeX
+::::{card} LaTeX
 
 ```latex
 \begin{align}
@@ -1475,24 +1505,24 @@ Okolje `align` omogoča pisanje več enačb, ki so poravnane glede na določen z
 \end{align}
 ```
 
-:::
+::::
 
-:::{card} PDF
+::::{card} PDF
 
 \begin{align}
 2 + 2 & = 2 \times 2 \\
 3 + 3 & \neq 3 \times 3 \\
 2 + 2 \times 2 & < 8
 \end{align}
-:::
 ::::
+:::::
 
-Okolje `align` omogoča umestitev več matematičnih elementov v eno vrstico z uporabo več znakov `&` za določitev več mest poravnave.
-Elementi se obravnavajo kot pari, zato bo vsak drugi znak poravnave ustvaril večje prostor, da se prilagodi razmik med pari.
+Okolje `align` omogoča tudi več stolpcev enačb v eni vrstici.
+Znaki `&` imajo izmenično dve vlogi: prvi, tretji, ... označujejo mesto poravnave znotraj stolpca, drugi, četrti, ... pa začnejo nov stolpec. LaTeX med stolpce sam vstavi primeren razmik.
 
-::::{grid} 2 2 2 2
+:::::{grid} 2 2 2 2
 
-:::{card} LaTeX
+::::{card} LaTeX
 
 ```latex
 \begin{align}
@@ -1501,22 +1531,22 @@ a & \geq d & d & \prec c
 \end{align}
 ```
 
-:::
+::::
 
-:::{card} PDF
+::::{card} PDF
 
 \begin{align}
 a & \succeq b & c & \leq d \\
 a & \geq d & d & \prec c
 \end{align}
-:::
 ::::
+:::::
 
 Okolje `align*` (z zvezdico) je tudi zelo uporabno za pisanje zaporedij izračunov, kjer je vsak korak prikazan v novi vrstici in so vsi znaki enakosti poravnani.
 
-::::{grid} 2 2 2 2
+:::::{grid} 2 2 2 2
 
-:::{card} LaTeX
+::::{card} LaTeX
 
 ```latex
 \begin{align*}
@@ -1527,27 +1557,27 @@ Okolje `align*` (z zvezdico) je tudi zelo uporabno za pisanje zaporedij izračun
 \end{align*}
 ```
 
-:::
+::::
 
-:::{card} PDF
+::::{card} PDF
 
 \begin{align*}
-\sum*{k=0}^n k
-&= \sum*{k=0}^{n-1} k + n \\
+\sum_{k=0}^n k
+&= \sum_{k=0}^{n-1} k + n \\
 &= \frac{n(n-1)}{2} + n \\
 &= \frac{n(n+1)}{2}
 \end{align*}
-:::
 ::::
+:::::
 
 **Enačbe kot gradniki**
 
-Okolja `multline`, `gather` in `align` se lahko uporabljajo znotraj drugih matematičnih okolij, kot so `equation` ali `align` z dodajanjem končnice -ed k njihovemu imenu. Na primer, `multlineed`, `gathered` in `aligned`.
-To so uporabno, kadar želite vključiti večvrstične enačbe, da dobi samo eno številko enačbe.
+Okolja `multline`, `gather` in `align` lahko uporabimo tudi znotraj drugih matematičnih okolij, kot sta `equation` ali `align`, če njihovemu imenu dodamo končnico _-ed_: `gathered` in `aligned` (paket `amsmath`) ter `multlined` (paket `mathtools`).
+To je uporabno, kadar želimo, da več vrstic dobi eno samo številko enačbe.
 
-::::{grid} 2 2 2 2
+:::::{grid} 2 2 2 2
 
-:::{card} LaTeX
+::::{card} LaTeX
 
 ```latex
 \begin{equation}
@@ -1560,34 +1590,34 @@ To so uporabno, kadar želite vključiti večvrstične enačbe, da dobi samo eno
 \end{equation}
 ```
 
-:::
+::::
 
-:::{card} PDF
+::::{card} PDF
 
 \begin{equation}
 \begin{aligned}
-\sum*{k=0}^n k
-&= \sum*{k=0}^{n-1} k + n \\
+\sum_{k=0}^n k
+&= \sum_{k=0}^{n-1} k + n \\
 &= \frac{n(n-1)}{2} + n \\
 &= \frac{n(n+1)}{2}
 \end{aligned}
 \end{equation}
-:::
 ::::
-
 :::::
+
+::::::
 
 :::::{dropdown} Presledki v matematičnem načinu
 
 Kot smo že omenili, se razmik v matematičnem načinu obravnava drugače kot v običajnem besedilnem načinu.
-V matematičnem načinu lahko vstavimo vodoravni presledek z uporabo ukaza `\mspace{širina}`, kjer je `širina` dolžina presledka, ki ga želimo vstaviti v posebni enoti `mu`, ki je približno enaka 1/18 širine črke 'M' v trenutni matematični pisavi.
+V matematičnem načinu lahko vstavimo vodoravni presledek z ukazom `\mspace{<širina>}`, kjer je `<širina>` dolžina presledka v posebni enoti `mu`. En `mu` je 1/18 enote `em` trenutne matematične pisave (`em` je približno širina črke M).
 
 ::::{grid} 2 2 2 2
 
 :::{card} LaTeX
 
 ```latex
-$a \mspace{18mu} 2$
+$a \mspace{18mu} b$
 ```
 
 :::
@@ -1607,12 +1637,12 @@ Vendar pa je uporaba ukaza `\mspace` redka. Pogosteje se uporabljajo vnaprej dol
   - Alias
   - Velikost v `mu`
   - Primer
-* - none
+* - (brez)
   -
   - `\mspace{0mu}`
   - $\rightarrow\leftarrow$
 * - `\thinspace`
-  - `\!`
+  - `\,`
   - `\mspace{3mu}`
   - $\rightarrow \thinspace \leftarrow$
 * - `\medspace`
@@ -1647,33 +1677,33 @@ Vendar pa je uporaba ukaza `\mspace` redka. Pogosteje se uporabljajo vnaprej dol
 ::::
 :::::
 
-:::::{dropdown} Drugi matematični izrazi
+::::::{dropdown} Drugi matematični izrazi
 
 **Modularna aritmetika**
-::::{grid} 2 2 2 2
+:::::{grid} 2 2 2 2
 
-:::{card} LaTeX
+::::{card} LaTeX
 
 ```latex
 \[
-a^{\varphi(n)} \equiv 1 \pmod n
+a^{\varphi(n)} \equiv 1 \pmod{n}
 \]
 ```
 
-:::  
-:::{card} PDF
+::::  
+::::{card} PDF
 
 $$
 a^{\varphi(n)} \equiv 1 \pmod{n}
 $$
 
-:::
 ::::
+:::::
 
 **Binomski koeficienti**
-::::{grid} 2 2 2 2
+:::::{grid} 2 2 2 2
 
-:::{card} LaTeX
+::::{card} LaTeX
 
 ```latex
 \[
@@ -1681,24 +1711,24 @@ $$
 \]
 ```
 
-:::  
-:::{card} PDF
+::::  
+::::{card} PDF
 
 $$
 \binom{n}{k} = \frac{n!}{k!(n-k)!}
 $$
 
-:::
 ::::
+:::::
 
 **Tri pike**
 
-Ukaz `\dots` ustvari tri pike in izpustiti del matematičnega izraza, ki ga je mogoče zlahka sklepati iz konteksta.
+Ukaz `\dots` ustvari tri pike, s katerimi izpustimo del matematičnega izraza, ki ga je mogoče zlahka sklepati iz konteksta.
 LaTeX poskuša prilagoditi svoj izpis na podlagi okoliških simbolov.
 
-::::{grid} 2 2 2 2
+:::::{grid} 2 2 2 2
 
-:::{card} LaTeX
+::::{card} LaTeX
 
 ```latex
 \begin{gather*}
@@ -1707,87 +1737,90 @@ LaTeX poskuša prilagoditi svoj izpis na podlagi okoliških simbolov.
 \end{gather*}
 ```
 
-:::
+::::
 
-:::{card} PDF
+::::{card} PDF
 
 \begin{gather*}
 1, 2, 3, \dots, 100 \\
 1 + 2 + 3 + \dots + 100 = 5050
 \end{gather*}
-:::
 ::::
+:::::
 
-Če razmik, ki ga izbere LaTeX, ni primeren, ha lahko določite izrecno z uporabo:
+Če razmik, ki ga izbere LaTeX, ni primeren, ga lahko določite izrecno z uporabo:
 
 - `\dotsc` za tri pike med vejicami, `$1,2,\dotsc,100$`: $1,2, \dotsc , 100$.
 - `\dotsb` za tri pike med binarnimi operatorji, `$1 + 2 + \dotsb + 100$`: $1 + 2 + \dotsb + 100$.
 - `\dotsm` za tri pike, ki označujejo množenje `$a_1 a_2 \dotsm a_n$`: $a_1 a_2 \dotsm a_n$.
-- `\dotsi` za tri pike med integraloma `$\int_{a_1}^{b_1} \int_{a_2}^{b_2} \dotsi \int_{a_n}^{b_n} f(x) \, dx$`: $\int_{a_1}^{b_1} \int_{a_2}^{b_2} \dotsi \int_{a_n}^{b_n} f(x) \, dx$.
+- `\dotsi` za tri pike med integrali `$\int_{a_1}^{b_1} \int_{a_2}^{b_2} \dotsi \int_{a_n}^{b_n} f(x) \, dx$`: $\int_{a_1}^{b_1} \int_{a_2}^{b_2} \dotsi \int_{a_n}^{b_n} f(x) \, dx$.
 - `\dotso` za tri pike v drugih kontekstih.
 
-::::{grid} 2 2 2 2
+:::::{grid} 2 2 2 2
 
-:::{card} LaTeX
+::::{card} LaTeX
 
 ```latex
 \begin{gather*}
 1 + 2 + 3 + \dots \\
-1 + 2 + 3 + \dotsb \\
+1 + 2 + 3 + \dotsb
 \end{gather*}
 ```
 
-:::
+::::
 
-:::{card} PDF
+::::{card} PDF
 
 \begin{gather*}
 1 + 2 + 3 + \dots \\
-1 + 2 + 3 + \dotsb \\
+1 + 2 + 3 + \dotsb
 \end{gather*}
-:::
 ::::
+:::::
+
+Na koncu izraza LaTeX ne ve, kaj sledi, zato `\dots` postavi pike na spodnjo črto. Z `\dotsb` povemo, da gre za vsoto, in pike so poravnane z znaki `+`.
 
 Če nobena od zgornjih možnosti ni primerna, lahko uporabite ukaz `\ldots` za vodoravne tri pike na spodnji črti besedila, in `\cdots` za tri pike, ki so poravnane s sredino.
 
-Ko delate z matrikami, lahko uporabite `\vdots` za navpične tri pike in `\ddots` za diagonalne tri pike (od zgoraj levo do spodaj desno) in `\adots` za diagonalne tri pike (od spodaj levo do zgoraj desno).
+Ko delate z matrikami, lahko uporabite `\vdots` za navpične tri pike in `\ddots` za diagonalne tri pike (od zgoraj levo do spodaj desno) in `\iddots` iz paketa `mathdots` za diagonalne tri pike (od spodaj levo do zgoraj desno).
 
-::::{grid} 2 2 2 2
+:::::{grid} 2 2 2 2
 
-:::{card} LaTeX
+::::{card} LaTeX
 
 ```latex
 \[  \begin{bmatrix}
 a_{1,1} & \cdots & a_{1,n} \\
 \vdots & \ddots & \vdots \\
-a_{m,1} & \cdots & a_{m,n} \\
+a_{m,1} & \cdots & a_{m,n}
 \end{bmatrix} \]
 ```
 
-:::
+::::
 
-:::{card} PDF
+::::{card} PDF
 
 $$
 \begin{bmatrix}
 a_{1,1} & \cdots & a_{1,n} \\
 \vdots & \ddots & \vdots \\
-a_{m,1} & \cdots & a_{m,n} \\
+a_{m,1} & \cdots & a_{m,n}
 \end{bmatrix}
 $$
 
-:::
 ::::
+:::::
 
 **Fantomski presledki**
 
 Včasih je potrebno ustvariti presledek, ki zavzame prostor, vendar ni viden.
-To lahko dosežemo z uporabo ukaza `\phantom{izraz}`, ki ustvari neviden element z enako širino kot `izraz`.
-Ukaza `\hphantom{izraz}` in `\vphantom{izraz}` ustvarita neviden element z enako širino oziroma višino kot `izraz`.
+To lahko dosežemo z ukazom `\phantom{<izraz>}`, ki ustvari neviden element z enako širino in višino kot `<izraz>`.
+Ukaza `\hphantom{<izraz>}` in `\vphantom{<izraz>}` ustvarita neviden element le z enako širino oziroma le z enako višino kot `<izraz>`.
+V spodnjem primeru `\vphantom` poskrbi, da je zaklepaj v drugi vrstici enako visok kot oklepaj v prvi.
 
-::::{grid} 2 2 2 2
+:::::{grid} 2 2 2 2
 
-:::{card} LaTeX
+::::{card} LaTeX
 
 ```latex
 \begin{multline*}
@@ -1805,27 +1838,27 @@ kratko d x
 \end{multline*}
 ```
 
+::::
+
+::::{card} PDF
+
+:::{figure} ./img/04_eg-multline-3.png
+:alt: Enačba v dveh vrsticah z integralom, kjer je velik oklepaj v prvi vrstici in enako velik zaklepaj v drugi.
 :::
 
-:::{card} PDF
-
-```{figure} ./img/04_eg-multline-3.png
-
-```
-
-:::
 ::::
 :::::
+::::::
 
 :::{exercise}
 :label: ex-matematika-1
-Napišite LaTeX kodo za naslednje matematične izraze:
+Napišite kodo LaTeX za naslednje matematične izraze:
 
 1. $\cos^2 \theta + \sin^2 \theta = 1$
 2. $\displaystyle \int_{0}^{\infty} e^{-x^2} \, dx = \frac{\sqrt{\pi}}{2}$
 3. $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}$
 4. Če je
-$A =\begin{pmatrix} 2 & 1 & 1 \\ 1 & 1 & 0 \\ 1 & 0 & 1 \end{pmatrix}$ torej je
+$A =\begin{pmatrix} 3 & 1 & 1 \\ 1 & 1 & 0 \\ 1 & 0 & 1 \end{pmatrix}$, potem je
 $
 A^{-1} = 
 \begin{pmatrix}1 & -1 & -1 \\
@@ -1839,59 +1872,57 @@ x & \text{če } x \geq 0 \\
 -x & \text{če } x < 0
 \end{cases}$
 
-6. Če je $\vec{v} = (v_1, \dots, v_n)$, torej je njena norma definirana kot
+6. Če je $\vec{v} = (v_1, \dots, v_n)$, potem je njegova norma definirana kot
 $\lvert \vec{v}\rvert = \sqrt{v_1^2 + v_2^2 + \dots + v_n^2}$.
 :::
 
-```{margin}
+:::{margin}
 [Seznam nalog](#latexMatematika_vaje)
-```
+:::
 
 :::{solution} ex-matematika-1
-:class: tip, dropdown
+:class: tip dropdown
 
 1. ```latex
-\[
-\cos^2 \theta + \sin^2 \theta = 1
-\]
-```
+   \[
+   \cos^2 \theta + \sin^2 \theta = 1
+   \]
+   ```
 2. ```latex
-\[
-\int_{0}^{\infty} e^{-x^2} \, dx = \frac{\sqrt{\pi}}{2}
-\]
-```
+   \[
+   \int_{0}^{\infty} e^{-x^2} \, dx = \frac{\sqrt{\pi}}{2}
+   \]
+   ```
 3. ```latex
-\[
-\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}
-\]
-```
+   \[
+   \sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}
+   \]
+   ```
 4. ```latex
-Če je $A =\begin{pmatrix} 2 & 1 & 1 \\ 1 & 1 & 0 \\ 1 & 0 & 1 \end{pmatrix}$  torej je
-$ A^{-1} = \begin{pmatrix}1 & -1 & -1 \\ -1 & 2 & 1 \\ -1 & 1 & 2\end{pmatrix}$
-```
+   Če je $A =\begin{pmatrix} 3 & 1 & 1 \\ 1 & 1 & 0 \\ 1 & 0 & 1 \end{pmatrix}$, potem je
+   $A^{-1} = \begin{pmatrix}1 & -1 & -1 \\ -1 & 2 & 1 \\ -1 & 1 & 2\end{pmatrix}$.
+   ```
 5. ```latex
-\[
-|x| = \begin{cases}
-x & \text{če } x \geq 0 \\
--x & \text{če } x < 0
-\end{cases}
-\]
-```
-````
-
+   \[
+   |x| = \begin{cases}
+   x & \text{če } x \geq 0 \\
+   -x & \text{če } x < 0
+   \end{cases}
+   \]
+   ```
 6. ```latex
-Če je $\vec{v} = (v_1, \dots, v_n)$, torej je njena norma definirana kot
-$\lvert \vec{v}\rvert = \sqrt{v_1^2 + v_2^2 + \dots + v_n^2}$.
-````
+   Če je $\vec{v} = (v_1, \dots, v_n)$, potem je njegova norma definirana kot
+   $\lvert \vec{v}\rvert = \sqrt{v_1^2 + v_2^2 + \dots + v_n^2}$.
+   ```
 :::
 
 :::{exercise}
 :label: ex-matematika-2
-Napišite LaTeX kodo za naslednje matematične izraze:
+Napišite kodo LaTeX za naslednje matematične izraze:
 
 - \begin{align}
 x^2 + y^2 &= 1\\
-y &= \sqrt{1-x^2} && \text{če je } y \geq 0\\
+y &= \sqrt{1-x^2} && \text{če je } y \geq 0
 \end{align}
 
 - \begin{align}
@@ -1901,56 +1932,57 @@ x+2y+3z & = 6\\
 \end{align}
 
 - \begin{align}
-(x+y)^n & = \sum\_{k=0}^{n} \binom{n}{k} x^{n-k} y^k\\
+(x+y)^n & = \sum_{k=0}^{n} \binom{n}{k} x^{n-k} y^k\\
 & = x^n + \binom{n}{1} x^{n-1} y + \binom{n}{2} x^{n-2} y^2 + \dots + y^n
 \end{align}
 
 :::
 
-```{margin}
+:::{margin}
 [Seznam nalog](#latexMatematika_vaje)
-```
+:::
 
 :::{solution} ex-matematika-2
-:class: tip, dropdown
+:class: tip dropdown
 
 - ```latex
-\begin{align}
-x^2 + y^2  &= 1\\
-y &= \sqrt{1-x^2} && \text{če je } y \geq 0\\
-\end{align}
-```
+  \begin{align}
+  x^2 + y^2 &= 1\\
+  y &= \sqrt{1-x^2} && \text{če je } y \geq 0
+  \end{align}
+  ```
 - ```latex
-\begin{align}
-x+2y+3z & = 6\\
-2x+3y+z & = 5\\
-3x+y+2z & = 7
-\end{align}
-```
+  \begin{align}
+  x+2y+3z & = 6\\
+  2x+3y+z & = 5\\
+  3x+y+2z & = 7
+  \end{align}
+  ```
 - ```latex
-\begin{align}
-(x+y)^n & = \sum_{k=0}^{n} \binom{n}{k} x^{n-k} y^k\\
-& = x^n + \binom{n}{1} x^{n-1} y + \binom{n}{2} x^{n-2} y^2 + \dots + y^n
-\end{align}
-```
+  \begin{align}
+  (x+y)^n & = \sum_{k=0}^{n} \binom{n}{k} x^{n-k} y^k\\
+  & = x^n + \binom{n}{1} x^{n-1} y + \binom{n}{2} x^{n-2} y^2 + \dots + y^n
+  \end{align}
+  ```
 :::
 
 :::{exercise}
 :label: ex-matematika-3
-Napišite LaTeX kodo, da reproducira besedilo prikazano na sliki spodaj:
+Napišite kodo LaTeX, ki ustvari besedilo s slike spodaj:
 
-```{figure} ./img/04_ex-maxwell.png
-:name: fig_ex_maxwell
-```
+:::{figure} ./img/04_ex-maxwell.png
+:label: fig_ex_maxwell
+:alt: Maxwellove enačbe v štirih oštevilčenih vrsticah, poravnanih po enačajih, in odstavek, ki se nanje sklicuje s številkami 1 do 4.
+:::
 
 :::
 
-```{margin}
+:::{margin}
 [Seznam nalog](#latexMatematika_vaje)
-```
+:::
 
 :::{solution} ex-matematika-3
-:class: tip, dropdown
+:class: tip dropdown
 
 ```latex
 Maxwellove enačbe v vakuumu so:
@@ -1966,10 +1998,10 @@ Enačba \ref{eq:GaussE} opisuje Gaussov zakon za električno polje, enačba \ref
 
 :::
 
-## Izreki, dokazi, definicije, itd..
+## Izreki, dokazi, definicije itd.
 
-Ko sestavljanju matematičnih besedil je pogosto potrebno vključiti izreke, dokaze, definicije in podobne strukture (ki jih bomo zaradi enostavnosti imenovali "teoremi").
-Paket `amsthm`, ponuja enostaven način za ustvarjanje teh struktur z uporabo okolij.
+Pri sestavljanju matematičnih besedil je pogosto treba vključiti izreke, dokaze, definicije in podobne strukture (ki jih bomo zaradi enostavnosti imenovali "teoremi").
+Paket `amsthm` ponuja enostaven način za ustvarjanje teh struktur z uporabo okolij.
 
 Najprej moramo definirati nova okolja za naše teoreme v preambuli dokumenta.
 To storimo z uporabo ukaza
@@ -1980,13 +2012,13 @@ To storimo z uporabo ukaza
 
 kjer je `<ime_okolja>` ime novega okolja in
 `<Napis>` je besedilo, ki se bo prikazalo pred številko teorema.
-Neobvezna argumenta `<drugi_teorem>` in `<razdelek>` določata, kako se bodo teoremi številčili (in lahko uporabimo samo ena od njih ali nobene).
+Neobvezna argumenta `<drugi_teorem>` in `<razdelek>` določata, kako se bodo teoremi številčili (uporabimo lahko največ enega od njiju).
 Uporabimo `<drugi_teorem>`, če želimo, da se novi teoremi številčijo skupaj z obstoječim teoremom, kjer je `<drugi_teorem>` ime okolja.
 Če želimo, da se številčenje teoremov ponastavi v vsakem razdelku, uporabimo `<razdelek>`, kjer je `<razdelek>` ime števca razdelkov (npr. `section` ali `subsection`).
 Če ne uporabimo nobenega od teh dveh argumentov, se bodo teoremi številčili neodvisno skozi celoten dokument (1, 2, 3, ...).
-Ukaz `\newtheorem*{<ime_okolja>}{<Naslov>}` definira različico okolja, ki ne bo imela številke.
+Ukaz `\newtheorem*{<ime_okolja>}{<Napis>}` definira različico okolja, ki ne bo imela številke.
 
-Po definiciji okolja lahko uporabimo novo okolje v našem dokumentu z uporabo standardnega LaTeX okolja sintakse:
+Po definiciji lahko novo okolje uporabimo v našem dokumentu z običajno sintakso okolij LaTeX:
 
 ```latex
 \begin{<ime_okolja>}[<Naslov>]
@@ -1994,40 +2026,42 @@ Vsebina teorema.
 \end{<ime_okolja>}
 ```
 
-Neobvezni argument `<Naslov>` omogoča dodajanje naslova teorema, ki bo prikazan poleg številke teorema.
+Neobvezni argument `<Naslov>` omogoča dodajanje naslova teorema, ki bo v oklepaju prikazan za številko teorema.
 
-:::{prf:example}
+::::::{prf:example}
 :label: eg_theorems_1
 
-`````{tab-set}
-  ````{tab-item} LaTeX
-    ```latex
-    %V preambuli dokumenta
-    \usepackage{amsthm}
-    \newtheorem{izrek}{Izrek}
-    %V telesu dokumenta
-    \begin{izrek}[Pitagorov izrek]
-      Vsota površin kvadratov katet pravokotnega
-      trikotnika je enaka površini kvadrata nad
-      hipotenuzo.
-      Izrek lahko zapišemo tudi kot: \[c^{2} = a^{2} + b^{2}\]
-    \end{izrek}
-    ```
-  ````
-  ````{tab-item} PDF
-    ``` {figure} ./img/04_eg-theorems-1.png
-      :name: fig_theorems_1
-    ```
-  ````
-`````
+:::::{tab-set}
+::::{tab-item} LaTeX
+```latex
+% V preambuli dokumenta
+\usepackage{amsthm}
+\newtheorem{izrek}{Izrek}
+% V telesu dokumenta
+\begin{izrek}[Pitagorov izrek]
+  Vsota površin kvadratov katet pravokotnega
+  trikotnika je enaka površini kvadrata nad
+  hipotenuzo.
+  Izrek lahko zapišemo tudi kot: \[c^{2} = a^{2} + b^{2}\]
+\end{izrek}
+```
+::::
 
+::::{tab-item} PDF
+:::{figure} ./img/04_eg-theorems-1.png
+:label: fig_theorems_1
+:alt: Izrek 1 s pokončnim naslovom Pitagorov izrek v oklepaju in ležečim besedilom, ki se konča s prikazano enačbo c na kvadrat je a na kvadrat plus b na kvadrat.
 :::
+::::
+:::::
 
-V LaTeXu obstajajo tri različne sloge teoremov:
+::::::
 
-- `plain`: privzeti slog, krepko naslov in poševno telo.
-- `definition`: krepko naslov in pokončno telo.
-- `remark`: poševno naslov in pokončno telo.
+Paket `amsthm` ponuja tri sloge teoremov:
+
+- `plain`: privzeti slog, krepek napis in ležeče besedilo (za izreke, trditve, leme ...),
+- `definition`: krepek napis in pokončno besedilo (za definicije, primere ...),
+- `remark`: ležeč napis in pokončno besedilo (za opombe ...).
 
 Za nastavitev sloga teorema uporabimo ukaz
 
@@ -2038,118 +2072,126 @@ Za nastavitev sloga teorema uporabimo ukaz
 pred definicijo okolja teorema.
 Vsak teorem, ki je definiran po tem ukazu, bo uporabil določen slog.
 
-:::{prf:example}
+::::::{prf:example}
 :label: eg_theorems_2
 
-`````{tab-set}
-````{tab-item} LaTeX
+:::::{tab-set}
+::::{tab-item} LaTeX
 ```latex
-  % V preambuli
-  \theoremstyle{plain}
-  \newtheorem{izrek}{Izrek}[section]
-  \newtheorem{trd}[izrek]{Trditev}
-  \theoremstyle{definition}
-  \newtheorem{defja}[izrek]{Definicija}
-  \theoremstyle{remark}
-  \newtheorem*{zgled}{Zgled}
-  % ...
-  % V telesu dokumenta
-  \section{Razdelek z teoremi}
-  \begin{izrek} (Pitagorov izrek)
-    V pravokotnem trikotniku velja \[c^{2} = a^{2} + b^{2}\]
-  \end{izrek}
-  % ...
-  \begin{trd}
-    Ne vem, če ta trditev velja.
-  \end{trd}
-  % ...
-  \begin{defja}
-    Tukaj sem napisal definicijo. Običajno vporabljamo \emph{povdarjeno} besedilo za naslove definicij.
-  \end{defja}
-  % ...
-  \begin{zgled}
-    Tukaj sem napisal primer.
-  \end{zgled}
+% V preambuli
+\theoremstyle{plain}
+\newtheorem{izrek}{Izrek}[section]
+\newtheorem{trd}[izrek]{Trditev}
+\theoremstyle{definition}
+\newtheorem{defja}[izrek]{Definicija}
+\theoremstyle{remark}
+\newtheorem*{zgled}{Zgled}
+% ...
+% V telesu dokumenta
+\section{Razdelek s teoremi}
+\begin{izrek}[Pitagorov izrek]
+  V pravokotnem trikotniku velja \[c^{2} = a^{2} + b^{2}\]
+\end{izrek}
+% ...
+\begin{trd}
+  Ne vem, če ta trditev velja.
+\end{trd}
+% ...
+\begin{defja}
+  Tukaj sem napisal definicijo. Običajno uporabljamo \emph{poudarjeno} besedilo za pojem, ki ga definiramo.
+\end{defja}
+% ...
+\begin{zgled}
+  Tukaj sem napisal primer.
+\end{zgled}
 ```
-````
-````{tab-item} PDF
-``` {figure} ./img/04_eg-theorems-2.png
-:name: fig_theorems_2
-```
-````
-`````
+::::
 
+::::{tab-item} PDF
+:::{figure} ./img/04_eg-theorems-2.png
+:label: fig_theorems_2
+:alt: Razdelek 1 z Izrekom 1.1 in Trditvijo 1.2 v ležečem besedilu, Definicijo 1.3 v pokončnem besedilu in neoštevilčenim Zgledom z ležečim napisom.
 :::
+::::
+:::::
+
+::::::
 
 Paket `amsthm` ponuja tudi okolje `proof` za pisanje dokazov.
 Okolje samodejno doda besedo "Dokaz" na začetek in simbol kvadrata na konec dokaza.
 
-:::{prf:example}
-:label: eg-theorems_3
+::::::{prf:example}
+:label: eg_theorems_3
 
-`````{tab-set}
-  ````{tab-item} LaTeX
-    ```latex
-     \begin{trd}
-      Ne vem, če ta trditev velja.
-    \end{trd}
-    \begin{proof}
-      Očitno, uporabimo
-      \[E=mc^2.\]
-    \end{proof}
-    ```
-  ````
-  ````{tab-item} PDF
-    ``` {figure} ./img/04_eg-theorems-3.png
-      :name: fig_theorems_3
-    ```
-  ````
-`````
+:::::{tab-set}
+::::{tab-item} LaTeX
+```latex
+\begin{trd}
+  Ne vem, če ta trditev velja.
+\end{trd}
+\begin{proof}
+  Očitno, uporabimo
+  \[E=mc^2.\]
+\end{proof}
+```
+::::
 
+::::{tab-item} PDF
+:::{figure} ./img/04_eg-theorems-3.png
+:label: fig_theorems_3
+:alt: Trditev 1 in dokaz, ki se konča s prikazano enačbo, simbol kvadrata pa stoji sam v naslednji vrstici.
 :::
+::::
+:::::
 
-Ukaz `\qedhere` lahko uporabimo znotraj okolja `proof`, da postavimo simbol kvadrata na določeno mesto, običajno na konec enačbe.
+::::::
 
-:::{prf:example}
-:label: eg-theorems_4
+Če se dokaz konča s prikazano enačbo (ali s seznamom), stoji simbol kvadrata sam v novi vrstici, kot v zgornjem primeru.
+Z ukazom `\qedhere` ga postavimo na konec zadnje vrstice enačbe.
 
-`````{tab-set}
-  ````{tab-item} LaTeX
-    ```latex
-     \begin{trd}
-      Ne vem, če ta trditev velja.
-    \end{trd}
-    \begin{proof}
-      Očitno, uporabimo
-      \[E=mc^2. \qedhere\]
-    \end{proof}
-    ```
-  ````
-  ````{tab-item} PDF
-    ``` {figure} ./img/04_eg-theorems-4.png
-      :name: fig_theorems_4
-    ```
-  ````
-`````
+::::::{prf:example}
+:label: eg_theorems_4
 
+:::::{tab-set}
+::::{tab-item} LaTeX
+```latex
+\begin{trd}
+  Ne vem, če ta trditev velja.
+\end{trd}
+\begin{proof}
+  Očitno, uporabimo
+  \[E=mc^2. \qedhere\]
+\end{proof}
+```
+::::
+
+::::{tab-item} PDF
+:::{figure} ./img/04_eg-theorems-4.png
+:label: fig_theorems_4
+:alt: Trditev 1 in dokaz, pri katerem je simbol kvadrata v isti vrstici kot prikazana enačba, na desnem robu.
 :::
+::::
+:::::
 
-:::{exercise}
+::::::
+
+::::{exercise}
 :label: ex-matematika-4
-V svoj dokument napišite LaTeX kodo za naslednje besedilo:
+V svoj dokument napišite kodo LaTeX za naslednje besedilo:
 
-```{figure} ./img/04_ex-theorems.png
-:name: fig_ex_theorems
-```
-
+:::{figure} ./img/04_ex-theorems.png
+:label: fig_ex_theorems
+:alt: Izrek 2 o de Morganovih zakonih z dvema oštevilčenima enačbama in dokazom, ki obe enačbi dokaže v štirih poravnanih verigah implikacij.
 :::
 
-```{margin}
+::::
+
+:::{margin}
 [Seznam nalog](#latexMatematika_vaje)
-```
+:::
 
 :::{solution} ex-matematika-4
-:class: tip, dropdown
+:class: tip dropdown
 
 Ustrezni deli kode so naslednji:
 
@@ -2161,7 +2203,7 @@ Ustrezni deli kode so naslednji:
 
 % V telesu dokumenta
 \begin{izrek}[de Morganovi zakoni]
-  Za vsakih dvoje podmnožic $A$ in $B$ množice $X$ veljata naslednji enačbi:
+  Za poljubni podmnožici $A$ in $B$ množice $X$ veljata naslednji enačbi:
   \begin{align}
     X\setminus (A \cup B) & = (X \setminus A) \cap (X \setminus B) \label{eq:deMorgan1}\\
     X\setminus (A \cap B) & = (X \setminus A) \cup (X \setminus B) \label{eq:deMorgan2}
@@ -2186,7 +2228,7 @@ Ustrezni deli kode so naslednji:
     & \Rightarrow x \in X \text{ in } x \notin A \cup B \\
     & \Rightarrow x \in X\setminus (A \cup B)
   \end{align*}
-S tem je dokaz prve enačbe zaključen.
+  S tem je dokaz prve enačbe zaključen.
 
   Dokaz za drugo enačbo je podoben:
   Naj bo $x \in X\setminus (A \cap B)$. Potem
@@ -2199,7 +2241,7 @@ S tem je dokaz prve enačbe zaključen.
     & \Rightarrow  x \in (X \setminus A) \cup (X \setminus B)
   \end{align*}
 %
-Obratno, naj bo $x \in (X \setminus A) \cup X \setminus B$. Potem
+  Obratno, naj bo $x \in (X \setminus A) \cup (X \setminus B)$. Potem
   \begin{align*}
     x \in (X \setminus A) \cup (X \setminus B)
     & \Rightarrow (x \in X \text{ in } x \notin A) \text{ ali } (x \in X \text{ in } x \notin B) \\
@@ -2209,7 +2251,7 @@ Obratno, naj bo $x \in (X \setminus A) \cup X \setminus B$. Potem
   \end{align*}
   Sledi, da $X\setminus (A\cap B) = (X \setminus A) \cup (X \setminus B)$.
 
-  Torej enačbi \ref{eq:deMorgan1} in \ref{eq:deMorgan2} držita.
+  Torej enačbi~\eqref{eq:deMorgan1} in~\eqref{eq:deMorgan2} veljata.
 \end{proof}
 ```
 
@@ -2219,12 +2261,15 @@ Obratno, naj bo $x \in (X \setminus A) \cup X \setminus B$. Potem
 
 ## Naloge
 
-- [Naloga %s](#ex-matematika-1): Napišite LaTeX kodo za osnovne matematične izraze.
-- [Naloga %s](#ex-matematika-2): Napišite LaTeX kodo za matematične izraze z uporaba okolji `align` in `align*` in `aligned`.
-- [Naloga %s](#ex-matematika-3): Napišite LaTeX kodo, da reproducira Maxwellove enačbe.
-- [Naloga %s](#ex-matematika-4): Napišite LaTeX kodo za izreke in dokaze.
+Tukaj so naloge četrtega poglavja:
+
+- [ ] [Naloga %s](#ex-matematika-1): Osnovni matematični izrazi.
+- [ ] [Naloga %s](#ex-matematika-2): Poravnane enačbe z okoljem `align`.
+- [ ] [Naloga %s](#ex-matematika-3): Maxwellove enačbe in sklici nanje.
+- [ ] [Naloga %s](#ex-matematika-4): Izreki in dokazi.
 
 :::{exercise} Domača naloga
+:label: dn_izreki
 :nonumber:
 Spodaj je seznam znanih matematičnih izrekov.
 
@@ -2236,13 +2281,13 @@ Spodaj je seznam znanih matematičnih izrekov.
 - Evklidov izrek (neskončnost praštevil).
 - Binomski izrek.
 - Izrek o implicitni funkciji.
-- Izrek da je $\sqrt{p}$ iracionalno število za vsako praštevilo $p$.
+- Izrek, da je $\sqrt{p}$ iracionalno število za vsako praštevilo $p$.
 - de Moivreova formula.
 
-1. Izberite dveh izmed njih in napišite LaTeX datoteko, ki vsebuje natančno formulacijo izbranih izrekov skupaj z njihovimi dokazi.
-2. Uporabite okolje in sloge teoremov, kot je opisano v tem poglavju.
-3. V dokument, vključujete seznam virov, ki ste jih uporabili za iskanje izrekov in njihovih dokazov, zato morate uporabite paket `biblatex` za upravljanje literature.
-4. Oddajte kodo kot datoteko `.zip`.
+1. Izberite dva izmed njih in napišite datoteko LaTeX z imenom `DN3.tex`, ki vsebuje natančno formulacijo izbranih izrekov skupaj z njihovimi dokazi.
+2. Uporabite okolja in sloge teoremov, kot je opisano v tem poglavju.
+3. V dokument vključite seznam virov, ki ste jih uporabili za iskanje izrekov in njihovih dokazov. Za seznam literature uporabite paket `biblatex`.
+4. Domačo nalogo oddajte kot datoteko `.zip` prek spletne učilnice. Če ne veste, kako pridobiti datoteko `.zip` iz Overleafa, poglejte [](./B_izvozIzOverleaf.md).
 
-**Opomba:** Ne morate dokazovati izrekov sami, lahko uporabite dokaze iz zanesljivih virov, vendar morate pravilno citirati te vire v svojem dokumentu. Če ne znate virov citirati, se obrnite na svojega profesorja za pomoč.
+**Opomba:** Izrekov vam ni treba dokazati sami. Uporabite lahko dokaze iz zanesljivih virov, vendar morate te vire v svojem dokumentu pravilno citirati. Če ne veste, kako citirati vire, poglejte poglavje [](./03_latexLiteratura.md) ali pa me vprašajte.
 :::
