@@ -1859,13 +1859,7 @@ Napišite kodo LaTeX za naslednje matematične izraze:
 3. $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}$
 4. Če je
 $A =\begin{pmatrix} 3 & 1 & 1 \\ 1 & 1 & 0 \\ 1 & 0 & 1 \end{pmatrix}$, potem je
-$
-A^{-1} = 
-\begin{pmatrix}1 & -1 & -1 \\
--1 & 2 & 1 \\
--1 & 1 & 2
-\end{pmatrix}
-$
+$$A^{-1} = \begin{pmatrix}1 & -1 & -1 \\ -1 & 2 & 1 \\ -1 & 1 & 2 \end{pmatrix}$$
 
 5. $\displaystyle |x| = \begin{cases}
 x & \text{če } x \geq 0 \\
@@ -1966,7 +1960,7 @@ x+2y+3z & = 6\\
   ```
 :::
 
-:::{exercise}
+::::{exercise}
 :label: ex-matematika-3
 Napišite kodo LaTeX, ki ustvari besedilo s slike spodaj:
 
@@ -1975,7 +1969,7 @@ Napišite kodo LaTeX, ki ustvari besedilo s slike spodaj:
 :alt: Maxwellove enačbe v štirih oštevilčenih vrsticah, poravnanih po enačajih, in odstavek, ki se nanje sklicuje s številkami 1 do 4.
 :::
 
-:::
+::::
 
 :::{margin}
 [Seznam nalog](#latexMatematika_vaje)
@@ -2271,23 +2265,45 @@ Tukaj so naloge četrtega poglavja:
 :::{exercise} Domača naloga
 :label: dn_izreki
 :nonumber:
-Spodaj je seznam znanih matematičnih izrekov.
+Spodaj je seznam znanih matematičnih izrekov, razvrščenih po področjih.
 
+**Teorija števil**
+
+- Evklidov izrek (praštevil je neskončno mnogo).
+- Osnovni izrek aritmetike (enoličnost razcepa na praštevila).
 - Mali Fermatov izrek.
-- Taylorjev izrek.
-- Osnovni izrek matematične analize.
-- Izrek o srednji vrednosti.
+- Wilsonov izrek.
 - Kitajski izrek o ostankih.
-- Evklidov izrek (neskončnost praštevil).
-- Binomski izrek.
-- Izrek o implicitni funkciji.
 - Izrek, da je $\sqrt{p}$ iracionalno število za vsako praštevilo $p$.
-- de Moivreova formula.
 
-1. Izberite dva izmed njih in napišite datoteko LaTeX z imenom `DN3.tex`, ki vsebuje natančno formulacijo izbranih izrekov skupaj z njihovimi dokazi.
-2. Uporabite okolja in sloge teoremov, kot je opisano v tem poglavju.
-3. V dokument vključite seznam virov, ki ste jih uporabili za iskanje izrekov in njihovih dokazov. Za seznam literature uporabite paket `biblatex`.
-4. Domačo nalogo oddajte kot datoteko `.zip` prek spletne učilnice. Če ne veste, kako pridobiti datoteko `.zip` iz Overleafa, poglejte [](./B_izvozIzOverleaf.md).
+**Algebra**
+
+- Binomski izrek.
+- de Moivreova formula.
+- Vietove formule za polinom stopnje $n$.
+- Formula za Vandermondovo determinanto.
+- Cayley-Hamiltonov izrek za matrike velikosti $2 \times 2$.
+
+**Analiza**
+
+- Osnovni izrek matematične analize.
+- Izrek o srednji vrednosti (Lagrangeov izrek).
+- Taylorjev izrek z Lagrangeovim ostankom.
+- Divergenca harmonične vrste.
+- Neenakost med aritmetično in geometrično sredino.
+- Cauchy-Schwarzeva neenakost.
+
+**Diskretna matematika in teorija množic**
+
+- Načelo vključitev in izključitev.
+- Cantorjev izrek (vsaka množica ima manjšo moč kot njena potenčna množica).
+- Množica realnih števil ni števna (Cantorjev diagonalni argument).
+
+1. Izberite dva izreka iz _različnih_ področij in napišite datoteko LaTeX z imenom `DN3.tex`, ki vsebuje natančno formulacijo izbranih izrekov skupaj z njihovimi dokazi.
+2. Izreke oblikujte z okolji paketa `amsthm`, kot je opisano v tem poglavju. Uporabite vse tri sloge teoremov (`plain`, `definition` in `remark`): poleg izrekov naj dokument vsebuje vsaj eno definicijo (npr. pojma, ki ga potrebujete v izreku) in vsaj eno opombo ali zgled. Dokaze napišite v okolju `proof`.
+3. Daljše izpeljave v dokazih postavite s poravnanimi enačbami (npr. z okoljem `align`). Vsaj eno enačbo oštevilčite in se nanjo sklicujte z ukazom `\eqref`, na izreke pa se sklicujte z ukazom `\ref`.
+4. V dokument vključite seznam virov, ki ste jih uporabili za iskanje izrekov in njihovih dokazov. Za seznam literature uporabite paket `biblatex`.
+5. Domačo nalogo oddajte kot datoteko `.zip` prek spletne učilnice. Če ne veste, kako pridobiti datoteko `.zip` iz Overleafa, poglejte [](./B_izvozIzOverleaf.md).
 
 **Opomba:** Izrekov vam ni treba dokazati sami. Uporabite lahko dokaze iz zanesljivih virov, vendar morate te vire v svojem dokumentu pravilno citirati. Če ne veste, kako citirati vire, poglejte poglavje [](./03_latexLiteratura.md) ali pa me vprašajte.
 :::
