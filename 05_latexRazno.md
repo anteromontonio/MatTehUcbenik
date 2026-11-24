@@ -2,63 +2,72 @@
 
 # LaTeX: Razno
 
-V tej poglavju so zbrani različni nasveti in triki za delo z LaTeX-om, ki ne sodijo v druge poglavja.
+:::{admonition} Cilji poglavja
+:class: tip
+Po tem poglavju boste znali:
+
+- razdeliti obsežnejši dokument na več datotek z ukazoma `\include` in `\input`,
+- s paketom `xcolor` barvati besedilo, matematične izraze, ozadja in okvirje ter mešati in definirati barve,
+- definirati lastne ukaze in okolja z ukazoma `\NewDocumentCommand` in `\NewDocumentEnvironment`.
+
+Predvideni čas: 2 do 3 pedagoške ure.
+:::
+
+V tem poglavju so zbrani različni nasveti in triki za delo z LaTeXom, ki ne sodijo v druga poglavja.
 
 ## Obsežnejši projekti
 
 Za obsežnejše projekte, kot so diplomske naloge, je priporočljivo razdeliti dokument na več datotek in jih vključiti v glavno datoteko z ukazom `\input{}` ali `\include{}`.
 To omogoča lažje upravljanje in urejanje posameznih delov dokumenta.
 
-Ukaz `\include{<pot do datoteke>}` vključi vsebino navedene datoteke in samodejno začne novo stran pred in po vključitvi.
+Ukaz `\include{<pot do datoteke>}` vključi vsebino navedene datoteke in samodejno začne novo stran pred vključitvijo in po njej. Datoteko navedemo brez končnice `.tex`.
 
-Ukaz `\includeonly{<ime_datoteke1>, <ime_datoteke2>, ...}` omogoča vključitev samo določenih datotek med kompilacijo, kar je uporabno za hitrejše pregledovanje določenih delov dokumenta.
+Ukaz `\includeonly{<ime_datoteke1>,<ime_datoteke2>,...}` omogoča, da se med prevajanjem vključijo samo določene datoteke, kar je uporabno za hitrejše pregledovanje določenih delov dokumenta.
 
 :::{admonition} Pazite!
 :class: warning
 
-- Ukaz `\include{<ime_datoteke>}` lahko uporabljamo samo v **telesu glavne datoteke** ne znotraj drugih vklučenih datotek.
-- Ukaz `\includeonly{<ime_datoteke1>, <ime_datoteke2>, ...}` mora biti postavljen v preambulo glavne datoteke.
-  V telesu dokumenta morajo biti
-  ukaze `\include{}` za vse datoteke, ki jih želimo vključiti.
-- Ukaz `\include{}` vedno začne novo stran, zato ni primeren za vključevanje manjših delov besedila. Poleg tega, ta ukaz ne deluje znotraj okolij, kot so `\begin{figure}...\end{figure}` ali `\begin{table}...\end{table}`.
-  :::
+- Ukaz `\include{<ime_datoteke>}` lahko uporabljamo samo v **telesu glavne datoteke**, ne pa znotraj drugih vključenih datotek.
+- Ukaz `\includeonly{<ime_datoteke1>,<ime_datoteke2>,...}` mora biti v preambuli glavne datoteke.
+  V telesu dokumenta morajo biti še vedno ukazi `\include{}` za vse datoteke, ki jih želimo vključiti.
+- Ukaz `\include{}` vedno začne novo stran, zato ni primeren za vključevanje manjših delov besedila. Poleg tega ta ukaz ne deluje znotraj okolij, kot sta `\begin{figure}...\end{figure}` ali `\begin{table}...\end{table}`.
+:::
 
-Ukaz `\include` je malo omejevalen in ima posebno uporabo: vključiti več poglavje (`chapter`) v velik projekt. Ta ukaz vedno začne novo stran, to je koristno ko uporabljamo ukaz `\indludeonly{}`, ker se prelomi strani ne bodo premaknili, če bomo vključili samo določene datoteke.
+Ukaz `\include` je precej omejujoč in ima posebno uporabo: vključevanje posameznih poglavij (`chapter`) v velik projekt. Ker vedno začne novo stran, je koristen skupaj z ukazom `\includeonly{}`: prelomi strani se ne premaknejo, tudi če vključimo samo nekatere datoteke, zato številke strani in sklici ostanejo pravilni.
 
 Včasih je bolj smiselno uporabiti ukaz `\input{<pot do datoteke>}`, ki vključi vsebino navedene datoteke brez preloma strani.
-Ukaz `\input{}` lahko uporabljamo kjerkoli v dokumentu, tudi znotraj okolij, kot so `\begin{figure}...\end{figure}` ali `\begin{table}...\end{table}`.
+Ukaz `\input{}` lahko uporabljamo kjerkoli v dokumentu, tudi znotraj okolij, kot sta `\begin{figure}...\end{figure}` ali `\begin{table}...\end{table}`.
 
-Ukaz `\input{}` lahko uporabimo tudi za vključitev datotek z ukazi LaTeX-a, kot so definicije makrov ali nastavitve paketov. Pogosta uporaba je vključitev datoteke, recimo, `preambula.tex`, ki vsebuje vse nastavitve in pakete, ki jih želimo uporabiti v našem dokumentu.
+Ukaz `\input{}` lahko uporabimo tudi za vključitev datotek z ukazi LaTeX, kot so definicije makrov ali nastavitve paketov. Pogosto na primer vključimo datoteko, recimo `preambula.tex`, ki vsebuje vse nastavitve in pakete, ki jih želimo uporabiti v našem dokumentu.
 
 :::{admonition} Pazite!
 :class: warning
-Čeprav lahko uporabimo ukaz `\input` za naložitev paketov v našo datoteko, mora vrstica, ki vsebuje ukaz `\documentclass`, **vedno** biti v glavni datoteki, pred vsemi ukazi `\input`.
-
+Čeprav lahko z ukazom `\input` naložimo pakete v našo datoteko, mora biti vrstica z ukazom `\documentclass` **vedno** v glavni datoteki, pred vsemi ukazi `\input`.
 :::
 
 :::{exercise}
 :label: ex_input_include
 
 1. Napišite glavno datoteko `glavno.tex` s standardno preambulo in okoljem `document`.
-   Uporabite razred `book` ali razred `report` namesto `article`.
-2. Ustvarite dve datoteki, `poglavje1.tex` in `poglavje2.tex`, ki vsebujeta besedilo za dva poglavja. Lahko uporabite paket `lipsum` za generiranje naključnega besedila.
-3. Vključite ti dve datoteki v glavno datoteko z uporabo ukaza `\include{}`.
-4. Shranite vse datoteke in kompilirajte glavno datoteko `glavno.tex`.
-5. S uporabo ukaza `\includeonly` v preambuli, vključujete samo datoteko `poglavje2.tex`.
-6. Nato spremenite glavno datoteko, da uporabite razred `article`. Spremenite tudi vse `\chapter{}` ukaze v `\section{}` ukaze v obeh vključenih datotekah. Shranite.
-7. Spremenite ukaz `\input{}` za vključitev obeh datotek namesto `\include{}`, komentirate ukaz `\includeonly{}` in ponovno shranite glavno datoteko.
-8. Ustvarite datoteko `preambula.tex`, ki vsebuje vse pakete in nastavitve, ki jih želite uporabiti v glavnem dokumentu. Vključite to datoteko v glavno datoteko z uporabo ukaza `\input{preambula.tex}`.
-   :::
+   Namesto razreda `article` uporabite razred `book` ali `report`.
+2. Ustvarite dve datoteki, `poglavje1.tex` in `poglavje2.tex`, ki vsebujeta besedilo za dve poglavji. Za nadomestno besedilo lahko uporabite paket `lipsum`.
+3. Z ukazom `\include{}` vključite ti dve datoteki v glavno datoteko.
+4. Shranite vse datoteke in prevedite glavno datoteko `glavno.tex`.
+5. Z ukazom `\includeonly` v preambuli vključite samo datoteko `poglavje2.tex` in dokument ponovno prevedite.
+6. Nato v glavni datoteki namesto razreda `book` oz. `report` uporabite razred `article`. V obeh vključenih datotekah spremenite tudi vse ukaze `\chapter{}` v ukaze `\section{}`. Shranite.
+7. Ukaze `\include{}` zamenjajte z ukazi `\input{}`, ukaz `\includeonly{}` zakomentirajte in ponovno shranite glavno datoteko.
+8. Ustvarite datoteko `preambula.tex`, ki vsebuje vse pakete in nastavitve, ki jih želite uporabiti v glavnem dokumentu. Z ukazom `\input{preambula.tex}` jo vključite v glavno datoteko.
+:::
 
-```{margin}
+:::{margin}
 [Seznam nalog](#05_latexRazno_vaje)
-```
+:::
 
 :::{solution} ex_input_include
-:class: tip, dropdown
-Na koncu datoteke `glavno.tex` bi moral izgledati nekako takole:
+:class: tip dropdown
+Na koncu bi lahko bila datoteka `glavno.tex` videti nekako takole:
 
-````latex
+```latex
 \documentclass{article}
 \input{preambula.tex}
 %Vsebina preambula.tex:
@@ -67,40 +76,35 @@ Na koncu datoteke `glavno.tex` bi moral izgledati nekako takole:
 % \usepackage{mathtools, amssymb, amsthm}
 % \usepackage{graphicx, caption, subcaption}
 % \usepackage{array, booktabs}
-
+% \includeonly{poglavje2}
 
 \begin{document}
-\include{poglavje1}
-% \input{poglavje1}
-%Vsebina razdelek1.tex:
+\input{poglavje1}
+% \include{poglavje1}
+%Vsebina poglavje1.tex:
 % \section{Prvi}
 % \lipsum[1-3]
-\include{poglavje2}
-% \input{poglavje2}
+\input{poglavje2}
+% \include{poglavje2}
 %Vsebina poglavje2.tex:
 % \section{Drugi}
 % \lipsum[4-6]
 \end{document}
-
+```
 :::
-
 
 ## Barve
 
-Za uporabo barv v LaTeX dokumentih uporabimo paket `xcolor`. Paket omogoča uporabo treh ukazov za barvanje besedila ali ozadij:
+Za uporabo barv v dokumentih LaTeX uporabimo paket `xcolor`. Paket omogoča uporabo treh ukazov za barvanje besedila:
 
-- `\textcolor[<model>]{<barva>}{<besedilo>}`: Barva besedilo z določeno barvo.
-- `\color[<model>]{<barva>}`: Spremeni barvo besedila od tega mesta naprej. To je različica _switch_ ukaza `\textcolor`, kot je ukaz `\bfseries` za krepko pisavo (prim. `\textbf{}`).
-- `\mathcolor[<model>]{<barva>}{<matematični_izraz>}`: Barva matematični izraz z določeno barvo. Ne pozabite, da ukaze za _navadno_ besedilo običajno ne delujejo v matematičnem načinu.
+- `\textcolor[<model>]{<barva>}{<besedilo>}`: obarva besedilo z dano barvo.
+- `\color[<model>]{<barva>}`: spremeni barvo besedila od tega mesta naprej. To je različica _switch_ ukaza `\textcolor`, tako kot je ukaz `\bfseries` različica _switch_ ukaza `\textbf{}` za krepko pisavo.
+- `\mathcolor[<model>]{<barva>}{<matematični_izraz>}`: obarva matematični izraz z dano barvo. Ukaz `\textcolor` sicer deluje tudi v matematičnem načinu, vendar `\mathcolor` bolje ohrani razmike in postavitev indeksov.
 
-Za zdaj se ne skrbite za neobvezni parameter `<model>`. Ta parameter nadzira, kaj se pričakuje za argument `<barva>`. Če ni določen, se privzeto uporablja model `named`, ki omogoča uporabo vnaprej določenih imen barv, to pomeni, barve pokličemo z imeni.
+Za zdaj ne skrbite za neobvezni argument `<model>`. Ta argument določa, kaj se pričakuje kot argument `<barva>`. Če ga ne podamo, se privzeto uporablja model `named`, ki omogoča uporabo vnaprej določenih imen barv, kar pomeni, da barve pokličemo z imeni.
 
-
-::::{grid} 2 2 2 2
-
-
-:::{card} LaTeX
-
+:::::{grid} 2 2 2 2
+::::{card} LaTeX
 ```latex
 %V preambuli
 \usepackage{xcolor}
@@ -109,69 +113,69 @@ Za zdaj se ne skrbite za neobvezni parameter `<model>`. Ta parameter nadzira, ka
 nekateri deli so
 \textcolor{yellow}{rumeni}.
 \[
-\mathcolor{blue}{\sum_{k=0}}^{10} i
+\mathcolor{blue}{\sum_{k=0}}^{10} k
 \]
-Vse še vedno rdeča
+Vse je še vedno rdeče,
 \color{blue}
-zdaj modra.
-````
+zdaj modro.
+```
+::::
 
+::::{card} PDF
+:::{figure} ./img/05_eg-barve-1.png
+:label: fig:eg-barve-1
+:alt: Rdeče besedilo z rumeno besedo rumeni, pod njim rdeča vsota, katere znak za vsoto in spodnja meja sta modra, na koncu stavek, ki preide iz rdeče v modro barvo.
+:::
+::::
+:::::
+
+Barve, ki so vnaprej določene v paketu `xcolor`, so prikazane na [Sliki %s](#tbl:basecolors).
+
+:::{figure} ./img/05_xcolorList.png
+:label: tbl:basecolors
+:alt: Seznam devetnajstih barv z barvnim kvadratkom in imenom, od red, green in blue do brown, lime, olive, orange, pink, purple, teal in violet.
+:height: 400px
+Osnovne barve, ki jih določa paket `xcolor`.
 :::
 
-:::{card} PDF
+Seznam določenih barv lahko razširimo z možnostmi paketa `xcolor`. Na primer, z možnostjo `dvipsnames` (`\usepackage[dvipsnames]{xcolor}`) lahko uporabimo dodatne barve, prikazane na [Sliki %s](#tbl:dvipsnames).
 
-```{figure} ./img/05_eg-barve-1.png
-:label: fig:eg-barve-1
+:::{figure} ./img/05_xcolorDvipsnames.png
+:label: tbl:dvipsnames
+:alt: Seznam 68 barv v štirih stolpcih, vsaka z barvnim kvadratkom in imenom, na primer Apricot, Cerulean, ForestGreen, Mahogany in YellowOrange.
+:height: 350px
+Dodatne barve, ki jih določa paket `xcolor` z možnostjo `dvipsnames`.
+:::
+
+Drugi možnosti sta `svgnames` in `x11names`. Možnost `svgnames` določa 151 barv, ki so definirane v standardu SVG, možnost `x11names` pa 317 barv, ki so bile prvotno definirane za okenski sistem X11. Celoten seznam barv je na voljo v dokumentaciji paketa [`xcolor`](https://ctan.org/pkg/xcolor?lang=en).
+
+Drugi način pridobivanja novih barv je mešanje dveh ali več barv. Sintaksa za mešanje dveh barv je naslednja:
+
+```latex
+<barva1>!<odstotek>!<barva2>
 ```
 
+Rezultat je barva, ki je sestavljena iz `<odstotek>` odstotkov barve `<barva1>` in `(100 - <odstotek>)` odstotkov barve `<barva2>`. Na primer, `red!40!blue` ustvari vijolično barvo, ki je mešanica 40 % rdeče in 60 % modre.
+
+Mešanje lahko vključuje tudi več kot dve barvi. V tem primeru se barve mešajo zaporedno. Na primer, `red!50!green!30!blue` najprej zmeša 50 % rdeče in 50 % zelene, nato pa dobljeno barvo zmeša z modro: rezultat je 30 % prej dobljene barve in 70 % modre.
+
+::::{exercise}
+:label: ex-gradient
+Z mešanjem barv poustvarite barvni prehod (gradient), prikazan na spodnji sliki:
+
+:::{figure} ./img/05_ex-gradient.png
+:label: fig:ex-gradient
+:alt: Beseda Slovenija z razmaknjenimi črkami, ki postopoma prehajajo od svetlo modre prek modre in vijolične do rdeče.
+:height: 100px
 :::
 ::::
 
-Barve, ki so vnaprej določene v paketu `xcolor`, so prikazane v [Tabeli %s](#tbl:basecolors).
-
-```{figure} ./img/05_xcolorList.png
-:label: tbl:basecolors
-:height: 400px
-Osnovne barve, ki jih določa paket `xcolor`.
-```
-
-Seznam določenih barv lahko razširimo z uporabo možnosti, ki jih ponuja paket `xcolor`. Npr z možnostjo `dvipsnames` lahko uporabimo dodatne barve prikazane v [Tabeli %s](#tbl:dvipsnames).
-
-```{figure} ./img/05_xcolorDvipsnames.png
-:label: tbl:dvipsnames
-:height: 350px
-Dodatne barve, ki jih določa paket `xcolor` z možnostjo `dvipsnames`.
-```
-
-Druge možnosti so `svgnames`, `x11names`. Možnost `svgnames` določa 151 barv, ki so definirane v SVG standardu, medtem ko možnost `x11names` določa 317 barv, ki so bile prvotno definirane za X11 Window System. Celoten seznam barv je na voljo v dokumentaciji paketa [`xcolor`](https://ctan.org/pkg/xcolor?lang=en).
-
-Drugi način pridobivanja novih barv je z mešanjem dveh ali več barv. Sintaksa za mešanje dveh barv je naslednja:
-
-```latex
-<barva1>!<odstotno>!<barva2>
-```
-
-Rezultat je barva, ki je sestavljena iz `<odstotno>` odstotkov `<barva1>` in `(100 - <odstotno>)` odstotkov `<barva2>`. Na primer, `red!40!blue` ustvari vijolično barvo, ki je mešanica 40% rdeče in 60% modre.
-
-Mešanje lahko vključuje tudi več kot dve barvi. V tem primeru, mešanje je izvedeno zaporedno. Na primer, `red!50!green!30!blue` najprej zmeša 50% rdeče in 50% zelene, nato pa rezultat zmeša z 70% modre in 30% prej dobljene barve.
-
-:::{exercise}
-:label: ex-gradient
-Z uporabo ukaza za mešanje barv, reproducirajte barvni gradient prikazan na spodnji sliki:
-
-```{figure} ./img/05_ex-gradient.png
-:label: fig:ex-gradient
-:height: 100px
-```
-
+:::{margin}
+[Seznam nalog](#05_latexRazno_vaje)
 :::
 
-```{margin}
-[Seznam nalog](#05_latexRazno_vaje)
-```
-
 :::{solution} ex-gradient
-:class: tip, dropdown
+:class: tip dropdown
 Ena izmed možnih rešitev je naslednja:
 
 ```latex
@@ -185,36 +189,31 @@ Ena izmed možnih rešitev je naslednja:
 \textcolor{blue!25!red}{j}
 \textcolor{red}{a}
 ```
-
 :::
 
-Včasih moramo biti natančnejši pri barvah, ki jih uporabljamo. Za to lahko uporabimo izbirni argument `model`. Najlažje ga razumemo prek modela `Gray`. V tem modelu določimo odtenek sive barve z vrednostjo med `0` in `15`, kjer `0` predstavlja črno in `15` belo.
+Včasih moramo biti natančnejši pri barvah, ki jih uporabljamo. Za to uporabimo neobvezni argument `<model>`. Najlažje ga razumemo prek modela `Gray`. V tem modelu določimo odtenek sive barve z vrednostjo med `0` in `15`, kjer `0` predstavlja črno in `15` belo.
 
-::::{grid} 2 2 2 2
-
-:::{card} LaTeX
-
+:::::{grid} 2 2 2 2
+::::{card} LaTeX
 ```latex
 \textcolor[Gray]{0}{Nula} \\
 \textcolor[Gray]{3}{Tri} \\
 \textcolor[Gray]{7}{Sedem} \\
-\textcolor[Gray]{11}{Enaist} \\
-\textcolor[Gray]{15}{Petnaist}
+\textcolor[Gray]{11}{Enajst} \\
+\textcolor[Gray]{15}{Petnajst}
 ```
-
-:::
-
-:::{card} PDF
-
-```{figure} ./img/05_eg-Gray-model.png
-:label: fig:eg-Gray-model
-:width: 100px
-```
-
-:::
 ::::
 
-Podobno lahko uporabimo model `grey`, kjer vrednosti segajo od `0` do `1`, pri čemer `0` predstavlja črno in `1` belo.
+::::{card} PDF
+:::{figure} ./img/05_eg-Gray-model.png
+:label: fig:eg-Gray-model
+:alt: Besede Nula, Tri, Sedem in Enajst druga pod drugo, vsaka v svetlejšem odtenku sive; zadnja beseda je bela in zato nevidna.
+:width: 100px
+:::
+::::
+:::::
+
+Podobno lahko uporabimo model `gray`, kjer vrednosti segajo od `0` do `1`, pri čemer `0` predstavlja črno in `1` belo.
 
 V [Tabeli %s](#tbl:color-models) so prikazani nekateri barvni modeli, ki jih podpira paket `xcolor`.
 
@@ -254,22 +253,23 @@ V [Tabeli %s](#tbl:color-models) so prikazani nekateri barvni modeli, ki jih pod
   - Odtenek sive
   - $[0,1]$
   - `\textcolor[gray]{0}{Črna}`
-* - `wave` - Valovna dolžina (nm) - $[380,780]$ - `\textcolor[wave]{700}{Rdeča}`
+* - `wave`
+  - Valovna dolžina (nm)
+  - $[363,814]$
+  - `\textcolor[wave]{700}{Rdeča}`
 :::
 
 :::{admonition} Opozorilo!
 :class: warning
-Pri mešanju barv v različnih modelih lahko dobimo nepričakovane rezultate. Na primer, da izrazi `<barva1>!25!<barva2>` in `<barva2>!75!<barva1>` ne dajeta vedno iste barve, če sta `<barva1>` in `<barva2>` definirani v različnih barvnih modelih.
-Zato je priporočljivo, da pri mešanju barv vedno uporabljamo barve iz istega modela.
-Alternativno v poglavje 6 dokumentacije paketa [`xcolor`](https://ctan.org/pkg/xcolor?lang=en) najdemo več informacij o spremenjenju med barvnimi modeli.
+Pri mešanju barv v različnih modelih lahko dobimo nepričakovane rezultate. Na primer, izraza `<barva1>!25!<barva2>` in `<barva2>!75!<barva1>` ne dasta vedno iste barve, če sta `<barva1>` in `<barva2>` definirani v različnih barvnih modelih.
+Zato je priporočljivo, da pri mešanju vedno uporabljamo barve iz istega modela.
+Več o pretvarjanju med barvnimi modeli najdemo v 6. poglavju dokumentacije paketa [`xcolor`](https://ctan.org/pkg/xcolor?lang=en).
 :::
 
-Z uporabo ukaza `\definecolor{<ime_barve>}{<model>}{<parametri>}` (v preambuli) lahko definiramo svoje barve. Na primer, z ukazom `\definecolor{ULrdeca}{RGB}{226,25,30}` definiramo barvo z imenom `ULrdeca`, ki je rdeča barva Univerze v Ljubljani.
+Z ukazom `\definecolor{<ime_barve>}{<model>}{<parametri>}` (v preambuli) lahko definiramo svoje barve. Na primer, z ukazom `\definecolor{ULrdeca}{RGB}{226,25,30}` definiramo barvo z imenom `ULrdeca`, ki je rdeča barva Univerze v Ljubljani.
 
-::::{grid} 2 2 2 2
-
-:::{card} LaTeX
-
+:::::{grid} 2 2 2 2
+::::{card} LaTeX
 ```latex
 % V preambuli:
 \definecolor{ULrdeca}{RGB}{226,25,30}
@@ -278,30 +278,28 @@ Z uporabo ukaza `\definecolor{<ime_barve>}{<model>}{<parametri>}` (v preambuli) 
 \textcolor{ULrdeca}
 {To je rdeča barva Univerze v Ljubljani.}
 ```
-
-:::
-
-:::{card} PDF
-
-````{figure} ./img/05_eg-ULrdeca.png
-:label: fig:eg-ULrdeca
-
-:::
 ::::
 
-Doslej smo obravnavali ukaze za barvanje besedila. Možno je tudi spremeniti barbo ozadja strani z ukazom
+::::{card} PDF
+:::{figure} ./img/05_eg-ULrdeca.png
+:label: fig:eg-ULrdeca
+:alt: Stavek To je rdeča barva Univerze v Ljubljani, izpisan v rdeči barvi.
+:::
+::::
+:::::
+
+Doslej smo obravnavali ukaze za barvanje besedila. Spremenimo lahko tudi barvo ozadja strani, in sicer z ukazom
+
 ```latex
-\pagecolor[<model>]{<barva>}.
-````
+\pagecolor[<model>]{<barva>}
+```
 
-Ta ukaz je različica _switch_, to pomeni da spremeni barvo celotne strani od mesta, kjer je uporabljen, naprej. Če želimo vrniti nazaj privzeto barvo ozadja (prozoren), uporabimo ukaz `\nopagecolor`.
+Tudi ta ukaz je različica _switch_, kar pomeni, da spremeni barvo strani od mesta, kjer je uporabljen, naprej. Če želimo nazaj privzeto barvo ozadja (prozorno), uporabimo ukaz `\nopagecolor`.
 
-V izrazu za barvo lahko uporabimo znak `-` (minus), da dobimo nasprotno barvo. Na primer, `-white` predstavlja črno barvo.
+V izrazu za barvo lahko uporabimo znak `-` (minus), da dobimo nasprotno (komplementarno) barvo. Na primer, `-white` predstavlja črno barvo.
 
-::::{grid} 2 2 2 2
-
-:::{card} LaTeX
-
+:::::{grid} 2 2 2 2
+::::{card} LaTeX
 ```latex
 \newpage
 \pagecolor{yellow}
@@ -310,125 +308,118 @@ V izrazu za barvo lahko uporabimo znak `-` (minus), da dobimo nasprotno barvo. N
 Barva strani je rumena, \\
 besedilo pa nasprotno rumeno.
 ```
-
-:::
-
-:::{card} PDF
-
-````{figure} ./img/05_eg-pagecolor.png
-:label: fig:eg-pagecolor
-:::
 ::::
 
-Če želimo spremeniti barvo samo določenega območja besedila, lahko uporabimo ukaz `\colorbox[<model>]{<barva>}{<besedilo>}`.
-Ta ukaz obdaja besedilo z ozadjem določene barve.
-Ukaz `\fcolorbox[<model>]{<barva_okvirja>}{<barva_ozadja>}{<besedilo>}` obdaja besedilo z okvirjem določene barve in ozadjem določene barve.
+::::{card} PDF
+:::{figure} ./img/05_eg-pagecolor.png
+:label: fig:eg-pagecolor
+:alt: Rumena stran s temno modrim besedilom Barva strani je rumena, besedilo pa nasprotno rumeno.
+:::
+::::
+:::::
 
-::::{grid} 2 2 2 2
+Če želimo spremeniti barvo ozadja samo za določen del besedila, lahko uporabimo ukaz `\colorbox[<model>]{<barva>}{<besedilo>}`.
+Ta ukaz besedilu doda ozadje dane barve.
+Ukaz `\fcolorbox[<model>]{<barva_okvirja>}{<barva_ozadja>}{<besedilo>}` besedilo obda z okvirjem ene barve in ozadjem druge barve.
 
-
-:::{card} LaTeX
-
+:::::{grid} 2 2 2 2
+::::{card} LaTeX
 ```latex
 Zanimivo je, kako lahko barve
 \colorbox{yellow}{\textcolor{red}{izboljšajo}}
 dokument.
 Vendar pa lahko prekomerna uporaba barv dokument tudi
 \fcolorbox{orange}{gray}{pokvari}.
-````
-
-:::
-
-:::{card} PDF
-
-````{figure} ./img/05_eg-colorbox.png
-:label: fig:eg-colorbox
-:::
+```
 ::::
 
-## Ukazi in okolja po meri.
+::::{card} PDF
+:::{figure} ./img/05_eg-colorbox.png
+:label: fig:eg-colorbox
+:alt: Odstavek, v katerem je rdeča beseda izboljšajo na rumenem ozadju, beseda pokvari pa na sivem ozadju z oranžnim okvirjem.
+:::
+::::
+:::::
+
+## Ukazi in okolja po meri
 
 LaTeX omogoča ustvarjanje lastnih ukazov in okolij, kar lahko olajša pisanje ponavljajočih se struktur v dokumentu.
-Klasični način za definiranje novega ukaza je z uporabo ukaza `\newcommand{<ime_ukaza>}[<število_argumentov>]{<definicija>}` in novega okolja z uporabo ukaza `\newenvironment{<ime_okolja>}[<število_argumentov>]{<začetek_definicije>}{<konec_definicije>}`.
-Čeprav ti ukazi delujejo povsem normalno za osnovne definicije novih ukazov in okolij, bodo postopoma postali zastareli.
-Tega pristopa tukaj ne bomo obravnavali, vendar če bralca zanima, priporočamo branje Overleafovih navodil za [nove ukaze](https://www.overleaf.com/learn/latex/Commands){target=_blank} in [nova okolja](https://www.overleaf.com/learn/latex/Environments){target=_blank} (v angleščini).
+Klasični način za definiranje novega ukaza je ukaz `\newcommand{<ime_ukaza>}[<število_argumentov>]{<definicija>}`, za definiranje novega okolja pa ukaz `\newenvironment{<ime_okolja>}[<število_argumentov>]{<začetek_definicije>}{<konec_definicije>}`.
+Ti ukazi za osnovne definicije novih ukazov in okolij delujejo povsem dobro, vendar razvijalci LaTeXa danes priporočajo sodobnejši pristop, ki ga opišemo spodaj.
+Klasičnega pristopa tukaj ne bomo obravnavali. Če vas zanima, priporočamo branje Overleafovih navodil za [nove ukaze](https://www.overleaf.com/learn/latex/Commands) in [nova okolja](https://www.overleaf.com/learn/latex/Environments) (v angleščini).
 
-Sodobnejši in bolj zmogljiv način za definiranje novih ukazov in okolij je z uporabo ukaza `\NewDocumentCommand` in `\NewDocumentEnvironment`.
-Ta pristop omogoča bolj fleksibilno določanje argumentov in podpira različne vrste argumentov, kot so obvezni, neobvezni, in več vrst argumentov.
+Sodobnejši in zmogljivejši način za definiranje novih ukazov in okolij sta ukaza `\NewDocumentCommand` in `\NewDocumentEnvironment`.
+Ta pristop omogoča bolj prilagodljivo določanje argumentov in podpira različne vrste argumentov, kot so obvezni, neobvezni in preklopni argumenti.
 
 Ukaz `\NewDocumentCommand` ima naslednjo sintakso:
+
 ```latex
 \NewDocumentCommand{<ime_ukaza>}{<vrsta_argumentov>}{<definicija>}
-````
+```
 
-- `<ime_ukaza>`: Ime novega ukaza, ki ga želimo definirati (vključno z `\`).
-- `<vrsta_argumentov>`: Niz, ki določa vrste argumentov, ki jih ukaz sprejema. To bomo počasi obravnavali v nadaljevanju.
-- `<definicija>`: Telo ukaza, kjer lahko uporabimo argumente znotraj ukaza.
+- `<ime_ukaza>`: ime novega ukaza, ki ga želimo definirati (vključno z `\`).
+- `<vrsta_argumentov>`: niz, ki določa vrste argumentov, ki jih ukaz sprejema. Vrste argumentov bomo postopoma spoznali v nadaljevanju.
+- `<definicija>`: telo ukaza, v katerem lahko uporabimo argumente ukaza.
 
-Najlažje ukaz, da lahko definiramo je brez argumentov, to pomeni z praznim nizom za `<vrsta_argumentov>`.
+Najpreprostejši je ukaz brez argumentov, pri katerem je `<vrsta_argumentov>` prazen niz.
 
-::::{grid} 2 2 2 2
-
-:::{card} LaTeX
-
+:::::{grid} 2 2 2 2
+::::{card} LaTeX
 ```latex
 % V preambuli:
 \NewDocumentCommand{\pozdrav}{}
 {Pozdravljen, svet!}
 % V telesu dokumenta:
-Vsakič da uporabljamo ukaz
+Vsakič, ko uporabimo ukaz
 \texttt{\textbackslash pozdrav},
-dobimo isti rezultat: \pozdrav.
+dobimo isti rezultat: \pozdrav
 ```
-
-:::
-
-:::{card} PDF
-
-````{figure} ./img/05_eg-NewCommand-NoArgs-1.png
-:::
 ::::
 
-Ta način je zelo uporaben, ko obstajajo del besedila ali strukture, ki jih pogosto uporabljamo v dokumentu.
-Seveda, če se kdajkoli odločimo spremeniti to besedilo ali strukturo, moramo to storiti samo na enem mestu: v definiciji ukaza.
+::::{card} PDF
+:::{figure} ./img/05_eg-NewCommand-NoArgs-1.png
+:label: fig:eg-NewCommand-NoArgs-1
+:alt: Odstavek, ki se konča z besedilom Pozdravljen, svet!, ki ga natisne ukaz pozdrav.
+:::
+::::
+:::::
 
-::::{grid} 2 2 2 2
+Takšni ukazi so zelo uporabni za dele besedila ali strukture, ki jih v dokumentu pogosto uporabljamo.
+Če se kdaj odločimo to besedilo ali strukturo spremeniti, moramo to storiti samo na enem mestu: v definiciji ukaza.
 
-
-:::{card} LaTeX
-
+:::::{grid} 2 2 2 2
+::::{card} LaTeX
 ```latex
 % V preambuli:
 \NewDocumentCommand{\pozdrav}{}
 {\textit{Pozdravljen},
 \textbf{svet}!}
 % V telesu dokumenta:
-Vsakič da uporabljamo ukaz
+Vsakič, ko uporabimo ukaz
 \texttt{\textbackslash pozdrav},
-dobimo isti rezultat: \pozdrav.
-````
-
-:::
-
-:::{card} PDF
-
-````{figure} ./img/05_eg-NewCommand-NoArgs-2.png
-:::
+dobimo isti rezultat: \pozdrav
+```
 ::::
 
-Pogosta uporaba novih ukazov je pri definiciji matematičnih izrazov, ki jih pogosto uporabljamo. Kot smo videli v prejšnjih poglavjih, nekatere vir (npr. [Standard ISO 80000-2](https://www.sist.si/velicine-in-enote-2-del-matematika-sist-en-iso-80000-220196-prevod-v-slovenscino.html)) priporočajo, da se za matematične konstante in posebne funkcije uporablja rimska pisava (upravičeno).
-Seveda, ni smiselno vsakič pisati `\mathrm{\pi}` za konstantno $\mathrm{pi}$ ali `\mathrm{e}` za Eulerjevo število.
+::::{card} PDF
+:::{figure} ./img/05_eg-NewCommand-NoArgs-2.png
+:label: fig:eg-NewCommand-NoArgs-2
+:alt: Enak odstavek kot v prejšnjem primeru, le da je beseda Pozdravljen ležeča, beseda svet pa krepka.
+:::
+::::
+:::::
+
+Pogosta uporaba novih ukazov je definicija matematičnih izrazov, ki jih pogosto uporabljamo. Kot smo videli v poglavju [](./04_latexMatematika.md), nekateri viri (npr. [Standard ISO 80000-2](https://www.sist.si/velicine-in-enote-2-del-matematika-sist-en-iso-80000-220196-prevod-v-slovenscino.html)) priporočajo, da za matematične konstante in posebne funkcije uporabljamo pokončno pisavo (upravičeno).
+Seveda ni smiselno vsakič pisati `\mathrm{e}` za Eulerjevo število ali `\uppi` (iz paketa `upgreek`) za število $\pi$. Spomnite se, da ukaz `\mathrm{\pi}` za pokončni $\pi$ ne zadošča.
 Namesto tega lahko definiramo nove ukaze za te konstante:
 
-::::{grid} 2 2 2 2
-
-
-:::{card} LaTeX
-
+:::::{grid} 2 2 2 2
+::::{card} LaTeX
 ```latex
 % V preambuli:
+\usepackage{upgreek}
 \NewDocumentCommand{\kpi}{}
-{\mathrm{\pi}} %Ukaz \kpi, kot 'konstantna pi'
+{\uppi} %Ukaz \kpi, kot 'konstantni pi'
 \NewDocumentCommand{\ke}{}
 {\mathrm{e}} %Ukaz \ke za Eulerjevo število
 % V telesu dokumenta:
@@ -436,82 +427,75 @@ Namesto tega lahko definiramo nove ukaze za te konstante:
 \ke^{i \kpi} + 1 = 0 \text{ vs. }
 e^{i \pi} + 1 = 0
 \]
-````
+```
+::::
 
-:::
-
-:::{card} PDF
-
+::::{card} PDF
 $$
  \mathrm{e}^{i \mathrm{\pi}} + 1 = 0 \text{ vs. }
  e^{i \pi} + 1 = 0
 $$
-
-:::
 ::::
+:::::
 
-:::{admonition} Nasvet
+:::{admonition} Nasvet!
 :class: tip
-Ko definiramo nove ukaze, ki se bodo uporabljali v matematičnem načinu, je priporočljivo, da ne vključimo nobenega simbola, ki označuje matematični način.
-Na primer, pri definiciji ukaza za konstantno $\pi$, je bolje definirati ukaz `\kpi` kot `\mathrm{\pi}` namesto `$\mathrm{\pi}$`.
+Ko definiramo nove ukaze, ki jih bomo uporabljali v matematičnem načinu, je priporočljivo, da v definicijo ne vključimo znakov, ki začnejo matematični način.
+Na primer, ukaz `\kpi` za konstanto $\pi$ je bolje definirati kot `\uppi` namesto `$\uppi$`. Tako ga lahko brez težav uporabimo znotraj drugih formul.
 :::
 
-Če želimo definirati nov ukaz, ki sprejema argumente, moramo določiti vrsto in število argumentov v nizu `<vrsta_argumentov>`.
-Nekateri najpogostejši tipi argumentov so prikazani v [Tabeli %s](#tbl:arg-types).
+Če želimo definirati nov ukaz, ki sprejema argumente, moramo v nizu `<vrsta_argumentov>` določiti vrsto in število argumentov.
+Nekatere najpogostejše vrste argumentov so prikazane v [Tabeli %s](#tbl:arg-types).
 
-:::{list-table} Najpogostejši tipi argumentov v `\NewDocumentCommand`
+:::{list-table} Najpogostejše vrste argumentov v `\NewDocumentCommand`
 :label: tbl:arg-types
 :header-rows: 1
 
-* - Tip argumenta
+* - Vrsta argumenta
   - Opis
 * - `m`
-  - Obvezni argument, ki lahko vsebuje več vrstic.
+  - Obvezni argument.
 * - `O{<privzeta_vrednost>}`
-  - Neobvezni argument, ki lahko vsebuje več vrstic. Če ni podan, ima privzeto vrednost `<privzeta_vrednost>`.
+  - Neobvezni argument. Če ga ne podamo, ima privzeto vrednost `<privzeta_vrednost>`.
 * - `o`
-  - Neobvezni argument. Če ni podan, natisne posebni niz `-NoValue-`. Običajno v definicij uporaba pogojev za preverjanje, ali je bil argument podan kot je ukaz `\IfNoValueTF`.
+  - Neobvezni argument. Če ga ne podamo, ima posebno vrednost `-NoValue-`, zato v definiciji običajno s pogojem, kot je `\IfValueTF`, preverimo, ali je bil podan.
 * - `D<levo><desno>{<privzeta_vrednost>}`
-  - Neobvezni argument, ki je obdan z `<levo>` in `<desno>`. Če ni podan, ima privzeto vrednost `<privzeta_vrednost>`. Običajno se uporablja znak `<` in `>`, za `<levo>` in `<desno>`. Deluje kot `o`, vendar s posebnimi ločevalniki.
+  - Neobvezni argument, ki je obdan z `<levo>` in `<desno>`. Če ga ne podamo, ima privzeto vrednost `<privzeta_vrednost>`. Običajno uporabimo znaka `<` in `>`. Deluje kot `O`, vendar s posebnimi ločevalniki.
 * - `d<levo><desno>`
   - Podobno kot `D`, vendar brez privzete vrednosti. Deluje kot `o`, vendar s posebnimi ločevalniki.
 * - `s`
-  - Preklopni argument (switch). Če je prisoten, je vrednost `\BooleanTrue`, sicer `\BooleanFalse`. Uporabno, ko definiramo ukaze 'z zvezdico' ali 'brez zvezdice'.
+  - Preklopni argument (zvezdica). Če je prisoten, je vrednost `\BooleanTrue`, sicer `\BooleanFalse`. Uporaben je, ko definiramo ukaze "z zvezdico" in "brez zvezdice".
 :::
 
-Najlažje tip argumenta je `m`, ki predstavlja obvezni argument. Na primer, lahko definiramo ukaz za barvanje besedila z določenim in barvo. Pri definiciji ukazo, uporabljamo znak `#1` za sklicevanje na prvi argument.
+Argument nobene od teh vrst ne sme vsebovati prazne vrstice (tj. novega odstavka). Če to želimo, pred vrsto argumenta dodamo znak `+`, npr. `+m`.
 
-::::{grid} 2 2 2 2
+Najpreprostejša vrsta argumenta je `m`, ki predstavlja obvezni argument. Na primer, lahko definiramo ukaz za barvanje besedila z določeno barvo. V definiciji ukaza se na prvi argument sklicujemo z `#1`.
 
-:::{card} LaTeX
-
+:::::{grid} 2 2 2 2
+::::{card} LaTeX
 ```latex
 % V preambuli:
 \NewDocumentCommand{\textULrdeca}{m}
 {\textcolor[RGB]{226,25,30}{#1}}
 % V telesu dokumenta:
-Dobodošli v
+Dobrodošli na
 \textULrdeca{Univerzi v Ljubljani}!
 Ta \textULrdeca{barva} mi je zelo všeč.
 ```
-
-:::
-
-:::{card} PDF
-
-```{figure} ./img/05_eg-ArgsM-1.png
-:label: fig:eg-ArgsM-1
-```
-
-:::
 ::::
 
-Seveda, lahko definiramo ukaze z več argumenti. Dovolj je da dodamo več tipov argumentov v niz `<vrsta_argumentov>` in uporabimo `#2`, `#3`, ... za sklicevanje na druge argumente.
+::::{card} PDF
+:::{figure} ./img/05_eg-ArgsM-1.png
+:label: fig:eg-ArgsM-1
+:alt: Stavek Dobrodošli na Univerzi v Ljubljani! Ta barva mi je zelo všeč, v katerem sta besedi Univerzi v Ljubljani in barva rdeči.
+:::
+::::
+:::::
 
-::::{grid} 2 2 2 2
+Seveda lahko definiramo tudi ukaze z več argumenti. Dovolj je, da v niz `<vrsta_argumentov>` dodamo več vrst argumentov in se na naslednje argumente sklicujemo z `#2`, `#3` …
 
-:::{card} LaTeX
-
+:::::{grid} 2 2 2 2
+::::{card} LaTeX
 ```latex
 % V preambuli:
 \NewDocumentCommand{\zap}{mm}
@@ -525,28 +509,24 @@ torej
 \texttt{\textbackslash zap\{a\}\{10\}} daje
 $ \zap{a}{10} $.
 ```
-
-:::
-
-:::{card} PDF
-
-```{figure} ./img/05_eg-ArgsM-2.png
-:label: fig:eg-ArgsM-2
-```
-
-:::
 ::::
 
-Če želimo definirati ukaz z neobveznimi argumenti, lahko uporabimo tip `O{<privzeta_vrednost>}`. Ne pozabite, da neobvezni argumenti damo znotraj oklepaj `[]` pri klicu ukaza.
+::::{card} PDF
+:::{figure} ./img/05_eg-ArgsM-2.png
+:label: fig:eg-ArgsM-2
+:alt: Odstavek, ki pojasni, da ukaz zap z argumentoma x in n da zaporedje x_1 do x_n, z argumentoma a in 10 pa zaporedje a_1 do a_10.
+:::
+::::
+:::::
 
-::::{grid} 2 2 2 2
+Če želimo definirati ukaz z neobveznim argumentom, lahko uporabimo vrsto `O{<privzeta_vrednost>}`. Ne pozabite, da neobvezne argumente pri klicu ukaza podamo v oglatih oklepajih `[]`.
 
-:::{card} LaTeX
-
+:::::{grid} 2 2 2 2
+::::{card} LaTeX
 ```latex
 % V preambuli:
 \NewDocumentCommand{\pozdrav}{O{svet}}
-{Pozdravljen, #1!}
+{Pozdravljeni, #1!}
 % V telesu dokumenta:
 Ukaz
 \texttt{\textbackslash pozdrav[<arg>]}
@@ -554,123 +534,107 @@ pozdravi \texttt{<arg>},
 če ga ne damo, pozdravi \texttt{svet}:
 \pozdrav[vsi], \pozdrav.
 ```
+::::
 
-:::
-
-:::{card} PDF
-
-```{figure} ./img/05_eg-ArgsO-1.png
+::::{card} PDF
+:::{figure} ./img/05_eg-ArgsO-1.png
 :label: fig:eg-ArgsO-1
-```
-
+:alt: Odstavek, ki se konča z izpisoma Pozdravljeni, vsi! in Pozdravljeni, svet!.
+:::
 ::::
-::::
+:::::
 
-Lahko seveda kombiniramo različne tipe argumentov. Na primer, lahko definiramo ukaz z enim obveznim in enim neobveznim argumentom:
+Seveda lahko kombiniramo različne vrste argumentov. Na primer, lahko definiramo ukaz z enim neobveznim in enim obveznim argumentom:
 
-::::{grid} 2 2 2 2
-
-:::{card} LaTeX
-
+:::::{grid} 2 2 2 2
+::::{card} LaTeX
 ```latex
-V preambuli:
+% V preambuli:
 \NewDocumentCommand{\Zap}{O{n}m}
 {#2_{1}, \dots, #2_{#1}}
 % V telesu dokumenta:
-Nekatere zaporedje imajo veliko elementov:
+Nekatera zaporedja imajo veliko elementov:
 $\Zap[1000]{a}$,
 za večino pa sploh ne vemo,
 koliko jih je:
 $\Zap{b}$.
 ```
-
-:::
-
-:::{card} PDF
-
-```{figure} ./img/05_eg-ArgsMO-1.png
-:label: fig:eg-ArgsMO-1
-```
-
-:::
 ::::
 
-Upoštevajte, da je vrstni red argumentov pomemben. Če je ukaz `\ukaz` definiran z vrstnim redom argumentov `O{}m`, ga moramo klicati z obveznim argumentom najprej, nato pa neobveznim argumentom (če ga želimo podati), to pomeni `\ukaz[<neobvezni>]{<obvezni>}` je pravilen klic, medtem ko `\ukaz{<obvezni>}[<neobvezni>]` ni pravilen klic.
-Dobra praksa je, da najprej definiramo vse neobvezne argumente, nato pa obvezne argumente.
+::::{card} PDF
+:::{figure} ./img/05_eg-ArgsMO-1.png
+:label: fig:eg-ArgsMO-1
+:alt: Odstavek z zaporedjema a_1 do a_1000 in b_1 do b_n.
+:::
+::::
+:::::
 
-Včasih želimo da ukaz deluje drugače, če je neobvezni argument podan ali ne. V tem primeru lahko uporabimo tip argumenta `o` in ukaz `\IfValueTF` za preverjanje, ali je bil argument podan.
+Upoštevajte, da je vrstni red argumentov pomemben. Če je ukaz `\ukaz` definiran z vrsto argumentov `O{}m`, ga moramo klicati najprej z neobveznim argumentom (če ga želimo podati) in nato z obveznim. Klic `\ukaz[<neobvezni>]{<obvezni>}` je torej pravilen, klic `\ukaz{<obvezni>}[<neobvezni>]` pa ne.
+Dobra praksa je, da najprej definiramo vse neobvezne argumente, nato pa obvezne.
 
-::::{grid} 2 2 2 2
+Včasih želimo, da ukaz deluje drugače glede na to, ali je neobvezni argument podan ali ne. V tem primeru lahko uporabimo vrsto argumenta `o` in z ukazom `\IfValueTF` preverimo, ali je bil argument podan.
 
-:::{card} LaTeX
-
+:::::{grid} 2 2 2 2
+::::{card} LaTeX
 ```latex
 %V preambuli:
 \NewDocumentCommand{\ukaz}{o}
 {
   \IfValueTF{#1}
-  {Neobvezni argument je: \textbf{#1}} %Če je podan prvi argument, vrni njegov vrednost
-  {Ni neobveznega argumenta.} %Če ni podanega argumenta
+  {Neobvezni argument je: \textbf{#1}} %Če je argument podan, vrni njegovo vrednost
+  {Ni neobveznega argumenta.} %Če argument ni podan
 }
 % V telesu dokumenta:
  \ukaz
  \ukaz[Podan argument]
 ```
-
-:::
-
-:::{card} PDF
-
-```{figure} ./img/05_eg-ArgsMo-2.png
-:label: fig:eg-ArgsMo-2
-```
-
-:::
 ::::
 
-Namesto ukaza `\IfValueTF`, lahko uporabimo tudi ukaz `\IfValueT`, če želimo izvesti dejanje samo, če je bil argument podan, ali ukaz `\IfValueF`, če želimo izvesti dejanje samo, če argument ni bil podan. Lahko tudi uporabimo ukaze `\IfNoValueTF`, `\IfNoValueT`, in `\IfNoValueF`, ki delujejo nasprotno.
+::::{card} PDF
+:::{figure} ./img/05_eg-ArgsMo-2.png
+:label: fig:eg-ArgsMo-2
+:alt: Dva stavka, Ni neobveznega argumenta. in Neobvezni argument je: Podan argument, pri čemer je Podan argument krepko.
+:::
+::::
+:::::
 
-Ko želimo da ukaz sprejme neobvezni argument z določenimi ločevalniki, lahko uporabimo tip argumenta `D<levo><desno>{<privzeta_vrednost>}`.
-Običajno se uporabljata znaka `<` in `>` kot ločevalnika.
+Namesto ukaza `\IfValueTF` lahko uporabimo tudi ukaz `\IfValueT`, če želimo izvesti dejanje samo takrat, ko je argument podan, ali ukaz `\IfValueF`, če želimo izvesti dejanje samo takrat, ko argument ni podan. Uporabimo lahko tudi ukaze `\IfNoValueTF`, `\IfNoValueT` in `\IfNoValueF`, ki delujejo nasprotno.
 
-::::{grid} 2 2 2 2
+Če želimo, da ukaz sprejme neobvezni argument z določenimi ločevalniki, lahko uporabimo vrsto argumenta `D<levo><desno>{<privzeta_vrednost>}`.
+Običajno kot ločevalnika uporabimo znaka `<` in `>`.
 
-:::{card} LaTeX
-
+:::::{grid} 2 2 2 2
+::::{card} LaTeX
 ```latex
 % V preambuli:
 \NewDocumentCommand{\zapLim}{D<>{1}O{n}m}
 {#3_{#1}, \dots, #3_{#2}}
 % V telesu dokumenta:
-Večina zaporedj gre od $1$ do $n$:
+Večina zaporedij gre od $1$ do $n$:
 $\zapLim{a}$,
 vendar včasih želimo drugačen začetek:
 $\zapLim<0>{a}$,
 ali drugačen konec:
-$\zapLim[500]{a}$.
+$\zapLim[500]{a}$,
 ali pa kar oboje:
 $\zapLim<5>[500]{a}$.
 ```
-
-:::
-
-:::{card} PDF
-
-```{figure} ./img/05_eg-ArgsD-1.png
-:label: fig:eg-ArgsD-1
-```
-
-:::
 ::::
 
-Če namesto `D<levo><desno>{<privzeta_vrednost>}` uporabimo `d<levo><desno>`, dobimo podoben učinek, vendar brez privzete vrednosti (točno tako, kot ko uporabljamo `o`). V tem primeru moramo vedno preveriti, ali je bil argument podan z uporabo ukaza `\IfValueTF` in podobnih.
+::::{card} PDF
+:::{figure} ./img/05_eg-ArgsD-1.png
+:label: fig:eg-ArgsD-1
+:alt: Odstavek z zaporedji a_1 do a_n, a_0 do a_n, a_1 do a_500 in a_5 do a_500.
+:::
+::::
+:::::
 
-Nazadnje, lahko tudi uporabljamo znak `s` za niz `<vrsta_argumentov>`, da definiramo preklopni argument oz. različica ukaz _z zvezdico_. Pri definiciji ukaza, lahko uporabimo ukaz `\IfBooleanTF`, da preverimo, ali je bil preklopni argument podan.
+Če namesto `D<levo><desno>{<privzeta_vrednost>}` uporabimo `d<levo><desno>`, dobimo podoben učinek, vendar brez privzete vrednosti (tako kot pri `o`). V tem primeru moramo vedno preveriti, ali je bil argument podan, z ukazom `\IfValueTF` ali podobnimi.
 
-::::{grid} 2 2 2 2
+Nazadnje lahko v nizu `<vrsta_argumentov>` uporabimo tudi znak `s`, s katerim definiramo preklopni argument oz. različico ukaza _z zvezdico_. V definiciji ukaza z ukazom `\IfBooleanTF` preverimo, ali je bil preklopni argument podan.
 
-:::{card} LaTeX
-
+:::::{grid} 2 2 2 2
+::::{card} LaTeX
 ```latex
 % V preambuli:
 \NewDocumentCommand{\jeRekli}{sm}
@@ -682,75 +646,71 @@ Nazadnje, lahko tudi uporabljamo znak `s` za niz `<vrsta_argumentov>`, da defini
 \jeRekli{Danes je lep dan.}\\
 \jeRekli*{Upam, da bo jutri tudi tako lep dan.}
 ```
+::::
 
-:::
-
-:::{card} PDF
-
-```{figure} ./img/05_eg-ArgsS-1.png
+::::{card} PDF
+:::{figure} ./img/05_eg-ArgsS-1.png
 :label: fig:eg-ArgsS-1
-```
-
+:alt: Dve vrstici, Boštjan je rekel: "Danes je lep dan." in Ana je rekla: "Upam, da bo jutri tudi tako lep dan."
 :::
 ::::
+:::::
 
 :::{exercise}
 :label: ex_ukazi
 
-1. Definirajte nov ukaz `\sporocilo`, ki sprejme en obvezni argument in en neobvezni argument (privzeta vrednost naj bo "Obvestilo"). Ukaz mora natisniti neobvezni argument, nato simbol `:` in nato obvezni argument v poševni pisavi.
-2. Ustvarite nov ukaz `\vektor`, ki sprejme en obvezni argument (za vnose vektorja) in en neobvezni argument (za dimenzijo vektorja) tako da, če je podan, ukaz natisne $n$-dimenzionalni vektor, sicer pa $3$-dimenzionalni vektor. To je, `\vektor[17]{v}` mora natisniti $(v_{1}, \dots, v_{17})$, ampak `\vektor{v}` mora natisniti $(v_{1}, v_{2}, v_{3})$.
-3. Ustvarite nov ukaz `\rdeceAliModre`, ki sprejme en obvezni argument in en preklopni argument. Če je preklopni argument podan, ukaz natisne besedilo v rdeči barvi, sicer v modri barvi.
-4. Ustvarite nov ukaz `\myInt` za integral, ki sprejme dva obvezna argumenta: funkcijo in spremenljivko integracije; en neobvezni argument
-   za spodnjo mejo (privzeta vrednost naj bo prazna) z ločevalnikoma `<` in `>`; in en neobvezni argument za zgornjo mejo (privzeta vrednost naj bo prazna) z ločevalnikoma `[` in `]`. Ukaz naj natisne integral z ustreznimi mejami, če so podane. Na primer, `\myInt<0>[1]{f(x)}{x}` naj natisne $\int_{0}^{1} f(x) \, dx$, medtem ko `\myInt{f(x)}{x}` naj natisne $\int f(x) \, dx$.
-   :::
+1. Definirajte nov ukaz `\sporocilo`, ki sprejme en obvezni argument in en neobvezni argument (privzeta vrednost naj bo "Obvestilo"). Ukaz naj natisne neobvezni argument, nato znak `:` in nato obvezni argument v ležeči pisavi.
+2. Ustvarite nov ukaz `\vektor`, ki sprejme en obvezni argument (za komponente vektorja) in en neobvezni argument (za dimenzijo vektorja). Če je dimenzija $n$ podana, naj ukaz natisne $n$-dimenzionalni vektor, sicer pa $3$-dimenzionalni vektor. Na primer, `\vektor[17]{v}` naj natisne $(v_{1}, \dots, v_{17})$, `\vektor{v}` pa $(v_{1}, v_{2}, v_{3})$.
+3. Ustvarite nov ukaz `\rdeceAliModre`, ki sprejme en obvezni argument in en preklopni argument. Če je preklopni argument podan, naj ukaz natisne besedilo v rdeči barvi, sicer v modri.
+4. Ustvarite nov ukaz `\myInt` za integral, ki sprejme dva obvezna argumenta: funkcijo in spremenljivko integracije; en neobvezni argument za spodnjo mejo (privzeta vrednost naj bo prazna) z ločevalnikoma `<` in `>`; in en neobvezni argument za zgornjo mejo (privzeta vrednost naj bo prazna) z ločevalnikoma `[` in `]`. Ukaz naj natisne integral z ustreznimi mejami, če so podane. Na primer, `\myInt<0>[1]{f(x)}{x}` naj natisne $\int_{0}^{1} f(x) \, dx$, `\myInt{f(x)}{x}` pa $\int f(x) \, dx$.
+:::
 
-```{margin}
+:::{margin}
 [Seznam nalog](#05_latexRazno_vaje)
-```
+:::
 
 :::{solution} ex_ukazi
-:class: tip, dropdown
+:class: tip dropdown
 
 1. Definicija ukaza `\sporocilo`:
 
-```latex
-\NewDocumentCommand{\sporocilo}{O{Obvestilo}m}
-{#1: \textit{#2}}
-```
+   ```latex
+   \NewDocumentCommand{\sporocilo}{O{Obvestilo}m}
+   {#1: \textit{#2}}
+   ```
 
 2. Definicija ukaza `\vektor`:
 
-```latex
-\NewDocumentCommand{\vektor}{om}
-{
-  \IfValueTF{#1}
-  {(#2_{1}, \dots, #2_{#1})} %Če je podan prvi argument, vrni vektor z dimenzijo #1
-  {(#2_{1}, #2_{2}, #2_{3})} %Če ni podanega argumenta, vrni 3-dimenzionalni vektor
-}
-```
+   ```latex
+   \NewDocumentCommand{\vektor}{om}
+   {
+     \IfValueTF{#1}
+     {(#2_{1}, \dots, #2_{#1})} %Če je podan prvi argument, vrni vektor z dimenzijo #1
+     {(#2_{1}, #2_{2}, #2_{3})} %Če argument ni podan, vrni 3-dimenzionalni vektor
+   }
+   ```
 
 3. Definicija ukaza `\rdeceAliModre`:
 
-```latex
-\NewDocumentCommand{\rdeceAliModre}{sm}
-{\IfBooleanTF{#1}
-{\textcolor{red}{#2}} %Če je podan preklopni argument, natisni rdeče
-{\textcolor{blue}{#2}} %Če ni podanega preklopnega argumenta, natisni modro
-}
-```
+   ```latex
+   \NewDocumentCommand{\rdeceAliModre}{sm}
+   {\IfBooleanTF{#1}
+   {\textcolor{red}{#2}} %Če je podan preklopni argument, natisni rdeče
+   {\textcolor{blue}{#2}} %Če preklopni argument ni podan, natisni modro
+   }
+   ```
 
 4. Definicija ukaza `\myInt`:
 
-```latex
-\NewDocumentCommand{\myInt}{D<>{}O{}mm}
-{
-  \int_{#1}^{#2} #3 \, d#4
-}
-```
-
+   ```latex
+   \NewDocumentCommand{\myInt}{D<>{}O{}mm}
+   {
+     \int_{#1}^{#2} #3 \, d#4
+   }
+   ```
 :::
 
-Lahko tudi definiramo nova okolja z uporabo ukaza `\NewDocumentEnvironment`, ki ima podobno sintakso kot `\NewDocumentCommand`.
+Nova okolja lahko definiramo z ukazom `\NewDocumentEnvironment`, ki ima podobno sintakso kot `\NewDocumentCommand`.
 
 ```latex
 \NewDocumentEnvironment{<ime_okolja>}{<vrsta_argumentov>}
@@ -758,24 +718,25 @@ Lahko tudi definiramo nova okolja z uporabo ukaza `\NewDocumentEnvironment`, ki 
 {<konec_definicije>}
 ```
 
-- `<ime_okolja>`: Ime novega okolja, ki ga želimo definirati.
-- `<vrsta_argumentov>`: Niz, ki določa vrste argumentov, ki jih okolje sprejema. To deluje skoraj enako kot pri ukazu `\NewDocumentCommand`.
-- `<začetek_definicije>`: Koda za začetek okolja, kjer lahko uporabimo argumente znotraj okolja.
-- `<konec_definicije>`: Koda za konec okolja.
+- `<ime_okolja>`: ime novega okolja, ki ga želimo definirati.
+- `<vrsta_argumentov>`: niz, ki določa vrste argumentov, ki jih okolje sprejema. Deluje skoraj enako kot pri ukazu `\NewDocumentCommand`.
+- `<začetek_definicije>`: koda na začetku okolja, v kateri lahko uporabimo argumente okolja.
+- `<konec_definicije>`: koda na koncu okolja.
 
-Naslednji primeri naj bi pojasnili uporabo tega ukaza.
+Uporabo tega ukaza pojasnimo z naslednjimi primeri. Okolja `FlushLeft`, `Center` in `FlushRight` iz paketa `ragged2e` smo spoznali v poglavju [](./02_latexOsnovnaOkolja.md).
 
-:::{prf:example}
+::::::{prf:example}
 :label: eg_okolja_kralj-1
 
-`````{tab-set}
-````{tab-item} LaTeX
+:::::{tab-set}
+::::{tab-item} LaTeX
 ```latex
 % V preambuli:
+\usepackage{ragged2e}
 \NewDocumentEnvironment{kralj}{}
 {
   \begin{FlushLeft} \textbf{Poslušajte!}
-  Njegova veličanstvo, kralj Artur bo podal izjavo:
+  Njegovo veličanstvo, kralj Artur bo podal izjavo:
   \end{FlushLeft}
   \begin{Center} \scshape
 }
@@ -789,30 +750,32 @@ Naslednji primeri naj bi pojasnili uporabo tega ukaza.
 To je izjava kralja Arturja.
 \end{kralj}
 ```
+::::
 
-````
-````{tab-item} PDF
-``` {figure} ./img/05_eg-okolja-kralj-1.png
-  :label: fig:eg-okolja-kralj-1
-```
-````
-`````
-
+::::{tab-item} PDF
+:::{figure} ./img/05_eg-okolja-kralj-1.png
+:label: fig:eg-okolja-kralj-1
+:alt: Krepko Poslušajte! z uvodom o kralju Arturju, pod njim na sredini izjava v malih velikih črkah, desno spodaj zaključek Konec izjave. Hvala za vašo pozornost.
 :::
+::::
+:::::
 
-Lahko tudi definiramo okolja z argumenti. Na primer, lahko definiramo okolje `kraljIme`, ki sprejme en obvezni argument za ime kralja.
+::::::
 
-:::{prf:example}
+Definiramo lahko tudi okolja z argumenti. Na primer, lahko definiramo okolje `kraljIme`, ki sprejme en obvezni argument za ime kralja.
+
+::::::{prf:example}
 :label: eg_okolja_kralj-2
 
-`````{tab-set}
-````{tab-item} LaTeX
+:::::{tab-set}
+::::{tab-item} LaTeX
 ```latex
 % V preambuli:
+\usepackage{ragged2e}
 \NewDocumentEnvironment{kraljIme}{m}
 {
   \begin{FlushLeft} \textbf{Poslušajte!}
-  Njegova veličanstvo, kralj \emph{#1} bo podal izjavo:
+  Njegovo veličanstvo, kralj \emph{#1} bo podal izjavo:
   \end{FlushLeft}
   \begin{Center} \scshape
 }
@@ -826,42 +789,47 @@ Lahko tudi definiramo okolja z argumenti. Na primer, lahko definiramo okolje `kr
   Kralj vam želi lepe praznike
 \end{kraljIme}
 ```
+::::
 
-````
-````{tab-item} PDF
-``` {figure} ./img/05_eg-okolja-kralj-2.png
-  :label: fig:eg-okolja-kralj-2
-```
-````
-`````
+::::{tab-item} PDF
+:::{figure} ./img/05_eg-okolja-kralj-2.png
+:label: fig:eg-okolja-kralj-2
+:alt: Enaka izjava kot v prejšnjem primeru, le da je ime Artur v uvodu ležeče, izjava pa se glasi Kralj vam želi lepe praznike.
+:::
+::::
+:::::
 
+::::::
+
+Težava nastane, če želimo imeti različna uvoda in zaključka za kralja in kraljico. To lahko rešimo s preklopnim argumentom `s`.
+V definiciji okolja z ukazom `\IfBooleanTF` preverimo, ali je bil preklopni argument podan; to lahko storimo v obeh delih definicije okolja.
+
+:::{admonition} Pazite!
+:class: warning
+Za razliko od nekaterih drugih okolij LaTeX (npr. `align*`) zvezdico pri takem okolju zapišemo za zavitimi oklepaji z imenom okolja, tj. `\begin{kralji}*{Ime}` namesto `\begin{kralji*}{Ime}`. Na koncu okolja zvezdice ne pišemo: `\end{kralji}` je pravilen tudi za okolje z zvezdico.
 :::
 
-Tukaj imamo problem, ker želimo imeti različne naslove in zaključke za kralja in kraljico. To lahko rešimo z uporabo preklopnega argumenta `s`.
-Moramo v definiciji okolja uporabiti ukaz `\IfBooleanTF`, da preverimo, ali je bil preklopni argument podan; to lahko storimo v obeh delih definicije okolja.
-
-Pazite, za razliko od nekaterih drugih LaTeX okoljih (npr. `align`), ko uporabljamo okolje z zvezdico, zvezdica gre zunaj oklepajev imenja okolja, t.j. `\begin{kralij}*{Ime}` namesto `\begin{kralij*}{Ime}`. Zvezdica ni potrebna na koncu okolja, t.j. `\end{kralij}` je pravilen klic tudi za okolje z zvezdico.
-
-:::{prf:example}
+::::::{prf:example}
 :label: eg_kralji
 
-`````{tab-set}
-````{tab-item} LaTeX
+:::::{tab-set}
+::::{tab-item} LaTeX
 ```latex
 % V preambuli:
+\usepackage{ragged2e}
 \NewDocumentEnvironment{kralji}{sm}
 { % ob \begin{kralji}
   \IfBooleanTF{#1}{ %z zvezdico
-    \begin{FlushLeft} \textbf{Poslušajte!} Njegova veličanstvo, kralj \emph{#2} bo podal izjavo: \end{FlushLeft}\begin{Center} \scshape
+    \begin{FlushLeft} \textbf{Poslušajte!} Njegovo veličanstvo, kralj \emph{#2} bo podal izjavo: \end{FlushLeft}\begin{Center} \scshape
   }
   { %brez zvezdice
-    \begin{FlushLeft} \textbf{Poslušajte!} Njena veličanstvo, kraljica \emph{#2} bo podala izjavo: \end{FlushLeft}\begin{Center} \scshape
+    \begin{FlushLeft} \textbf{Poslušajte!} Njeno veličanstvo, kraljica \emph{#2} bo podala izjavo: \end{FlushLeft}\begin{Center} \scshape
   }
 }
 { % ob \end{kralji}
   \IfBooleanTF{#1}
   { %z zvezdico
-    \normalfont \end{Center}\begin{FlushRight} Konec izjave.  Kralj je hvalžen za vašo pozornost.\end{FlushRight}
+    \normalfont \end{Center}\begin{FlushRight} Konec izjave. Kralj je hvaležen za vašo pozornost.\end{FlushRight}
   }
   { %brez zvezdice
     \normalfont \end{Center}\begin{FlushRight} Konec izjave. Kraljica je hvaležna za vašo pozornost. \end{FlushRight}
@@ -877,20 +845,24 @@ Kraljeve besede.
 Kraljičine besede.
 \end{kralji}
 ```
-````
-````{tab-item} PDF
-``` {figure} ./img/05_eg-okolja-kralj-2.png
-  :label: fig:eg-okolja-kralj--3
-```
-````
-`````
+::::
 
+::::{tab-item} PDF
+:::{figure} ./img/05_eg-okolja-kralj-3.png
+:label: fig:eg-okolja-kralj-3
+:alt: Dve izjavi druga pod drugo: prva napove kralja Arturja in se konča z Kralj je hvaležen za vašo pozornost, druga napove kraljico Guinevere in se konča z Kraljica je hvaležna za vašo pozornost.
 :::
+::::
+:::::
+
+::::::
 
 (05_latexRazno_vaje)=
 
 ## Naloge
 
-- [Naloga %s](#ex_input_include): Ukaza `\input{}` in `\include{}`.
-- [Naloga %s](#ex-gradient): Mešanje barv.
-- [Naloga %s](#ex_ukazi): Definicija novih ukazov z `\NewDocumentCommand`.
+Tukaj so naloge petega poglavja:
+
+- [ ] [Naloga %s](#ex_input_include): Ukaza `\input` in `\include`.
+- [ ] [Naloga %s](#ex-gradient): Mešanje barv.
+- [ ] [Naloga %s](#ex_ukazi): Novi ukazi z `\NewDocumentCommand`.
