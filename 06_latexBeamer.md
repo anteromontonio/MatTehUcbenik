@@ -1420,7 +1420,7 @@ Teme se naložijo z ukazom `\usetheme{<ime_teme>}`, posamezne vrste tem pa z uka
 Lahko pa ponudimo zunanje vire za raziskovanje različnih tem.
 
 - [Beamer Theme Matrix](https://hartwork.org/beamer-theme-matrix/): interaktivno orodje za raziskovanje različnih kombinacij tem in barvnih shem v Beamerju.
-- [Beamer Theme Gallery](https://deic.uab.es/~iblanes/beamer_gallery/index.html): galerija različnih tem Beamer, tem pisave in barvnih tem.
+- [Beamer Theme Gallery](https://deic.uab.cat/~iblanes/beamer_gallery/index.html): galerija različnih tem Beamer, tem pisave in barvnih tem.
 - [Beamer User Guide](https://tug.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf): III. del vodiča za uporabnike Beamerja vsebuje podrobne informacije o temah in barvnih shemah.
 - [Overleaf beamer templates](https://www.overleaf.com/gallery/tagged/beamer): sodobne teme Beamer na Overleafu.
 
